@@ -1,0 +1,60 @@
+name = SiteNow
+description = "A University of Iowa installation profile"
+version = VERSION
+core = 7. x
+
+; Core
+
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = php
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = toolbar
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+; Contrib
+
+dependencies[] = cas
+dependencies[] = ctools
+dependencies[] = email
+dependencies[] = features
+dependencies[] = globalredirect
+dependencies[] = googleanalytics
+dependencies[] = libraries
+dependencies[] = link
+dependencies[] = module_filter
+dependencies[] = panels
+dependencies[] = pathauto
+dependencies[] = phone
+dependencies[] = token
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = xmlsitemap
+dependencies[] = wysiwyg
+
+
+; Custom
+
+
+
+; Features
+
+
+
+files[] = sitenow.profile
