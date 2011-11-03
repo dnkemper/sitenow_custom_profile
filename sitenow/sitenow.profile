@@ -20,7 +20,7 @@ function sitenow_install_tasks() {
 
 function sitenow_choose_theme_form($form, &$form_state, &$install_state) {
   drupal_set_title(t('Choose a theme'));
-  $theme = array('iowa' => t('Iowa'), 'sitenow1' => t('SiteNow1'));
+  $theme = array('sitenow' => t('SiteNow'), 'sitenow1' => t('SiteNow1'));
   
   $form['theme'] = array(
     '#type' => 'radios',
@@ -46,13 +46,13 @@ function sitenow_choose_theme_form_submit($form, &$form_state) {
 	'corolla',
   );
   
-  if($enable['theme_default'] == 'iowa') {
+  // if($enable['theme_default'] == 'iowa') {
+  //    theme_enable($enable);
+  //	module_enable(array('fusion_accelerator','fusion_apply','fusion_apply_ui','fusion_apply_rules'));
+  // }
+  // else {
     theme_enable($enable);
-	module_enable(array('fusion_accelerator','fusion_apply','fusion_apply_ui','fusion_apply_rules'));
-  }
-  else {
-    theme_enable($enable);
-  }
+  // }
   
   foreach ($enable as $var => $theme) {
     if (!is_numeric($var)) {

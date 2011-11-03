@@ -36,6 +36,7 @@ dependencies[] = email
 dependencies[] = features
 dependencies[] = globalredirect
 dependencies[] = googleanalytics
+dependencies[] = less
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = module_filter
