@@ -20,13 +20,13 @@ function sitenow_install_tasks() {
 
 function sitenow_choose_theme_form($form, &$form_state, &$install_state) {
   drupal_set_title(t('Choose a theme'));
-  $theme = array('sitenow' => t('SiteNow'), 'sitenow1' => t('SiteNow1'));
+  $theme = array('sitenow1' => t('SiteNow1'));
   
   $form['theme'] = array(
     '#type' => 'radios',
     '#title' => t('Select Theme'),
     '#options' => $theme,
-    '#description' => t('Test Description'),
+    // '#description' => t('Test Description'),
 	'#required' => TRUE,
   );
   

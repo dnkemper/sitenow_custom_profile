@@ -379,8 +379,12 @@ function sitenow_install() {
 	$editor_role_id = 3;
 	$webmaster_role_id = 4;
 	
-	user_role_grant_permissions($editor_role_id, array('create article content', $filtered_html_permission));
-    user_role_grant_permissions($webmaster_role_id, array('create article content', $full_html_permission));
+	user_role_grant_permissions($editor_role_id, array('edit own comments','administer menu','administer nodes','access content overview','view own unpublished content',
+													   'create article content','edit own article content','edit any article content','delete own article content','delete any article content',
+													   'create page content','edit own page content','edit any page content','delete own page content','delete any page content',
+													   'access overlay','view the administration theme','access site reports','access toolbar','change own username',$filtered_html_permission));
+    user_role_grant_permissions($webmaster_role_id, array('administer blocks','edit own comments','access dashboard','manage features','administer image styles','administer menu','bypass node access',
+														  'administer content types','administer nodes','access content overview','view own unpublished content','access overlay','administer comments',$full_html_permission));
 	
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
@@ -596,4 +600,71 @@ function sitenow_install() {
 	variable_set('cas_hide_password', 1);
 	variable_set('cas_first_login_destination', '<front>');
 	
+  // Create custom date formats and format types
+  
+    $date_format_values = array(
+      array(
+        'format' => 'M d, Y',
+        'type' => 'custom',
+        'locked' => 0,
+      ),
+	  array(
+        'format' => 'M',
+        'type' => 'custom',
+        'locked' => 0,
+      ),
+	  array(
+        'format' => 'F',
+        'type' => 'custom',
+        'locked' => 0,
+      ),
+	  array(
+        'format' => 'd',
+        'type' => 'custom',
+        'locked' => 0,
+      ),
+	);
+	
+	$query = db_insert('date_formats')->fields(array('format', 'type', 'locked'));
+      foreach ($date_format_values as $date_format_values_record) {
+        $query->values($date_format_values_record);
+      }
+      $query->execute();
+	
+	$date_format_type_values = array(
+      array(
+        'type' => 'month',
+        'title' => 'Month',
+        'locked' => 0,
+      ),
+	  array(
+        'type' => 'short_month',
+        'title' => 'Short Month',
+        'locked' => 0,
+      ),
+	  array(
+        'type' => 'day',
+        'title' => 'Day',
+        'locked' => 0,
+      ),
+	  array(
+        'type' => 'event_date_type',
+        'title' => 'Event Date Type',
+        'locked' => 0,
+      ),
+	);
+	
+	$query = db_insert('date_format_type')->fields(array('type', 'title', 'locked'));
+      foreach ($date_format_type_values as $date_format_record) {
+        $query->values($date_format_record);
+      }
+      $query->execute();
+	  
+	variable_set('date_format_long','l, F j, Y - g:ia');
+	variable_set('date_format_medium','D, m/d/Y - g:ia');
+	variable_set('date_format_short','m/d/Y - g:ia');
+	variable_set('date_format_day','d');
+	variable_set('date_format_event_date_type','M d, Y');
+	variable_set('date_format_month','F');
+	variable_set('date_format_short_month','M');
 }
