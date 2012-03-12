@@ -42,6 +42,7 @@ dependencies[] = link
 dependencies[] = module_filter
 dependencies[] = panels
 dependencies[] = pathauto
+dependencies[] = pathologic
 dependencies[] = phone
 dependencies[] = robotstxt
 dependencies[] = token
