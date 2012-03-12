@@ -599,6 +599,10 @@ function sitenow_install() {
 	variable_set('cas_hide_email', 1);
 	variable_set('cas_hide_password', 1);
 	variable_set('cas_first_login_destination', '<front>');
+	variable_set('cas_login_invite', 'Log in using HawkID');
+	variable_set('cas_login_drupal_invite', 'Cancel HawkID login');
+	variable_set('cas_login_redir_message', 'You will be redirected to the secure HawkID login page.');
+	variable_set('cas_login_message', 'Logged in via HawkID as %cas_username.');
 	
   // Create custom date formats and format types
   
