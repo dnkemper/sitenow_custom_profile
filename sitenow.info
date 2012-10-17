@@ -37,6 +37,7 @@ dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = libraries
 dependencies[] = link
+dependencies[] = logintoboggan
 dependencies[] = module_filter
 dependencies[] = panels
 dependencies[] = pathauto
