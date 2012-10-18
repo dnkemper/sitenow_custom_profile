@@ -56,11 +56,12 @@ dependencies[] = wysiwyg
 
 
 ; Custom
-
+dependencies[] = uiowa_bar
 
 
 ; Features
-
+dependencies[] = sienow_wysiwyg
+dependencies[] = sienow_media
 
 
 files[] = sitenow.profile
