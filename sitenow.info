@@ -60,8 +60,8 @@ dependencies[] = uiowa_bar
 
 
 ; Features
-dependencies[] = sienow_wysiwyg
-dependencies[] = sienow_media
+dependencies[] = sitenow_wysiwyg
+dependencies[] = sitenow_media
 
 
 files[] = sitenow.profile
