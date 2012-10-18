@@ -6,9 +6,11 @@
  * Perform actions to set up the site for this profile.
  */
 function sitenow_install() {
-  // Enable some standard blocks.
+  // Enable default themes.
   $default_theme = variable_get('theme_default', 'bartik');
   $admin_theme = 'seven';
+  
+  // Enable some standard blocks.
   $values = array(
     array(
       'module' => 'system',
@@ -21,16 +23,6 @@ function sitenow_install() {
       'cache' => -1,
     ),
 	array(
-      'module' => 'system',
-      'delta' => 'main-menu',
-      'theme' => 'iowa',
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'main_menu',
-      'pages' => '',
-      'cache' => -1,
-    ),
-    array(
       'module' => 'node',
       'delta' => 'recent',
       'theme' => $admin_theme,
