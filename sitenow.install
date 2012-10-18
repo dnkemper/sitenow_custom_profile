@@ -291,12 +291,6 @@ function sitenow_install() {
     ),
   );
   field_create_instance($instance);
-
-  // Enable default permissions for system roles.
-  $filtered_html_permission = filter_permission_name($filtered_html_format);
-  $full_html_permission = filter_permission_name($full_html_format);
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', $filtered_html_permission));
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', $filtered_html_permission));
   
   // Create editor and webmaster roles
     $new_roles = array('editor', 'webmaster');
@@ -311,12 +305,13 @@ function sitenow_install() {
 	$editor_role_id = 3;
 	$webmaster_role_id = 4;
 	
+	// Enable default permissions for roles.
 	user_role_grant_permissions($editor_role_id, array('administer menu','administer nodes','access content overview','view own unpublished content',
 													   'create article content','edit own article content','edit any article content','delete own article content','delete any article content',
 													   'create page content','edit own page content','edit any page content','delete own page content','delete any page content',
-													   'access overlay','view the administration theme','access site reports','access toolbar','change own username',$filtered_html_permission));
+													   'access overlay','view the administration theme','access site reports','access toolbar','change own username'));
     user_role_grant_permissions($webmaster_role_id, array('administer blocks','access dashboard','manage features','administer image styles','administer menu','bypass node access',
-														  'administer content types',$filtered_html_permission,$full_html_permission));
+														  'administer content types'));
 	
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
