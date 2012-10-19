@@ -24,7 +24,7 @@ function sitenow_add_content_types() {
 // This functions adds default blocks
 function sitenow_add_default_blocks() {
   require_once drupal_get_path('profile', 'sitenow') . '/includes/sitenow.blocks.inc';
-  sitenow_enable_blocks();  
+  sitenow_enable_blocks();
 }
 
 // This functions enables admin theme
@@ -42,7 +42,7 @@ function sitenow_create_new_roles_and_perms() {
 }
 
 // This functions creates menu links
-function sitenow_create_menus() {		
+function sitenow_create_menus() {
   // Create a Home link in the main menu.
   $item = array(
     'link_title' => st('Home'),
@@ -56,7 +56,7 @@ function sitenow_create_menus() {
 }
 
 // This functions adds CAS configuration
-function sitenow_default_cas_settings () {  
+function sitenow_default_cas_settings () {
   // Configure default CAS settings
     variable_set('cas_version', '1.0');
 	variable_set('cas_server', 'login.uiowa.edu');
@@ -70,4 +70,4 @@ function sitenow_default_cas_settings () {
 	variable_set('cas_login_drupal_invite', 'Cancel HawkID login');
 	variable_set('cas_login_redir_message', 'You will be redirected to the secure HawkID login page.');
 	variable_set('cas_login_message', 'Logged in via HawkID as %cas_username.');
-}	
+}
