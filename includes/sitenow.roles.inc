@@ -11,6 +11,10 @@
  */
  
  function sitenow_default_roles() {
+ 
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
+  
     // Create editor and webmaster roles
     $new_roles = array('editor', 'webmaster');
     foreach ($new_roles as $r){
