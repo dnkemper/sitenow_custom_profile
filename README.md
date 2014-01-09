@@ -1,6 +1,3 @@
 SiteNow Custom Install Profile
 ------------------------------
-dev
-dsgdsgdsfgdf
-dfgdfgdf
-dsfgsdg
+Used to provision new sites on the custom service.
