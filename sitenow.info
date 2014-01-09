@@ -31,7 +31,6 @@ dependencies[] = ctools
 dependencies[] = email
 dependencies[] = features
 dependencies[] = globalredirect
-dependencies[] = googleanalytics
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = logintoboggan
