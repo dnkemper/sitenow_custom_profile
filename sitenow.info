@@ -17,7 +17,6 @@ dependencies[] = options
 dependencies[] = path
 dependencies[] = php
 dependencies[] = taxonomy
-dependencies[] = dblog
 dependencies[] = search
 dependencies[] = shortcut
 dependencies[] = toolbar
