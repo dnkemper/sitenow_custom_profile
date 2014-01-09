@@ -1,7 +1,7 @@
 name = SiteNow
-core = 7. x
 description = "ITS Web Services SiteNow custom installation profile"
 version = 7.x-1.0
+core = 7.x
 
 ; Core
 
