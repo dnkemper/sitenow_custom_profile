@@ -2,14 +2,14 @@
 
 /**
  * @file sitenow.content-types.inc
- * 
+ *
  * This has been split out as it was getting too long.
- * 
+ *
  * Install setup for:
  * basic page
  * article
  */
- 
+
  function sitenow_content_types() {
   // Insert default pre-defined node types into the database. For a complete
   // list of available node type attributes, refer to the node type API
@@ -74,6 +74,9 @@
 
   // Don't display date and author information for "Basic page" nodes by default.
   variable_set('node_submitted_page', FALSE);
+
+  // Set default path pattern for pathauto.
+  variable_set('pathauto_node_pattern', '[node:title]');
 
   // Enable user picture support and set the default to a square thumbnail option.
   variable_set('user_pictures', '1');
