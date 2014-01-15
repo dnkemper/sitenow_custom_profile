@@ -7,7 +7,6 @@ core = 7.x
 
 dependencies[] = block
 dependencies[] = contextual
-dependencies[] = dashboard
 dependencies[] = help
 dependencies[] = image
 dependencies[] = list
@@ -38,10 +37,9 @@ dependencies[] = module_filter
 dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = panels_ipe
-;dependencies[] = panelizer
+dependencies[] = panelizer
 dependencies[] = pathauto
 dependencies[] = pathologic
-dependencies[] = phone
 dependencies[] = robotstxt
 dependencies[] = token
 dependencies[] = views
@@ -53,7 +51,7 @@ dependencies[] = wysiwyg
 
 ; Custom
 dependencies[] = uiowa_bar
-
+dependencies[] = uiowa_authentication
 
 ; Features
 dependencies[] = sitenow_wysiwyg
