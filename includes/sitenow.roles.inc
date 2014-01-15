@@ -28,13 +28,39 @@
 	$editor_role_id = 3;
 	$webmaster_role_id = 4;
 
+  $editor_permissions = array(
+    'administer menu',
+    'administer nodes',
+    'access content overview',
+    'view own unpublished content',
+    'create article content',
+    'edit own article content',
+    'edit any article content',
+    'delete own article content',
+    'delete any article content',
+    'create page content',
+    'edit own page content',
+    'edit any page content',
+    'delete own page content',
+    'delete any page content',
+    'access overlay',
+    'view the administration theme',
+    'access site reports',
+    'access toolbar',
+  );
+
+  $webmaster_permissions = array(
+    'administer blocks',
+    'manage features',
+    'administer image styles',
+    'administer menu',
+    'bypass node access',
+    'administer content types',
+  );
+
 	// Enable default permissions for roles.
-	user_role_grant_permissions($editor_role_id, array('administer menu','administer nodes','access content overview','view own unpublished content',
-													   'create article content','edit own article content','edit any article content','delete own article content','delete any article content',
-													   'create page content','edit own page content','edit any page content','delete own page content','delete any page content',
-													   'access overlay','view the administration theme','access site reports','access toolbar','change own username'));
-    user_role_grant_permissions($webmaster_role_id, array('administer blocks','access dashboard','manage features','administer image styles','administer menu','bypass node access',
-														  'administer content types'));
+	user_role_grant_permissions($editor_role_id, $editor_permissions);
+  user_role_grant_permissions($webmaster_role_id, $webmaster_permissions);
 
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
