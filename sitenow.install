@@ -8,10 +8,10 @@
 function sitenow_install() {
   sitenow_add_content_types();
   sitenow_add_default_blocks();
-  sitenow_enable_theme_settings ();
+  sitenow_enable_theme_settings();
   sitenow_create_new_roles_and_perms();
   sitenow_create_menus();
-  sitenow_default_cas_settings ();
+  sitenow_default_cas_settings();
 }
 
 
