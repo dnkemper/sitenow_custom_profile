@@ -33,6 +33,7 @@ dependencies[] = globalredirect
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = logintoboggan
+dependencies[] = memcache
 dependencies[] = module_filter
 dependencies[] = page_manager
 dependencies[] = panels
@@ -56,6 +57,5 @@ dependencies[] = uiowa_authentication
 ; Features
 dependencies[] = sitenow_wysiwyg
 dependencies[] = sitenow_media
-
 
 files[] = sitenow.profile
