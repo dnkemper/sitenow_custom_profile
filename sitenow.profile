@@ -28,6 +28,13 @@ function sitenow_install_tasks($install_state) {
     'function' => '_sitenow_set_file_path',
   );
 
+  $tasks['configure_site_folder'] = array(
+    'display_name' => st('Configure Site Folder'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'function' => '_sitenow_configure_site_folder',
+  );
+
   return $tasks;
 }
 
@@ -41,4 +48,15 @@ function _sitenow_set_file_path() {
   variable_set('file_public_path', $filepath);
 
  file_prepare_directory($filepath, $options = FILE_CREATE_DIRECTORY);
+}
+
+/**
+ * Helper function to set directory perms and remove files directory.
+ */
+function _sitenow_configure_site_folder() {
+  $sitename = variable_get('site_name');
+  $site_path = DRUPAL_ROOT . '/sites/' . $sitename;
+  exec("chmod -R 775 $site_path");
+  exec("rm -rf $site_path/files");
+  exec("chmod 644 $site_path/settings.php");
 }
