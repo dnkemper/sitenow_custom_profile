@@ -35,11 +35,18 @@ function sitenow_install_tasks($install_state) {
     'function' => '_sitenow_configure_site_folder',
   );
 
+  $tasks['delete_update_notify_email'] = array(
+    'display_name' => st('Delete Notification Email When Updates are Available'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'function' => '_sitenow_delete_update_notify_email',
+  );
+
   return $tasks;
 }
 
 /**
- * Helper function to change file paths to outside Drupal root.
+ * Custom function to change file paths to outside Drupal root.
  */
 function _sitenow_set_file_path() {
 // Change public file path
@@ -51,7 +58,7 @@ function _sitenow_set_file_path() {
 }
 
 /**
- * Helper function to set directory perms and remove files directory.
+ * Custom function to set directory perms and remove files directory.
  */
 function _sitenow_configure_site_folder() {
   $sitename = variable_get('site_name');
@@ -59,4 +66,11 @@ function _sitenow_configure_site_folder() {
   exec("chmod -R 775 $site_path");
   exec("rm -rf $site_path/files");
   exec("chmod 644 $site_path/settings.php");
+}
+
+/**
+ * Custom function to delete notification of available updates variable.
+ */
+function _sitenow_delete_update_notify_email() {
+  variable_del('update_notify_emails');
 }
