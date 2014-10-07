@@ -42,6 +42,13 @@ function sitenow_install_tasks($install_state) {
     'function' => '_sitenow_delete_update_notify_email',
   );
 
+  $tasks['configure_files_folder'] = array(
+    'display_name' => st('Configure Files Folder'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'function' => '_sitenow_configure_files_folder',
+  );
+
   return $tasks;
 }
 
@@ -73,4 +80,21 @@ function _sitenow_configure_site_folder() {
  */
 function _sitenow_delete_update_notify_email() {
   variable_del('update_notify_emails');
+}
+
+/**
+ * Custom function to set perms on sites shared files directory.
+ */
+function _sitenow_configure_files_folder() {
+  $sitename = variable_get('site_name');
+  $file_path = drupal_realpath(DRUPAL_ROOT . '/files');
+  $site_path = $file_path . '/' . $sitename;
+  exec("chmod -R 775 $site_path");
+  exec("chgrp -R apache $site_path");
+
+  // Not sure why we are doing this but it was in the fab file so keeping it.
+  if (file_exists($site_path . '/files/.htaccess')) {
+    $htaccess_path = $site_path . '/files/.htaccess';
+    exec("chmod 444 $htaccess_path");
+  }
 }
