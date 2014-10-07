@@ -25,7 +25,6 @@ dependencies[] = rdf
 
 ; Contrib
 
-dependencies[] = cas
 dependencies[] = ctools
 dependencies[] = email
 dependencies[] = features
