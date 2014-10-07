@@ -42,13 +42,6 @@ function sitenow_install_tasks($install_state) {
     'function' => '_sitenow_delete_update_notify_email',
   );
 
-  $tasks['revert_features'] = array(
-    'display_name' => st('Revert Features'),
-    'display' => TRUE,
-    'type' => 'normal',
-    'function' => '_sitenow_revert_features',
-  );
-
   return $tasks;
 }
 
@@ -80,12 +73,4 @@ function _sitenow_configure_site_folder() {
  */
 function _sitenow_delete_update_notify_email() {
   variable_del('update_notify_emails');
-}
-
-/**
- * Custom function to revert all features to set panelizer permissions.
- */
-function _sitenow_revert_features() {
-  features_revert();
-  cache_clear_all();
 }
