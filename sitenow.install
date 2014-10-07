@@ -11,7 +11,6 @@ function sitenow_install() {
   sitenow_enable_theme_settings();
   sitenow_create_new_roles_and_perms();
   sitenow_create_menus();
-  sitenow_default_cas_settings();
 }
 
 
@@ -53,21 +52,4 @@ function sitenow_create_menus() {
 
   // Update the menu router information.
   menu_rebuild();
-}
-
-// This functions adds CAS configuration
-function sitenow_default_cas_settings () {
-  // Configure default CAS settings
-    variable_set('cas_version', '1.0');
-	variable_set('cas_server', 'login.uiowa.edu');
-	variable_set('cas_uri', '/uip');
-	variable_set('cas_login_form', CAS_MAKE_DEFAULT);
-	variable_set('cas_user_register', 0);
-	variable_set('cas_hide_email', 1);
-	variable_set('cas_hide_password', 1);
-	variable_set('cas_first_login_destination', '<front>');
-	variable_set('cas_login_invite', 'Log in using HawkID');
-	variable_set('cas_login_drupal_invite', 'Cancel HawkID login');
-	variable_set('cas_login_redir_message', 'You will be redirected to the secure HawkID login page.');
-	variable_set('cas_login_message', 'Logged in via HawkID as %cas_username.');
 }
