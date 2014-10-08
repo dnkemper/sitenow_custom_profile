@@ -45,6 +45,7 @@ dependencies[] = pathauto
 dependencies[] = pathologic
 dependencies[] = robotstxt
 dependencies[] = token
+dependencies[] = transliteration
 dependencies[] = views
 dependencies[] = views_content
 dependencies[] = views_ui
