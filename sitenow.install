@@ -11,6 +11,7 @@ function sitenow_install() {
   sitenow_enable_theme_settings();
   sitenow_create_new_roles_and_perms();
   sitenow_create_menus();
+  sitenow_set_vars();
 }
 
 
@@ -52,4 +53,10 @@ function sitenow_create_menus() {
 
   // Update the menu router information.
   menu_rebuild();
+}
+
+// This function is used to set variables.
+function sitenow_set_vars() {
+  // Set image toolkit JPEG quality higher to limit image quality loss.
+  variable_set('image_jpeg_quality', '95');
 }
