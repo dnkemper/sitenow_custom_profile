@@ -50,7 +50,6 @@
   );
 
   $webmaster_permissions = array(
-    'administer blocks',
     'manage features',
     'administer image styles',
     'administer menu',
