@@ -51,6 +51,23 @@
 
   $webmaster_permissions = array(
     'administer menu',
+    'administer nodes',
+    'access content overview',
+    'view own unpublished content',
+    'create article content',
+    'edit own article content',
+    'edit any article content',
+    'delete own article content',
+    'delete any article content',
+    'create page content',
+    'edit own page content',
+    'edit any page content',
+    'delete own page content',
+    'delete any page content',
+    'access overlay',
+    'view the administration theme',
+    'access site reports',
+    'access toolbar',
   );
 
 	// Enable default permissions for roles.
