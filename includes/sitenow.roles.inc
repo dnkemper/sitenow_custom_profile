@@ -51,7 +51,6 @@
 
   $webmaster_permissions = array(
     'administer menu',
-    'bypass node access',
     'administer content types',
   );
 
