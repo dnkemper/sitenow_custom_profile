@@ -50,7 +50,6 @@
   );
 
   $webmaster_permissions = array(
-    'manage features',
     'administer image styles',
     'administer menu',
     'bypass node access',
