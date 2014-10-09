@@ -51,7 +51,6 @@
 
   $webmaster_permissions = array(
     'administer menu',
-    'administer content types',
   );
 
 	// Enable default permissions for roles.
