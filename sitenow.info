@@ -32,7 +32,6 @@ dependencies[] = globalredirect
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = logintoboggan
-dependencies[] = memcache
 dependencies[] = metatag
 dependencies[] = metatag_panels
 dependencies[] = metatag_views
