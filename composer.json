@@ -1,0 +1,8 @@
+{
+    "name": "its-uofiowa/sitenow",
+    "description": "UIowa SiteNow Custom install profile.",
+    "type": "drupal-profile",
+    "require": {
+      "composer/installers": "*"
+    }
+}
