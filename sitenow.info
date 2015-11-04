@@ -35,7 +35,6 @@ dependencies[] = logintoboggan
 dependencies[] = metatag
 dependencies[] = metatag_panels
 dependencies[] = metatag_views
-dependencies[] = module_filter
 dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = panels_ipe
