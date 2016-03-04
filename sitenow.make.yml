@@ -4,4 +4,4 @@ api: 2
 includes:
   - contrib.make.yml
   - custom.make.yml
-  - libraires.make.yml
+  - libraries.make.yml
