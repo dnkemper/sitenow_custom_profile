@@ -251,8 +251,6 @@ projects:
       type: git
       revision: 5c497f5968055c2abd0df28a3517a7e7719517cd
       branch: 7.x-2.x
-    patch:
-      - "http://drupal.org/files/media-wysiwyg-document-support-1942688-22.patch"
 
   media_youtube:
     download:
