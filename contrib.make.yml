@@ -1,0 +1,467 @@
+core: 7.x
+api: 2
+
+# Defaults
+defaults:
+  projects:
+    type: module
+    subdir: contrib
+
+# Modules
+projects:
+  addressfield:
+    version: ~
+
+  addressfield_staticmap:
+    version: ~
+
+  addthis:
+    version: ~
+
+  admin_views:
+    version: ~
+
+  advanced_help:
+    version: ~
+
+  auto_entitylabel:
+    version: ~
+
+  auto_nodetitle:
+    version: ~
+
+  bg_image:
+    version: ~
+
+  block_class:
+    version: ~
+
+  bongo:
+    version: ~
+
+  calendar:
+    version: ~
+
+  captcha:
+    version: ~
+
+  cas:
+    version: ~
+
+  cas_attributes:
+    version: ~
+
+  ckeditor_link:
+    version: ~
+
+  ckeditor_link_file:
+    download:
+      type: git
+      branch: 7.x-1.x
+      revision: abbd3379e4e219f84a7f34bb9bb6056e9b400edd
+
+  conditional_fields:
+    version: ~
+
+  context:
+    version: ~
+
+  ctools:
+    version: ~
+
+  custom_breadcrumbs:
+    version: ~
+
+  date:
+    version: ~
+
+  date_ical:
+    version: ~
+
+  defaultcontent:
+    version: ~
+
+  devel:
+    version: ~
+
+  diff:
+    version: ~
+
+  disqus:
+    version: ~
+
+  draggableviews:
+    version: ~
+
+  ds:
+    version: ~
+
+  email:
+    version: ~
+
+  entity:
+    version: ~
+
+  entity_view_mode:
+    version: ~
+
+  entityreference:
+    version: ~
+
+  expire:
+    version: ~
+
+  extlink:
+    version: ~
+
+  faq:
+    version: ~
+
+  features:
+    version: ~
+
+  feeds:
+    version: ~
+
+  feeds_tamper:
+    version: ~
+
+  feeds_xpathparser:
+    version: ~
+
+  field_collection:
+    version: ~
+
+  field_group:
+    version: ~
+
+  field_permissions:
+    version: ~
+
+  field_redirection:
+    version: ~
+
+  field_validation:
+    version: ~
+
+  file_entity:
+    download:
+      type: git
+      branch: 7.x-2.x
+      revision: fc857ee339d20cec710bb965471c05890bbc72ae
+
+  flag:
+    version: ~
+
+  flexslider:
+    version: ~
+
+  flexslider_entityreference:
+    version: ~
+
+  flexslider_field_collection:
+    version: ~
+
+  flexslider_views_slideshow:
+    version: ~
+
+  form_builder:
+    version: ~
+
+  geocoder:
+    version: ~
+
+  geofield:
+    version: ~
+
+  geophp:
+    version: ~
+
+  globalredirect:
+    version: ~
+
+  gmap:
+    version: ~
+
+  google_analytics:
+    version: ~
+
+  hidden_captcha:
+    version: ~
+
+  imagefield_crop:
+    version: ~
+
+  inline_entity_form:
+    version: ~
+
+  insert:
+    version: ~
+
+  job_scheduler:
+    version: ~
+
+  jquery_update:
+    version: ~
+
+  ldap:
+    version: ~
+
+  leaflet:
+    version: ~
+
+  less:
+    version: ~
+
+  libraries:
+    version: ~
+
+  lightbox2:
+    version: ~
+
+  link:
+    version: ~
+
+  linkit:
+    version: ~
+
+  location:
+    version: ~
+
+  login_destination:
+    version: ~
+
+  logintoboggan:
+    version: ~
+
+  mailsystem:
+    version: ~
+
+  manual-crop:
+    version: ~
+
+  masquerade:
+    version: ~
+
+  mb:
+    version: ~
+
+  media:
+    download:
+      type: git
+      revision: 5c497f5968055c2abd0df28a3517a7e7719517cd
+      branch: 7.x-2.x
+    patch:
+      - "http://drupal.org/files/media-wysiwyg-document-support-1942688-22.patch"
+
+  media_youtube:
+    download:
+      type: git
+      revision: 825d80badfcaf97fa553f9b2ee0238495c033ea8
+      branch: 7.x-2.x
+
+    patch:
+      - "http://drupal.org/files/media_youtube-mimetype-update-1812976-35.patch"
+
+  memcache:
+    version: ~
+
+  menu_attributes:
+    version: ~
+
+  menu_block:
+    version: ~
+
+  menu_position:
+    version: ~
+
+  migrate:
+    version: ~
+
+  mimemail:
+    version: ~
+
+  module_filter:
+    version: ~
+
+  node_revision_delete:
+    version: ~
+
+  nodequeue:
+    version: ~
+
+  options_element:
+    version: ~
+
+  override_node_options:
+    version: ~
+
+  page_title:
+    version: ~
+
+  panelizer:
+    version: ~
+
+  panels:
+    version: ~
+
+  pathauto:
+    version: ~
+
+  pathauto_persist:
+    version: ~
+
+  pathologic:
+    version: ~
+
+  phone:
+    version: ~
+
+  print:
+    version: ~
+
+  proj4js:
+    version: ~
+
+  quicktabs:
+    version: ~
+
+  redirect:
+    version: ~
+
+  references:
+    version: ~
+
+  relation:
+    version: ~
+
+  relation_add:
+    version: ~
+
+  responsive_navigation:
+    download:
+      type: git
+      revision: 430cdf5334abb9b05d94fc5421427dc027bb6dda
+      branch: 7.x-1.x
+
+  robotstxt:
+    version: ~
+
+  role_delegation:
+    version: ~
+
+  rotating_banner:
+    version: ~
+
+  rules:
+    version: ~
+
+  scheduler:
+    version: ~
+
+  select_or_other:
+    version: ~
+
+  site_verify:
+    version: ~
+
+  strongarm:
+    version: ~
+
+  styles:
+    version: ~
+
+  subpathauto:
+    version: ~
+
+  superfish:
+    version: ~
+
+  taxonomy_access_fix:
+    version: ~
+
+  telephone:
+    version: ~
+
+  token:
+    version: ~
+
+  transliteration:
+    version: ~
+
+  twitter_block:
+    version: ~
+
+  userprotect:
+    version: ~
+
+  varnish:
+    version: ~
+
+  view_unpublished:
+    version: ~
+
+  views:
+    version: ~
+
+  views_bulk_operations:
+    version: ~
+
+  views_datasource:
+    version: ~
+
+  views_fieldsets:
+    version: ~
+
+  views_slideshow:
+    version: ~
+
+  views_xml_backend:
+    version: ~
+
+  webform:
+    version: ~
+
+  webform_rules:
+    version: ~
+
+  webform_validation:
+    version: ~
+
+  workbench:
+    version: ~
+
+  workbench_access:
+    version: ~
+
+  workbench_files:
+    version: ~
+
+  workbench_media:
+    version: ~
+
+  workbench_moderation:
+    version: ~
+
+  wsclient:
+    version: ~
+
+  wysiwyg:
+    version: ~
+
+  wysiwyg_filter:
+    version: ~
+
+  xmlsitemap:
+    version: ~
+
+
+  # Themes
+  adaptivetheme:
+    type: theme
+
+  omega:
+    type: theme
+
+  footheme:
+    type: theme

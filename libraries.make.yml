@@ -1,0 +1,52 @@
+core: 7.x
+api: 2
+
+# Libraries
+libraries:
+  CAS:
+    download:
+      type: git
+      url: git@github.com:Jasig/phpCAS
+      tag: 1.3.3
+    directory_name: CAS
+    patch:
+      - "https://raw.github.com/ITS-UofIowa/uiowa_cas_patch/master/uiowa_cas.patch"
+
+  ckeditor:
+    download:
+      type: get
+      url: http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.1/ckeditor_3.6.6.1.tar.gz
+
+  fancybox:
+    download:
+      type: get
+      url: https://github.com/fancyapps/fancyBox/zipball/v2.1.5
+
+  FirePHPCore:
+    download:
+      type: git
+      url: git@github.com:firephp/firephp-core.git
+      tag: v0.3.1
+
+  flexslider:
+    download:
+      type: git
+      url: https://github.com/woothemes/FlexSlider.git
+      revision: ca347d49f3656ff7ba7ea1a043feec7626a0db91
+
+  responsive_navigation:
+    download:
+      type: git
+      url: git@github.com:viljamis/responsive-nav.js.git
+      tag: 1.0.15
+    directory_name: responsive_navigation
+
+  superfish:
+    download:
+      type: git
+      url: git@github.com:mehrpadin/Superfish-for-Drupal.git
+      revision: 85e468d71a4882677d0e3596446a91620f9bdcec
+      directory_name: superfish
+    patch:
+      - "https://raw.github.com/ITS-UofIowa/SiteNow-Custom-Libraries/master/superfish/global_modernizr_and_mq_detection_check.patch"
+      - "https://raw.github.com/ITS-UofIowa/SiteNow-Custom-Libraries/master/superfish/sfautomaticwidth-calc-less-than-100.patch"

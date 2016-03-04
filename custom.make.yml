@@ -1,0 +1,107 @@
+core: 7.x
+api: 2
+
+projects:
+  sitenow_media:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/sitenow_media.git
+
+  sitenow_syslog:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/sitenow_syslog.git
+
+  sitenow_wysiwyg:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
+
+  uiowa_authentication:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/uiowa_authentication.git
+
+  feeds_mastercal:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/feeds_mastercal.git
+
+  print_block:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/print_block.git
+
+  sitenow_maps:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/sitenow_maps.git
+
+  uiowa_maui:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/uiowa_maui.git
+
+  uiowa_bar:
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/uiowa_bar.git
+
+# Themes
+  parallaxy:
+    type: theme
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/parallaxy.git
+
+  gravitas:
+    type: theme
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/gravitas.git
+
+  fo_common:
+    type: theme
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/fo_common.git
+
+  ovpr_common:
+    type: theme
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/ovpr_common.git
+
+  uhd_base:
+    type: theme
+    subdir: custom
+    download:
+      type: git
+      branch: master
+      url: git@github.com:ITS-UofIowa/uhd_base.git
