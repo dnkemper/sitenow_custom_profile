@@ -1,0 +1,7 @@
+core: 7.x
+api: 2
+
+includes:
+  - "contrib.make.yaml"
+  - "custom.make.yaml"
+  - "libraires.make.yaml"
