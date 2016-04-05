@@ -39,7 +39,7 @@ function sitenow_install_tasks($install_state) {
     'display_name' => st('Delete Notification Email When Updates are Available'),
     'display' => TRUE,
     'type' => 'normal',
-    'function' => '_sitenow_delete_update_notify_email',
+    'function' => '_sitenow_delete_notification_email',
   );
 
   $tasks['configure_files_folder'] = array(
@@ -78,7 +78,7 @@ function _sitenow_configure_site_folder() {
 /**
  * Custom function to delete notification of available updates variable.
  */
-function _sitenow_delete_update_notify_email() {
+function _sitenow_delete_notification_email() {
   variable_del('update_notify_emails');
 }
 
