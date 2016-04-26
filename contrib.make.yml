@@ -10,163 +10,219 @@ defaults:
 # Modules
 projects:
   addressfield:
-    version: ~
+    version: 1.2
 
   addressfield_staticmap:
-    version: ~
+    version: 1.0
 
   addthis:
-    version: ~
+    version: 4.0-alpha6
 
   admin_views:
-    version: ~
+    version: 7.x-1.5
 
   advanced_help:
-    version: ~
+    version: 1.3
+
+  ape:
+    version: 1.1
 
   auto_entitylabel:
-    version: ~
+    version: 1.3
 
+  # Can we migrate all sites using this to auto_entitylabel?
   auto_nodetitle:
-    version: ~
+    version: 1.0
+
+  better_exposed_filters:
+    version: 3.2
 
   bg_image:
-    version: ~
+    version: 1.4
 
   block_class:
-    version: ~
+    version: 2.3
 
   bongo:
-    version: ~
+    version: 1.0-beta3
+
+  bootstrap_fieldgroup:
+    version: 1.2
+
+  bootstrap_library:
+    version: 1.4
 
   calendar:
-    version: ~
+    version: 3.5
 
   captcha:
-    version: ~
+    version: 1.3+6-dev
 
+  # Remove.
   cas:
-    version: ~
+    version: 1.3
 
+  # Remove.
   cas_attributes:
-    version: ~
+    version: 1.0-rc3
+
+  ckeditor:
+    version: 1.17
 
   ckeditor_link:
-    version: ~
+    version: 2.4
 
   ckeditor_link_file:
-    download:
-      type: git
-      branch: 7.x-1.x
-      revision: abbd3379e4e219f84a7f34bb9bb6056e9b400edd
+    version: 3+3-dev
+
+  classy_paragraphs:
+    version: 1.0-alpha4
 
   conditional_fields:
-    version: ~
+    version: 3.0-alpha2
+
+  content_access:
+    version: 1.2-beta2
 
   context:
-    version: ~
+    version: 3.6
 
   ctools:
-    version: ~
+    version: 1.9
 
   custom_breadcrumbs:
-    version: ~
+    version: 2.0-beta1
+
+  custom_pub:
+    version: 1.4
 
   date:
-    version: ~
+    version: 2.9
 
   date_ical:
-    version: ~
+    version: 3.8
 
+  # Is this needed for the custom service?
   defaultcontent:
-    version: ~
+    version: 1.0-alpha9
 
   devel:
-    version: ~
+    version: 1.5
 
   diff:
-    version: ~
+    version: 3.2
 
   disqus:
-    version: ~
+    version: 1.12
 
   draggableviews:
-    version: ~
+    version: 2.1
 
   ds:
-    version: ~
+    version: 2.13
+
+  elements:
+    version: 1.4
+
+  elysia_cron:
+    version: 2.1
 
   email:
-    version: ~
+    version: 1.3
 
   entity:
-    version: ~
+    version: 1.7
 
   entity_view_mode:
-    version: ~
+    version: 1.7
+
+  entityqueue:
+    version: 1.1
 
   entityreference:
-    version: ~
+    version: 1.1
+
+  escape_admin:
+    version: 1.2
 
   expire:
-    version: ~
+    version: 1.0-beta1
 
   extlink:
-    version: ~
+    version: 1.18
+
+  fancybox:
+    version: 2.0-beta6
 
   faq:
-    version: ~
+    version: 1.1
+
+  fb_likebox:
+    version: 2.2
 
   features:
-    version: ~
+    version: 2.8
+
+  features_override:
+    version: 2.0-rc3
 
   feeds:
-    version: ~
+    version: 2.0-beta2
+
+  feeds_ex:
+    version: 1.0-beta2
+
+  feeds_jsonpath_parser:
+    version: 1.0
 
   feeds_tamper:
-    version: ~
+    version: 1.1
 
   feeds_xpathparser:
-    version: ~
+    version: 1.1
 
   field_collection:
-    version: ~
+    version: 1.0-beta11
 
   field_group:
-    version: ~
+    version: 1.5
 
   field_permissions:
-    version: ~
+    version: 1.0-beta2
 
   field_redirection:
-    version: ~
+    version: 2.6
 
-  field_validation:
-    version: ~
+  fieldable_panels_panes:
+    version: 1.8
 
   file_entity:
-    download:
-      type: git
-      branch: 7.x-2.x
-      revision: fc857ee339d20cec710bb965471c05890bbc72ae
+    version: 2.0-beta2
+
+  file_entity_link:
+    version: 1.0-alpha3
 
   flag:
-    version: ~
+    version: 2.2
 
   flexslider:
-    version: ~
+    version: 2.0-rc1
 
   flexslider_entityreference:
-    version: ~
+    version: 1.6
 
-  flexslider_field_collection:
-    version: ~
-
+  # Latest release.
   flexslider_views_slideshow:
-    version: ~
+    download:
+      branch: "7.x-2.x"
+      url: "https://git.drupal.org/project/flexslider_views_slideshow.git"
+      revision: "0b1f8e7e24c168d1820ccded63c319327d57a97e"
+
+  focal_point:
+    version: 1.0-beta6
 
   form_builder:
-    version: ~
+    version: 1.15
 
   geocoder:
     version: ~
