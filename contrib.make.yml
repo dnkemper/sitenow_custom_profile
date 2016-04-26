@@ -225,157 +225,183 @@ projects:
     version: 1.15
 
   geocoder:
-    version: ~
+    version: 1.3
 
   geofield:
-    version: ~
+    version: 2.3
 
   geophp:
-    version: ~
+    version: 1.7
 
   globalredirect:
-    version: ~
+    version: 1.5
 
   gmap:
-    version: ~
+    version: 2.11
 
   google_analytics:
-    version: ~
+    version: 2.1
 
   hidden_captcha:
-    version: ~
+    version: 1.0
+
+  hierarchical_select:
+    version: 3.0-beta3
+
+  imagecache_external:
+    version: 2.1
 
   imagefield_crop:
-    version: ~
+    version: 1.1
+
+  imagemagick:
+    version: 1.0
 
   inline_entity_form:
-    version: ~
+    version: 1.6
 
   insert:
-    version: ~
+    version: 1.3
+
+  instantfilter:
+    version: 2.0
 
   job_scheduler:
-    version: ~
+    version: 2.0-alpha3
+
+  jquery_ui_multiselect:
+    version: 1.0
 
   jquery_update:
-    version: ~
+    version: 3.0-alpha3
 
   ldap:
-    version: ~
+    version: 1.0-beta12
 
   leaflet:
-    version: ~
-
-  less:
-    version: ~
+    version: 1.3
 
   libraries:
-    version: ~
+    version: 2.2
 
   lightbox2:
-    version: ~
+    version: 1.0-beta1
 
   link:
-    version: ~
-
-  linkit:
-    version: ~
+    version: 1.4
 
   location:
-    version: ~
-
-  login_destination:
-    version: ~
+    version: 3.7
 
   logintoboggan:
-    version: ~
+    version: 1.5
 
   mailsystem:
-    version: ~
+    version: 2.34
 
-  manual-crop:
-    version: ~
+  manualcrop:
+    version: 1.5
 
   masquerade:
-    version: ~
+    version: 1.0-rc7
 
-  mb:
-    version: ~
+  match_redirect:
+    version: 1.0
 
   media:
-    download:
-      type: git
-      revision: 5c497f5968055c2abd0df28a3517a7e7719517cd
-      branch: 7.x-2.x
+    version: 2.0-beta1
+    patch:
+      - "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-35.patch"
+      - "https://www.drupal.org/files/issues/media-wysiwyg_alt_and_title-2416701-13.patch"
+
+  media_sharestream:
+    version: 1.0-alpha1
 
   media_youtube:
-    download:
-      type: git
-      revision: 825d80badfcaf97fa553f9b2ee0238495c033ea8
-      branch: 7.x-2.x
-
-    patch:
-      - "http://drupal.org/files/media_youtube-mimetype-update-1812976-35.patch"
+    version: 3.0
 
   memcache:
-    version: ~
+    version: 1.5
+
+  menu_admin_per_menu:
+    version: 1.1
 
   menu_attributes:
-    version: ~
+    version: 1.0
 
   menu_block:
-    version: ~
+    version: 2.7
+
+  menu_link_weight:
+    version: 1.2
 
   menu_position:
-    version: ~
+    version: 1.2
+
+  metatag:
+    version: 1.14
 
   migrate:
-    version: ~
+    version: 2.8
 
   mimemail:
-    version: ~
+    version: 1.0-beta4
 
-  module_filter:
-    version: ~
+  modernizr:
+    version: 3.9
 
   node_revision_delete:
-    version: ~
+    version: 2.6
 
+  # Can we migrate to entityqueue?
   nodequeue:
-    version: ~
+    version: 2.0
 
   options_element:
-    version: ~
+    version: 1.12
 
   override_node_options:
-    version: ~
+    version: 1.13
 
+  # Can we migrate to metatag?
   page_title:
-    version: ~
+    version: 2.7
 
   panelizer:
-    version: ~
+    version: 3.1
 
   panels:
-    version: ~
+    version: 3.5
+
+  panels_ajax_tab:
+    version: 1.2
+
+  paragraphs:
+    version: 1.0-rc4
 
   pathauto:
-    version: ~
+    version: 1.3
 
   pathauto_persist:
-    version: ~
+    version: 1.4
 
   pathologic:
-    version: ~
+    version: 2.12
 
   phone:
-    version: ~
+    version: 1.0-beta1
 
   print:
-    version: ~
+    version: 1.3
 
   proj4js:
-    version: ~
+    version: 1.2
+
+  pseudo_field:
+    download:
+      type: git
+      revision: e22e163026cadb93b347d3e16177a1806e6829fc
+      branch: 7.x-1.x
 
   quicktabs:
     version: ~
