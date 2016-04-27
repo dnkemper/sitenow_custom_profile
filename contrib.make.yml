@@ -56,7 +56,9 @@ projects:
     version: 3.5
 
   captcha:
-    version: 1.3+6-dev
+    download:
+      branch: "7.x-1.x"
+      revision: "e11efbea85a7ba50a8d98265df2acbd9a6e6eedf"
 
   # Remove.
   cas:
