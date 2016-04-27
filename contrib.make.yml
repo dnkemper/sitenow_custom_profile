@@ -74,8 +74,11 @@ projects:
   ckeditor_link:
     version: 2.4
 
+  # Dev version because of media related issue.
   ckeditor_link_file:
-    version: 3+3-dev
+    download:
+      branch: "7.x-1.x"
+      revision: "1a534cfbbe27e32e3103c757fa83d0334d3682de"
 
   classy_paragraphs:
     version: 1.0-alpha4
