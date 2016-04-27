@@ -19,7 +19,7 @@ projects:
     version: 4.0-alpha6
 
   admin_views:
-    version: 7.x-1.5
+    version: 1.5
 
   advanced_help:
     version: 1.3
