@@ -97,12 +97,16 @@ projects:
 
   custom_breadcrumbs:
     version: 2.0-beta1
+    patch:
+      - "https://www.drupal.org/files/1414674-d7-1.patch"
 
   custom_pub:
     version: 1.4
 
   date:
     version: 2.9
+    patch:
+      - "https://www.drupal.org/files/issues/date_date_week_range_and_date_iso_week_range_both_returns_1_day_too_much-1137062-17.patch"
 
   date_ical:
     version: 3.8
@@ -240,6 +244,8 @@ projects:
 
   globalredirect:
     version: 1.5
+    patch:
+      - "https://www.drupal.org/files/globalredirect-check-directory-before-deslash-2013785-1.patch"
 
   gmap:
     version: 2.11
@@ -377,6 +383,8 @@ projects:
 
   panelizer:
     version: 3.1
+    patch:
+      - "https://www.drupal.org/files/1968876-10-panelizer-choice_permission_check_display_mode.patch"
 
   panels:
     version: 3.5
@@ -399,8 +407,12 @@ projects:
   phone:
     version: 1.0-beta1
 
+  # Patch from https://www.drupal.org/node/2257075#comment-9557255
+  # However, a more robust solution may be in #8.
   print:
     version: 1.3
+    patch:
+      - "https://www.drupal.org/files/issues/fix_headers_already_sent.patch"
 
   proj4js:
     version: 1.2
@@ -453,7 +465,7 @@ projects:
   rotating_banner:
     download:
       type: git
-      revision: 67ec291c609f45eb9cd533e55194a07c7a8b8c15
+      revision: ca4907b5ede8ec0edb33ee1b42833ea38d8425c0
       branch: 7.x-1.x
 
   rrssb:
@@ -492,7 +504,7 @@ projects:
   superfish:
     download:
       type: git
-      revision: 892dfecdcb5167308fd8a5f66f7ce049df63332f
+      revision: a612a8b27585b9101c6df21a5161decf7af1faee
       branch: 7.x-1.x
 
   taxonomy_access_fix:
@@ -507,8 +519,13 @@ projects:
   taxonomy_menu:
     version: 1.5
 
+  # Using the version from https://www.drupal.org/node/2109227#comment-8797095
+  # However, there is a more recent RTBC version at
+  # https://www.drupal.org/node/2109227#comment-11095537
   telephone:
     version: 1.0-alpha1
+    patch:
+      - "https://www.drupal.org/files/issues/telephone-feeds-support-2109227-8.patch"
 
   term_merge:
     version: 1.3
@@ -537,8 +554,12 @@ projects:
   view_unpublished:
     version: 1.2
 
+  # Patched from https://www.drupal.org/node/339384#comment-10587426
+  # Committed into the next release.
   views:
     version: 3.13
+    patch:
+      - "https://www.drupal.org/files/issues/views-fix-exposed-filter-description-339384-36-7.x-3.x.patch"
 
   views_autocomplete_filters:
     version: 1.2
