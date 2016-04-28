@@ -551,7 +551,7 @@ projects:
     version: 1.0-beta1
 
   value_is:
-    version: 1.10
+    version: "1.10"
 
   varnish:
     version: 1.1
