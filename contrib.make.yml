@@ -295,6 +295,9 @@ projects:
   link:
     version: 1.4
 
+  linkchecker:
+    version: 1.2
+
   location:
     version: 3.7
 
