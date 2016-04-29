@@ -3,6 +3,11 @@ api: 2
 
 # Libraries
 libraries:
+  bootstrap:
+    download:
+      url: git@github.com:twbs/bootstrap.git
+      tag: v3.3.6
+
   CAS:
     download:
       type: git
