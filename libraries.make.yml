@@ -20,24 +20,40 @@ libraries:
   ckeditor:
     download:
       type: get
-      url: http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.1/ckeditor_3.6.6.1.tar.gz
+      url: http://ckeditor.com/builder/download/41d59fa745033a4ad40cb40fa79ec5b8
 
   fancybox:
     download:
       type: get
       url: https://github.com/fancyapps/fancyBox/zipball/v2.1.5
 
-  FirePHPCore:
-    download:
-      type: git
-      url: git@github.com:firephp/firephp-core.git
-      tag: v0.3.1
-
   flexslider:
     download:
-      type: git
       url: https://github.com/woothemes/FlexSlider.git
       revision: ca347d49f3656ff7ba7ea1a043feec7626a0db91
+
+  # Latest 1.x is 1.6.7.
+  fullcalendar:
+    download:
+      url: "https://github.com/fullcalendar/fullcalendar.git"
+      tag: "v1.5.3"
+
+  jsonpath:
+    download:
+      type: "get"
+      url: "https://jsonpath.googlecode.com/svn/trunk/src/php/jsonpath.php"
+
+  # Latest stable is v0.7.7
+  # 1.0.0-rc1 is also available.
+  leaflet:
+    download:
+      url: "git@github.com:viljamis/responsive-nav.js.git"
+      tag: "v0.7.3"
+
+  modernizr:
+    download:
+      url: "git@github.com:ITS-UofIowa/sitenow-modernizr.git"
+      tag: "2.8.3"
 
   responsive_navigation:
     download:
