@@ -5,7 +5,7 @@ api: 2
 defaults:
   projects:
     type: module
-    subdir: contrib
+    subdir: "contrib"
 
 # Modules
 projects:
@@ -671,15 +671,19 @@ projects:
   adaptivetheme:
     type: theme
     version: "3.1"
+    subdir: ""
 
   adminimal_theme:
     type: theme
     version: "1.24"
+    subdir: ""
 
   omega:
     type: theme
     version: "4.4"
+    subdir: ""
 
   radix:
     type: theme
     version: "3.3"
+    subdir: ""
