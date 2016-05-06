@@ -2,106 +2,166 @@ core: 7.x
 api: 2
 
 projects:
-  sitenow_media:
-    subdir: custom
+  capturehighered:
+    subdir: "custom"
     download:
-      type: git
-      branch: master
-      url: git@github.com:ITS-UofIowa/sitenow_media.git
-
-  sitenow_syslog:
-    subdir: custom
-    download:
-      type: git
-      branch: master
-      url: git@github.com:ITS-UofIowa/sitenow_syslog.git
-
-  sitenow_wysiwyg:
-    subdir: custom
-    download:
-      type: git
-      branch: master
-      url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
-
-  uiowa_authentication:
-    subdir: custom
-    download:
-      type: git
-      branch: master
-      url: git@github.com:ITS-UofIowa/uiowa_authentication.git
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/capturehighered.git
 
   feeds_mastercal:
-    subdir: custom
+    subdir: "custom"
     download:
-      type: git
-      branch: master
+      branch: "master"
       url: git@github.com:ITS-UofIowa/feeds_mastercal.git
 
-  print_block:
-    subdir: custom
+  highcharts_pane:
+    subdir: "custom"
     download:
-      type: git
-      branch: master
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/highcharts_pane.git
+
+  iowa_counties:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/iowa_counties.git
+
+  localist_pane:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/localist_pane.git
+
+  ovpred_common_modules:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/ovpred_common_modules.git
+
+  parallaxy_background_image:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
+
+  print_block:
+    subdir: "custom"
+    download:
+      branch: "master"
       url: git@github.com:ITS-UofIowa/print_block.git
 
   sitenow_maps:
-    subdir: custom
+    subdir: "custom"
     download:
-      type: git
-      branch: master
+      branch: "master"
       url: git@github.com:ITS-UofIowa/sitenow_maps.git
 
-  uiowa_maui:
-    subdir: custom
+  sitenow_media:
+    subdir: "custom"
     download:
-      type: git
-      branch: master
-      url: git@github.com:ITS-UofIowa/uiowa_maui.git
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/sitenow_media.git
+
+  sitenow_syslog:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/sitenow_syslog.git
+
+  sitenow_user_create:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/sitenow_user_create.git
+
+  sitenow_varnish:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/sitenow_varnish.git
+
+  sitenow_wysiwyg:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
+
+  uiowa_authentication:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/uiowa_authentication.git
 
   uiowa_bar:
-    subdir: custom
+    subdir: "custom"
     download:
-      type: git
-      branch: master
+      branch: "master"
       url: git@github.com:ITS-UofIowa/uiowa_bar.git
+
+  uiowa_events:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/uiowa_events.git
+
+  uiowa_favicon:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/uiowa_favicon.git
+
+  uiowa_maui:
+    subdir: "custom"
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/uiowa_maui.git
 
 # Themes
   parallaxy:
     type: theme
-    subdir: custom
+    subdir: ""
     download:
-      type: git
-      branch: master
+      branch: "master"
       url: git@github.com:ITS-UofIowa/parallaxy.git
 
   gravitas:
     type: theme
-    subdir: custom
+    subdir: ""
     download:
-      type: git
-      branch: master
+      branch: "master"
       url: git@github.com:ITS-UofIowa/gravitas.git
 
   fo_common:
     type: theme
-    subdir: custom
+    subdir: ""
     download:
-      type: git
-      branch: master
+      branch: "master"
       url: git@github.com:ITS-UofIowa/fo_common.git
+
+  ovpred:
+    type: theme
+    subdir: ""
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/ovpred.git
+
+  stellar:
+    type: theme
+    subdir: ""
+    download:
+      branch: "master"
+      url: git@github.com:ITS-UofIowa/stellar.git
 
   ovpr_common:
     type: theme
-    subdir: custom
+    subdir: ""
     download:
-      type: git
-      branch: master
+      branch: "master"
       url: git@github.com:ITS-UofIowa/ovpr_common.git
 
   uhd_base:
     type: theme
-    subdir: custom
+    subdir: ""
     download:
-      type: git
-      branch: master
+      branch: "master"
       url: git@github.com:ITS-UofIowa/uhd_base.git
