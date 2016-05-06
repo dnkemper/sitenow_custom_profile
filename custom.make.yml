@@ -5,7 +5,8 @@ projects:
   capturehighered:
     subdir: "custom"
     download:
-      branch: "master"
+      branch: "7.x-1.x"
+      tag: "7.x-1.1"
       url: git@github.com:ITS-UofIowa/capturehighered.git
 
   feeds_mastercal:
