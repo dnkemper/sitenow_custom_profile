@@ -68,10 +68,6 @@ projects:
       branch: "7.x-1.x"
       revision: "e11efbea85a7ba50a8d98265df2acbd9a6e6eedf"
 
-  # Remove.
-  cas_attributes:
-    version: "1.0-rc3"
-
   ckeditor:
     version: "1.17"
 
