@@ -58,6 +58,5 @@ dependencies[] = uiowa_authentication
 ; Features
 dependencies[] = sitenow_wysiwyg
 dependencies[] = sitenow_media
-dependencies[] = sitenow_syslog
 
 files[] = sitenow.profile
