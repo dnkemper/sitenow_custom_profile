@@ -9,12 +9,6 @@ projects:
       tag: "7.x-1.1"
       url: git@github.com:ITS-UofIowa/capturehighered.git
 
-  highcharts_pane:
-    subdir: "custom"
-    download:
-      branch: "master"
-      url: git@github.com:ITS-UofIowa/highcharts_pane.git
-
   iowa_counties:
     subdir: "custom"
     download:
