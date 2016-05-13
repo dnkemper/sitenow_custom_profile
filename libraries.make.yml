@@ -58,7 +58,7 @@ libraries:
   jsonpath:
     download:
       type: "git"
-      url: "git@github.com:Peekmo/JsonPath.gitt"
+      url: "git@github.com:Peekmo/JsonPath.git"
       tag: "1.1.0"
 
   jquery_cycle:
