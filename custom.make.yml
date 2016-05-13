@@ -75,11 +75,11 @@ projects:
       branch: "master"
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
 
-  uiowa_authentication:
+  uiowa_acquia_authentication:
     subdir: "custom"
     download:
       branch: "master"
-      url: git@github.com:ITS-UofIowa/uiowa_authentication.git
+      url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
 
   uiowa_bar:
     subdir: "custom"
