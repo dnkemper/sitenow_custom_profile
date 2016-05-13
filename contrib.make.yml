@@ -118,10 +118,6 @@ projects:
   date_ical:
     version: "3.9"
 
-  # Is this needed for the custom service?
-  defaultcontent:
-    version: "1.0-alpha9"
-
   devel:
     version: "1.5"
 
