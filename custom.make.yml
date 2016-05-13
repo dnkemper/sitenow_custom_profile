@@ -69,12 +69,6 @@ projects:
       branch: "master"
       url: git@github.com:ITS-UofIowa/sitenow_user_create.git
 
-  sitenow_varnish:
-    subdir: "custom"
-    download:
-      branch: "master"
-      url: git@github.com:ITS-UofIowa/sitenow_varnish.git
-
   sitenow_wysiwyg:
     subdir: "custom"
     download:
