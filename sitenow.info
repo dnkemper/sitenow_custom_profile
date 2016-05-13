@@ -53,7 +53,7 @@ dependencies[] = wysiwyg
 
 ; Custom
 dependencies[] = uiowa_bar
-dependencies[] = uiowa_authentication
+dependencies[] = uiowa_acquia_authentication
 
 ; Features
 dependencies[] = sitenow_wysiwyg
