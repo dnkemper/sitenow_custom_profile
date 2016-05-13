@@ -57,8 +57,9 @@ libraries:
 
   jsonpath:
     download:
-      type: "get"
-      url: "https://jsonpath.googlecode.com/svn/trunk/src/php/jsonpath.php"
+      type: "git"
+      url: "git@github.com:Peekmo/JsonPath.gitt"
+      tag: "1.1.0"
 
   jquery_cycle:
     download:
