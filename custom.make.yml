@@ -9,12 +9,6 @@ projects:
       tag: "7.x-1.1"
       url: git@github.com:ITS-UofIowa/capturehighered.git
 
-  feeds_mastercal:
-    subdir: "custom"
-    download:
-      branch: "master"
-      url: git@github.com:ITS-UofIowa/feeds_mastercal.git
-
   highcharts_pane:
     subdir: "custom"
     download:
