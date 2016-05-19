@@ -13,14 +13,6 @@ libraries:
       type: "get"
       url: "https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip"
 
-  CAS:
-    download:
-      type: "git"
-      url: "git@github.com:Jasig/phpCAS"
-      tag: "1.3.3"
-    patch:
-      - "https://raw.github.com/ITS-UofIowa/uiowa_cas_patch/master/uiowa_cas.patch"
-
   ckeditor:
     download:
       type: "get"
