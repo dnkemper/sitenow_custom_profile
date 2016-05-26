@@ -649,7 +649,7 @@ projects:
     version: "1.6-rc3"
 
   xmlsitemap:
-    version: "2.2"
+    version: "2.3"
 
 
   # Themes
