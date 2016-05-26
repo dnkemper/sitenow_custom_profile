@@ -674,6 +674,8 @@ projects:
     type: theme
     version: "4.4"
     subdir: ""
+    patch:
+      - "https://www.drupal.org/files/issues/2026149_42.patch"
 
   radix:
     type: theme
