@@ -39,6 +39,12 @@ function sitenow_enable_theme_settings() {
 function sitenow_create_new_roles_and_perms() {
   require_once drupal_get_path('profile', 'sitenow') . '/includes/sitenow.roles.inc';
   sitenow_default_roles();
+  
+  // Set automatic role population for Web Services and Web Services Student groups.
+  $role = user_role_load_by_name('administrator');
+  if (!empty($role)) {
+    variable_set('simplesamlphp_auth_rolepopulation', $role->rid . ':urn:oid:2.5.4.31,=,"CN=ITS-WebServices,OU=Groups,OU=ITS,DC=iowa,DC=uiowa,DC=edu"|' . $role->rid . ':urn:oid:2.5.4.31,=,"CN=ITS-Students-WebServices,OU=Groups,OU=ITS,DC=iowa,DC=uiowa,DC=edu"');
+  }
 }
 
 // This functions creates menu links
