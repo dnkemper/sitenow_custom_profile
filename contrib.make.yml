@@ -501,7 +501,7 @@ projects:
       branch: "7.x-3.x"
       revision: "6e92be67b007e4e9f4a071b9a82c7db8fbcee2af"
     patch:
-      - "https://www.drupal.org/files/issues/prelogout_hook-2761471-3.patch"
+      - "https://www.drupal.org/files/issues/drupal-alter-gotourl-7.x-3.x-2619262.patch"
       - "https://www.drupal.org/files/issues/simplesamlphp_auth-store-saml-roles-separate-2707269-2.patch"
 
   site_verify:
