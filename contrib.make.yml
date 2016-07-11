@@ -609,12 +609,8 @@ projects:
   viewfield:
     version: "2.0"
 
-  # Patched from https://www.drupal.org/node/339384#comment-10587426
-  # Committed into the next release.
   views:
-    version: "3.13"
-    patch:
-      - "https://www.drupal.org/files/issues/views-fix-exposed-filter-description-339384-36-7.x-3.x.patch"
+    version: "3.14"
 
   views_autocomplete_filters:
     version: "1.2"
