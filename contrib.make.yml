@@ -304,6 +304,12 @@ projects:
   leaflet:
     version: "1.3"
 
+  lexicon:
+    download:
+      branch: "7.x-1.x"
+      url: "https://git.drupal.org/project/lexicon.git"
+      revision: "d52caa3c545e81eb59029c8eed16e5138b3061cf"
+
   libraries:
     version: "2.2"
 
