@@ -84,7 +84,7 @@ projects:
       revision: "1a534cfbbe27e32e3103c757fa83d0334d3682de"
 
   classy_paragraphs:
-    version: "1.0-beta1"
+    version: "1.0"
 
   conditional_fields:
     version: "3.0-alpha2"
