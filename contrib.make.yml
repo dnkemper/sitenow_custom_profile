@@ -45,6 +45,9 @@ projects:
   bg_image:
     version: "1.4"
 
+  block_access:
+    version: "1.6"
+
   block_class:
     version: "2.3"
 
