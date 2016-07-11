@@ -358,7 +358,7 @@ projects:
       url: "https://git.drupal.org/project/media_browser_plus.git"
       revision: "f0783d22a047a0c574192761604820463e1f8a40"
     patch:
-      - "media_browser_plus-fix-administer-permission-2223841-5.patch"
+      - "https://www.drupal.org/files/issues/media_browser_plus-fix-administer-permission-2223841-5.patch"
 
   media_sharestream:
     version: "1.0-alpha1"
