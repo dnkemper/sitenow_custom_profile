@@ -530,6 +530,9 @@ projects:
   slick:
     version: "2.0"
 
+  slick_views:
+    version: "2.0"
+
   smart_trim:
     version: "1.5"
 
