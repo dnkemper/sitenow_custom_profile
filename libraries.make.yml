@@ -120,6 +120,12 @@ libraries:
       url: "git@github.com:kni-labs/rrssb.git"
       tag: "1.10.0"
 
+  slick:
+    download:
+      type: "git"
+      url: "git@github.com:kenwheeler/slick.git"
+      tag: "1.6.0"
+
   superfish:
     download:
       type: "git"

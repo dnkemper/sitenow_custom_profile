@@ -45,6 +45,9 @@ projects:
   bg_image:
     version: "1.4"
 
+  block_access:
+    version: "1.6"
+
   block_class:
     version: "2.3"
 
@@ -81,7 +84,7 @@ projects:
       revision: "1a534cfbbe27e32e3103c757fa83d0334d3682de"
 
   classy_paragraphs:
-    version: "1.0-beta1"
+    version: "1.0"
 
   conditional_fields:
     version: "3.0-alpha2"
@@ -90,7 +93,7 @@ projects:
     version: "1.2-beta2"
 
   context:
-    version: "3.6"
+    version: "3.7"
 
   ctools:
     version: "1.9"
@@ -131,7 +134,7 @@ projects:
     version: "2.1"
 
   ds:
-    version: "2.13"
+    version: "2.14"
 
   elements:
     version: "1.4"
@@ -206,13 +209,19 @@ projects:
     version: "2.6"
 
   fieldable_panels_panes:
-    version: "1.8"
+    version: "1.10"
 
   file_entity:
     version: "2.0-beta2"
 
   file_entity_link:
     version: "1.0-alpha3"
+
+  find_text:
+    download:
+      branch: "7.x-1.x"
+      url: "https://git.drupal.org/sandbox/themarkahrens/2719743.git"
+      revision: "c4dc2a02473f13ddfce58e1b545af1ed6d72c392"
 
   flag:
     version: "2.2"
@@ -260,7 +269,10 @@ projects:
     version: "1.0"
 
   hierarchical_select:
-    version: "3.0-beta3"
+    download:
+      branch: "7.x-3.x"
+      url: "https://git.drupal.org/project/hierarchical_select.git"
+      revision: "3c9fe023ee66832a20c9fe7ec0578c03f429b7f6"
 
   imagecache_external:
     version: "2.1"
@@ -295,8 +307,14 @@ projects:
   leaflet:
     version: "1.3"
 
+  lexicon:
+    download:
+      branch: "7.x-1.x"
+      url: "https://git.drupal.org/project/lexicon.git"
+      revision: "d52caa3c545e81eb59029c8eed16e5138b3061cf"
+
   libraries:
-    version: "2.2"
+    version: "2.3"
 
   lightbox2:
     version: "1.0-beta1"
@@ -334,6 +352,14 @@ projects:
       - "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-35.patch"
       - "https://www.drupal.org/files/issues/media-wysiwyg_alt_and_title-2416701-13.patch"
 
+  media_browser_plus:
+    download:
+      branch: "7.x-3.x"
+      url: "https://git.drupal.org/project/media_browser_plus.git"
+      revision: "f0783d22a047a0c574192761604820463e1f8a40"
+    patch:
+      - "https://www.drupal.org/files/issues/media_browser_plus-fix-administer-permission-2223841-5.patch"
+
   media_sharestream:
     version: "1.0-alpha1"
 
@@ -369,6 +395,9 @@ projects:
 
   modernizr:
     version: "3.9"
+
+  multiform:
+    version: "1.1"
 
   navbar:
     version: "1.7"
@@ -508,6 +537,9 @@ projects:
     version: "1.1"
 
   slick:
+    version: "2.0"
+
+  slick_views:
     version: "2.0"
 
   smart_trim:
@@ -680,5 +712,5 @@ projects:
 
   radix:
     type: theme
-    version: "3.3"
+    version: "3.4"
     subdir: ""
