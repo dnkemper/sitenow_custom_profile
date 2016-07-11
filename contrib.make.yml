@@ -314,7 +314,7 @@ projects:
       revision: "d52caa3c545e81eb59029c8eed16e5138b3061cf"
 
   libraries:
-    version: "2.2"
+    version: "2.3"
 
   lightbox2:
     version: "1.0-beta1"
