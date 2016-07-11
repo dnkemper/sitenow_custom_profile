@@ -243,7 +243,7 @@ projects:
     version: "1.0-beta6"
 
   form_builder:
-    version: "1.17"
+    version: "1.18"
 
   geocoder:
     version: "1.3"
@@ -297,6 +297,9 @@ projects:
 
   jquery_ui_multiselect:
     version: "1.0"
+    patch:
+      - "https://www.drupal.org/files/issues/undefined_index-2757933-2.patch"
+      - "https://www.drupal.org/files/issues/description-change_1447300_1.patch"
 
   jquery_update:
     version: "3.0-alpha3"
@@ -385,7 +388,7 @@ projects:
     version: "1.2"
 
   metatag:
-    version: "1.14"
+    version: "1.16"
 
   migrate:
     version: "2.8"
@@ -407,7 +410,7 @@ projects:
 
   # Can we migrate to entityqueue?
   nodequeue:
-    version: "2.0"
+    version: "2.1"
 
   options_element:
     version: "1.12"
@@ -606,12 +609,8 @@ projects:
   viewfield:
     version: "2.0"
 
-  # Patched from https://www.drupal.org/node/339384#comment-10587426
-  # Committed into the next release.
   views:
-    version: "3.13"
-    patch:
-      - "https://www.drupal.org/files/issues/views-fix-exposed-filter-description-339384-36-7.x-3.x.patch"
+    version: "3.14"
 
   views_autocomplete_filters:
     version: "1.2"
