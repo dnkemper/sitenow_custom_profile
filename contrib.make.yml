@@ -217,6 +217,12 @@ projects:
   file_entity_link:
     version: "1.0-alpha3"
 
+  find_text:
+    download:
+      branch: "7.x-1.x"
+      url: "https://git.drupal.org/sandbox/themarkahrens/2719743.git"
+      revision: "c4dc2a02473f13ddfce58e1b545af1ed6d72c392"
+
   flag:
     version: "2.2"
 
