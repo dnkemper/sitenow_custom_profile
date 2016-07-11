@@ -297,6 +297,9 @@ projects:
 
   jquery_ui_multiselect:
     version: "1.0"
+    patch:
+      - "https://www.drupal.org/files/issues/undefined_index-2757933-2.patch"
+      - "https://www.drupal.org/files/issues/description-change_1447300_1.patch"
 
   jquery_update:
     version: "3.0-alpha3"
