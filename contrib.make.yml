@@ -343,6 +343,14 @@ projects:
       - "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-35.patch"
       - "https://www.drupal.org/files/issues/media-wysiwyg_alt_and_title-2416701-13.patch"
 
+  media_browser_plus:
+    download:
+      branch: "7.x-3.x"
+      url: "https://git.drupal.org/project/media_browser_plus.git"
+      revision: "f0783d22a047a0c574192761604820463e1f8a40"
+    patch:
+      - "media_browser_plus-fix-administer-permission-2223841-5.patch"
+
   media_sharestream:
     version: "1.0-alpha1"
 
