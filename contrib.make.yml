@@ -307,9 +307,6 @@ projects:
   jquery_update:
     version: "3.0-alpha3"
 
-  ldap:
-    version: "1.0-beta12"
-
   leaflet:
     version: "1.3"
 
