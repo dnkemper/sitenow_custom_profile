@@ -9,6 +9,9 @@ defaults:
 
 # Modules
 projects:
+  acquia_connector:
+    version: "2.17"
+
   acquia_purge:
     version: "1.3"
 
