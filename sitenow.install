@@ -39,7 +39,7 @@ function sitenow_enable_theme_settings() {
 function sitenow_create_new_roles_and_perms() {
   require_once drupal_get_path('profile', 'sitenow') . '/includes/sitenow.roles.inc';
   sitenow_default_roles();
-  
+
   // Set automatic role population for Web Services and Web Services Student groups.
   $role = user_role_load_by_name('administrator');
   if (!empty($role)) {
@@ -65,4 +65,48 @@ function sitenow_create_menus() {
 function sitenow_set_vars() {
   // Set image toolkit JPEG quality higher to limit image quality loss.
   variable_set('image_jpeg_quality', '95');
+}
+
+/**
+ * Set simplesamlphp_auth role mappings from ldap authorization role mappings.
+ */
+function sitenow_update_7200() {
+  if (module_exists('ldap_authorization')) {
+    $select = db_select('ldap_authorization', 'l')
+        ->fields('l', array('mappings'))
+        ->condition('sid', 'HawkID')
+        ->execute()
+        ->fetchAll();
+
+    $count = count($select);
+
+    if ($count == 1) {
+      $current_mappings = $select[0]->mappings;
+
+      $mappings = explode("\n", $current_mappings);
+
+      foreach ($mappings as $mapping) {
+        $parts[] = explode('|',$mapping);
+      }
+
+      foreach ($parts as $part) {
+        $group = $part[0];
+        $role_name = $part[1];
+        $role = user_role_load_by_name($role_name);
+        $new_mappings[] = $role->rid . ':urn:oid:2.5.4.31,=,"' . $group . '"';
+      }
+
+      $new_mapping = implode('|', $new_mappings);
+
+      variable_set('simplesamlphp_auth_rolepopulation', $new_mapping);
+    }
+  }
+  else {
+    $role = user_role_load_by_name('administrator');
+    if (!empty($role)) {
+      $new_mapping = $role->rid . ':urn:oid:2.5.4.31,=,"CN=ITS-WebServices,OU=Groups,OU=ITS,DC=iowa,DC=uiowa,DC=edu"|' . $role->rid . ':urn:oid:2.5.4.31,=,"CN=ITS-Students-WebServices,OU=Groups,OU=ITS,DC=iowa,DC=uiowa,DC=edu"';
+
+      variable_set('simplesamlphp_auth_rolepopulation', $new_mapping);
+    }
+  }
 }
