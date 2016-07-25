@@ -20,6 +20,7 @@ dependencies[] = rdf
 
 dependencies[] = ctools
 dependencies[] = email
+dependencies[] = escape_admin
 dependencies[] = features
 dependencies[] = globalredirect
 dependencies[] = libraries
