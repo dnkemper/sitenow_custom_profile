@@ -49,9 +49,10 @@ libraries:
 
   jsonpath:
     download:
-      type: "git"
-      url: "git@github.com:Peekmo/JsonPath.git"
-      tag: "1.1.0"
+      type: "file"
+      url: "https://raw.githubusercontent.com/Peekmo/JsonPath/1.1.0/src/Peekmo/JsonPath/JsonPath.php"
+      filename: "jsonpath.php"
+    directory_name: "jsonpath"
 
   jquery_cycle:
     download:
