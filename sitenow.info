@@ -6,8 +6,6 @@ core = 7.x
 ; Core
 
 dependencies[] = block
-dependencies[] = contextual
-dependencies[] = help
 dependencies[] = image
 dependencies[] = list
 dependencies[] = menu
@@ -15,11 +13,6 @@ dependencies[] = number
 dependencies[] = options
 dependencies[] = path
 dependencies[] = taxonomy
-dependencies[] = search
-dependencies[] = shortcut
-dependencies[] = toolbar
-dependencies[] = overlay
-dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 
@@ -27,6 +20,7 @@ dependencies[] = rdf
 
 dependencies[] = ctools
 dependencies[] = email
+dependencies[] = escape_admin
 dependencies[] = features
 dependencies[] = globalredirect
 dependencies[] = libraries
@@ -37,8 +31,6 @@ dependencies[] = metatag_panels
 dependencies[] = metatag_views
 dependencies[] = page_manager
 dependencies[] = panels
-dependencies[] = panels_ipe
-;dependencies[] = panelizer
 dependencies[] = pathauto
 dependencies[] = pathologic
 dependencies[] = robotstxt
@@ -46,17 +38,14 @@ dependencies[] = token
 dependencies[] = transliteration
 dependencies[] = views
 dependencies[] = views_content
-dependencies[] = views_ui
 dependencies[] = xmlsitemap
-dependencies[] = wysiwyg
-
 
 ; Custom
 dependencies[] = uiowa_bar
 dependencies[] = uiowa_acquia_authentication
 
 ; Features
-dependencies[] = sitenow_wysiwyg
-dependencies[] = sitenow_media
+test_dependencies[] = sitenow_wysiwyg
+test_dependencies[] = sitenow_media
 
 files[] = sitenow.profile
