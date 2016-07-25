@@ -6,6 +6,9 @@
  * Perform actions to set up the site for this profile.
  */
 function sitenow_install() {
+
+  module_enable(array('toolbar'));
+
   sitenow_add_content_types();
   sitenow_add_default_blocks();
   sitenow_enable_theme_settings();
