@@ -130,7 +130,7 @@ projects:
     download:
       branch: "7.x-3.x"
       url: git@github.com:ITS-UofIowa/fo_common.git
-      tag: "7.x-3.1"
+      tag: "7.x-3.3"
 
   ovpred:
     type: theme
