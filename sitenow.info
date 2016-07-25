@@ -38,14 +38,13 @@ dependencies[] = transliteration
 dependencies[] = views
 dependencies[] = views_content
 dependencies[] = xmlsitemap
-dependencies[] = wysiwyg
 
 ; Custom
 dependencies[] = uiowa_bar
 dependencies[] = uiowa_acquia_authentication
 
 ; Features
-dependencies[] = sitenow_wysiwyg
-dependencies[] = sitenow_media
+test_dependencies[] = sitenow_wysiwyg
+test_dependencies[] = sitenow_media
 
 files[] = sitenow.profile

@@ -7,7 +7,7 @@
  */
 function sitenow_install() {
 
-  module_enable(array('toolbar'));
+  module_enable(array('sitenow_media, sitenow_wysiwyg, toolbar'));
 
   sitenow_add_content_types();
   sitenow_add_default_blocks();
