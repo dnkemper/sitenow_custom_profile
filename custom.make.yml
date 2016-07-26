@@ -49,7 +49,7 @@ projects:
     download:
       branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/sitenow_maps.git
-      tag: "7.x-1.4"
+      tag: "7.x-1.5"
 
   sitenow_media:
     subdir: "custom"
