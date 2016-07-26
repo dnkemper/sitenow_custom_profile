@@ -614,6 +614,8 @@ projects:
 
   views:
     version: "3.14"
+    patch:
+      - "https://www.drupal.org/files/issues/views-representative_view-1417090-71.patch"
 
   views_autocomplete_filters:
     version: "1.2"
