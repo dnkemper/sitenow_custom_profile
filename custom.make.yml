@@ -162,4 +162,4 @@ projects:
     download:
       branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/uhd_base.git
-      tag: "7.x-1.0"
+      tag: "7.x-1.1"
