@@ -21,7 +21,7 @@ projects:
     download:
       branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/localist_pane.git
-      tag: "7.x-1.6"
+      tag: "7.x-1.7"
 
   ovpred_common_modules:
     subdir: "custom"
