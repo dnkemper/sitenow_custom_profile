@@ -435,6 +435,8 @@ projects:
 
   panels_ajax_tab:
     version: "1.2"
+    patch:
+      - "https://www.drupal.org/files/issues/all_tabs_have_active-2776899-2.patch"
 
   paragraphs:
     version: "1.0-rc4"
