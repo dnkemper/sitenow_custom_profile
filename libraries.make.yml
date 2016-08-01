@@ -50,7 +50,7 @@ libraries:
   jsonpath:
     download:
       type: "file"
-      url: "https://raw.githubusercontent.com/Peekmo/JsonPath/1.1.0/src/Peekmo/JsonPath/JsonPath.php"
+      url: "https://raw.githubusercontent.com/ITS-UofIowa/jsonpath/master/jsonpath.php"
       filename: "jsonpath.php"
     directory_name: "jsonpath"
 
