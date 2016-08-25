@@ -68,6 +68,15 @@ function sitenow_create_menus() {
 function sitenow_set_vars() {
   // Set image toolkit JPEG quality higher to limit image quality loss.
   variable_set('image_jpeg_quality', '95');
+
+  // Set caching and compression configuration.
+  variable_set('cache', 1);
+  variable_set('block_cache', 1);
+  variable_set('page_cache_maximum_age', '21600');
+  variable_set('page_compression', 1);
+  variable_set('preprocess_css', 1);
+  variable_set('preprocess_js', 1);
+  variable_set('expire_file_file', '1');
 }
 
 /**
@@ -112,4 +121,26 @@ function sitenow_update_7200() {
       variable_set('simplesamlphp_auth_rolepopulation', $new_mapping);
     }
   }
+}
+
+/**
+ * Set new default cache settings.
+ */
+function sitenow_update_7201() {
+  if (!module_exists('memcache')) {
+    module_enable(array('memcache'));
+  }
+
+  if (!module_exists('acquia_purge')) {
+    module_enable(array('acquia_purge'));
+  }
+
+  // Set caching and compression configuration.
+  variable_set('cache', 1);
+  variable_set('block_cache', 1);
+  variable_set('page_cache_maximum_age', '21600');
+  variable_set('page_compression', 1);
+  variable_set('preprocess_css', 1);
+  variable_set('preprocess_js', 1);
+  variable_set('expire_file_file', '1');
 }
