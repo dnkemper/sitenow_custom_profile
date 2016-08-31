@@ -77,6 +77,9 @@ function sitenow_set_vars() {
   variable_set('preprocess_css', 1);
   variable_set('preprocess_js', 1);
   variable_set('expire_file_file', '1');
+
+  // Set variable for webform exports.
+  variable_set('webform_export_path', 'public://webform_results');
 }
 
 /**
@@ -143,4 +146,11 @@ function sitenow_update_7201() {
   variable_set('preprocess_css', 1);
   variable_set('preprocess_js', 1);
   variable_set('expire_file_file', '1');
+}
+
+/**
+ * Set export path for webform submissions.
+ */
+function sitenow_update_7202() {
+  variable_set('webform_export_path', 'public://webform_results');
 }
