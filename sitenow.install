@@ -147,3 +147,12 @@ function sitenow_update_7201() {
   variable_set('preprocess_js', 1);
   variable_set('expire_file_file', '1');
 }
+
+/**
+ * Ensure syslog is enabled.
+ */
+function sitenow_update_7202() {
+  if (!module_exists('syslog')) {
+    module_enable(array('syslog'));
+  }
+}

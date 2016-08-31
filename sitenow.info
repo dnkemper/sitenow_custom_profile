@@ -15,6 +15,7 @@ dependencies[] = path
 dependencies[] = taxonomy
 dependencies[] = file
 dependencies[] = rdf
+dependencies[] = syslog
 
 ; Contrib
 dependencies[] = acquia_purge
