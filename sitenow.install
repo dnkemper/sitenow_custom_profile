@@ -161,7 +161,7 @@ function sitenow_update_7202() {
 /**
  * Ensure syslog is enabled.
  */
-function sitenow_update_7202() {
+function sitenow_update_7203() {
   if (!module_exists('syslog')) {
     module_enable(array('syslog'));
   }
