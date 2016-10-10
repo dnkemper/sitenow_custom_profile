@@ -2,13 +2,6 @@ core: 7.x
 api: 2
 
 projects:
-  capturehighered:
-    subdir: "custom"
-    download:
-      branch: "7.x-1.x"
-      url: git@github.com:ITS-UofIowa/capturehighered.git
-      tag: "7.x-1.2"
-
   iowa_counties:
     subdir: "custom"
     download:
