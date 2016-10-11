@@ -37,3 +37,12 @@ function sitenow_install_tasks($install_state) {
 function _sitenow_delete_notification_email() {
   variable_del('update_notify_emails');
 }
+
+/**
+ * Implements hook_webform_component_defaults_alter().
+ */
+function sitenow_webform_component_defaults_alter(&$defaults, $type) {
+  if ($type == 'file') {
+    $defaults['extra']['scheme'] = 'private';
+  }
+}
