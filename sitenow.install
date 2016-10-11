@@ -79,7 +79,7 @@ function sitenow_set_vars() {
   variable_set('expire_file_file', '1');
 
   // Set variable for webform exports.
-  variable_set('webform_export_path', 'public://webform_results');
+  variable_set('webform_export_path', 'private://webform_results');
 
   // Hide error reporting by default.
   variable_set('error_level', ERROR_REPORTING_HIDE);
@@ -152,10 +152,9 @@ function sitenow_update_7201() {
 }
 
 /**
- * Set export path for webform submissions.
+ * Deprecated update hook.
  */
 function sitenow_update_7202() {
-  variable_set('webform_export_path', 'public://webform_results');
 }
 
 /**
@@ -218,4 +217,7 @@ function sitenow_update_7204() {
   foreach ($roles as $rid => $role) {
     user_role_grant_permissions($rid, $permissions);
   }
+
+  // Set variable for webform exports.
+  variable_set('webform_export_path', 'private://webform_results');
 }
