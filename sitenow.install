@@ -209,4 +209,13 @@ function sitenow_update_7204() {
         ->execute();
     }
   }
+
+  // Allow users who can access all webform results to view private files.
+  $roles = user_roles(FALSE, 'access all webform results');
+  $permissions = array(
+    'view private files',
+  );
+  foreach ($roles as $rid => $role) {
+    user_role_grant_permissions($rid, $permissions);
+  }
 }
