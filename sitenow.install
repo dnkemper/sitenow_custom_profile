@@ -216,6 +216,7 @@ function sitenow_update_7204() {
   );
   foreach ($roles as $rid => $role) {
     user_role_grant_permissions($rid, $permissions);
+    drush_log('Assigning view private files permission to ' . $role . ' role', 'success');
   }
 
   // Set variable for webform exports.
