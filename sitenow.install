@@ -192,7 +192,7 @@ function sitenow_update_7204() {
 
   // Convert all file webform components from the public to private file system.
   if (module_exists('webform')) {
-    $result = db_query("SELECT nid, cid, extra FROM {webform_component} WHERE type = :type", array(':type' => 'file'));
+    $result = db_query('SELECT nid, cid, extra FROM {webform_component} WHERE type = :type', array(':type' => 'file'));
     foreach ($result as $record) {
       // Grab the extra column and change the scheme.
       $extra = unserialize($record->extra);
