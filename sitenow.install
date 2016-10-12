@@ -221,4 +221,26 @@ function sitenow_update_7204() {
 
   // Set variable for webform exports.
   variable_set('webform_export_path', 'private://webform_results');
+
+  // Reset the stream wrappers so we can use private://.
+  drupal_static_reset('file_get_stream_wrappers');
+
+  // Get all file ids of webform file uploads.
+  $file_query = db_query('SELECT fid FROM {file_managed} WHERE uri LIKE :prefix', array(':prefix' => db_like('public://webform/') . '%'));
+
+  $fids = array_keys($file_query->fetchAllKeyed(0, 0));
+
+  // Move files using File API.
+  $files = file_load_multiple($fids);
+  if (!empty($files)) {
+    $count = count($fids);
+    drush_log('Attempting to move ' . $count . ' files', 'status');
+    foreach ($files as $file) {
+      $destination = drupal_dirname(str_replace('public:', 'private:', $file->uri));
+
+      if (file_prepare_directory($destination, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
+        file_move($file, $destination, FILE_EXISTS_RENAME);
+      }
+    }
+  }
 }
