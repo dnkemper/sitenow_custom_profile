@@ -46,3 +46,27 @@ function sitenow_webform_component_defaults_alter(&$defaults, $type) {
     $defaults['extra']['scheme'] = 'private';
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sitenow_form_webform_component_edit_form_alter(&$form, &$form_state, $form_id) {
+  $form['extra']['scheme']['#access'] = FALSE;
+  $form['extra']['scheme_description'] = array(
+    '#markup' => '<p>' . t('Files uploaded through webform submissions may only be accessed by users who can view webform submissions.') . '</p>',
+    '#weight' => 7,
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sitenow_form_form_builder_field_configure_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['webform_file_scheme'])) {
+    $form['webform_file_scheme']['#access'] = FALSE;
+    $form['webform_file_scheme_description'] = array(
+      '#markup' => '<p>' . t('Files uploaded through webform submissions may only be accessed by users who can view webform submissions.') . '</p>',
+      '#weight' => 6,
+    );
+  }
+}
