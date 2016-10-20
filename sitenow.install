@@ -247,7 +247,7 @@ function sitenow_update_7204() {
     drush_log('Attempting to move ' . $count . ' files', 'status');
     foreach ($files as $file) {
       // Check to see if file exists.
-      if (file_exists($file->ur)) {
+      if (file_exists($file->uri)) {
         $destination = drupal_dirname(str_replace('public:', 'private:', $file->uri));
 
         if (file_prepare_directory($destination, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
