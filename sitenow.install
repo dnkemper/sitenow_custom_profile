@@ -258,5 +258,5 @@ function sitenow_update_7204() {
   }
 
   // Remove webform directory from public file system.
-  drupal_rmdir('public://webform');
+  file_unmanaged_delete_recursive('public://webform');
 }
