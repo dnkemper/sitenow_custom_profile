@@ -102,6 +102,13 @@ libraries:
       url: "git@github.com:amsul/pickadate.js.git"
       branch: "master"
       tag: "3.5.6"
+      
+  proj4js:
+    download:
+      type: "git"
+      url: "git@github.com:ITS-UofIowa/proj4js.git"
+      branch: "master"
+      tag: "1.1.0"
 
   respondjs:
     download:
