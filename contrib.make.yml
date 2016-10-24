@@ -102,7 +102,7 @@ projects:
     version: "3.7"
 
   ctools:
-    version: "1.9"
+    version: "1.11"
 
   # 1414674 is not yet committed and in RTBC status.
   # 1154608 is not yet committed and in needs review status.
@@ -426,12 +426,10 @@ projects:
     version: "2.7"
 
   panelizer:
-    version: "3.1"
-    patch:
-      - "https://www.drupal.org/files/1968876-10-panelizer-choice_permission_check_display_mode.patch"
+    version: "3.4"
 
   panels:
-    version: "3.5"
+    version: "3.8"
 
   panels_ajax_tab:
     version: "1.2"
