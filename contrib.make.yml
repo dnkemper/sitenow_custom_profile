@@ -146,7 +146,7 @@ projects:
     version: "1.4"
 
   elysia_cron:
-    version: "2.1"
+    version: "2.3"
 
   email:
     version: "1.3"
