@@ -269,7 +269,7 @@ projects:
     version: "2.11"
 
   google_analytics:
-    version: "2.2"
+    version: "2.3"
 
   hidden_captcha:
     version: "1.0"
