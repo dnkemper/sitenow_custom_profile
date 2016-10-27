@@ -89,5 +89,5 @@ function sitenow_theme_registry_alter(&$theme_registry) {
   $theme_registry['webform_edit_file_extensions']['file'] = $file_name;
   $theme_registry['webform_edit_file_extensions']['theme path'] = $profile_path;
   $theme_registry['webform_edit_file_extensions']['function'] = 'theme_sitenow_edit_file_extensions';
-  $theme_registry['webform_edit_file_extensions']['includes'] = array($profile_path . '/' . $file_name);
+  $theme_registry['webform_edit_file_extensions']['includes'] = array($profile_path . '/includes/' . $file_name);
 }
