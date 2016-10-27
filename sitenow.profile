@@ -56,6 +56,11 @@ function sitenow_form_webform_component_edit_form_alter(&$form, &$form_state, $f
     '#markup' => '<p>' . t('Files uploaded through webform submissions may only be accessed by users who can view webform submissions.') . '</p>',
     '#weight' => 7,
   );
+  // Do not allow arbitrary file extensions for file upload components.
+  if ($form['type']['#value'] == 'file') {
+    $form['validation']['extensions']['addextensions']['#access'] = FALSE;
+    $form['validation']['extensions']['#description'] = t('To collect files of additional types, allow the zip type. A respondent can then upload files of additional types by compressing the files into a zip file before uploading.');
+  }
 }
 
 /**
@@ -68,5 +73,8 @@ function sitenow_form_form_builder_field_configure_alter(&$form, &$form_state, $
       '#markup' => '<p>' . t('Files uploaded through webform submissions may only be accessed by users who can view webform submissions.') . '</p>',
       '#weight' => 6,
     );
+  }
+  if ($form['#_edit_element']['#webform_component']['type'] == 'file') {
+    $form['webform_file_extensions']['#description'] = t('To collect files of additional types, allow the zip type. A respondent can then upload files of additional types by compressing the files into a zip file before uploading.');
   }
 }
