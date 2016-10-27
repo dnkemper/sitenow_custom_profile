@@ -260,3 +260,56 @@ function sitenow_update_7204() {
   // Remove webform directory from public file system.
   file_unmanaged_delete_recursive('public://webform');
 }
+
+/**
+ * Remove custom allowed extensions for files uploaded through webforms.
+ */
+function sitenow_update_7205(&$sandbox) {
+  if (module_exists('webform')) {
+    // If this is the first pass through this update function then set some variables.
+    if (!isset($sandbox['total'])) {
+      $result = db_query("SELECT form_key FROM {webform_component} WHERE type='file'");
+      $sandbox['total'] = $result->rowCount();
+      $sandbox['current'] = 0;
+    }
+
+    // The number of form components to process per pass.
+    $components_per_pass = 10;
+
+    // Get the form components to process during this pass.
+    $result = db_query_range("SELECT nid, cid, extra FROM {webform_component} WHERE type='file'", $sandbox['current'], $components_per_pass);
+    while ($row = $result->fetchAssoc()) {
+      // Un-serialize the value.
+      $extra_array = unserialize($row['extra']);
+      // Check if custom extensions have been added.
+      if (!empty($extra_array['filtering']['addextensions'])) {
+        $custom_extensions = $extra_array['filtering']['addextensions'];
+
+        // Remove custom extensions from "types" array.
+        $extra_array['filtering']['types'] = array_diff($extra_array['filtering']['types'], array_map('trim', explode(',', $custom_extensions)));
+
+        // Change the value of "addextensions".
+        $extra_array['filtering']['addextensions'] = '';
+
+        // Re-serialize the value.
+        $extra = serialize($extra_array);
+
+        // Update the value in the database.
+        db_update('webform_component')
+        ->fields(array('extra' => $extra))
+        ->condition('nid', $row['nid'])
+        ->condition('cid', $row['cid'])
+        ->execute();
+
+        // Output a message about this change.
+        drupal_set_message(t('The extentions @extensions were removed from node @nid', array('@extensions' => $custom_extensions, '@nid' => $row['nid'])));
+      }
+
+      // Increment "current" by 1.
+      $sandbox['current']++;
+
+      // Set the value for finished. If current == total then finished will be 1, signifying we are done.
+      $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
+    }
+  }
+}
