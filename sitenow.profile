@@ -59,7 +59,7 @@ function sitenow_form_webform_component_edit_form_alter(&$form, &$form_state, $f
   // Do not allow arbitrary file extensions for file upload components.
   if ($form['type']['#value'] == 'file') {
     $form['validation']['extensions']['addextensions']['#access'] = FALSE;
-    $form['validation']['extensions']['#description'] = t('To collect files of additional types, allow the zip type. A respondent can then upload files of additional types by compressing the files into a zip file before uploading.');
+    $form['validation']['extensions']['#description'] = t('To collect files of additional types, allow an archive file extension. A respondent can then upload files of additional types by compressing the files into an archive before uploading.');
   }
 }
 
@@ -75,7 +75,7 @@ function sitenow_form_form_builder_field_configure_alter(&$form, &$form_state, $
     );
   }
   if ($form['#_edit_element']['#webform_component']['type'] == 'file') {
-    $form['webform_file_extensions']['#description'] = t('To collect files of additional types, allow the zip type. A respondent can then upload files of additional types by compressing the files into a zip file before uploading.');
+    $form['webform_file_extensions']['#description'] = t('To collect files of additional types, allow an archive file extension. A respondent can then upload files of additional types by compressing the files into an archive before uploading.');
   }
 }
 
