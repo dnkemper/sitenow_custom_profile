@@ -78,3 +78,16 @@ function sitenow_form_form_builder_field_configure_alter(&$form, &$form_state, $
     $form['webform_file_extensions']['#description'] = t('To collect files of additional types, allow the zip type. A respondent can then upload files of additional types by compressing the files into a zip file before uploading.');
   }
 }
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function sitenow_theme_registry_alter(&$theme_registry) {
+  // Use a custom theme function to remove the row for additional file types.
+  $profile_path = drupal_get_path('profile', 'sitenow');
+  $file_name = 'sitenow.file.inc';
+  $theme_registry['webform_edit_file_extensions']['file'] = $file_name;
+  $theme_registry['webform_edit_file_extensions']['theme path'] = $profile_path;
+  $theme_registry['webform_edit_file_extensions']['function'] = 'theme_sitenow_edit_file_extensions';
+  $theme_registry['webform_edit_file_extensions']['includes'] = array($profile_path . '/' . $file_name);
+}
