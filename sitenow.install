@@ -179,4 +179,8 @@ function sitenow_update_7204() {
   if (!module_exists('menu_link_weight')) {
     module_enable(array('menu_link_weight'), FALSE);
   }
+
+  if (!module_exists('menu_admin_per_menu')) {
+    module_enable(array('menu_admin_per_menu'), FALSE);
+  }
 }
