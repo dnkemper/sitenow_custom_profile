@@ -183,4 +183,21 @@ function sitenow_update_7204() {
   if (!module_exists('menu_admin_per_menu')) {
     module_enable(array('menu_admin_per_menu'), FALSE);
   }
+
+  // If role has permission "Administer menus and menu items",
+  // add Menu Admin per Menu permissions.
+  $roles = user_roles(FALSE, 'administer menu');
+  $all_menus = menu_get_menus();
+  // Remove menus only admins should have access to.
+  $admin_menus = array('devel' => 'Development', 'management' => 'Management', 'navigation' => 'Navigation', 'user-menu' => 'User menu');
+  $editor_menus = array_diff($all_menus, $admin_menus);
+  // Build array of permissions to grant.
+  $permissions = array();
+  foreach ($editor_menus as $menu => $mid) {
+    $permissions[] = 'administer ' . $menu . ' menu items';
+  }
+  // Grant Menu Admin per Menu permissions.
+  foreach ($roles as $rid => $role) {
+    user_role_grant_permissions($rid, $permissions);
+  }
 }

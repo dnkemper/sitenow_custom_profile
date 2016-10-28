@@ -30,6 +30,7 @@
 
   $editor_permissions = array(
     'administer menu',
+    'administer main-menu menu items',
     'administer nodes',
     'access content overview',
     'view own unpublished content',
@@ -50,6 +51,7 @@
 
   $webmaster_permissions = array(
     'administer menu',
+    'administer main-menu menu items',
     'administer nodes',
     'access content overview',
     'view own unpublished content',
