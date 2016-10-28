@@ -166,3 +166,17 @@ function sitenow_update_7203() {
     module_enable(array('syslog'));
   }
 }
+
+
+/**
+ * Enable menu link management modules.
+ */
+function sitenow_update_7204() {
+  if (!module_exists('hs_menu')) {
+    module_enable(array('hierarchical_select', 'hs_menu'), FALSE);
+  }
+
+  if (!module_exists('menu_link_weight')) {
+    module_enable(array('menu_link_weight'), FALSE);
+  }
+}
