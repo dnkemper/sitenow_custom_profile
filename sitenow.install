@@ -190,14 +190,17 @@ function sitenow_update_7204() {
     // Remove menus only admins should have access to.
     $admin_menus = array('devel' => 'Development', 'management' => 'Management', 'navigation' => 'Navigation', 'user-menu' => 'User menu');
     $editor_menus = array_diff($all_menus, $admin_menus);
-    // Build array of permissions to grant.
-    $permissions = array();
+    // Build array of permissions to change.
+    $permissions = array(
+      'administer menu' => FALSE,
+      'access administration pages' => TRUE,
+    );
     foreach ($editor_menus as $menu => $mid) {
-      $permissions[] = 'administer ' . $menu . ' menu items';
+      $permissions['administer ' . $menu . ' menu items'] = TRUE;
     }
-    // Grant Menu Admin per Menu permissions.
+    // Change permissions.
     foreach ($roles as $rid => $role) {
-      user_role_grant_permissions($rid, $permissions);
+      user_role_change_permissions($rid, $permissions);
     }
   }
 }
