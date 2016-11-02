@@ -167,7 +167,6 @@ function sitenow_update_7203() {
   }
 }
 
-
 /**
  * Enable menu link management modules.
  */
