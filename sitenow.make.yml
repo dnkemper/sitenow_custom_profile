@@ -706,6 +706,8 @@ projects:
     type: theme
     version: "1.24"
     subdir: ""
+    patch:
+      - "https://www.drupal.org/files/issues/adminimal_theme-2763581-4.patch"
 
   omega:
     type: theme
