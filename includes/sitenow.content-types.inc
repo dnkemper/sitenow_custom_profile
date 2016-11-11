@@ -1,19 +1,16 @@
 <?php
 
 /**
- * @file sitenow.content-types.inc
- *
- * This has been split out as it was getting too long.
- *
- * Install setup for:
- * basic page
- * article
+ * @file
+ * Install setup for basic pages and articles.
  */
 
- function sitenow_content_types() {
-  // Insert default pre-defined node types into the database. For a complete
-  // list of available node type attributes, refer to the node type API
-  // documentation at: http://api.drupal.org/api/HEAD/function/hook_node_info.
+ /**
+  * Content type configuration.
+  *
+  * Set node types, RDF and field configuration.
+  */
+function sitenow_content_types() {
   $types = array(
     array(
       'type' => 'page',
@@ -65,6 +62,7 @@
       ),
     ),
   );
+
   foreach ($rdf_mappings as $rdf_mapping) {
     rdf_mapping_save($rdf_mapping);
   }
@@ -94,6 +92,7 @@
     'help' => $help,
 
   );
+
   taxonomy_vocabulary_save($vocabulary);
 
   $field = array(
@@ -110,6 +109,7 @@
       ),
     ),
   );
+
   field_create_field($field);
 
   $instance = array(
@@ -133,13 +133,12 @@
       ),
     ),
   );
-  field_create_instance($instance);
 
+  field_create_instance($instance);
 
   // Create an image field named "Image", enabled for the 'article' content type.
   // Many of the following values will be defaulted, they're included here as an illustrative examples.
   // See http://api.drupal.org/api/function/field_create_field/7
-
   $field = array(
     'field_name' => 'field_image',
     'type' => 'image',
@@ -155,8 +154,8 @@
       'settings' => array(),
     ),
   );
-  field_create_field($field);
 
+  field_create_field($field);
 
   // Many of the following values will be defaulted, they're included here as an illustrative examples.
   // See http://api.drupal.org/api/function/field_create_instance/7
@@ -202,5 +201,6 @@
       ),
     ),
   );
+
   field_create_instance($instance);
 }
