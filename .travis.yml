@@ -1,0 +1,54 @@
+sudo: false
+
+language: php
+
+php:
+  - '5.6'
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - $HOME/.drush/cache
+
+matrix:
+  fast_finish: true
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_45fe636764ea_key -iv $encrypted_45fe636764ea_iv -in deploy_key.enc -out deploy_key -d
+  - mv deploy_key $HOME/.ssh/id_rsa
+  - chmod 600 $HOME/.ssh/id_rsa
+  - phpenv config-rm xdebug.ini
+  - composer self-update
+  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+
+install:
+  - git fetch --unshallow --tags
+  - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+  - git remote set-url origin git@github.com:ITS-UofIowa/sitenow_custom_profile.git
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - cd ../.. && mkdir profiles && mv ITS-UofIowa/sitenow_custom_profile profiles/sitenow
+
+  # install dependencies
+  - composer global require drush/drush
+  - composer global require drupal/coder
+
+  # register Drupal standards and ignore warnings on exit
+  - phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+  - phpcs --config-set ignore_warnings_on_exit 1
+
+script:
+  - phpcs --standard=Drupal,DrupalPractice . --ignore='libraries,modules,themes'
+  - drush make --yes --working-copy --no-patch-txt --no-gitinfofile --concurrency=6 --contrib-destination=profiles/sitenow profiles/sitenow/build-sitenow.make.yml .
+
+before_deploy:
+  - tar -czf build-sitenow.tar.gz -C profiles sitenow
+
+deploy:
+  provider: releases
+  api_key:
+    secure: MmrQ58S55EEPonWsJsBqpZPw2vqYuVEYYvjFE0wJryuJfXrmvzicQ+NkZTI2kfeonEWZGC+v1Ckntp2NGX9wL/yQuyIfzkJzkuci89j4Ce4026TE+XGi/oRBqrIuWrbfCIsY2R4QIgyy1HOWqivkVTcEWz9iYXfZTs2mXgeil/Q=
+  file: "build-sitenow.tar.gz"
+  skip_cleanup: true
+  overwrite: true
+  on:
+    tags: true
