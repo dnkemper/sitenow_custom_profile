@@ -1,20 +1,17 @@
 <?php
 
 /**
- * @file sitenow.blocks.inc
- *
- * This has been split out as it was getting too long.
- *
- * Install setup for:
- * default blocks
+ * @file
+ * Install tasks for default blocks.
  */
 
+/**
+ * Enable default blocks.
+ */
 function sitenow_enable_blocks() {
- // Enable default themes.
   $default_theme = variable_get('theme_default', 'bartik');
   $admin_theme = 'seven';
 
-  // Enable some standard blocks.
   $values = array(
     array(
       'module' => 'system',
@@ -67,9 +64,21 @@ function sitenow_enable_blocks() {
       'cache' => -1,
     ),
   );
-  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+
+  $query = db_insert('block')->fields(array(
+    'module',
+    'delta',
+    'theme',
+    'status',
+    'weight',
+    'region',
+    'pages',
+    'cache',
+  ));
+
   foreach ($values as $record) {
     $query->values($record);
   }
+
   $query->execute();
 }
