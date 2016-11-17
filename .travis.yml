@@ -38,7 +38,7 @@ script:
 
 before_deploy:
   - echo -e "\n; Automatically added by Travis packaging script\nversion = $TRAVIS_TAG" >> profiles/sitenow/sitenow.info
-  - rm profiles/sitesnow/deploy_key.enc
+  - rm profiles/sitenow/deploy_key.enc
   - tar -czf build-sitenow.tar.gz -C profiles sitenow
 
 deploy:
