@@ -1,8 +1,10 @@
 name = SiteNow Custom
 description = "ITS Web Services SiteNow custom installation profile"
+version = 7.x-2.10
 core = 7.x
 
 ; Core
+
 dependencies[] = block
 dependencies[] = image
 dependencies[] = list
