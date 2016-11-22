@@ -742,7 +742,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
-      tag: "7.x-2.1"
+      tag: "7.x-2.2"
 
   print_block:
     subdir: "custom"
@@ -754,7 +754,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_maps.git
-      tag: "7.x-1.5"
+      tag: "7.x-1.6"
 
   sitenow_media:
     subdir: "custom"
@@ -778,13 +778,13 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
-      tag: "7.x-1.10"
+      tag: "7.x-1.11"
 
   uiowa_bar:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_bar.git
-      tag: "7.x-1.15"
+      tag: "7.x-1.16"
 
   uiowa_events:
     subdir: "custom"
