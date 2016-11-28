@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Remove ability to add additional file extensions to webform.
+ */
+
+/**
  * Output the list of allowed extensions as checkboxes.
  */
 function theme_sitenow_edit_file_extensions($variables) {
