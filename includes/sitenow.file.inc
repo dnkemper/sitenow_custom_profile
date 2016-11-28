@@ -20,7 +20,9 @@ function theme_sitenow_edit_file_extensions($variables) {
       $select_link = ' <a href="#" class="webform-select-link webform-select-link-' . $filtergroup . '">(' . t('select') . ')</a>';
       $row[] = $element['types'][$filtergroup]['#title'];
       $row[] = array('data' => $select_link, 'width' => 40);
-      $row[] = array('data' => drupal_render_children($element['types'][$filtergroup]), 'class' => array('webform-file-extensions', 'webform-select-group-' . $filtergroup));
+      $row[] = array(
+        'data' => drupal_render_children($element['types'][$filtergroup]),
+        'class' => array('webform-file-extensions', 'webform-select-group-' . $filtergroup));
       $rows[] = array('data' => $row);
       unset($element['types'][$filtergroup]);
     }
@@ -29,7 +31,14 @@ function theme_sitenow_edit_file_extensions($variables) {
   // Remove the row for additional types.
   unset($element['addextensions']);
 
-  $header = array(array('data' => t('Category'), 'colspan' => '2'), array('data' => t('Types')));
+  $header = array(
+    array(
+      'data' => t('Category'), 'colspan' => '2'
+    ),
+    array(
+      'data' => t('Types')
+    )
+  );
 
   // Create the table inside the form.
   $element['types']['table'] = array(
