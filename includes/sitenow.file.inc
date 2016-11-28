@@ -15,14 +15,17 @@ function theme_sitenow_edit_file_extensions($variables) {
   $rows = array();
   foreach (element_children($element['types']) as $filtergroup) {
     $row = array();
-    $first_row = count($rows);
     if ($element['types'][$filtergroup]['#type'] == 'checkboxes') {
       $select_link = ' <a href="#" class="webform-select-link webform-select-link-' . $filtergroup . '">(' . t('select') . ')</a>';
       $row[] = $element['types'][$filtergroup]['#title'];
       $row[] = array('data' => $select_link, 'width' => 40);
       $row[] = array(
         'data' => drupal_render_children($element['types'][$filtergroup]),
-        'class' => array('webform-file-extensions', 'webform-select-group-' . $filtergroup));
+        'class' => array(
+          'webform-file-extensions',
+          'webform-select-group-' . $filtergroup
+        )
+      );
       $rows[] = array('data' => $row);
       unset($element['types'][$filtergroup]);
     }
@@ -33,10 +36,11 @@ function theme_sitenow_edit_file_extensions($variables) {
 
   $header = array(
     array(
-      'data' => t('Category'), 'colspan' => '2'
+      'data' => t('Category'),
+      'colspan' => '2',
     ),
     array(
-      'data' => t('Types')
+      'data' => t('Types'),
     )
   );
 
