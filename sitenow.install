@@ -178,12 +178,22 @@ function sitenow_update_7204() {
   // Create private file path.
   $private = "../acquia-files/sites/" . $public[1] . "/files-private";
 
+  // Check for captcha on non-listed forms.
+  $captcha = variable_get('captcha_default_challenge_on_nonlisted_forms');
+  if ($captcha == 1) {
+    variable_set('captcha_default_challenge_on_nonlisted_forms', '0');
+  }
+
   // Save the file systems settings form with the private file system location.
   module_load_include('inc', 'system', 'system.admin');
   $form_state = array();
   $form_state['values']['file_private_path'] = $private;
   $form_state['values']['op'] = 'Save configuration';
   drupal_form_submit('system_file_system_settings', $form_state);
+
+  if ($captcha == 1) {
+    variable_set('captcha_default_challenge_on_nonlisted_forms', '1');
+  }
 
   // Skip the scheme selection on file entity upload forms.
   if (module_exists('file_entity')) {
