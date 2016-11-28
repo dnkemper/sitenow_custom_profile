@@ -883,12 +883,14 @@ libraries:
 
   flexslider:
     download:
-      url: "https://github.com/woothemes/FlexSlider.git"
+      type: "git"
+      url: "git@github.com:woothemes/FlexSlider.git"
       revision: "ca347d49f3656ff7ba7ea1a043feec7626a0db91"
 
   # Latest 1.x is 1.6.7.
   fullcalendar:
     download:
+      type: "git"
       url: "git@github.com:fullcalendar/fullcalendar.git"
       tag: "v1.5.3"
 
@@ -907,6 +909,7 @@ libraries:
 
   jquery_cycle:
     download:
+      type: "git"
       url: "git@github.com:malsup/cycle.git"
       tag: "3.0.3-a"
     directory_name: "jquery.cycle"
@@ -915,6 +918,7 @@ libraries:
   # This is the last stable version of the 2.x branch.
   jquery_imagesloaded:
     download:
+      type: "git"
       url: "git@github.com:desandro/imagesloaded.git"
       tag: "v2.1.2"
     directory_name: "jquery.imagesloaded"
@@ -927,6 +931,7 @@ libraries:
 
   jquery_ui_multiselect:
     download:
+      type: "git"
       url: "git@github.com:crdeutsch/multiselect.git"
       tag: "v0.3.1"
 
@@ -937,42 +942,50 @@ libraries:
 
   modernizr:
     download:
+      type: "git"
       url: "git@github.com:ITS-UofIowa/sitenow-modernizr.git"
       branch: "master"
       revision: "1c9a725fc8582f5b14498af9b7f38ffc67d12627"
 
   pickadate:
     download:
+      type: "git"
       url: "git@github.com:amsul/pickadate.js.git"
       tag: "3.5.6"
 
   proj4js:
     download:
+      type: "git"
       url: "git@github.com:ITS-UofIowa/proj4js.git"
       tag: "1.1.0"
 
   respondjs:
     download:
+      type: "git"
       url: "git@github.com:scottjehl/Respond.git"
       tag: "1.4.2"
 
   responsive_navigation:
     download:
+      type: "git"
       url: "git@github.com:viljamis/responsive-nav.js.git"
       tag: "1.0.15"
 
   rrssb:
     download:
+      type: "git"
       url: "git@github.com:kni-labs/rrssb.git"
       tag: "1.10.0"
 
   slick:
     download:
+      type: "git"
       url: "git@github.com:kenwheeler/slick.git"
       tag: "1.6.0"
 
   superfish:
     download:
+      type: "git"
       url: "git@github.com:mehrpadin/Superfish-for-Drupal.git"
       revision: "85e468d71a4882677d0e3596446a91620f9bdcec"
     patch:
