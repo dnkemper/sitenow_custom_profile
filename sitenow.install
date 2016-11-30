@@ -88,10 +88,10 @@ function sitenow_set_vars() {
 
 // This function is used to setup the private files system.
 function sitenow_set_private_files() {
-  // Get the directory path.
-  $dir_name = conf_path(FALSE);
+  // Get the config path.
+  $conf_path = conf_path(FALSE);
   // Create private file path.
-  $private = "../acquia-files/" . $dir_name . "/files-private";
+  $private = "../acquia-files/" . $conf_path . "/files-private";
 
   // Save the file systems settings form with the private file system location.
   module_load_include('inc', 'system', 'system.admin');
