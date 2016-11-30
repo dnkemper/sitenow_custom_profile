@@ -23,8 +23,8 @@ function theme_sitenow_edit_file_extensions($variables) {
         'data' => drupal_render_children($element['types'][$filtergroup]),
         'class' => array(
           'webform-file-extensions',
-          'webform-select-group-' . $filtergroup
-        )
+          'webform-select-group-' . $filtergroup,
+        ),
       );
       $rows[] = array('data' => $row);
       unset($element['types'][$filtergroup]);
@@ -41,7 +41,7 @@ function theme_sitenow_edit_file_extensions($variables) {
     ),
     array(
       'data' => t('Types'),
-    )
+    ),
   );
 
   // Create the table inside the form.
