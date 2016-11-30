@@ -138,7 +138,7 @@ function sitenow_content_types() {
 
   // Create an image field named "Image", enabled for 'article' content type.
   // Many of the following values will be defaulted, they're included here as an
-  //  illustrative examples.
+  // illustrative examples.
   // See http://api.drupal.org/api/function/field_create_field/7
   $field = array(
     'field_name' => 'field_image',
@@ -159,7 +159,7 @@ function sitenow_content_types() {
   field_create_field($field);
 
   // Many of the following values will be defaulted, they're included here as an
-  //  illustrative examples.
+  // illustrative examples.
   // See http://api.drupal.org/api/function/field_create_instance/7
   $instance = array(
     'field_name' => 'field_image',
