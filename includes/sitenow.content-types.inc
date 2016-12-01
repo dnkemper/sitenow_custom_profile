@@ -70,19 +70,19 @@ function sitenow_content_types() {
   // Default "Basic page" to not be promoted and have comments disabled.
   variable_set('node_options_page', array('status'));
 
-  // Don't display date and author information for "Basic page" nodes by default.
+  // Don't display date and author info for "Basic page" nodes by default.
   variable_set('node_submitted_page', FALSE);
 
   // Set default path pattern for pathauto.
   variable_set('pathauto_node_pattern', '[node:title]');
 
-  // Enable user picture support and set the default to a square thumbnail option.
+  // Enable user picture support, set the default to a square thumbnail option.
   variable_set('user_pictures', '0');
 
   // Allow visitor account creation with administrative approval.
   variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
 
-  // Create a default vocabulary named "Tags", enabled for the 'article' content type.
+  // Create default vocabulary named "Tags", enabled for 'article' content type.
   $description = st('Use tags to group articles on similar topics into categories.');
   $help = st('Enter a comma-separated list of words to describe your content.');
   $vocabulary = (object) array(
@@ -136,8 +136,9 @@ function sitenow_content_types() {
 
   field_create_instance($instance);
 
-  // Create an image field named "Image", enabled for the 'article' content type.
-  // Many of the following values will be defaulted, they're included here as an illustrative examples.
+  // Create an image field named "Image", enabled for 'article' content type.
+  // Many of the following values will be defaulted, they're included here as an
+  // illustrative examples.
   // See http://api.drupal.org/api/function/field_create_field/7
   $field = array(
     'field_name' => 'field_image',
@@ -157,7 +158,8 @@ function sitenow_content_types() {
 
   field_create_field($field);
 
-  // Many of the following values will be defaulted, they're included here as an illustrative examples.
+  // Many of the following values will be defaulted, they're included here as an
+  // illustrative examples.
   // See http://api.drupal.org/api/function/field_create_instance/7
   $instance = array(
     'field_name' => 'field_image',

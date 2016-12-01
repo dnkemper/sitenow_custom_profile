@@ -15,6 +15,7 @@ function sitenow_install() {
   sitenow_create_new_roles_and_perms();
   sitenow_create_menus();
   sitenow_set_vars();
+  sitenow_set_private_files();
 }
 
 
@@ -83,6 +84,26 @@ function sitenow_set_vars() {
 
   // Hide error reporting by default.
   variable_set('error_level', ERROR_REPORTING_HIDE);
+}
+
+// This function is used to setup the private files system.
+function sitenow_set_private_files() {
+  // Get the config path.
+  $conf_path = conf_path(FALSE);
+  // Create private file path.
+  $private = "../acquia-files/" . $conf_path . "/files-private";
+
+  // Save the file systems settings form with the private file system location.
+  module_load_include('inc', 'system', 'system.admin');
+  $form_state = array();
+  $form_state['values']['file_private_path'] = $private;
+  $form_state['values']['op'] = 'Save configuration';
+  drupal_form_submit('system_file_system_settings', $form_state);
+
+  // Skip the scheme selection on file entity upload forms.
+  if (module_exists('file_entity')) {
+    variable_set('file_entity_file_upload_wizard_skip_scheme', 1);
+  }
 }
 
 /**
@@ -170,13 +191,6 @@ function sitenow_update_7203() {
  * Configure private file system.
  */
 function sitenow_update_7204() {
-  // Rely on the public file path to determine what site this is.
-  // Is there a better way to handle this?
-  $public = variable_get('file_public_path');
-  $public = explode('/', $public);
-
-  // Create private file path.
-  $private = "../acquia-files/sites/" . $public[1] . "/files-private";
 
   // Check for captcha on non-listed forms.
   $captcha = variable_get('captcha_default_challenge_on_nonlisted_forms');
@@ -184,20 +198,10 @@ function sitenow_update_7204() {
     variable_set('captcha_default_challenge_on_nonlisted_forms', '0');
   }
 
-  // Save the file systems settings form with the private file system location.
-  module_load_include('inc', 'system', 'system.admin');
-  $form_state = array();
-  $form_state['values']['file_private_path'] = $private;
-  $form_state['values']['op'] = 'Save configuration';
-  drupal_form_submit('system_file_system_settings', $form_state);
+  sitenow_set_private_files();
 
   if ($captcha == 1) {
     variable_set('captcha_default_challenge_on_nonlisted_forms', '1');
-  }
-
-  // Skip the scheme selection on file entity upload forms.
-  if (module_exists('file_entity')) {
-    variable_set('file_entity_file_upload_wizard_skip_scheme', 1);
   }
 
   // Convert all file webform components from the public to private file system.
