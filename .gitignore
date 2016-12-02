@@ -1,3 +1,12 @@
 libraries/*
 modules/contrib/*
-themes/*
+themes/adaptivetheme
+themes/adminimal_theme
+themes/fo_common
+themes/omega
+themes/ovpr_common
+themes/ovpred
+themes/parallaxy
+themes/radix
+themes/stellar
+themes/uhd_base

@@ -1,0 +1,8 @@
+{
+    "name": "its-uofiowa/gravitas",
+    "description": "A theme that exhibits seriousness and dignity, also importance, and connotes a certain substance or depth of personality.",
+    "type": "drupal-theme",
+    "require": {
+      "composer/installers": "*"
+    }
+}
