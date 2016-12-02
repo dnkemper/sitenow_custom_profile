@@ -805,14 +805,6 @@ projects:
       url: git@github.com:ITS-UofIowa/parallaxy.git
       tag: "7.x-1.0"
 
-  ovpr_common:
-    type: theme
-    subdir: ""
-    download:
-      branch: "7.x-3.x"
-      url: git@github.com:ITS-UofIowa/ovpr_common.git
-      tag: "7.x-3.1"
-
   stellar:
     type: theme
     subdir: ""
