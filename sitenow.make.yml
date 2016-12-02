@@ -733,13 +733,6 @@ projects:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
       tag: "7.x-2.2"
 
-  print_block:
-    subdir: "custom"
-    download:
-      branch: "7.x-1.x"
-      url: git@github.com:ITS-UofIowa/print_block.git
-      tag: "7.x-1.2"
-
   sitenow_maps:
     subdir: "custom"
     download:
