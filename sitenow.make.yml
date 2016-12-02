@@ -719,13 +719,6 @@ projects:
     subdir: ""
 
   ################################# Custom #####################################
-  iowa_counties:
-    subdir: "custom"
-    download:
-      branch: "7.x-1.x"
-      url: git@github.com:ITS-UofIowa/iowa_counties.git
-      tag: "7.x-1.1"
-
   localist_pane:
     subdir: "custom"
     download:
