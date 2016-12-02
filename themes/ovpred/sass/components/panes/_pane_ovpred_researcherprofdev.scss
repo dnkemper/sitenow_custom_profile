@@ -1,0 +1,23 @@
+.pane-ovpred-researcherprofdev {
+  $bp-float-panes: $bp-tablet;
+
+  .events > a {
+    @include btn;
+  }
+
+  @include breakpoint($bp-float-panes) {
+    .l-container {
+      @include pie-clearfix;
+      @include add-grid(12);
+      @include add-gutter(1);
+
+      .info {
+        @include grid-span(6, 1);
+      }
+
+      .events {
+        @include grid-span(6, 7);
+      }
+    }
+  }
+}

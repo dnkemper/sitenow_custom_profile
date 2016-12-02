@@ -1,0 +1,12 @@
+.node--venture--full {
+  @include pie-clearfix;
+
+  .no_sidebars & {
+    @include breakpoint(600px) {
+      .field--type-image {
+        float: right;
+        margin: 0px 0px 20px 20px;
+      }
+    }
+  }
+}

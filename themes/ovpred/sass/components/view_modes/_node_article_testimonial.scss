@@ -1,0 +1,47 @@
+$bp-float-testimonial-image: 500px;
+
+.node--article--testimonial {
+  margin-bottom: 1em;
+
+
+  h3 {
+    margin: 0;
+
+    a {
+      display: block;
+      background: #333;
+      padding: 5px 10px;
+      color: #bbbbbb;
+    }
+  }
+
+  .node__content {
+    padding: 1em;
+    @include rgba-background(rgba(255,255,255,.7));
+    @include border(4px, all);
+    border-top: none;
+    @include pie-clearfix;
+  }
+
+  .field--type-image {
+    @include breakpoint($bp-float-testimonial-image) {
+      float: right;
+      margin-left: 20px;
+      max-width: 250px;
+      width: 100%;
+    }
+  }
+}
+
+.panel-display--ferrari .node--article--testimonial .field--type-image {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
+
+  @include breakpoint($bp-mobile $bp-tablet) {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+  }
+}

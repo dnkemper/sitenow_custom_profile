@@ -1,0 +1,71 @@
+.block--ovpred-blocks-ovpred-units {
+
+  @include cf;
+
+  h2 {
+    @include font-size(1.6);
+
+    @include breakpoint($bp-mobile) {
+      @include font-size(2.2);
+    }
+  }
+
+  .ovpred-units-title {
+    &:after {
+      @include icon($fa-var-minus-square);
+      margin-left: 5px;
+    }
+    &.collapsed:after {
+      @include icon($fa-var-plus-square);
+    }
+  }
+
+  h3 {
+    @include font-size(1.6);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .ovpred-units-content {
+    a:focus, a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    @include font-size(1.3);
+    line-height: 1.3;
+    padding-bottom: $spacer-unit/2.5;
+  }
+
+  @include breakpoint($bp-tablet) {
+    .block__content {
+      @include add-gutter(1/5);
+      width: 100%;
+
+      @include add-grid(5);
+      .unit-group {
+        @include float-span(1);
+        &:nth-child(5n) {
+          @include float-span(1, 'last');
+        }
+      }
+    }
+  }
+
+  ul ul  {
+    margin: 0;
+    padding-left: $spacer-unit;
+    li {
+      padding-bottom: 0;
+    }
+  }
+}
+

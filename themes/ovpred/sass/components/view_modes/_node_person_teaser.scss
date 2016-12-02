@@ -1,0 +1,27 @@
+.node--person--teaser {
+
+  .field {
+    margin-bottom: 5px;
+  }
+
+  .field--name-field-person-headshot {
+    @include breakpoint($bp-tablet) {
+      float: left;
+      margin-right: $spacer-unit;
+    }
+  }
+
+  h3 {
+    margin-bottom: 5px;
+  }
+
+  .field--name-field-person-job-title {
+    @include font-size(1.6);
+    font-style: italic;
+    margin-bottom: 10px;
+
+    .field__item {
+      overflow: hidden;
+    }
+  }
+}

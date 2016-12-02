@@ -1,0 +1,15 @@
+.breadcrumb {
+  @include font-size($fs-xsmall);
+  font-weight: $fw-bold;
+  margin: 0;
+  padding: 0;
+  @include font-smoothing;
+
+  li {
+    @include inline-block;
+  }
+
+  .breadcrumb-seperator {
+    margin: 0 .3em;
+  }
+}

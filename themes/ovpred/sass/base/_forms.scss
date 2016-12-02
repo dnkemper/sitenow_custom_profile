@@ -1,0 +1,13 @@
+fieldset {
+  margin-bottom: 1em;
+  padding: 1em;
+  border-color: #e1e1e1;
+
+  .field {
+    margin-bottom: .5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

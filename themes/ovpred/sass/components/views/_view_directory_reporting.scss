@@ -1,0 +1,22 @@
+.view-display-id-directory_reporting {
+  table {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  @include breakpoint($page-max-width) {
+    .views-field-title {
+      width: 250px;
+    }
+
+    .views-field-field-person-job-title {}
+
+    .views-field-field-person-phone-number {
+      width: 120px;
+    }
+
+    .views-field-field-person-email {
+      width: 300px;
+    }
+  }
+}
