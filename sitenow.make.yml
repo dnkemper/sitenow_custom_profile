@@ -885,8 +885,10 @@ libraries:
 
   jquery_imgareaselect:
     download:
-      type: "get"
-      url: "http://odyniec.net/projects/imgareaselect/jquery.imgareaselect-0.9.10.zip"
+      type: "git"
+      url: "git@github.com:odyniec/imgareaselect.git"
+      branch: "master"
+      tag: "v0.9.11-rc.1"
     directory_name: "jquery.imgareaselect"
 
   jquery_ui_multiselect:
