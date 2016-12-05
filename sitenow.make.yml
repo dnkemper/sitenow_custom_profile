@@ -31,7 +31,7 @@ projects:
     version: "1.3"
 
   ape:
-    version: "1.1"
+    version: "1.2"
 
   auto_entitylabel:
     download:
@@ -102,7 +102,7 @@ projects:
     version: "3.7"
 
   ctools:
-    version: "1.11"
+    version: "1.12"
 
   # 1414674 is not yet committed and in RTBC status.
   # 1154608 is not yet committed and in needs review status.
@@ -146,13 +146,13 @@ projects:
     version: "1.4"
 
   elysia_cron:
-    version: "2.3"
+    version: "2.4"
 
   email:
     version: "1.3"
 
   entity:
-    version: "1.7"
+    version: "1.8"
 
   entity_view_mode:
     version: "1.0-rc1"
@@ -161,7 +161,7 @@ projects:
     version: "1.1"
 
   entityreference:
-    version: "1.1"
+    version: "1.2"
 
   escape_admin:
     version: "1.2"
@@ -188,7 +188,7 @@ projects:
     version: "2.0-rc3"
 
   feeds:
-    version: "2.0-beta2"
+    version: "2.0-beta3"
 
   feeds_ex:
     version: "1.0-beta2"
@@ -203,22 +203,22 @@ projects:
     version: "1.1"
 
   field_collection:
-    version: "1.0-beta11"
+    version: "1.0-beta12"
 
   field_group:
     version: "1.5"
 
   field_permissions:
-    version: "1.0-beta2"
+    version: "1.0"
 
   field_redirection:
     version: "2.6"
 
   fieldable_panels_panes:
-    version: "1.10"
+    version: "1.11"
 
   file_entity:
-    version: "2.0-beta2"
+    version: "2.0-beta3"
 
   file_entity_link:
     version: "1.0-alpha3"
@@ -243,10 +243,10 @@ projects:
       revision: "0b1f8e7e24c168d1820ccded63c319327d57a97e"
 
   focal_point:
-    version: "1.0-beta6"
+    version: "1.0"
 
   form_builder:
-    version: "1.18"
+    version: "1.19"
 
   geocoder:
     version: "1.3"
@@ -326,7 +326,7 @@ projects:
     version: "1.4"
 
   linkchecker:
-    version: "1.2"
+    version: "1.3"
 
   location:
     version: "3.7"
@@ -338,7 +338,7 @@ projects:
     version: "2.34"
 
   manualcrop:
-    version: "1.5"
+    version: "1.6"
 
   masquerade:
     version: "1.0-rc7"
@@ -388,7 +388,7 @@ projects:
     version: "1.2"
 
   metatag:
-    version: "1.16"
+    version: "1.18"
 
   migrate:
     version: "2.8"
@@ -400,7 +400,7 @@ projects:
     version: "3.9"
 
   multiform:
-    version: "1.1"
+    version: "1.3"
 
   navbar:
     version: "1.7"
@@ -491,6 +491,9 @@ projects:
   relation:
     version: "1.0"
 
+  reroute_email:
+    version: "1.2"
+
   respondjs:
     version: "1.5"
 
@@ -516,13 +519,13 @@ projects:
       branch: "7.x-1.x"
 
   rrssb:
-    version: "1.0-rc3"
+    version: "1.0"
 
   rules:
     version: "2.9"
 
   scheduler:
-    version: "1.4"
+    version: "1.5"
 
   select_or_other:
     version: "2.22"
@@ -599,7 +602,7 @@ projects:
     version: "1.2"
 
   uuid:
-    version: "1.0-beta1"
+    version: "1.0-beta2"
 
   value_is:
     version: "1.10"
@@ -652,13 +655,13 @@ projects:
     version: "1.0-alpha4"
 
   webform:
-    version: "4.12"
+    version: "4.14"
 
   webform_rules:
     version: "1.6"
 
   webform_validation:
-    version: "1.11"
+    version: "1.12"
 
   weight:
     version: "2.5"
@@ -680,7 +683,7 @@ projects:
     version: "1.4"
 
   workflow:
-    version: "2.8"
+    version: "2.9"
 
   wysiwyg:
     download:
