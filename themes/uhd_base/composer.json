@@ -1,8 +1,0 @@
-{
-    "name": "its-uofiowa/uhd_base",
-    "description": "UHD base theme.",
-    "type": "drupal-theme",
-    "require": {
-      "composer/installers": "*"
-    }
-}

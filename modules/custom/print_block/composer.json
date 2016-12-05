@@ -1,8 +1,0 @@
-{
-    "name": "its-uofiowa/print_block",
-    "description": "Builds a block with a customized print friendly link.",
-    "type": "drupal-module",
-    "require": {
-      "composer/installers": "*"
-    }
-}

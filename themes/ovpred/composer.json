@@ -1,8 +1,0 @@
-{
-    "name": "its-uofiowa/ovpred",
-    "description": "OVPRED shared theme.",
-    "type": "drupal-theme",
-    "require": {
-      "composer/installers": "*"
-    }
-}
