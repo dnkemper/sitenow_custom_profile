@@ -491,6 +491,9 @@ projects:
   relation:
     version: "1.0"
 
+  reroute_email:
+    version: "1.2"
+
   respondjs:
     version: "1.5"
 
