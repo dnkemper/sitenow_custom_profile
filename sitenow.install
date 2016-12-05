@@ -327,3 +327,12 @@ function sitenow_update_7205(&$sandbox) {
     }
   }
 }
+
+/**
+ * Enable SiteNow User Create.
+ */
+function sitenow_update_7206() {
+  if (!module_exists('sitenow_user_create')) {
+    module_enable(array('sitenow_user_create'));
+  }
+}
