@@ -1,6 +1,3 @@
 libraries/*
-modules/contrib/*
-themes/adaptivetheme
-themes/adminimal_theme
-themes/omega
-themes/radix
+modules/*
+themes/*
