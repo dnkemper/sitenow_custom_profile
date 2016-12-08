@@ -1,0 +1,8 @@
+/******************************************************************************* ferrari.layout.scss  Styling of the "Ferrari" layout grids with Singularity. *****************************************************************************/
+.panel-display--ferrari { *zoom: 1; }
+.panel-display--ferrari:after { content: ""; display: table; clear: both; }
+
+@media (min-width: 750px) { .ferrari-region--first, .panels-dnd .ferrari-region--first { width: 65.71429%; float: left; margin-right: -100%; margin-left: 0; clear: none; }
+  .ferrari-region--second, .panels-dnd .ferrari-region--second { width: 31.42857%; float: right; margin-left: 0; margin-right: 0; clear: none; }
+  .ferrari-region--third, .panels-dnd .ferrari-region--third { width: 65.71429%; float: left; margin-right: -100%; margin-left: 0; clear: both; }
+  .ferrari-region--fourth, .panels-dnd .ferrari-region--fourth { width: 31.42857%; float: right; margin-left: 0; margin-right: 0; clear: right; } }

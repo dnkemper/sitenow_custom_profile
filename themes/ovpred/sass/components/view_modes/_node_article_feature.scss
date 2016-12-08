@@ -1,0 +1,18 @@
+.node--article--feature {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 1em;
+
+  h3 {
+    @include font-size($base-font-size);
+    font-weight: $fw-normal;
+  }
+
+  .field--type-image {
+    margin-bottom: 3px;
+
+    img {
+      width: 100%;
+    }
+  }
+}

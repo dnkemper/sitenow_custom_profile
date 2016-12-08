@@ -1,0 +1,50 @@
+name = ovpred
+description = Please provide a description for your theme.
+base theme = omega
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+version = 7.x-1.1
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = css/libraries/fontawesome/font-awesome.css
+stylesheets[all][] = css/ovpred.normalize.css
+stylesheets[all][] = css/ovpred.hacks.css
+stylesheets[all][] = css/ovpred.styles.css
+stylesheets[all][] = css/ovpred.no-query.css
+
+; ========================================
+; Scripts
+; ========================================
+; scripts[] = js/ovpred.behaviors.js
+
+; ========================================
+; Regions
+; ========================================
+regions[branding] = Branding
+regions[header] = Header
+regions[hero] = Hero
+regions[navigation] = Navigation
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[content_bottom] = Content Bottom
+regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[sub_footer] = Sub Footer
+regions[footer] = Footer
+
+; ========================================
+; Plugins
+; ========================================
+plugins[panels][layouts] = layouts/panel_layouts
+plugins[panels][styles] = panels/styles
+
+; ========================================
+; Breakpoints
+; ========================================
+breakpoints[wide] = (min-width: 1220px)
+breakpoints[normal] = (min-width: 740px)
+breakpoints[mobile] = (min-width: 0px)

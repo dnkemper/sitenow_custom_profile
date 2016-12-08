@@ -1,0 +1,262 @@
+/*
+ * responsive.custom.css is for custom media queries that are not set via the
+ * theme settings, such as cascading media queries.
+ *
+ * By default all the other responsive stylesheets used in Adaptivetheme use a
+ * "stacking method", however cascading media queries use a waterfall method so
+ * you can leverage the cascade and inheritance for all browsers that support
+ * media queries, regardless of screen size.
+ *
+ * @SEE http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack
+ *
+ */
+/* =================================================================================================
+   Level 1:  Smartphone and down
+================================================================================================= */
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .region[class*="float-blocks"] .block {
+    float: none;
+    width: 100%;
+  }
+
+  .panel-display {
+    margin-left: -14px;
+    margin-right: -14px;
+  }
+
+  #page-wrapper {
+    background-image: none;
+  }
+
+  #header-wrapper #header h2#org-title {
+    float: right;
+    margin: 4px 8px !important;
+    font-size: 12px;
+    font-size: 1.2rem;
+  }
+  #header-wrapper #header ul#uhd-sites-links {
+    display: none;
+  }
+
+  #content-wrapper .container {
+    padding-top: 0 !important;
+  }
+  #content-wrapper .container #uhd-title-bar {
+    width: 100%;
+  }
+  #content-wrapper .container #uhd-title-bar h1#site-name {
+    position: relative;
+    margin-top: -46px;
+  }
+  #content-wrapper .container #uhd-title-bar h1#site-name a {
+    font-size: 22px;
+    font-size: 2.2rem;
+    color: black;
+    line-height: 40px;
+    text-shadow: none;
+  }
+  #content-wrapper .container h1#page-title {
+    font-size: 24px;
+    font-size: 2.4rem;
+    margin-top: 24px;
+    left: 8px;
+  }
+  #content-wrapper .container h1#page-title.page-banner-image-exists {
+    bottom: 12px;
+    left: 12px;
+  }
+
+  div#branding {
+    margin: 0 6px !important;
+    width: 40%;
+    height: 40%;
+  }
+
+  nav#block-system-main-menu {
+    margin: 0 !important;
+    padding: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  #columns {
+    border-top-left-radius: 0 !important;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+
+  #footer-wrapper ul.uhd-footer-links {
+    width: 85% !important;
+    list-style-type: none;
+  }
+  #footer-wrapper ul.uhd-footer-links > li {
+    margin-left: 8px;
+    width: 100%;
+  }
+  #footer-wrapper ul.uhd-footer-links > li.home img {
+    max-width: 33%;
+  }
+  #footer-wrapper ul.uhd-footer-links > li ul li {
+    margin: 0;
+  }
+
+  .block-masquerade {
+    width: 80% !important;
+  }
+}
+/* END Level 1:  Smartphone and down ================================================================================ */
+/* =================================================================================================
+   Level 2:  Tablets narrow
+================================================================================================= */
+@media only screen and (min-width: 501px) and (max-width: 810px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #header-wrapper .container #header h2#org-title {
+    float: right;
+    margin: 4px 8px !important;
+    font-size: 12px;
+    font-size: 1.2rem;
+  }
+  #header-wrapper .container #header ul#uhd-sites-links {
+    display: none;
+  }
+
+  nav#block-system-main-menu {
+    margin: 0 !important;
+    padding: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  #columns {
+    border-top-left-radius: 0 !important;
+  }
+
+  .container {
+    padding-top: 0 !important;
+  }
+  .container #uhd-title-bar {
+    width: 100%;
+  }
+  .container #uhd-title-bar h1#site-name {
+    position: relative;
+    margin-top: -40px;
+  }
+  .container #uhd-title-bar h1#site-name a {
+    font-size: 22px;
+    font-size: 2.2rem;
+    color: black;
+    line-height: 40px;
+    text-shadow: none;
+  }
+  .container h1#page-title {
+    font-size: 28px;
+    font-size: 2.8rem;
+  }
+
+  .more-info {
+    margin: 0 !important;
+  }
+
+  ul.uhd-footer-links > li {
+    float: left;
+    width: 40%;
+  }
+  ul.uhd-footer-links > li.home {
+    width: 100%;
+  }
+  ul.uhd-footer-links > li.home img {
+    max-width: 25%;
+  }
+  ul.uhd-footer-links > li.admin, ul.uhd-footer-links > li.dining {
+    clear: both;
+    margin-left: 8px;
+  }
+
+  .block-masquerade {
+    width: 80% !important;
+  }
+}
+/* END Level 2:  Tablets narrow ================================================================================ */
+/* =================================================================================================
+   Level 3:  Tablets wide
+================================================================================================= */
+@media only screen and (min-width: 811px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #nav-link {
+    display: none !important;
+  }
+
+  nav#block-system-main-menu {
+    border-top-left-radius: 0;
+  }
+
+  #columns {
+    border-top-left-radius: 0;
+  }
+
+  .back-to-top-link {
+    display: none !important;
+  }
+
+  .more-info {
+    margin: 0 !important;
+  }
+
+  ul.uhd-footer-links > li {
+    float: left;
+    width: 25%;
+  }
+}
+/* END Level 3:  Tablets wide ================================================================================ */
+/* =================================================================================================
+   Level 4:  Desktop
+================================================================================================= */
+@media only screen and (min-width: 1140px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #nav-link {
+    display: none !important;
+  }
+
+  nav#block-system-main-menu {
+    padding-top: 20px;
+    padding-bottom: 12px;
+    background-color: #474747;
+    -moz-border-radius-topleft: 8px;
+    -webkit-border-top-left-radius: 8px;
+    border-top-left-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  #columns {
+    -moz-border-radius-topleft: 14px;
+    -webkit-border-top-left-radius: 14px;
+    border-top-left-radius: 14px;
+  }
+
+  .back-to-top-link {
+    display: none !important;
+  }
+
+  ul.uhd-footer-links > li {
+    width: 17%;
+  }
+}
+/* END Level 4:  Desktop ================================================================================ */

@@ -1,0 +1,190 @@
+
+// _base.scss imports _custom.scss and other partials.
+@import "base";
+
+/*
+ *   Important Information about this CSS File
+ *
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete
+ *   everything) and the file will be skipped when you enable Production Mode in
+ *   the Global theme settings.
+ *
+ * - Read the _README file in this directory, it contains useful help and other information.
+ */
+
+#name-and-slogan {
+  float: left;
+  padding: 0.5em 0 1em;
+  width: 100%;
+}
+
+#main-content {
+  margin-left: 20px;
+}
+
+#nav-wrapper {
+  .container {
+    background: #242424;
+    @include background-image(linear-gradient(#313131, #242424));
+    @include border-top-radius(6px);
+    @include box-shadow(rgba(200,200,200,0.25) 0px 2px 3px);
+    padding: 5px;
+    text-align: right;
+    width: 100%;
+  }
+  
+  li {}
+  
+  a {
+	color: #E0E0E0;
+    font-size: 1em;
+    vertical-align: middle;
+    
+    &:hover,
+    &:focus {
+	  color: #FFFFFF;
+    }
+  }
+}
+
+#breadcrumb-wrapper .container {
+  @include border-bottom-radius(6px);
+}
+
+#research-depts-nav {
+  background: #3B3B3C;
+  padding: 5px;
+  clear: both;
+  overflow: auto;
+  width: 100%;
+  text-align: right;
+  a {
+    color: #F1F1F1;
+    font-size: 0.8em;
+    font-weight: bold;
+    vertical-align: middle;
+
+    &:hover,
+    &:focus {
+      color:#FFF;
+    }
+  }
+  li{
+    float: right;
+  }
+  #current-department-link {
+    float: left;
+    background-color: #FFC344;
+    //height: 100%;
+    padding: 0 4px;
+    @include border-radius(5px);
+    color: #000;
+    margin-top: 2px;
+  }
+}
+
+#research-link {
+  float: left;
+  margin-right: 10px;
+  text-transform: uppercase; 
+  margin-top: 2px;
+}
+
+#depts-links-top {
+  margin: 0;
+  float: right;
+  a {
+    height: 100%;
+    padding: 0 4px;
+    &:hover {
+      color: #000;
+      background-color: #FFC344;
+      height: 100%;
+      @include border-radius(5px);
+    }
+  }
+  li {
+    display: inline;
+    margin: 0 5px;
+    border-left: 1px solid #FFC344;
+    padding-left: 10px;
+    &.first {
+      border-left: none;
+    }
+  }
+}
+
+// Front page slideshows
+.front .view-slideshow {
+  margin-right: -10px;
+}
+
+// Arrange bottom panes on GAO front page
+.site-name-grant-accounting-office { 
+  .pane-gao-announcements, .pane-1 {
+    float: left;
+    width: 50%;
+  }
+}
+
+// Controller front page margins
+.site-name-controlleramp039s-office.front .region-two-50-second .pane-menu-off-site-links .block-inner {
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+// UBill Slider
+.site-name-university-billing-office {
+  .flexslider {
+    background: #F5F5F5;
+
+    .slides img {
+      width: 445px;
+    }
+
+    .views-field-body {
+      float: right;
+      padding-left: 15px;
+      padding-right: 10px;
+      width: 225px;
+
+      h3 {
+        margin-bottom: 5px;
+      }
+    }
+
+    .views-field-field-photo {
+      float: left;
+      width: 445px;
+    }
+
+    li {
+      background-color: #F5F5F5;
+    }
+  }
+
+  .flex-direction-nav li {
+    a {
+      background-size: 78px;
+      height: 39px;
+      width: 39px;
+    }
+
+    .prev {
+      left: -14px;
+    }
+
+    .next {
+      background-position: -39px 0;
+      right: -14px;
+    }
+  }
+
+  .flex-pauseplay span {
+    color: #086782;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

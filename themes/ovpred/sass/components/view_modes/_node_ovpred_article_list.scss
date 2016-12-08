@@ -1,0 +1,8 @@
+.node--ovpred-article--list {
+  @include article-list;
+}
+
+.view-display-id-article_pane .node--ovpred-article--list,
+.view-display-id-panel_pane_2 .node--ovpred-article--list {
+  @include list-separator;
+}

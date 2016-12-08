@@ -1,0 +1,18 @@
+$bp-float-image: 850px;
+.node--article--teaser,
+.node--ovpred-sub-article--teaser {
+  @include pie-clearfix;
+  @include teaser-base;
+
+  .field--type-image  {
+    line-height: 0;
+    text-align: center;
+    margin: 0 auto 10px;
+
+    @include breakpoint($bp-float-image) {
+      max-width: 250px;
+      float: right;
+      margin: 0px 0px 10px 10px;
+    }
+  }
+}

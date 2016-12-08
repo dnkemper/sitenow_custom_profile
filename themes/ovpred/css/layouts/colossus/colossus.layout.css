@@ -1,0 +1,10 @@
+/******************************************************************************* colossus.layout.scss  Styling of the "Colossus" layout grids with Singularity. *****************************************************************************/
+.panel-display--colossus { *zoom: 1; }
+.panel-display--colossus:after { content: ""; display: table; clear: both; }
+
+.colossus-region { margin-bottom: 20px; }
+
+@media (min-width: 750px) { .colossus-region--first { width: 6.77966%; float: left; margin-right: -100%; margin-left: 0; clear: none; }
+  .colossus-region--second { width: 6.77966%; float: left; margin-right: -100%; margin-left: 8.47458%; clear: none; } }
+@media (min-width: 1200px) { .colossus-region--first, .panels-dnd .colossus-region--first { width: 6.77966%; float: left; margin-right: -100%; margin-left: 0; clear: none; }
+  .colossus-region--second, .panels-dnd .colossus-region--second { width: 6.77966%; float: left; margin-right: -100%; margin-left: 8.47458%; clear: none; } }

@@ -1,0 +1,7 @@
+/******************************************************************************* le-tigre.layout.scss  Styling of the "Le Tigre" layout grids with Singularity. *****************************************************************************/
+.panel-display--le-tigre { *zoom: 1; }
+.panel-display--le-tigre:after { content: ""; display: table; clear: both; }
+
+@media (min-width: 750px) { .le-tigre-region--first, .panels-dnd .le-tigre-region--first { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; }
+  .le-tigre-region--second, .panels-dnd .le-tigre-region--second { width: 48%; float: left; margin-right: -100%; margin-left: 0; clear: both; }
+  .le-tigre-region--third, .panels-dnd .le-tigre-region--third { width: 48%; float: right; margin-left: 0; margin-right: 0; clear: none; } }

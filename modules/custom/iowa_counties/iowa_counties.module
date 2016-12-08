@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * Code for the Iowa Counties feature.
+ */
+
+include_once 'iowa_counties.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function iowa_counties_form_feeds_import_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#importer_id'] == 'iowa_counties') {
+    // Build XML file URL that's included in this module.
+    $xml = $GLOBALS['base_url'] . '/' . drupal_get_path('module', 'iowa_counties') . '/counties.xml';
+    // Add description about why URL field is disabled.
+    $form['markup']['#markup'] = '<p>County data will be populated via the included XML file.</p>';
+    $form['markup']['#weight'] = -1;
+    // Set the value of the source to our XML file.
+    $form['feeds']['FeedsHTTPFetcher']['source']['#value'] = $xml;
+    // Disable the feeds form element so it can't be changed.
+    $form['feeds']['#disabled'] = TRUE;
+  }
+}

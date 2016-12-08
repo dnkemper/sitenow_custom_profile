@@ -1,0 +1,9 @@
+.pane-bundle-impact-grid {
+  .field--name-field-impact-articles {
+    @include grid(3, "> .field__items", "> .field__item");
+  }
+}
+
+.pane-articles-panel-pane-1 .view-display-id-panel_pane_1 {
+  @include grid(3, "> .view-content", "> .views-row");
+}

@@ -1,0 +1,141 @@
+// Abstracted classes for localist grid and list styles.
+.pane-localist-pane-grid,
+%pane-localist-pane-grid {
+  span {
+    display: block;
+  }
+
+  .lw ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  // Each list item
+  .lwe {
+    list-style: none;
+    padding: 1em;
+    margin-bottom: 1em;
+    background: $snow;
+    @include border(1px, bottom);
+  }
+
+  // Image
+  .lwi1 {
+    line-height: 0;
+    text-align: center;
+
+    a {
+      display: block;
+    }
+  }
+
+  // Date
+  .lwn0 {
+    font-family: $base-font-stack;
+    font-weight: $fw-bold;
+    @include font-size(1.4);
+    text-transform: uppercase;
+    margin-bottom: .5em;
+    display: block;
+    background: #333;
+    color: $yellow-gold;
+    @include font-smoothing;
+    padding: .3em;
+    text-align: center;
+
+    &:before,
+    &:after {
+      content: "\2014";
+      margin: 0 .5em;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  // location
+  .lwl {
+    display: none;
+  }
+
+  // Location label
+  .lwl0 {
+    height: 20px;
+    text-align: center;
+    line-height: 999px;
+    overflow: hidden;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: .5em;
+
+    &:before {
+      @include icon($fa-var-map-marker);
+      @include font-size(2);
+      display: block;
+      line-height: normal;
+      color: #888;
+    }
+  }
+
+  // Responsive
+  @include breakpoint(500px ($bp-desktop - 1px)) {
+    @include grid(2, "ul", "li");
+  }
+
+  @include breakpoint($bp-desktop) {
+    .no-flexbox & {
+      @include grid(4, "ul", "li");
+    }
+
+    .flexbox & {
+      ul {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include justify-content(space-between);
+      }
+
+      li {
+        width: 24%;
+      }
+    }
+  }
+}
+
+%pane-localist-pane-list,
+.pane-localist-pane-list {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  span {
+    display: block;
+  }
+
+  .lwe {
+    @include article-list;
+    @include list-separator;
+  }
+
+  .lwn0 {
+    @include font-size(1.4);
+
+    &:before {
+      @include icon($fa-var-calendar);
+      margin-right: 10px;
+      color: #777;
+    }
+  }
+
+  .lwl {
+    @include font-size(1.4);
+
+    .lwl0 {
+      display: inline;
+      margin-right: 5px;
+    }
+  }
+}

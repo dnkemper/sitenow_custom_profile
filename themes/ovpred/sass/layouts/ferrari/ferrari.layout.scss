@@ -1,0 +1,38 @@
+/*******************************************************************************
+ * ferrari.layout.scss
+ *
+ * Styling of the "Ferrari" layout
+ * grids with Singularity.
+ ******************************************************************************/
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "../../variables/breakpoints";
+
+.panel-display--ferrari {
+  @include pie-clearfix;
+  @include add-grid(12);
+  @include add-gutter(1/2);
+}
+
+.ferrari-region {}
+
+// Page reactions
+@include breakpoint($bp-tablet) {
+  .ferrari-region--first,
+  .panels-dnd .ferrari-region--first {
+    @include grid-span(8, 1);
+  }
+  .ferrari-region--second,
+  .panels-dnd .ferrari-region--second {
+    @include grid-span(4, 9);
+  }
+  .ferrari-region--third,
+  .panels-dnd .ferrari-region--third {
+    @include isolation-span(8, 1, 'both');
+  }
+  .ferrari-region--fourth,
+  .panels-dnd .ferrari-region--fourth {
+    @include isolation-span(4, 9, 'right');
+  }
+}

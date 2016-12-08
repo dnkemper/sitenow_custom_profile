@@ -1,0 +1,21 @@
+.pane-articles-article-pane-testimonial {
+  $bp-float-testimonials: 950px;
+
+  @include breakpoint($bp-float-testimonials) {
+    .no-flexbox & {
+      @include grid(2, ".view-content", ".views-row");
+    }
+
+    .view-content {
+      .flexbox & {
+        @include flexbox;
+        margin: 0 -10px;
+
+        .views-row {
+          @include flex(1 1 400px);
+          margin: 10px;
+        }
+      }
+    }
+  }
+}

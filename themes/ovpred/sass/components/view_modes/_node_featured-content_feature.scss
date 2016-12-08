@@ -1,0 +1,115 @@
+$bp-flexslider-max-height: 1350px;
+$flexslider-height: auto;
+$bp-slider-small-screen: $bp-sf-is-expanded;
+
+.node--featured-content--feature {
+  max-height: $flexslider-height;
+  position: relative;
+
+  .l-container {
+    position: relative;
+    max-height: $flexslider-height;
+
+    @include breakpoint(0 $bp-slider-small-screen) {
+      padding: 0;
+    }
+  }
+
+  .slider-caption {
+
+    // Caption position for large screens.
+    @include breakpoint($bp-slider-small-screen) {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    @include breakpoint($page-max-width) {
+      bottom: 60px;
+      left: 0;
+    }
+  }
+
+  a {
+    display: block;
+
+    &:hover,
+    &:focus,
+    &:active {}
+  }
+
+  .field--type-image {
+    position: relative;
+
+    .fc-hover {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      @include box-shadow(none);
+      @include transition(background .5s, box-shadow .5s);
+    }
+
+    .grid-overlay {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/patterns/dark-grid.png');
+      background-repeat: repeat;
+      @include opacity(0);
+      @include transition(opacity .5s);
+    }
+  }
+
+  h2 {
+    @include inline-block;
+    @include rgba-background(rgba(0,0,0,0.75));
+    font-weight: $fw-light;
+    margin-bottom: 3px;
+    color: #fff;
+    padding: 5px 20px;
+
+    // Title styles for mobile only.
+    @include breakpoint(0 $bp-slider-small-screen) {
+      display: block;
+      margin-bottom: 0;
+      @include font-size(1.8);
+      background: #222;
+    }
+  }
+
+  .field--name-field-feature-caption {
+    max-width: 600px;
+    @include rgba-background(rgba(255,255,255,0.75));
+    @include font-size(1.5);
+    color: #444;
+    padding: 15px 20px;
+
+    // Caption styles for mobile only.
+    @include breakpoint(0 $bp-slider-small-screen) {
+      display: none;
+    }
+  }
+}
+
+// View specific Flexslider styles.
+.view-featured-content .flexslider {
+  @include breakpoint($bp-flexslider-max-height) {
+    height: $flexslider-height;
+    overflow: hidden;
+  }
+
+  .flex-control-nav {
+    @include breakpoint(0 $bp-slider-small-screen) {
+      bottom: auto;
+      top: 10px;
+    }
+    @include breakpoint($page-max-width) {
+      bottom: 15px;
+    }
+  }
+}

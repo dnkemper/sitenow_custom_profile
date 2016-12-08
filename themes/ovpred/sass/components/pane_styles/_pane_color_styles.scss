@@ -1,0 +1,38 @@
+.panel-pane.gray,
+.bottom-container.gray {
+  background-color: $snow;
+  border-top: 1px solid darken($snow, 4);
+  border-bottom: 1px solid darken($snow, 4);
+}
+.panel-pane.floralwhite {
+  background-color: $floralwhite;
+  border-top: 1px solid darken($floralwhite, 4);
+  border-bottom: 1px solid darken($floralwhite, 4);
+}
+.panel-pane.oldlace {
+  background-color: $oldlace;
+  border-top: 1px solid darken($oldlace, 4);
+  border-bottom: 1px solid darken($oldlace, 4);
+}
+.panel-pane.aliceblue {
+  background-color: $aliceblue;
+  border-top: 1px solid darken($aliceblue, 4);
+  border-bottom: 1px solid darken($aliceblue, 4);
+}
+
+// Color variations
+.panel-pane.oldlace * {
+  border-color: darken($oldlace, 4);
+}
+.panel-pane.floralwhite * {
+  border-color: darken($floralwhite, 4);
+}
+.panel-pane.aliceblue * {
+  border-color: darken($aliceblue, 4);
+}
+.panel-pane.gray * {
+  border-color: #eee;
+}
+.panel-pane.no-color * {
+  border-color: #efefef;
+}

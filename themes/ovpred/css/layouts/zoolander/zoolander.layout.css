@@ -1,0 +1,8 @@
+/******************************************************************************* zoolander.layout.scss  Styling of the "Zoolander" layout grids with Singularity. *****************************************************************************/
+.panel-display--zoolander { *zoom: 1; }
+.panel-display--zoolander:after { content: ""; display: table; clear: both; }
+
+@media (min-width: 750px) { .zoolander-region--first, .panels-dnd .zoolander-region--first { width: 65.71429%; float: left; margin-right: -100%; margin-left: 0; clear: none; }
+  .zoolander-region--second, .panels-dnd .zoolander-region--second { width: 31.42857%; float: right; margin-left: 0; margin-right: 0; clear: none; }
+  .zoolander-region--third, .panels-dnd .zoolander-region--third { width: 48.57143%; float: left; margin-right: -100%; margin-left: 0; clear: both; }
+  .zoolander-region--fourth, .panels-dnd .zoolander-region--fourth { width: 48.57143%; float: right; margin-left: 0; margin-right: 0; clear: right; } }

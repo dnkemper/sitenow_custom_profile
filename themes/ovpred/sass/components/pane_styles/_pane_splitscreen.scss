@@ -1,0 +1,5 @@
+.splitscreen {
+    @include breakpoint($bp-tablet) {
+      @include grid(2, ".splitscreen", ".split");
+    }
+}

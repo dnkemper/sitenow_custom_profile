@@ -1,0 +1,62 @@
+.pane-ovpred-researchercompliance {
+  $bp-float-image: 950px;
+  $bp-links-2-col: 600px;
+
+  img {
+    display: block;
+    margin: 0 auto 1em;
+  }
+
+  .description {
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      list-style: none;
+
+      a {
+        display: block;
+        margin-bottom: .3em;
+        padding-bottom: .3em;
+        @include border(1px, bottom);
+      }
+    }
+  }
+
+  @include breakpoint($bp-links-2-col) {
+    ul {
+      @include column-count(2);
+      @include column-gap(2em);
+    }
+  }
+
+  @include breakpoint($bp-float-image) {
+    .l-container {
+      @include pie-clearfix;
+      @include add-grid(12);
+      @include add-gutter(1);
+    }
+
+    .pane-header {
+      @include grid-span(6, 1);
+    }
+
+    img {
+      @include isolation-span(6, 7);
+    }
+
+    .description {
+      @include isolation-span(6, 1, 'left');
+    }
+
+    ul {
+      @include isolation-span(6, 1, 'left');
+    }
+  }
+}
