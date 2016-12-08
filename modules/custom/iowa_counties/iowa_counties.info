@@ -2,7 +2,6 @@ name = Iowa Counties
 description = Adds a counties vocabulary and imports all 99 Iowa counties as taxonomy terms.
 core = 7.x
 package = Features
-version = 7.x-1.1
 project = iowa_counties
 dependencies[] = ctools
 dependencies[] = features

@@ -2,5 +2,4 @@ name = Print Block
 description = Builds a block with a customized print friendly link
 core = 7.x
 package = UIowa
-version = 7.x-1.2
 dependencies[] = print

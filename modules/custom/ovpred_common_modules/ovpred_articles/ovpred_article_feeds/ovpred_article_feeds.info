@@ -1,7 +1,6 @@
 name = OVPRED Article Feeds
 core = 7.x
 package = OVPRED
-version = 7.x-1.3
 project = ovpred_article_feeds
 dependencies[] = ctools
 dependencies[] = feeds
