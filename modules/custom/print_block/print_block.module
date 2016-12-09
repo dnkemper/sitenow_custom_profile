@@ -1,0 +1,173 @@
+<?php
+/**
+ * @file
+ * Module file for print_block module.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function print_block_block_info() {
+  $blocks = array();
+  $blocks['print_block'] = array(
+    'info' => t('Print Block'),
+    'status' => TRUE,
+    'region' => 'three_33_third',  // Not usually provided, but is provided as courtesy to the OVPR_Common theme.
+    'cache' => DRUPAL_CACHE_PER_PAGE, // Block will be cached per page
+  );
+   
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function print_block_block_view($delta='') {
+  $block = array();
+ 
+  switch($delta) {
+    case 'print_block' :
+      $block['subject'] = 'Print this page';
+      $block['content'] = print_link();
+      break;
+  }
+ 
+  return $block;
+}
+
+/* 
+ * Implements hook_block_configure().
+ */
+function print_block_block_configure($delta = '') {
+  $form = array();
+  if ($delta == 'print_block') {
+    $form['print_block_link'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Print Block link'),
+      '#default_value' => variable_get('print_block_link'),
+      '#description' => t('Text to display as a link to the printer-friendly version. Leave blank to display no link.'),
+    );
+    $form['print_block_icon'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Print Block icon settings'),
+    );
+    $form['print_block_icon']['print_block_show_icon'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Use an icon'),
+      '#default_value' => variable_get('print_block_show_icon'),
+      '#description' => t('Uncheck this box if you do not want to use an icon.'),
+    );
+    $form['print_block_icon']['print_block_icon_path'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Icon path'),
+      '#default_value' => variable_get('print_block_icon_path'),
+      '#description' => t('A Drupal path to the icon to use.'),
+      '#required' => FALSE,
+    );
+    $form['print_block_icon']['print_block_icon_path']['#states'] = array(
+      'visible' => array (':input[name="print_block_show_icon"]' => array('checked' => TRUE),),
+    );
+    $form['print_block_icon']['print_block_icon_upload'] = array(
+      '#type' => 'file',
+      '#title' => t('Upload a new icon image'),
+      '#maxlength' => 40,
+      '#description' => t("Use this field to upload an icon."),
+    );
+    $form['print_block_icon']['print_block_icon_upload']['#states'] = array(
+      'visible' => array (':input[name="print_block_show_icon"]' => array('checked' => TRUE),),
+    );
+  }
+
+  return $form;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function print_block_form_block_admin_configure_alter(&$form, &$form_state, $form_id) {
+  // Alter the block configuration form for print_block module and delta only
+  if(arg(4) == 'print_block' && arg(5) == 'print_block'){
+    $form['#submit'][] = 'print_block_config_form_submit';
+  }
+}
+
+/**
+ * Process the submitted form
+ */
+function print_block_config_form_submit($form, &$form_state) {
+  // Set necessary variables
+  variable_set('print_block_show_icon', $form_state['values']['print_block_show_icon']);
+  variable_set('print_block_link', $form_state['values']['print_block_link']);
+
+  // Check the destination folder, attempt to create it if it does't exist
+  $directory_path = 'public://print_block';
+  file_prepare_directory($directory_path, FILE_CREATE_DIRECTORY);
+
+  // Store the current icon path
+  $path = $form_state['values']['print_block_icon_path'];
+
+  // Define the validation settings
+  $validate = array(
+    'file_validate_is_image' => array(),
+  );
+
+  // Check for a new uploaded icon, and use that instead
+  if ($file = file_save_upload('print_block_icon_upload', $validate)) {
+    $parts = pathinfo($file->filename);
+    $filename = $directory_path . '/' . $parts['basename'];
+    file_unmanaged_copy($file->uri, $filename, FILE_EXISTS_REPLACE);
+
+    $path = variable_get('file_public_path') . '/print_block/' . $parts['basename'];
+    variable_set('print_block_icon_path', $path);
+  }
+}
+
+/**
+ * Logic used to add a link to the print version of the node.
+ */
+function print_link() {
+  // Check to make sure this is a node
+  if(arg(0) == 'node' && is_numeric(arg(1))) {
+    $node_id = arg(1); // Return the NID
+    global $base_url;
+    // Print ready url
+    $url = $base_url . "/print/" . $node_id;
+    // URL of the little printer image
+    $image_src = variable_get('print_block_icon_path');
+    // Create varibale out of print_block_link since empty() won't accept functions as arguments
+    $print_block_link = variable_get('print_block_link');
+    //Create alt text variable depending on text field
+    if ((variable_get('print_block_show_icon') == TRUE) && (empty($print_block_link))) {
+      $alt_text = 'Print this page';
+    } else {
+      $alt_text = '';
+    }
+    // Create the array we need for theme_image()
+    $image_variables = array(
+      'path' => $image_src,
+      'alt' => $alt_text,
+      'title' => 'Print this page',
+      'attributes' => array('class' => 'print-img', 'id' => 'print-img'),
+    );
+
+    
+    // Theme the image
+    if(variable_get('print_block_show_icon') == TRUE) {
+      $image = theme_image($image_variables);
+    } else {
+      $image = '';
+    }
+    // Create the link
+    $link = l(variable_get('print_block_link') . $image, $url, 
+      array(
+        'html' => TRUE, 
+        'attributes' => array('target'=>'_blank', 'class' => array('print-block-link'), 'id' => 'print-block-link',), 
+      )
+    );
+    return $link;
+  } 
+  else { // Whatever it is we're looking at, it's not a node so don't return anything
+    $node_id = NULL;
+    return;
+  }
+}

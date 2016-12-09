@@ -1,0 +1,32 @@
+.node--space--teaser {
+  @include pie-clearfix;
+  @include teaser-base;
+
+  .field {
+    margin-bottom: 5px;
+  }
+
+  .field--type-image {
+    margin-bottom: 10px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .no_sidebars & {
+    @include breakpoint(600px) {
+      .field--type-image {
+        float: right;
+        margin: 0px 0px 20px 20px;
+      }
+      .field--name-field-space-square-footage {
+        float: left;
+      }
+      .field--name-body {
+        clear: left;
+      }
+    }
+  }
+}

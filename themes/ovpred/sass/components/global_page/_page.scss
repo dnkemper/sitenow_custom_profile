@@ -1,0 +1,48 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $base-font-stack;
+  font-size: 1.8em;
+  color: $base-font-color;
+}
+
+.l-page {
+  margin: 0 auto;
+}
+
+.l-main {
+  padding-bottom: 2em;
+
+  .l-main-header {
+    padding-top: 2em;
+
+    .page-title {
+      border-bottom: 8px solid #f5f5f5;
+      padding-bottom: .5em;
+      margin-bottom: .7em;
+    }
+
+    .tabs--primary {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.l-container {
+  margin: 0 auto;
+  max-width: $page-max-width;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.element-invisible {
+  @include element-invisible;
+}
+
+.btn {
+  @include btn;
+}
+
+

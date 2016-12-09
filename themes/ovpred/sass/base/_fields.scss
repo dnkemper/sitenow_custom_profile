@@ -1,0 +1,9 @@
+.post-date {
+  margin-bottom: 1em;
+  @include font-size(1.5);
+
+  &:before {
+    @include icon($fa-var-clock-o);
+    margin-right: 5px;
+  }
+}

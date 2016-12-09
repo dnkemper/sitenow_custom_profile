@@ -1,0 +1,327 @@
+//
+// Custom sass variables and mixins
+//
+// Variables
+// -----------------------------------------------------------------------------
+// The variables set here serve only as example of how you can use SASS variables
+// to centralize and control frequently used styles more easily. Here you will
+// find variables for colors, fonts and the global gutter width.
+//
+// Mixins
+// -----------------------------------------------------------------------------
+// To use a mixin in this file, add this line to the top of your .scss file:
+//   @import "base"; (_base.scss imports _custom.scss).
+//
+// Then to use a mixin for a particular rule, add this inside the ruleset's
+// curly brackets:
+//   @include mix-in-name;
+//
+
+//-----------------------------------------------------------------------------
+// Color variables
+// Colors used in the sample global.styles. You can use these to recolor many
+//     elements such as forms, tables, tabs etc.
+//-----------------------------------------------------------------------------
+$page:         #fff;    // to match the page background, default is white
+$border:       #ccc;    // all borders set in global.styles - tables, fieldset, primary links
+$highlight:    #c00;    // required mark, form error highlight, "new" label on comments
+$ultralight:   #f5f5f5; // table row even, primary link inactive tabs
+$light:        #eee;    // table row odd active, primary link inactive hover
+$medium_light: #ebebeb; // table row even active
+$medium_dark:  #e5e5e5; // table thead
+$debug:        rgba(255, 192, 203, 0.5); // Full width wrapper test
+
+$blue:         #107acb; // Used for links
+$gray:         #333333;
+$black:        #000000;
+
+$thead:          $medium_dark;
+$tr_odd:         $page;
+$tr_even:        $ultralight;
+$tr_odd_active:  $light;
+$tr_even_active: $medium_light;
+
+$primary_task:        $ultralight;
+$primary_task_hover:  $light;
+$primary_task_active: $page;
+
+//-----------------------------------------------------------------------------
+
+$hawk_gold:             #fee100;
+$none_more_black:       #000;
+$grey_dark_very:        #333;
+$grey_dark_pretty:      #666;
+$grey_dark_medium:      #999;
+$grey_light_medium:     #999;
+$grey_light_pretty:     #aaa;
+$grey_light_very:       #ccc;
+
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// Font variables
+// These font stacks are an exact copy of the stacks found in AT Cores
+// theme settings for web safe fonts.
+//-----------------------------------------------------------------------------
+$sans-serif-small:            Ubuntu, 'Droid Sans', 'Trebuchet MS', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$sans-serif-large:            Oswald, Verdana, Geneva, 'DejaVu Sans', Arial, Helvetica, sans-serif;
+$sans-serif-arial-helvetica:  Arial, Helvetica, sans-serif;
+$calibri-candara:             Calibri, Candara, Arial, Helvetica, sans-serif;
+$serif-small:                 Garamond, Perpetua, 'Times New Roman', serif;
+$serif-large:                 Georgia, Baskerville, Palatino, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
+$modern-myriad:               'Segoe UI', 'Myriad Pro', Myriad, Arial, Helvetica, sans-serif;
+$lucida:                      'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', Verdana, Geneva, sans-serif;
+$impact:                      Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif;
+$mono:                        Consolas, Monaco, 'Courier New', Courier, monospace, sans-serif;
+
+//-----------------------------------------------------------------------------
+// REM Font Sizing
+//-----------------------------------------------------------------------------
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+
+//-----------------------------------------------------------------------------
+// Gutters
+//
+// Set a variable for the gutters. Adaptivetheme allows you to easly modify the
+// global gutter width for precise control over the design. Panel pages need
+// special gutter wrangling when a Panel is inside #content wrapper, so to ease
+// setting this we use a variable.
+//-----------------------------------------------------------------------------
+$gutter-width: 14px;
+
+
+
+//-----------------------------------------------------------------------------
+// Markup free clearing
+// http://www.stubbornella.org/content/2012/05/02/cross-browser-debugging-css/
+//-----------------------------------------------------------------------------
+@mixin cf {
+  overflow: hidden;   // New formatting context in better browsers
+  *overflow: visible; // Protect IE7 and older from the overflow property
+  *zoom: 1;           // Give IE hasLayout, a new formatting context equivalent
+}
+
+//-----------------------------------------------------------------------------
+// Image replacement
+// Kellum Method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
+// Additional helpers from http://html5boilerplate.com/docs/css/
+// This is also included as a SASS mixin, see: sass/custom.rb
+//-----------------------------------------------------------------------------
+@mixin ir {
+  // Kellum Method
+  display: block !important;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  // Additional helpers
+  border: 0;                     // Remove the default border from elements like <button>
+  font: 0/0 a;                   // Crush the text down to take up no space
+  text-shadow: none;             // Remove any text shadows
+  color: transparent;            // Hide any residual text in Safari 4 and any mobile devices that may need it
+  background-color: transparent; // Hide the default background color on elements like <button>
+}
+
+//-----------------------------------------------------------------------------
+// Improved and more robust element-invisible 
+//-----------------------------------------------------------------------------
+@mixin element-invisible {
+  border: 0;
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+//-----------------------------------------------------------------------------
+// Turns off the element-invisible effect
+//-----------------------------------------------------------------------------
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+//-----------------------------------------------------------------------------
+// Shift content offscreen
+//-----------------------------------------------------------------------------
+@mixin offscreen {
+  position: absolute;
+  top: -99999em;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  outline: 0;
+}
+
+//-----------------------------------------------------------------------------
+// Hide content from all users
+//-----------------------------------------------------------------------------
+@mixin element-hidden {
+  display: none;
+}
+
+
+//-----------------------------------------------------------------------------
+// The word "Unpublished" displayed underneath unpublished nodes and comments
+//-----------------------------------------------------------------------------
+@mixin unpublished {
+  color: pink; // target browsers that do not support rgba
+  color: rgba(239, 170, 170, 0.4);
+  font-family: $impact;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+  word-wrap: break-word;
+
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    .ie6-7 &>* {
+      position: relative; // Otherwise these elements will appear below the "Unpublished" text.
+    }
+  }
+}
+
+
+//-----------------------------------------------------------------------------
+// Greyscale an image in rest state
+//-----------------------------------------------------------------------------
+@mixin img_grayscale($amount: 100%) {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'https://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale($amount); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+  
+  &:hover, &:focus, &:active {
+    filter: none;
+       -webkit-filter: grayscale(0%);
+  }
+}
+
+
+//-----------------------------------------------------------------------------
+// Buttons & pills
+//-----------------------------------------------------------------------------
+@mixin plain-button($bgcolor1: #5eb9d8, $bgcolor2: #2795ba, $bdcolor: #0c87b1) {
+  display: block;
+  background-color: $bgcolor1;
+  @include background-image(linear-gradient($bgcolor1, $bgcolor2));
+  color: #fff;
+  padding: 0.5em 1em;
+  border: 1px solid $bdcolor;
+  @include border-radius(1.25em);
+  text-align: center;
+  font-weight: bold;
+
+  // the mixin is best applied to an anchor
+  &:visited {
+    color: #fff;
+  }
+  
+  &:hover, &:focus {
+    background-color: darken($bgcolor1, 15%);
+    @include background-image(linear-gradient(darken($bgcolor1, 15%), darken($bgcolor2, 15%)));
+    border: 1px solid darken($bdcolor, 15%); 
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+@mixin plain-pill($bgcolor: #900, $radius: 1em) {
+  display: block;
+  background-color: $bgcolor;
+  color: #fff;
+  padding: 0.25em 1em;
+  @include border-radius($radius);
+  text-align: center;
+  font-weight: bold;
+}
+
+//-----------------------------------------------------------------------------
+// Text shadows and glows
+//-----------------------------------------------------------------------------
+@mixin text-glow-big {
+  @include text-shadow(rgba(black, 0.9) -3px -3px 6px, rgba(black, 0.9) 3px 3px 6px, rgba(black, 0.9) -3px 3px 6px, rgba(black, 0.9) 3px -3px 6px);
+  // filter:
+  // progid:DXImageTransform.Microsoft.MotionBlur(strength=13, direction=310)
+  // progid:DXImageTransform.Microsoft.Blur(pixelradius=2)
+  // progid:DXImageTransform.Microsoft.Wheel(duration=3);
+}
+
+@mixin text-glow-small {
+  @include text-shadow(rgba(black, 0.9) -2px -2px 3px, rgba(black, 0.9) 2px 2px 3px, rgba(black, 0.9) -2px 2px 3px, rgba(black, 0.9) 2px -2px 3px);
+}
+
+
+//-----------------------------------------------------------------------------
+// Attempt at unifying styles
+//-----------------------------------------------------------------------------
+@mixin list-view-styles {
+  margin: 8px 0;
+  padding: 10px;
+  @include clearfix();
+  border-bottom: 1px dotted $grey_light_pretty;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+//-----------------------------------------------------------------------------
+// Resize sprites
+//-----------------------------------------------------------------------------
+@mixin resize-sprite($map, $sprite, $percent) {
+  $spritePath:    sprite-path($map);
+  $spriteWidth:   image-width($spritePath);
+  $spriteHeight:  image-height($spritePath);
+  $width: image-width(sprite-file($map, $sprite));
+  $height: image-height(sprite-file($map, $sprite));
+ 
+  @include background-size(ceil($spriteWidth * ($percent/100)) ceil($spriteHeight * ($percent/100)));
+  width: ceil($width*($percent/100));
+  height: ceil($height*($percent/100));
+  background-position: 0 floor(nth(sprite-position($map, $sprite), 2)  * ($percent/100) );
+}
+
+
+//-----------------------------------------------------------------------------
+// DEBUG code for media query breakpoints
+//-----------------------------------------------------------------------------
+@mixin debug-message($message: 'nothing') {
+  /* --- DEBUG FLAG!!! --- */
+  // &:before {
+  //   position: absolute;
+  //   top: 2px;
+  //   left: 2px;
+  //   content: $message;
+  //   @include font-size(1.0);
+  //   color: $hawk_gold;
+  //   font-weight: bold;
+  //   z-index: 490;
+  // }
+  /* --- END DEBUG FLAG --- */
+}

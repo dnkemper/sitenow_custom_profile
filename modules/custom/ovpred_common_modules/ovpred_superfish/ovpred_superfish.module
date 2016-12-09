@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OVPRED Superfish feature.
+ */
+
+include_once 'ovpred_superfish.features.inc';

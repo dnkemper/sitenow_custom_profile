@@ -1,0 +1,38 @@
+.l-region--sidebar-first,
+.l-region--sidebar-second {
+  .menu {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .collapsed {
+      &:before {
+        @include icon($fa-var-caret-right);
+        margin-right: 8px;
+      }
+    }
+
+    .expanded {
+      &:before {
+        @include icon($fa-var-caret-down);
+        margin-right: 8px;
+      }
+    }
+
+    ul {
+      margin-left: 20px;
+
+      li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

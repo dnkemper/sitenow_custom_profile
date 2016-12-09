@@ -1,0 +1,40 @@
+/*******************************************************************************
+ * zoolander.layout.scss
+ *
+ * Styling of the "Zoolander" layout
+ * grids with Singularity.
+ ******************************************************************************/
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "../../variables/breakpoints";
+
+.panel-display--orange-mocha {
+  @include pie-clearfix;
+  @include add-grid(12);
+  @include add-gutter(1/3);
+}
+
+.orange-mocha-region {}
+
+// Page reactions
+@include breakpoint($bp-tablet) {
+  .orange-mocha-region--top,
+  .panels-dnd .orange-mocha-region--top{
+    @include grid-span(12, 1);
+  }
+  .orange-mocha-region--left,
+  .panels-dnd .orange-mocha-region--left {
+    @include isolation-span(4, 1, 'both');
+  }
+  .orange-mocha-region--center,
+  .panels-dnd .orange-mocha-region--center {
+    @include isolation-span(4, 5, 'none');
+  }
+  .orange-mocha-region--right,
+  .panels-dnd .orange-mocha-region--right {
+    @include isolation-span(4, 9, 'none');
+  }
+}
+
+

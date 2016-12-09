@@ -1,0 +1,17 @@
+<?php
+/**
+ * Install, update and uninstall functions for OVPRED blocks.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function ovpred_blocks_uninstall() {
+  variable_del('ovpred_blocks_address');
+  variable_del('ovpred_blocks_phone');
+  variable_del('ovpred_blocks_fax');
+  variable_del('ovpred_blocks_email');
+  variable_del('ovpred_blocks_youtube');
+  variable_del('ovpred_blocks_twitter');
+  variable_del('ovpred_blocks_facebook');
+}

@@ -1,0 +1,39 @@
+/*******************************************************************************
+ * blue-steel.layout.scss
+ *
+ * Styling of the "Blue Steel" layout
+ * grids with Singularity.
+ ******************************************************************************/
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "../../variables/breakpoints";
+
+// Set Singularity grid variables.
+.panel-display--blue-steel {
+
+  .l-container {
+    @include pie-clearfix;
+    @include add-grid(6 6);
+    @include add-gutter(1/2);
+  }
+
+  .panel-pane {
+    margin-bottom: 0;
+    padding: 3em 0 ;
+  }
+}
+
+.blue-steel-region {}
+
+// Page reactions
+@include breakpoint($bp-tablet) {
+  .blue-steel-region--second,
+  .panels-dnd .blue-steel-region--second {
+    @include grid-span(1, 1);
+  }
+  .blue-steel-region--third,
+  .panels-dnd .blue-steel-region--third {
+    @include grid-span(1, 2);
+  }
+}

@@ -1,0 +1,76 @@
+$bp-float-facts: 950px;
+
+.ovpred-facts {
+  text-align: center;
+
+  .facts {
+    margin-bottom: 1em;
+  }
+
+  .fact {
+    padding: 1em;
+    @include border(4px, all, 8px);
+    margin-bottom: .5em;
+    @include rgba-background(rgba(255,255,255,.7));
+  }
+
+  .prefix {
+    @include inline-block;
+    @include font-size(2.8);
+    font-weight: $fw-extra-bold;
+    position: relative;
+    top: -3px;
+    right: 2px;
+  }
+
+  .value {
+    @include inline-block;
+    @include font-size(5.5);
+    font-weight: $fw-extra-bold;
+    margin-bottom: -10px;
+  }
+
+  .unit {
+    display: block;
+    font-weight: $fw-light;
+    @include font-size(3);
+  }
+
+  .description {
+    display: block;
+    @include font-size(1.4);
+    margin-top: 5px;
+    color: $light-gray-valid-contrast;
+
+    @include breakpoint($bp-float-facts) {
+      max-width: 300px;
+      margin: 5px auto 0;
+    }
+  }
+
+  .more {
+    @include btn($size: "l");
+    @include inline-block;
+  }
+
+  // Responsive flexbox with fall back
+  @include breakpoint($bp-float-facts) {
+    .facts {
+      .flexbox & {
+        @include flexbox;
+        @include align-items(stretch);
+        @include justify-content(center);
+
+        .fact {
+          margin-left: 5px;
+          margin-right: 5px;
+          @include flex(1 1 300px);
+        }
+      }
+    }
+
+    .no-flexbox & {
+      @include grid(3, ".facts", ".fact");
+    }
+  }
+}

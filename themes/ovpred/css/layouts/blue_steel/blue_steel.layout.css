@@ -1,0 +1,7 @@
+/******************************************************************************* blue-steel.layout.scss  Styling of the "Blue Steel" layout grids with Singularity. *****************************************************************************/
+.panel-display--blue-steel .l-container { *zoom: 1; }
+.panel-display--blue-steel .l-container:after { content: ""; display: table; clear: both; }
+.panel-display--blue-steel .panel-pane { margin-bottom: 0; padding: 3em 0; }
+
+@media (min-width: 750px) { .blue-steel-region--second, .panels-dnd .blue-steel-region--second { width: 48%; float: left; margin-right: -100%; margin-left: 0; clear: none; }
+  .blue-steel-region--third, .panels-dnd .blue-steel-region--third { width: 48%; float: right; margin-left: 0; margin-right: 0; clear: none; } }

@@ -1,0 +1,28 @@
+.node--ovpred-article--full {
+
+  .by-line {
+    display: inline;
+    padding-right: 20px;
+    @include font-size(1.5);
+  }
+
+  .post-date {
+    display: inline;
+  }
+
+  .field--name-field-ovpred-article-by-line {
+    display: inline;
+  }
+
+  .field--name-field-ovpred-article-tags {
+    @include font-size(1.5);
+
+    .field__label {
+      &:before {
+        @include icon($fa-var-tags);
+        margin-right: 5px;
+      }
+    }
+  }
+
+}

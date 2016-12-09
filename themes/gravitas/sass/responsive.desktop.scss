@@ -1,0 +1,33 @@
+
+// _base.scss imports _custom.scss and other partials.
+@import "base";
+
+/*
+ *   Important Information about this CSS File
+ *
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete
+ *   everything) and the file will be skipped when you enable Production Mode in
+ *   the Global theme settings.
+ *
+ * - Read the _README file in this directory, it contains useful help and other information.
+ */
+
+#name-and-slogan {
+  float: left;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+#main-content {
+  margin-left: 40px;
+}
+
+// Featured content views
+.flexslider .slides img {
+    width: 440px;
+    float: left;
+}
+
+.flexslider ul.slides li img {
+    padding-right: 10px;
+}

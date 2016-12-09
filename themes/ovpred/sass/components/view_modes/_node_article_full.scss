@@ -1,0 +1,41 @@
+.node--article--full {
+  .field--name-field-article-tag,
+  .field--name-field-article-tags {
+    @include font-size(1.5);
+
+    .field__label {
+      &:before {
+        @include icon($fa-var-tags);
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .field--type-image {
+    margin-bottom: 20px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .one_sidebar & {
+      @include breakpoint($bp-desktop) {
+        float: right;
+        max-width: 400px;
+        margin: 0 20px 20px;
+      }
+    }
+
+    .no_sidebars & {
+      @include breakpoint($bp-tablet) {
+        float: right;
+        max-width: 400px;
+        margin: 0 20px 20px;
+      }
+      @include breakpoint($bp-desktop) {
+        max-width: 600px;
+      }
+    }
+  }
+}
