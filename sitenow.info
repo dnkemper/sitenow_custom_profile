@@ -43,7 +43,6 @@ dependencies[] = views_content
 dependencies[] = xmlsitemap
 
 ; Custom
-dependencies[] = sitenow_user_create
 dependencies[] = uiowa_bar
 dependencies[] = uiowa_acquia_authentication
 
