@@ -44,6 +44,9 @@ function sitenow_create_new_roles_and_perms() {
   require_once drupal_get_path('profile', 'sitenow') . '/includes/sitenow.roles.inc';
   sitenow_default_roles();
 
+  // Enabling here because roles do not exist yet when enabled through .info file dependency.
+  module_enable(array('sitenow_user_create'));
+
   // Set automatic role population for Web Services and Web Services Student groups.
   $role = user_role_load_by_name('administrator');
   if (!empty($role)) {
