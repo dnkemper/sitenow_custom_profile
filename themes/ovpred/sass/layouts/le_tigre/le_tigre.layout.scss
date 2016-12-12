@@ -1,0 +1,35 @@
+/*******************************************************************************
+ * le-tigre.layout.scss
+ *
+ * Styling of the "Le Tigre" layout
+ * grids with Singularity.
+ ******************************************************************************/
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "../../variables/breakpoints";
+
+// Set Singularity grid variables.
+.panel-display--le-tigre {
+  @include pie-clearfix;
+  @include add-grid(6 6);
+  @include add-gutter(1/2);
+}
+
+.le-tigre-region {}
+
+// Page reactions
+@include breakpoint($bp-tablet) {
+  .le-tigre-region--first,
+  .panels-dnd .le-tigre-region--first {
+    @include grid-span(2, 1);
+  }
+  .le-tigre-region--second,
+  .panels-dnd .le-tigre-region--second {
+    @include isolation-span(1, 1, 'both');
+  }
+  .le-tigre-region--third,
+  .panels-dnd .le-tigre-region--third {
+    @include grid-span(1, 2);
+  }
+}

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "steelfish";
+  src: url('fonts/steelfish/steelfish-webfont.eot');
+  src: url('fonts/steelfish/steelfish-webfont.eot?#iefix') format('eot'), url('fonts/steelfish/steelfish-webfont.woff') format('woff'), url('fonts/steelfish/steelfish-webfont.ttf') format('truetype'), url('fonts/steelfish/steelfish-webfont.svg') format('svg');
+}
+
+/*
+ * Target IE 6, 7 and 8 (less than IE9)
+ */
+/*
+ * Assuming a mobile first approach with respond.js OFF, we must reset the font
+ * size for lt IE9
+ */
+html {
+  font-size: 62.5%;
+}

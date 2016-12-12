@@ -1,0 +1,4 @@
+/******************************************************************************* magnum.layout.scss  Styling of the "Magnum" layout grids with Singularity. *****************************************************************************/
+.panel-display--magnum { *zoom: 1; }
+.panel-display--magnum:after { content: ""; display: table; clear: both; }
+.panel-display--magnum .panel-pane { margin-bottom: 0; padding: 3em 0; }

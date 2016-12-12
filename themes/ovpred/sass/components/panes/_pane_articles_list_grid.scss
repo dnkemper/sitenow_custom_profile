@@ -1,0 +1,16 @@
+.pane-articles-article-pane-grid {
+  .node--article--list {
+    @include list-separator;
+  }
+  @include breakpoint($bp-mobile ($bp-desktop - 1px)) {
+    @include grid(2, ".view-content", ".views-row");
+  }
+  @include breakpoint($bp-desktop) {
+    @include grid(4, ".view-content", ".views-row");
+    .node--article--list {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}

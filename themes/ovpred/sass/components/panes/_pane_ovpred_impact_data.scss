@@ -1,0 +1,80 @@
+$bp-float-impact-data: 950px;
+
+.ovpred-impact-data {
+  text-align: center;
+
+  .impact-data-list {
+    margin-bottom: 1em;
+  }
+
+  .impact-data-item {
+    padding: 1em;
+    @include border(4px, all, 8px);
+    margin-bottom: .5em;
+    @include rgba-background(rgba(255,255,255,.7));
+  }
+
+  .field--name-field-ovpred-id-data-prefix {
+    @include inline-block;
+    @include font-size(2.8);
+    font-weight: $fw-extra-bold;
+    position: relative;
+    top: -3px;
+    right: 2px;
+  }
+
+  .field--name-field-ovpred-id-data-suffix {
+    @include inline-block;
+    @include font-size(2.8);
+    font-weight: $fw-extra-bold;
+    position: relative;
+    top: -3px;
+    right: 2px;
+  }
+
+  .field--name-field-ovpred-id-data {
+    @include inline-block;
+    @include font-size(5.5);
+    font-weight: $fw-extra-bold;
+    margin-bottom: -10px;
+  }
+
+  .field--name-field-ovpred-id-caption {
+    display: block;
+    font-weight: $fw-light;
+    @include font-size(3);
+  }
+
+  .field--name-field-ovpred-id-description  {
+    display: block;
+    @include font-size(1.4);
+    margin-top: 5px;
+    color: $light-gray-valid-contrast;
+
+    @include breakpoint($bp-float-impact-data) {
+      max-width: 300px;
+      margin: 5px auto 0;
+    }
+  }
+
+  // Responsive flexbox with fall back
+  @include breakpoint($bp-float-impact-data) {
+    .impact-data-list {
+      .flexbox & .view-content {
+        @include flexbox;
+        @include align-items(stretch);
+        @include justify-content(center);
+
+        .impact-data-item {
+          margin-left: 5px;
+          margin-right: 5px;
+          @include flex(1 1 300px);
+        }
+      }
+    }
+
+    .no-flexbox & {
+      @include grid(3, ".impact-data-list", ".impact-data-item");
+    }
+  }
+}

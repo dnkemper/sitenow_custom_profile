@@ -1,0 +1,69 @@
+.node--featured-content--teaser {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 1em;
+
+  .field--type-image {
+    line-height: 0;
+    position: relative;
+
+    .fc-hover {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      @include transition(background .5s);
+
+      .grid-overlay {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/patterns/dark-grid.png');
+        background-repeat: repeat;
+        @include opacity(0);
+        @include transition(opacity .5s);
+      }
+
+      .flex-center {
+        .flexbox & {
+          height: 100%;
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(center);
+        }
+      }
+
+      .fa-stack {
+        @include font-size(3.5);
+        @include transform(scale(0));
+        @include transition(transform .5s .1s);
+      }
+      .fa-stack-2x {
+        color: rgba(0,0,0,.1);
+      }
+      .fa-stack-1x {
+        color: rgba(0,0,0,.8);
+      }
+    }
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    .fc-hover {
+      @include rgba-background(rgba($yellow-gold, .8));
+
+      .grid-overlay {
+        @include opacity(.2);
+      }
+
+      .fa-stack {
+        @include transform(scale(1));
+      }
+    }
+  }
+}

@@ -71,7 +71,8 @@ function sitenow_default_roles() {
   user_role_grant_permissions($editor_role_id, $editor_permissions);
   user_role_grant_permissions($webmaster_role_id, $webmaster_permissions);
 
-  // Create a default role for site administrators, with all available permissions assigned.
+  // Create a default role for site administrators,
+  // with all available permissions assigned.
   $admin_role = new stdClass();
   $admin_role->name = 'administrator';
   $admin_role->weight = 4;

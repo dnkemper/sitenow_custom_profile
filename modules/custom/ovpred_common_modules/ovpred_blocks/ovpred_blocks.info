@@ -1,0 +1,5 @@
+name = "OVPRED Blocks"
+description = "Custom blocks for all OVPRED sites"
+package = "UIowa"
+core = 7.x
+dependencies[] = block

@@ -1,0 +1,46 @@
+.pane-ovpred-units {
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+      text-align: center;
+      line-height: 1;
+      background-color: $snow;
+      border: 1px solid darken($snow, 4);
+
+
+      a {
+        display: block;
+      }
+
+      img {
+        padding: .5em;
+        max-height: 100px;
+      }
+    }
+  }
+
+  .flexbox & {
+    ul {
+      margin: 0 -2px;
+      @include flexbox;
+      @include flex-wrap(wrap);
+    }
+    li {
+      @include flex(1 1 250px);
+      margin: 2px;
+    }
+  }
+
+  .no-flexbox & {
+    @include breakpoint(950px) {
+      @include grid(4, "ul", "li");
+      @include add-gutter(1/10);
+
+      li {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}

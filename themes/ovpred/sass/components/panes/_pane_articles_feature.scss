@@ -1,0 +1,8 @@
+.pane-articles-article-pane-feature {
+  @include breakpoint($bp-mobile ($bp-desktop - 1px)) {
+    @include grid(2, ".view-content", ".views-row");
+  }
+  @include breakpoint($bp-desktop) {
+    @include grid(4, ".view-content", ".views-row");
+  }
+}

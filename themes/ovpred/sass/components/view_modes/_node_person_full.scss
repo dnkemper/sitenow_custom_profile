@@ -1,0 +1,121 @@
+.node--person--full {
+
+  .field--type-image,
+  .node__content,
+  .field--name-body {
+    margin-bottom: 1em;
+  }
+
+  .field--type-image {
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .field--name-field-person-job-title {
+    margin-bottom: 1.5em;
+    @include font-size(1.6);
+    font-style: italic;
+
+    .field__item {
+      margin-bottom: 5px;
+      overflow: hidden;
+
+      &:before {
+        @include icon($fa-var-angle-right);
+        @include font-size(1.3);
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .profile-details {
+    .field {
+      padding-bottom: .5em;
+      margin-bottom: .5em;
+      @include border(2px, bottom);
+    }
+
+    .field__items {
+      float: left;
+      overflow: hidden;
+    }
+
+    .field__label {
+      min-width: 160px;
+      @include font-size(1.4);
+      position: relative;
+      top: 3px;
+      margin-bottom: 5px;
+
+      &:before {
+        margin-right: 5px;
+        min-width: 16px;
+        @include inline-block;
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    .field--name-field-person-email .field__label:before {
+      @include icon($fa-var-envelope);
+    }
+    .field--name-field-person-office .field__label:before {
+      @include icon($fa-var-map-marker);
+    }
+    .field--name-field-person-phone-number .field__label:before {
+      @include icon($fa-var-phone);
+    }
+    .field--name-field-person-twitter .field__label:before {
+      @include icon($fa-var-twitter);
+    }
+    .field--name-field-person-dept .field__label:before {
+      @include icon($fa-var-sitemap);
+    }
+    .field--name-field-person-scheduler .field__label:before {
+      @include icon($fa-var-user);
+    }
+  }
+}
+
+@include breakpoint($bp-mobile ($bp-desktop - 1px)) {
+    .node--person--full.person-photo {
+    @include pie-clearfix;
+    @include add-grid(12);
+    @include add-gutter(1);
+
+    .field--type-image {
+      @include grid-span(5, 1);
+    }
+
+    .node__content {
+      @include grid-span(7, 6);
+    }
+
+    .field--name-body {
+      @include isolation-span(12, 1, 'both');
+    }
+  }
+}
+
+// If the person has a headshot
+@include breakpoint($bp-desktop) {
+  .node--person--full.person-photo {
+    @include pie-clearfix;
+    @include add-grid(12);
+    @include add-gutter(1);
+
+    .field--type-image {
+      @include grid-span(3, 1);
+    }
+
+    .node__content {
+      @include grid-span(9, 4);
+    }
+
+    .field--name-body {
+      @include isolation-span(12, 1, 'both');
+    }
+  }
+}

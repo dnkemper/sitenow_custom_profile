@@ -1,0 +1,32 @@
+.flexslider {
+  border: none;
+  @include box-shadow(initial);
+  background: transparent;
+  margin: 0;
+
+  .flex-control-nav {
+    line-height: 0;
+    bottom: 5px;
+    z-index: 2;
+  }
+
+  .flex-direction-nav a {
+    height: 48px;
+    color: #fff;
+    @include text-shadow(none);
+  }
+
+  .flex-control-paging li {
+    margin: 0 3px;
+
+    a {
+      width: 8px;
+      height: 8px;
+      @include box-shadow(none);
+    }
+
+    a.flex-active {
+      background: $yellow-gold;
+    }
+  }
+}

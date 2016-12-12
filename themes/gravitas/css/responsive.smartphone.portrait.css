@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "steelfish";
+  src: url('fonts/steelfish/steelfish-webfont.eot');
+  src: url('fonts/steelfish/steelfish-webfont.eot?#iefix') format('eot'), url('fonts/steelfish/steelfish-webfont.woff') format('woff'), url('fonts/steelfish/steelfish-webfont.ttf') format('truetype'), url('fonts/steelfish/steelfish-webfont.svg') format('svg');
+}
+
+/*
+ *   Important Information about this CSS File
+ *
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete
+ *   everything) and the file will be skipped when you enable Production Mode in
+ *   the Global theme settings.
+ *
+ * - Read the _README file in this directory, it contains useful help and other information.
+ */
+/* Increase the default font size on small devices */
+html {
+  font-size: 112.5%;
+}
+
+.front #breadcrumb-wrapper .container {
+  display: none;
+}
