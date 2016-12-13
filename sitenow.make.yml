@@ -1,14 +1,13 @@
 core: 7.x
 api: 2
 
-# Defaults
 defaults:
   projects:
     type: module
     subdir: "contrib"
 
+################################# Contrib ####################################
 projects:
-  ################################# Contrib ####################################
   acquia_connector:
     version: "2.17"
 
@@ -358,7 +357,6 @@ projects:
   media_browser_plus:
     download:
       branch: "7.x-3.x"
-      url: "https://git.drupal.org/project/media_browser_plus.git"
       revision: "f0783d22a047a0c574192761604820463e1f8a40"
     patch:
       - "https://www.drupal.org/files/issues/media_browser_plus-fix-administer-permission-2223841-5.patch"
@@ -725,86 +723,73 @@ projects:
   localist_pane:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/localist_pane.git
       tag: "7.x-1.7"
 
   parallaxy_background_image:
     subdir: "custom"
     download:
-      branch: "7.x-2.x"
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
       tag: "7.x-2.2"
 
   sitenow_maps:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/sitenow_maps.git
       tag: "7.x-1.6"
 
   sitenow_media:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/sitenow_media.git
       tag: "7.x-1.6"
 
   sitenow_user_create:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/sitenow_user_create.git
       tag: "7.x-1.4"
 
   sitenow_wysiwyg:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
       tag: "7.x-1.7"
 
   uiowa_acquia_authentication:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
       tag: "7.x-1.11"
 
   uiowa_bar:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/uiowa_bar.git
       tag: "7.x-1.17"
 
   uiowa_events:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/uiowa_events.git
       tag: "7.x-1.4"
 
   uiowa_favicon:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/uiowa_favicon.git
       tag: "7.x-1.2"
 
   uiowa_maui:
     subdir: "custom"
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
       tag: "7.x-1.5"
 
-  # Themes
   parallaxy:
     type: theme
     subdir: ""
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/parallaxy.git
       tag: "7.x-1.0"
 
@@ -812,11 +797,10 @@ projects:
     type: theme
     subdir: ""
     download:
-      branch: "7.x-1.x"
       url: git@github.com:ITS-UofIowa/stellar.git
       tag: "7.x-1.1"
 
-# Libraries
+################################# Libraries ####################################
 libraries:
   backbone:
     download:
@@ -846,7 +830,7 @@ libraries:
   flexslider:
     download:
       type: "git"
-      url: "https://github.com/woothemes/FlexSlider.git"
+      url: "git@github.com:woothemes/FlexSlider.git"
       revision: "ca347d49f3656ff7ba7ea1a043feec7626a0db91"
 
   # Latest 1.x is 1.6.7.
@@ -882,7 +866,6 @@ libraries:
     download:
       type: "git"
       url: "git@github.com:desandro/imagesloaded.git"
-      branch: "master"
       tag: "v2.1.2"
     directory_name: "jquery.imagesloaded"
 
@@ -898,7 +881,6 @@ libraries:
     download:
       type: "git"
       url: "git@github.com:crdeutsch/multiselect.git"
-      branch: "master"
       tag: "v0.3.1"
 
   leaflet:
@@ -917,14 +899,12 @@ libraries:
     download:
       type: "git"
       url: "git@github.com:amsul/pickadate.js.git"
-      branch: "master"
       tag: "3.5.6"
 
   proj4js:
     download:
       type: "git"
       url: "git@github.com:ITS-UofIowa/proj4js.git"
-      branch: "master"
       tag: "1.1.0"
 
   respondjs:
