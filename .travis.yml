@@ -9,6 +9,9 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+services:
+  - memcached
+
 matrix:
   fast_finish: true
 
@@ -19,6 +22,7 @@ before_install:
   - phpenv config-rm xdebug.ini
   - composer self-update
   - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - echo "extension = memcache.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
