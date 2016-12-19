@@ -10,6 +10,7 @@ cache:
     - $HOME/.composer/cache
 
 services:
+  - mysql
   - memcached
 
 matrix:
