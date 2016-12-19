@@ -16,7 +16,6 @@ dependencies[] = rdf
 dependencies[] = syslog
 
 ; Contrib
-dependencies[] = acquia_purge
 dependencies[] = ctools
 dependencies[] = email
 dependencies[] = escape_admin
