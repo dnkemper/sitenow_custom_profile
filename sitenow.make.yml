@@ -909,9 +909,9 @@ libraries:
 
   respondjs:
     download:
-      type: "git"
-      url: "git@github.com:scottjehl/Respond.git"
-      tag: "1.4.2"
+      type: file
+      url: https://github.com/scottjehl/Respond/archive/1.4.2.tar.gz
+      subtree: Respond-1.4.2/dest
 
   responsive_navigation:
     download:
