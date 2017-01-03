@@ -718,6 +718,8 @@ projects:
     type: theme
     version: "3.4"
     subdir: ""
+    patch:
+      - "https://www.drupal.org/files/issues/radix-2772783-2.patch"
 
   ################################# Custom #####################################
   localist_pane:
