@@ -16,7 +16,7 @@ function sitenow_install() {
 
   // Only enable if running on Acquia Cloud to avoid site install errors.
   if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
-    module_enable('acquia_purge');
+    module_enable(array('acquia_purge'));
   }
 
   sitenow_add_content_types();
