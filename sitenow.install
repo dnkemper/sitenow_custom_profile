@@ -9,6 +9,16 @@ function sitenow_install() {
 
   module_enable(array('sitenow_media', 'sitenow_wysiwyg', 'toolbar'));
 
+  // Only enable if the extension is loaded to avoid site install error.
+  if (extension_loaded('memcache') || extension_loaded('memcached')) {
+    module_enable(array('memcache'));
+  }
+
+  // Only enable if running on Acquia Cloud to avoid site install errors.
+  if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+    module_enable(array('acquia_purge'));
+  }
+
   sitenow_add_content_types();
   sitenow_add_default_blocks();
   sitenow_enable_theme_settings();
