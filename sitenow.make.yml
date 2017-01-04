@@ -875,7 +875,6 @@ libraries:
     download:
       type: "git"
       url: "git@github.com:odyniec/imgareaselect.git"
-      branch: "master"
       tag: "v0.9.11-rc.1"
     directory_name: "jquery.imgareaselect"
 
