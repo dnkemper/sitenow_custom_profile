@@ -253,7 +253,7 @@ function ovpred_blocks_thank_content() {
   $content = array(
     '#type' => 'link',
     '#title' => t('Thank a staff member'),
-    '#href' => 'https://workflow.uiowa.edu/entry/new/2483/10342924/a',
+    '#href' => 'https://workflow.uiowa.edu/form/thankyou',
     '#options' => array(
       'attributes' => array('class' => array('ovpred-thank-link')),
       'external' => TRUE,
