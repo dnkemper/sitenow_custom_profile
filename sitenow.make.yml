@@ -807,6 +807,11 @@ libraries:
       type: "get"
       url: "https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip"
 
+  chosen:
+    download:
+      type: "get"
+      url: "https://github.com/harvesthq/chosen/releases/download/v1.6.2/chosen_v1.6.2.zip"
+
   ckeditor:
     download:
       type: "get"
