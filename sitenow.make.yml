@@ -130,7 +130,7 @@ projects:
     version: "1.5"
 
   diff:
-    version: "3.2"
+    version: "3.3"
 
   disqus:
     version: "1.12"
