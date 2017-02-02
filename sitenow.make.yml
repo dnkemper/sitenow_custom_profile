@@ -602,7 +602,7 @@ projects:
     version: "1.2"
 
   viewfield:
-    version: "2.0"
+    version: "2.1"
 
   views:
     version: "3.14"
