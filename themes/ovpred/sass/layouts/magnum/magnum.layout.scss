@@ -1,0 +1,25 @@
+/*******************************************************************************
+ * magnum.layout.scss
+ *
+ * Styling of the "Magnum" layout
+ * grids with Singularity.
+ ******************************************************************************/
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "../../variables/breakpoints";
+
+// Set Singularity grid variables.
+@include add-grid(12);
+@include add-gutter(1/2);
+
+.panel-display--magnum {
+  @include pie-clearfix;
+
+  .panel-pane {
+    margin-bottom: 0;
+    padding: 3em 0 ;
+  }
+}
+
+.magnum-region {}

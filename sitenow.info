@@ -1,10 +1,8 @@
 name = SiteNow Custom
 description = "ITS Web Services SiteNow custom installation profile"
-version = 7.x-2.10
 core = 7.x
 
 ; Core
-
 dependencies[] = block
 dependencies[] = image
 dependencies[] = list
@@ -18,7 +16,6 @@ dependencies[] = rdf
 dependencies[] = syslog
 
 ; Contrib
-dependencies[] = acquia_purge
 dependencies[] = ctools
 dependencies[] = email
 dependencies[] = escape_admin
@@ -28,7 +25,6 @@ dependencies[] = hs_menu
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = logintoboggan
-dependencies[] = memcache
 dependencies[] = menu_admin_per_menu
 dependencies[] = menu_link_weight
 dependencies[] = metatag

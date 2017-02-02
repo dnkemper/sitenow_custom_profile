@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OVPRED Impact Data Views feature.
+ */
+
+include_once 'ovpred_impact_data_views.features.inc';

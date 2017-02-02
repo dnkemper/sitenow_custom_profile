@@ -9,12 +9,23 @@ function sitenow_install() {
 
   module_enable(array('sitenow_media', 'sitenow_wysiwyg', 'toolbar'));
 
+  // Only enable if the extension is loaded to avoid site install error.
+  if (extension_loaded('memcache') || extension_loaded('memcached')) {
+    module_enable(array('memcache'));
+  }
+
+  // Only enable if running on Acquia Cloud to avoid site install errors.
+  if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+    module_enable(array('acquia_purge'));
+  }
+
   sitenow_add_content_types();
   sitenow_add_default_blocks();
   sitenow_enable_theme_settings();
   sitenow_create_new_roles_and_perms();
   sitenow_create_menus();
   sitenow_set_vars();
+  sitenow_set_private_files();
 }
 
 
@@ -42,6 +53,9 @@ function sitenow_enable_theme_settings() {
 function sitenow_create_new_roles_and_perms() {
   require_once drupal_get_path('profile', 'sitenow') . '/includes/sitenow.roles.inc';
   sitenow_default_roles();
+
+  // Enabling here because roles do not exist yet when enabled through .info file dependency.
+  module_enable(array('sitenow_user_create'));
 
   // Set automatic role population for Web Services and Web Services Student groups.
   $role = user_role_load_by_name('administrator');
@@ -79,10 +93,30 @@ function sitenow_set_vars() {
   variable_set('expire_file_file', '1');
 
   // Set variable for webform exports.
-  variable_set('webform_export_path', 'public://webform_results');
+  variable_set('webform_export_path', 'private://webform_results');
 
   // Hide error reporting by default.
   variable_set('error_level', ERROR_REPORTING_HIDE);
+}
+
+// This function is used to setup the private files system.
+function sitenow_set_private_files() {
+  // Get the config path.
+  $conf_path = conf_path(FALSE);
+  // Create private file path.
+  $private = "../acquia-files/" . $conf_path . "/files-private";
+
+  // Save the file systems settings form with the private file system location.
+  module_load_include('inc', 'system', 'system.admin');
+  $form_state = array();
+  $form_state['values']['file_private_path'] = $private;
+  $form_state['values']['op'] = 'Save configuration';
+  drupal_form_submit('system_file_system_settings', $form_state);
+
+  // Skip the scheme selection on file entity upload forms.
+  if (module_exists('file_entity')) {
+    variable_set('file_entity_file_upload_wizard_skip_scheme', 1);
+  }
 }
 
 /**
@@ -152,10 +186,9 @@ function sitenow_update_7201() {
 }
 
 /**
- * Set export path for webform submissions.
+ * Deprecated update hook.
  */
 function sitenow_update_7202() {
-  variable_set('webform_export_path', 'public://webform_results');
 }
 
 /**
@@ -164,6 +197,156 @@ function sitenow_update_7202() {
 function sitenow_update_7203() {
   if (!module_exists('syslog')) {
     module_enable(array('syslog'));
+  }
+}
+
+/**
+ * Configure private file system.
+ */
+function sitenow_update_7204() {
+
+  // Check for captcha on non-listed forms.
+  $captcha = variable_get('captcha_default_challenge_on_nonlisted_forms');
+  if ($captcha == 1) {
+    variable_set('captcha_default_challenge_on_nonlisted_forms', '0');
+  }
+
+  sitenow_set_private_files();
+
+  if ($captcha == 1) {
+    variable_set('captcha_default_challenge_on_nonlisted_forms', '1');
+  }
+
+  // Convert all file webform components from the public to private file system.
+  if (module_exists('webform')) {
+    $result = db_query('SELECT nid, cid, extra FROM {webform_component} WHERE type = :type', array(':type' => 'file'));
+    foreach ($result as $record) {
+      // Grab the extra column and change the scheme.
+      $extra = unserialize($record->extra);
+      $extra['scheme'] = 'private';
+
+      // Update this record's extra column based on cid and nid.
+      $query = db_update('webform_component')
+        ->condition('cid', $record->cid)
+        ->condition('nid', $record->nid)
+        ->fields(array(
+          'extra' => serialize($extra),
+        ))
+        ->execute();
+    }
+  }
+
+  // Allow users who can access all webform results to view private files.
+  $roles = user_roles(FALSE, 'access all webform results');
+  $permissions = array(
+    'view private files',
+  );
+  foreach ($roles as $rid => $role) {
+    user_role_grant_permissions($rid, $permissions);
+    drush_log('Assigning view private files permission to ' . $role . ' role', 'success');
+  }
+
+  // Allow users who can access own webform results to view own private files.
+  $roles = user_roles(FALSE, 'access own webform results');
+  $permissions = array(
+    'view own private files',
+  );
+  foreach ($roles as $rid => $role) {
+    user_role_grant_permissions($rid, $permissions);
+    drush_log('Assigning view own private files permission to ' . $role . ' role', 'success');
+  }
+
+  // Set variable for webform exports.
+  variable_set('webform_export_path', 'private://webform_results');
+
+  // Reset the stream wrappers so we can use private://.
+  drupal_static_reset('file_get_stream_wrappers');
+
+  // Get all file ids of webform file uploads.
+  $file_query = db_query('SELECT fid FROM {file_managed} WHERE uri LIKE :prefix', array(':prefix' => db_like('public://webform/') . '%'));
+
+  $fids = array_keys($file_query->fetchAllKeyed(0, 0));
+
+  // Move files using File API.
+  $files = file_load_multiple($fids);
+  if (!empty($files)) {
+    $count = count($fids);
+    drush_log('Attempting to move ' . $count . ' files', 'status');
+    foreach ($files as $file) {
+      // Check to see if file exists.
+      if (file_exists($file->uri)) {
+        $destination = drupal_dirname(str_replace('public:', 'private:', $file->uri));
+
+        if (file_prepare_directory($destination, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
+          file_move($file, $destination, FILE_EXISTS_RENAME);
+        }
+      }
+    }
+  }
+
+  // Remove webform directory from public file system.
+  file_unmanaged_delete_recursive('public://webform');
+}
+
+/**
+ * Remove custom allowed extensions for files uploaded through webforms.
+ */
+function sitenow_update_7205(&$sandbox) {
+  if (module_exists('webform')) {
+    // If this is the first pass through this update function then set some variables.
+    if (!isset($sandbox['total'])) {
+      $result = db_query("SELECT form_key FROM {webform_component} WHERE type='file'");
+      $sandbox['total'] = $result->rowCount();
+      $sandbox['current'] = 0;
+    }
+
+    // The number of form components to process per pass.
+    $components_per_pass = 10;
+
+    // Get the form components to process during this pass.
+    $result = db_query_range("SELECT nid, cid, extra FROM {webform_component} WHERE type='file'", $sandbox['current'], $components_per_pass);
+    while ($row = $result->fetchAssoc()) {
+      // Un-serialize the value.
+      $extra_array = unserialize($row['extra']);
+      // Check if custom extensions have been added.
+      if (!empty($extra_array['filtering']['addextensions'])) {
+        $custom_extensions = $extra_array['filtering']['addextensions'];
+
+        // Remove custom extensions from "types" array.
+        $extra_array['filtering']['types'] = array_diff($extra_array['filtering']['types'], array_map('trim', explode(',', $custom_extensions)));
+
+        // Change the value of "addextensions".
+        $extra_array['filtering']['addextensions'] = '';
+
+        // Re-serialize the value.
+        $extra = serialize($extra_array);
+
+        // Update the value in the database.
+        db_update('webform_component')
+        ->fields(array('extra' => $extra))
+        ->condition('nid', $row['nid'])
+        ->condition('cid', $row['cid'])
+        ->execute();
+
+        // Output a message about this change.
+        drupal_set_message(t('The extentions @extensions were removed from node @nid', array('@extensions' => $custom_extensions, '@nid' => $row['nid'])));
+      }
+
+      // Increment "current" by 1.
+      $sandbox['current']++;
+
+      // Set the value for finished. If current == total then finished will be 1, signifying we are done.
+      $sandbox['#finished'] = ($sandbox['current'] / $sandbox['total']);
+    }
+  }
+}
+
+/**
+ * Enable SiteNow User Create.
+ */
+function sitenow_update_7206() {
+  if (!module_exists('sitenow_user_create')) {
+    module_enable(array('sitenow_user_create'));
   }
 }
 

@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the OVPRED Image Slideshow module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function ovpred_image_slideshow_install() {
+  $item = array(
+    'link_path' => 'admin/structure/entityqueue/list/ovpred_slideshow/subqueues/1/edit',
+    'link_title' => 'Edit Slideshow Queue',
+    'menu_name' => 'shortcut-set-1',
+    'weight' => 0,
+    'plid' => 0,
+    'module' => 'ovpred_image_slideshow',
+  );
+  menu_link_save($item);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ovpred_image_slideshow_uninstall() {
+  menu_delete_links('ovpred_image_slideshow');
+}

@@ -1,0 +1,5 @@
+name = "OVPRED Core"
+description = "Common functionality for all OVPRED sites"
+package = "OVPRED"
+core = 7.x
+hidden = TRUE

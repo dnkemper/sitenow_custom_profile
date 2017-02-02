@@ -1,0 +1,47 @@
+.pane-articles-article-pane-testimonial-news {
+  @include breakpoint($bp-mobile) {
+    .view-display-id-article_pane_testimonial_news > .view-content {
+      @include pie-clearfix;
+      @include add-grid(2);
+      @include add-gutter(1/4);
+      @include breakpoint($bp-desktop) {
+        @include add-gutter(1/16);
+      }
+
+      .views-row-1 {
+        @include grid-span(1,1);
+      }
+      .views-row-2 {
+        @include grid-span(1,2);
+      }
+
+    }
+    .views-footer {
+      clear:both;
+    }
+  }
+  @include breakpoint($bp-desktop) {
+    @include add-grid(3);
+    @include add-gutter(1/12);
+
+    .view-display-id-article_pane_testimonial_news > .view-content {
+      @include grid-span(2,1);
+    }
+    .view-display-id-article_pane_testimonial_news > .view-footer {
+      @include grid-span(1,3);
+    }
+
+    .node--article--testimonial .field--type-image {
+      max-width:150px;
+    }
+  }
+  .view-display-id-article_pane_testimonial_news > .view-content h3 {
+    @include font-size(2.1);
+  }
+
+  .view-footer {
+    > p {
+      @include font-size(2.4);
+    }
+  }
+}

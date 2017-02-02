@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Code for the OVPRED Image Slideshow feature.
+ */
+
+include_once 'ovpred_image_slideshow.features.inc';
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function ovpred_image_slideshow_entity_info_alter(&$entity_info) {
+  $entity_info['file']['view modes']['ovpred_slideshow_image'] = array(
+    'label' => t('OVPRED Slideshow Image'),
+    'custom settings' => TRUE,
+  );
+}

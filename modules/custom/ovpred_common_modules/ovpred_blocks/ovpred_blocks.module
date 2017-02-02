@@ -1,0 +1,420 @@
+<?php
+/**
+ * Provides custom blocks for Office of the Vice President for Research and
+ * Economic Development affiliated websites.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function ovpred_blocks_block_info() {
+  $blocks['ovpred_branding'] = array(
+    'info' => t('OVPRED footer branding'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'footer',
+    'status' => 1,
+  );
+  $blocks['ovpred_contact'] = array(
+    'info' => t('OVPRED contact info'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'footer',
+    'status' => 1,
+  );
+
+  $blocks['ovpred_thank'] = array(
+    'info' => t('Thank a staff member'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'footer',
+    'status' => 1,
+  );
+
+  $blocks['ovpred_social'] = array(
+    'info' => t('Social media'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'footer',
+    'status' => 1,
+  );
+
+  $blocks['ovpred_units'] = array(
+    'info' => t('Research and Economic Development units'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'sub_footer',
+    'status' => 1,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function ovpred_blocks_block_configure($delta = '') {
+  $form = array();
+  // Add the text area to the contact information form.
+  if ($delta == 'ovpred_contact') {
+      $address = '<p>Office of the Vice President for Research and Economic Development<br/>
+2660 UCC<br/>
+Iowa City, IA  52242</p>';
+
+    $form['address'] = array(
+      '#type' => 'text_format',
+      '#title' => t('Address'),
+      '#default_value' => variable_get('ovpred_blocks_address', $address),
+    );
+
+    $form['phone'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Phone'),
+      '#default_value' => variable_get('ovpred_blocks_phone', '319-335-2119'),
+    );
+
+    $form['fax'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Fax'),
+      '#default_value' => variable_get('ovpred_blocks_fax', '319-335-2104'),
+    );
+
+    $form['email'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Webmaster email'),
+      '#default_value' => variable_get('ovpred_blocks_email', 'research-webmaster@uiowa.edu'),
+    );
+  }
+
+  if ($delta == 'ovpred_social') {
+
+    $form['youtube'] = array(
+      '#type' => 'textfield',
+      '#title' => t('YouTube URL'),
+      '#default_value' => variable_get('ovpred_blocks_youtube'),
+    );
+
+    $form['twitter'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Twitter Profile/List URL'),
+      '#default_value' => variable_get('ovpred_blocks_twitter'),
+    );
+
+    $form['facebook'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Facebook profile URL'),
+      '#default_value' => variable_get('ovpred_blocks_facebook'),
+    );
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function ovpred_blocks_block_save($delta = '', $edit = array()) {
+  // Save the contact information form.
+  if ($delta == 'ovpred_contact') {
+    variable_set('ovpred_blocks_address', $edit['address']['value']);
+    variable_set('ovpred_blocks_phone', $edit['phone']);
+    variable_set('ovpred_blocks_fax', $edit['fax']);
+    variable_set('ovpred_blocks_email', $edit['email']);
+  }
+
+  // Save the social links form.
+  if ($delta == 'ovpred_social') {
+    variable_set('ovpred_blocks_youtube', $edit['youtube']);
+    variable_set('ovpred_blocks_twitter', $edit['twitter']);
+    variable_set('ovpred_blocks_facebook', $edit['facebook']);
+  }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ovpred_blocks_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'ovpred_branding':
+
+      $block['subject'] = NULL;
+      $block['content'] = ovpred_blocks_branding_content();
+      break;
+
+    case 'ovpred_contact':
+
+      $block['subject'] = t('Contact Us');
+      $block['content'] = ovpred_blocks_contact_content();
+      break;
+
+    case 'ovpred_thank':
+
+      $block['subject'] = NULL;
+      $block['content'] = ovpred_blocks_thank_content();
+      break;
+
+    case 'ovpred_social':
+
+      $block['subject'] = t('Connect');
+      $block['content'] = ovpred_blocks_social_content();
+      break;
+
+    case 'ovpred_units':
+
+      $block['subject'] = NULL;
+      $block['content'] = ovpred_blocks_units_content();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Branding block content.
+ */
+function ovpred_blocks_branding_content() {
+
+  $image = theme('image',
+    array(
+      'path' => base_path() . drupal_get_path('module', 'ovpred_blocks') . '/images/ovpred_white.png',
+      'alt' => 'Office of the Vice President for Research and Economic Development'
+      )
+    );
+
+  $content = array(
+    '#type' => 'link',
+    '#title' => $image,
+    '#href' => 'http://research.uiowa.edu',
+    '#options' => array(
+      'attributes' => array('class' => array('ovpred-main-link')),
+      'external' => TRUE,
+      'html' => TRUE
+    ),
+  );
+
+  return $content;
+}
+
+/**
+ * Contact us block content.
+ */
+function ovpred_blocks_contact_content() {
+  $address = 'Office of the Vice President for Research and Economic Development<br/>
+2660 UCC<br/>
+Iowa City, IA  52242';
+
+  $phone = variable_get('ovpred_blocks_phone', '319-335-2119');
+
+  $fax = check_plain(variable_get('ovpred_blocks_fax', '319-335-2104'));
+
+  $email = check_plain(variable_get('ovpred_blocks_email', 'research-webmaster@uiowa.edu'));
+
+  $content = array(
+    'address' => array(
+      '#prefix' => '<div class="ovpred-address">',
+      '#markup' => variable_get('ovpred_blocks_address', $address),
+      '#suffix' => '</div>',
+    ),
+  );
+
+  if(!empty($phone)) {
+    $content['phone'] = array(
+      '#prefix' => '<div class="ovpred-phone">' . t('Phone: '),
+      '#type' => 'link',
+      '#title' => check_plain($phone),
+      '#href' => 'tel:' . check_plain($phone),
+      '#options' => array('external' => TRUE),
+      '#suffix' => '</div>',
+    );
+  }
+
+  if(!empty($fax)) {
+    $content['fax'] = array(
+      '#prefix' => '<div class="ovpred-fax">' . t('Fax: '),
+      '#markup' => check_plain($fax),
+      '#suffix' => '</div>',
+    );
+  }
+
+  if(!empty($email)) {
+    $content['email'] = array(
+      '#prefix' => '<div class="ovpred-email">',
+      '#type' => 'link',
+      '#title' => check_plain($email),
+      '#href' => 'mailto:' . check_plain($email),
+      '#options' => array('external' => TRUE),
+      '#suffix' => '</div>',
+    );
+  }
+
+  return $content;
+}
+
+/**
+ * Thank a staff member block content.
+ */
+function ovpred_blocks_thank_content() {
+
+  $content = array(
+    '#type' => 'link',
+    '#title' => t('Thank a staff member'),
+    '#href' => 'https://workflow.uiowa.edu/form/thankyou',
+    '#options' => array(
+      'attributes' => array('class' => array('ovpred-thank-link')),
+      'external' => TRUE,
+    ),
+  );
+
+  return $content;
+}
+
+/**
+ * Social block content.
+ */
+function ovpred_blocks_social_content() {
+
+  $youtube = variable_get('ovpred_blocks_youtube');
+
+  $twitter = variable_get('ovpred_blocks_twitter');
+
+  $facebook = variable_get('ovpred_blocks_facebook');
+
+  $content = array();
+
+  if(!empty($youtube)) {
+    $content['youtube'] = array(
+      '#type' => 'link',
+      '#title' => t('YouTube'),
+      '#href' => $youtube,
+      '#options' => array(
+        'attributes' => array('class' => array('ovpred-youtube')),
+        'external' => TRUE,
+      ),
+    );
+  }
+
+  if(!empty($twitter)) {
+    $content['twitter'] = array(
+      '#type' => 'link',
+      '#title' => t('Twitter'),
+      '#href' => $twitter,
+      '#options' => array(
+        'attributes' => array('class' => array('ovpred-twitter')),
+        'external' => TRUE,
+      ),
+    );
+  }
+
+  if(!empty($facebook)) {
+    $content['facebook'] = array(
+      '#type' => 'link',
+      '#title' => t('Facebook'),
+      '#href' => $facebook,
+      '#options' => array(
+        'attributes' => array('class' => array('ovpred-facebook')),
+        'external' => TRUE,
+      ),
+    );
+  }
+
+  return $content;
+}
+
+/**
+ * Reporting units block content.
+ */
+function ovpred_blocks_units_content() {
+
+  $path = drupal_get_path('module', 'ovpred_blocks');
+
+  $content = array(
+    'wrapper' => array(
+      '#prefix' => '<div role="contentinfo">',
+      '#suffix' => '</div>',
+      'title' => array(
+        '#prefix' => '<div id="tab-container" role="tablist"><h2>',
+        'link' => array(
+          '#prefix' => '<a href="#tab1focus" id="tab1" class="tab ovpred-units-title" role="tab" aria-selected="true" aria-expanded="false" tabindex="0" title="Click to expand">',
+          '#suffix' => '</a>',
+          '#markup' => t('Research and Economic Development units'),
+        ),
+        '#suffix' => '</h2></div>',
+      ),
+      'content' => array(
+        '#prefix' => '<div class="ovpred-units-content" id="ovpred-units-content" aria-labelledby="tab1" role="tabpanel">',
+        '#suffix' => '</div>',
+        'administration' => array(
+          '#prefix' => '<div class="unit-group administration">',
+          '#suffix' => '</div>',
+          '#title' => t('Research Administration'),
+          '#theme' => 'item_list',
+          '#items' => array(
+            l('Office of Research and Economic Development', 'http://research.uiowa.edu/'),
+            l('Office of Animal Resources', 'http://animal.research.uiowa.edu/'),
+            l('Conflict of Interest in Research Office', 'http://coi.research.uiowa.edu/'),
+            l('Division of Sponsored Programs', 'http://dsp.research.uiowa.edu/'),
+            l('Environmental Health & Safety Office', 'http://ehs.research.uiowa.edu/'),
+            l('Human Subjects Office', 'http://hso.research.uiowa.edu/'),
+            l('Research Information Systems', 'http://ris.research.uiowa.edu/'),
+          ),
+        ),
+        'economic' => array(
+          '#prefix' => '<div class="unit-group economic-development">',
+          '#suffix' => '</div>',
+          '#title' => t('Economic Development'),
+          '#theme' => 'item_list',
+          '#items' => array(
+            l('UI Research Park', 'http://researchpark.uiowa.edu/'),
+            l('UI Research Foundation', 'http://research.uiowa.edu/uirf/'),
+            l('UI Ventures', 'http://uiventures.uiowa.edu/'),
+          ),
+        ),
+        'facilities' => array(
+          '#prefix' => '<div class="unit-group core-facilities">',
+          '#suffix' => '</div>',
+          '#title' => t('Core Facilities'),
+          '#theme' => 'item_list',
+          '#items' => array(
+            l('Central Microscopy Facility', 'http://cmrf.research.uiowa.edu/'),
+            l('Fermentation Facility', 'https://cbb.research.uiowa.edu/'),
+            l('High Resolution Mass Spectrometry Facility', 'http://hrmsf.research.uiowa.edu/'),
+            l('High Throughput Screening Facility', 'http://pharmacy.uiowa.edu/high-throughput-screening-facility'),
+          ),
+        ),
+        'museums' => array(
+          '#prefix' => '<div class="unit-group museums-centers-outreach">',
+          '#suffix' => '</div>',
+          '#title' => t('Museums & Collections'),
+          '#theme' => 'item_list',
+          '#items' => array(
+            l('Office of the State Archaeologist', 'http://archaeology.uiowa.edu/'),
+            t('<a href="@pentacrest">Pentacrest Museums</a><ul><li><a href="@oldcap">Old Capitol Museum</a></li><li><a href="@natural">Museum of Natural History</a></li></ul>',
+              array(
+                '@pentacrest' => 'http://discover.research.uiowa.edu/university-iowa-museums',
+                '@oldcap' => 'https://oldcap.uiowa.edu/',
+                '@natural' => 'http://www.uiowa.edu/mnh/',
+            )),
+            l('Mobile Museum', 'http://discover.research.uiowa.edu/mobile-museum'),
+          ),
+        ),
+        'centers' => array(
+          '#prefix' => '<div class="unit-group centers">',
+          '#suffix' => '</div>',
+          '#title' => t('Centers'),
+          '#theme' => 'item_list',
+          '#items' => array(
+            l('Public Policy Center', 'http://ppc.uiowa.edu/'),
+            l('Obermann Center for Advanced Studies', 'http://obermann.uiowa.edu/'),
+            l('State Hygienic Laboratory', 'http://www.shl.uiowa.edu/'),
+            l('Iowa Consortium for Substance Abuse Research & Evaluation', 'http://iconsortium.subst-abuse.uiowa.edu/'),
+            l('Injury Prevention Research Center', 'https://www.public-health.uiowa.edu/iprc/'),
+            l('Center for Health Effects of Environmental Contamination', 'http://www.cheec.uiowa.edu/'),
+            l('Center for Global and Regional Environmental Research', 'http://cgrer.uiowa.edu/'),
+          ),
+        ),
+      ),
+    ),
+    '#attached' => array(
+      'js' => array(
+        $path . '/js/units.js' => array('weight'=> 100),
+      )
+    )
+  );
+
+  return $content;
+}
