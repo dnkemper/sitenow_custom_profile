@@ -245,7 +245,7 @@ projects:
     version: "1.0"
 
   form_builder:
-    version: "1.19"
+    version: "1.20"
 
   geocoder:
     version: "1.3"
