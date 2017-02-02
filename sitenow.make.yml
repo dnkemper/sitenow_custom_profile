@@ -661,7 +661,7 @@ projects:
     version: "1.2"
 
   workbench_access:
-    version: "1.4"
+    version: "1.5"
 
   # This module is obsolete and sites using it should use Workbench Media.
   workbench_files:
