@@ -353,7 +353,7 @@ function sitenow_update_7206() {
 /**
  * Enable menu link management modules.
  */
-function sitenow_update_7204() {
+function sitenow_update_7207() {
   if (!module_exists('hs_menu')) {
     module_enable(array('hierarchical_select', 'hs_menu'), FALSE);
   }
