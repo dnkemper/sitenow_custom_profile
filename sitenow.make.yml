@@ -268,7 +268,7 @@ projects:
     version: "2.3"
 
   hidden_captcha:
-    version: "1.0"
+    version: "1.1"
 
   hierarchical_select:
     download:
