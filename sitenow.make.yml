@@ -271,10 +271,7 @@ projects:
     version: "1.1"
 
   hierarchical_select:
-    download:
-      branch: "7.x-3.x"
-      url: "https://git.drupal.org/project/hierarchical_select.git"
-      revision: "3c9fe023ee66832a20c9fe7ec0578c03f429b7f6"
+    version: "3.0-beta7"
 
   imagecache_external:
     version: "2.1"
