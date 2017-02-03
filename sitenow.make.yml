@@ -709,11 +709,8 @@ projects:
 
   radix:
     type: theme
-    version: "3.4"
+    version: "3.6"
     subdir: ""
-    patch:
-      - "https://www.drupal.org/files/issues/radix-2772783-2.patch"
-      - "https://www.drupal.org/files/issues/radix-search_includes_during-2847486-3.patch"
 
   ################################# Custom #####################################
   localist_pane:
