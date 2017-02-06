@@ -42,7 +42,7 @@ projects:
     version: "1.0"
 
   better_exposed_filters:
-    version: "3.2"
+    version: "3.4"
 
   better_formats:
     version: "1.0-beta2"
@@ -130,7 +130,7 @@ projects:
     version: "1.5"
 
   diff:
-    version: "3.2"
+    version: "3.3"
 
   disqus:
     version: "1.12"
@@ -178,7 +178,7 @@ projects:
     version: "1.1"
 
   fb_likebox:
-    version: "2.2"
+    version: "2.3"
 
   features:
     version: "2.10"
@@ -245,7 +245,7 @@ projects:
     version: "1.0"
 
   form_builder:
-    version: "1.19"
+    version: "1.20"
 
   geocoder:
     version: "1.3"
@@ -268,13 +268,10 @@ projects:
     version: "2.3"
 
   hidden_captcha:
-    version: "1.0"
+    version: "1.1"
 
   hierarchical_select:
-    download:
-      branch: "7.x-3.x"
-      url: "https://git.drupal.org/project/hierarchical_select.git"
-      revision: "3c9fe023ee66832a20c9fe7ec0578c03f429b7f6"
+    version: "3.0-beta7"
 
   imagecache_external:
     version: "2.1"
@@ -307,7 +304,7 @@ projects:
     version: "3.0-alpha3"
 
   leaflet:
-    version: "1.3"
+    version: "1.4"
 
   lexicon:
     download:
@@ -355,11 +352,7 @@ projects:
       - "https://www.drupal.org/files/issues/media-wysiwyg_alt_and_title-2416701-13.patch"
 
   media_browser_plus:
-    download:
-      branch: "7.x-3.x"
-      revision: "f0783d22a047a0c574192761604820463e1f8a40"
-    patch:
-      - "https://www.drupal.org/files/issues/media_browser_plus-fix-administer-permission-2223841-5.patch"
+    version: "3.0-beta4"
 
   media_sharestream:
     version: "1.0-alpha1"
@@ -386,7 +379,7 @@ projects:
     version: "1.2"
 
   metatag:
-    version: "1.18"
+    version: "1.20"
 
   migrate:
     version: "2.8"
@@ -433,6 +426,8 @@ projects:
 
   paragraphs:
     version: "1.0-rc4"
+    patch:
+      - "https://www.drupal.org/files/issues/paragraphs-fix_parents_access-2562463-20-7.x.patch"
 
   pathauto:
     version: "1.3"
@@ -588,7 +583,7 @@ projects:
     version: "1.3"
 
   token:
-    version: "1.6"
+    version: "1.7"
 
   transliteration:
     version: "3.2"
@@ -609,7 +604,7 @@ projects:
     version: "1.2"
 
   viewfield:
-    version: "2.0"
+    version: "2.1"
 
   views:
     version: "3.14"
@@ -644,7 +639,7 @@ projects:
     version: "1.5"
 
   views_slideshow:
-    version: "3.1"
+    version: "3.5"
 
   views_tree:
     version: "2.0"
@@ -659,7 +654,7 @@ projects:
     version: "1.6"
 
   webform_validation:
-    version: "1.12"
+    version: "1.13"
 
   weight:
     version: "2.5"
@@ -668,7 +663,7 @@ projects:
     version: "1.2"
 
   workbench_access:
-    version: "1.4"
+    version: "1.5"
 
   # This module is obsolete and sites using it should use Workbench Media.
   workbench_files:
@@ -716,10 +711,8 @@ projects:
 
   radix:
     type: theme
-    version: "3.4"
+    version: "3.6"
     subdir: ""
-    patch:
-      - "https://www.drupal.org/files/issues/radix-2772783-2.patch"
 
   ################################# Custom #####################################
   localist_pane:
@@ -813,6 +806,11 @@ libraries:
     download:
       type: "get"
       url: "https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip"
+
+  chosen:
+    download:
+      type: "get"
+      url: "https://github.com/harvesthq/chosen/releases/download/v1.6.2/chosen_v1.6.2.zip"
 
   ckeditor:
     download:
