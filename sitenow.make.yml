@@ -42,7 +42,7 @@ projects:
     version: "1.0"
 
   better_exposed_filters:
-    version: "3.3"
+    version: "3.4"
 
   better_formats:
     version: "1.0-beta2"
