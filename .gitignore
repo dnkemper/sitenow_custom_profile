@@ -1,3 +1,4 @@
 libraries/*
 modules/*
 themes/*
+.DS_Store
