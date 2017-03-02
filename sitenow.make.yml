@@ -748,8 +748,10 @@ projects:
   sitenow_wysiwyg:
     subdir: "custom"
     download:
+      type: "git"
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
-      tag: "7.x-1.8"
+      branch: "f/layout-manager"
+      revision: "703e1c5799459e6e7b3dccf9f708599c68af6b79"
 
   uiowa_acquia_authentication:
     subdir: "custom"
