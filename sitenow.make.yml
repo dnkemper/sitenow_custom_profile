@@ -815,7 +815,7 @@ libraries:
   ckeditor:
     download:
       type: "get"
-      url: "http://ckeditor.com/builder/download/41d59fa745033a4ad40cb40fa79ec5b8"
+      url: "http://ckeditor.com/builder/download/e65ee7e1ca0baac7cb0a32bc997542ac"
 
   ckeditor_autogrow:
     download:
