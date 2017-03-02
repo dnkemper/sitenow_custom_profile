@@ -143,10 +143,10 @@ function sitenow_set_private_files() {
 function sitenow_update_7200() {
   if (module_exists('ldap_authorization')) {
     $select = db_select('ldap_authorization', 'l')
-        ->fields('l', array('mappings'))
-        ->condition('sid', 'HawkID')
-        ->execute()
-        ->fetchAll();
+      ->fields('l', array('mappings'))
+      ->condition('sid', 'HawkID')
+      ->execute()
+      ->fetchAll();
 
     $count = count($select);
 
@@ -156,7 +156,7 @@ function sitenow_update_7200() {
       $mappings = explode("\n", $current_mappings);
 
       foreach ($mappings as $mapping) {
-        $parts[] = explode('|',$mapping);
+        $parts[] = explode('|', $mapping);
       }
 
       foreach ($parts as $part) {
@@ -341,10 +341,10 @@ function sitenow_update_7205(&$sandbox) {
 
         // Update the value in the database.
         db_update('webform_component')
-        ->fields(array('extra' => $extra))
-        ->condition('nid', $row['nid'])
-        ->condition('cid', $row['cid'])
-        ->execute();
+          ->fields(array('extra' => $extra))
+          ->condition('nid', $row['nid'])
+          ->condition('cid', $row['cid'])
+          ->execute();
 
         // Output a message about this change.
         drupal_set_message(t('The extentions @extensions were removed from node @nid', array('@extensions' => $custom_extensions, '@nid' => $row['nid'])));
