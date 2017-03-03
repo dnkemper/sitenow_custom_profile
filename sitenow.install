@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install and uninstall tasks for SiteNow profile.
+ */
+
+/**
  * Implements hook_install().
  *
  * Perform actions to set up the site for this profile.
@@ -28,28 +33,35 @@ function sitenow_install() {
   sitenow_set_private_files();
 }
 
-
-// This functions adds basic page and article content types
+/**
+ * This functions adds basic page and article content types.
+ */
 function sitenow_add_content_types() {
   require_once drupal_get_path('profile', 'sitenow') . '/includes/sitenow.content-types.inc';
   sitenow_content_types();
 }
 
-// This functions adds default blocks
+/**
+ * This functions adds default blocks.
+ */
 function sitenow_add_default_blocks() {
   require_once drupal_get_path('profile', 'sitenow') . '/includes/sitenow.blocks.inc';
   sitenow_enable_blocks();
 }
 
-// This functions enables admin theme
+/**
+ * This functions enables admin theme.
+ */
 function sitenow_enable_theme_settings() {
- // Enable the admin theme.
+  // Enable the admin theme.
   theme_enable(array('seven'));
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
 }
 
-// This functions adds roles and permissions
+/**
+ * This functions adds roles and permissions.
+ */
 function sitenow_create_new_roles_and_perms() {
   require_once drupal_get_path('profile', 'sitenow') . '/includes/sitenow.roles.inc';
   sitenow_default_roles();
@@ -64,7 +76,9 @@ function sitenow_create_new_roles_and_perms() {
   }
 }
 
-// This functions creates menu links
+/**
+ * This functions creates menu links.
+ */
 function sitenow_create_menus() {
   // Create a Home link in the main menu.
   $item = array(
@@ -78,7 +92,9 @@ function sitenow_create_menus() {
   menu_rebuild();
 }
 
-// This function is used to set variables.
+/**
+ * This function is used to set variables.
+ */
 function sitenow_set_vars() {
   // Set image toolkit JPEG quality higher to limit image quality loss.
   variable_set('image_jpeg_quality', '95');
@@ -99,7 +115,9 @@ function sitenow_set_vars() {
   variable_set('error_level', ERROR_REPORTING_HIDE);
 }
 
-// This function is used to setup the private files system.
+/**
+ * This function is used to setup the private files system.
+ */
 function sitenow_set_private_files() {
   // Get the config path.
   $conf_path = conf_path(FALSE);
@@ -125,10 +143,10 @@ function sitenow_set_private_files() {
 function sitenow_update_7200() {
   if (module_exists('ldap_authorization')) {
     $select = db_select('ldap_authorization', 'l')
-        ->fields('l', array('mappings'))
-        ->condition('sid', 'HawkID')
-        ->execute()
-        ->fetchAll();
+      ->fields('l', array('mappings'))
+      ->condition('sid', 'HawkID')
+      ->execute()
+      ->fetchAll();
 
     $count = count($select);
 
@@ -138,7 +156,7 @@ function sitenow_update_7200() {
       $mappings = explode("\n", $current_mappings);
 
       foreach ($mappings as $mapping) {
-        $parts[] = explode('|',$mapping);
+        $parts[] = explode('|', $mapping);
       }
 
       foreach ($parts as $part) {
@@ -323,10 +341,10 @@ function sitenow_update_7205(&$sandbox) {
 
         // Update the value in the database.
         db_update('webform_component')
-        ->fields(array('extra' => $extra))
-        ->condition('nid', $row['nid'])
-        ->condition('cid', $row['cid'])
-        ->execute();
+          ->fields(array('extra' => $extra))
+          ->condition('nid', $row['nid'])
+          ->condition('cid', $row['cid'])
+          ->execute();
 
         // Output a message about this change.
         drupal_set_message(t('The extentions @extensions were removed from node @nid', array('@extensions' => $custom_extensions, '@nid' => $row['nid'])));
