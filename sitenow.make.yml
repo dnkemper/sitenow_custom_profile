@@ -751,7 +751,7 @@ projects:
       type: "git"
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
       branch: "f/layout-manager"
-      revision: "703e1c5799459e6e7b3dccf9f708599c68af6b79"
+      revision: "a26485ab3157734d28ee3239a81f61f9aea28d88"
 
   uiowa_acquia_authentication:
     subdir: "custom"
