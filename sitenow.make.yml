@@ -616,7 +616,7 @@ projects:
     version: "3.1"
 
   views_bulk_operations:
-    version: "3.3"
+    version: "3.4"
 
   views_content_cache:
     version: "3.0-alpha3"
