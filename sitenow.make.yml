@@ -227,7 +227,7 @@ projects:
       revision: "c4dc2a02473f13ddfce58e1b545af1ed6d72c392"
 
   flexslider:
-    version: "2.0-rc1"
+    version: "2.0-rc2"
 
   flexslider_entityreference:
     version: "1.6"
