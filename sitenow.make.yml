@@ -359,7 +359,7 @@ projects:
     version: "3.0"
 
   memcache:
-    version: "1.5"
+    version: "1.6"
 
   menu_admin_per_menu:
     version: "1.1"
