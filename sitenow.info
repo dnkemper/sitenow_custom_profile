@@ -48,5 +48,3 @@ dependencies[] = uiowa_acquia_authentication
 ; Features
 test_dependencies[] = sitenow_wysiwyg
 test_dependencies[] = sitenow_media
-
-files[] = sitenow.profile
