@@ -269,7 +269,7 @@ projects:
     version: "1.1"
 
   hierarchical_select:
-    version: "3.0-beta7"
+    version: "3.0-beta8"
 
   imagecache_external:
     version: "2.1"
