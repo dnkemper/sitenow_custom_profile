@@ -423,7 +423,7 @@ projects:
       - "https://www.drupal.org/files/issues/all_tabs_have_active-2776899-2.patch"
 
   paragraphs:
-    version: "1.0-rc4"
+    version: "1.0-rc5"
     patch:
       - "https://www.drupal.org/files/issues/paragraphs-fix_parents_access-2562463-20-7.x.patch"
 
