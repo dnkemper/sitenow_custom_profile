@@ -371,7 +371,7 @@ projects:
     version: "2.7"
 
   menu_link_weight:
-    version: "1.2"
+    version: "1.4"
 
   menu_position:
     version: "1.2"
