@@ -72,9 +72,7 @@ projects:
     version: "3.5"
 
   captcha:
-    download:
-      branch: "7.x-1.x"
-      revision: "e11efbea85a7ba50a8d98265df2acbd9a6e6eedf"
+    version: "1.4"
 
   ckeditor:
     version: "1.17"
@@ -229,7 +227,7 @@ projects:
       revision: "c4dc2a02473f13ddfce58e1b545af1ed6d72c392"
 
   flexslider:
-    version: "2.0-rc1"
+    version: "2.0-rc2"
 
   flexslider_entityreference:
     version: "1.6"
@@ -271,7 +269,7 @@ projects:
     version: "1.1"
 
   hierarchical_select:
-    version: "3.0-beta7"
+    version: "3.0-beta8"
 
   imagecache_external:
     version: "2.1"
@@ -361,7 +359,7 @@ projects:
     version: "3.0"
 
   memcache:
-    version: "1.5"
+    version: "1.6"
 
   menu_admin_per_menu:
     version: "1.1"
@@ -373,13 +371,13 @@ projects:
     version: "2.7"
 
   menu_link_weight:
-    version: "1.2"
+    version: "1.4"
 
   menu_position:
     version: "1.2"
 
   metatag:
-    version: "1.20"
+    version: "1.21"
 
   migrate:
     version: "2.8"
@@ -417,7 +415,7 @@ projects:
     version: "3.4"
 
   panels:
-    version: "3.8"
+    version: "3.9"
 
   panels_ajax_tab:
     version: "1.2"
@@ -425,7 +423,7 @@ projects:
       - "https://www.drupal.org/files/issues/all_tabs_have_active-2776899-2.patch"
 
   paragraphs:
-    version: "1.0-rc4"
+    version: "1.0-rc5"
     patch:
       - "https://www.drupal.org/files/issues/paragraphs-fix_parents_access-2562463-20-7.x.patch"
 
@@ -607,7 +605,7 @@ projects:
     version: "2.1"
 
   views:
-    version: "3.14"
+    version: "3.15"
     patch:
       - "https://www.drupal.org/files/issues/views-representative_view-1417090-71.patch"
 
@@ -618,7 +616,7 @@ projects:
     version: "3.1"
 
   views_bulk_operations:
-    version: "3.3"
+    version: "3.4"
 
   views_content_cache:
     version: "3.0-alpha3"
@@ -639,7 +637,7 @@ projects:
     version: "1.5"
 
   views_slideshow:
-    version: "3.5"
+    version: "3.6"
 
   views_tree:
     version: "2.0"
