@@ -46,5 +46,3 @@ dependencies[] = uiowa_favicon
 ; Features
 test_dependencies[] = sitenow_wysiwyg
 test_dependencies[] = sitenow_media
-
-files[] = sitenow.profile
