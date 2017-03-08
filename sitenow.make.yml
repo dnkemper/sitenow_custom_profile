@@ -223,7 +223,7 @@ projects:
   find_text:
     download:
       branch: "7.x-1.x"
-      url: "https://git.drupal.org/sandbox/themarkahrens/2719743.git"
+      url: "https://git.drupal.org/project/find_text.git"
       revision: "c4dc2a02473f13ddfce58e1b545af1ed6d72c392"
 
   flexslider:
