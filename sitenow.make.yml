@@ -89,6 +89,21 @@ projects:
   classy_paragraphs:
     version: "1.0"
 
+  commerce:
+    version: "1.13"
+
+  commerce_autosku:
+    version: "1.2"
+
+  commerce_checkout_progress:
+    version: "1.5"
+
+  commerce_features:
+    version: "1.2"
+
+  commerce_fieldgroup_panes:
+    version: "1.1"
+
   conditional_fields:
     version: "3.0-alpha2"
 
