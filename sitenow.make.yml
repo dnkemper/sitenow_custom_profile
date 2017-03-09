@@ -838,7 +838,7 @@ libraries:
   fancybox:
     download:
       type: "get"
-      url: "https://github.com/fancyapps/fancyBox/zipball/v2.1.5"
+      url: "https://github.com/fancyapps/fancybox/archive/v2.1.5.zip"
 
   flexslider:
     download:
