@@ -72,9 +72,7 @@ projects:
     version: "3.5"
 
   captcha:
-    download:
-      branch: "7.x-1.x"
-      revision: "e11efbea85a7ba50a8d98265df2acbd9a6e6eedf"
+    version: "1.4"
 
   ckeditor:
     version: "1.17"
@@ -90,6 +88,21 @@ projects:
 
   classy_paragraphs:
     version: "1.0"
+
+  commerce:
+    version: "1.13"
+
+  commerce_autosku:
+    version: "1.2"
+
+  commerce_checkout_progress:
+    version: "1.5"
+
+  commerce_features:
+    version: "1.2"
+
+  commerce_fieldgroup_panes:
+    version: "1.1"
 
   conditional_fields:
     version: "3.0-alpha2"
@@ -225,11 +238,11 @@ projects:
   find_text:
     download:
       branch: "7.x-1.x"
-      url: "https://git.drupal.org/sandbox/themarkahrens/2719743.git"
+      url: "https://git.drupal.org/project/find_text.git"
       revision: "c4dc2a02473f13ddfce58e1b545af1ed6d72c392"
 
   flexslider:
-    version: "2.0-rc1"
+    version: "2.0-rc2"
 
   flexslider_entityreference:
     version: "1.6"
@@ -271,7 +284,7 @@ projects:
     version: "1.1"
 
   hierarchical_select:
-    version: "3.0-beta7"
+    version: "3.0-beta8"
 
   imagecache_external:
     version: "2.1"
@@ -361,7 +374,7 @@ projects:
     version: "3.0"
 
   memcache:
-    version: "1.5"
+    version: "1.6"
 
   menu_admin_per_menu:
     version: "1.1"
@@ -373,13 +386,13 @@ projects:
     version: "2.7"
 
   menu_link_weight:
-    version: "1.2"
+    version: "1.4"
 
   menu_position:
     version: "1.2"
 
   metatag:
-    version: "1.20"
+    version: "1.21"
 
   migrate:
     version: "2.8"
@@ -417,7 +430,7 @@ projects:
     version: "3.4"
 
   panels:
-    version: "3.8"
+    version: "3.9"
 
   panels_ajax_tab:
     version: "1.2"
@@ -425,7 +438,7 @@ projects:
       - "https://www.drupal.org/files/issues/all_tabs_have_active-2776899-2.patch"
 
   paragraphs:
-    version: "1.0-rc4"
+    version: "1.0-rc5"
     patch:
       - "https://www.drupal.org/files/issues/paragraphs-fix_parents_access-2562463-20-7.x.patch"
 
@@ -607,7 +620,7 @@ projects:
     version: "2.1"
 
   views:
-    version: "3.14"
+    version: "3.15"
     patch:
       - "https://www.drupal.org/files/issues/views-representative_view-1417090-71.patch"
 
@@ -618,7 +631,7 @@ projects:
     version: "3.1"
 
   views_bulk_operations:
-    version: "3.3"
+    version: "3.4"
 
   views_content_cache:
     version: "3.0-alpha3"
@@ -639,7 +652,7 @@ projects:
     version: "1.5"
 
   views_slideshow:
-    version: "3.5"
+    version: "3.6"
 
   views_tree:
     version: "2.0"
@@ -825,7 +838,7 @@ libraries:
   fancybox:
     download:
       type: "get"
-      url: "https://github.com/fancyapps/fancyBox/zipball/v2.1.5"
+      url: "https://github.com/fancyapps/fancybox/archive/v2.1.5.zip"
 
   flexslider:
     download:
@@ -936,8 +949,8 @@ libraries:
       url: "git@github.com:mehrpadin/Superfish-for-Drupal.git"
       revision: "85e468d71a4882677d0e3596446a91620f9bdcec"
     patch:
-      - "https://raw.github.com/ITS-UofIowa/SiteNow-Custom-Libraries/master/superfish/global_modernizr_and_mq_detection_check.patch"
-      - "https://raw.github.com/ITS-UofIowa/SiteNow-Custom-Libraries/master/superfish/sfautomaticwidth-calc-less-than-100.patch"
+      - "https://patch-diff.githubusercontent.com/raw/mehrpadin/Superfish-for-Drupal/pull/6.patch"
+      - "https://patch-diff.githubusercontent.com/raw/mehrpadin/Superfish-for-Drupal/pull/18.patch"
 
   underscore:
     download:
