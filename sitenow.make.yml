@@ -695,6 +695,8 @@ projects:
     download:
       revision: "898d022cf7d0b6c6a6e7d813199d561b4ad39f8b"
       branch: "7.x-2.x"
+    patch:
+      - "https://www.drupal.org/files/issues/2679106-ckeditor-reuse-cache-busting-query-898d02-do-not-test.patch"
 
   wysiwyg_filter:
     version: "1.6-rc3"
@@ -744,7 +746,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_maps.git
-      tag: "7.x-1.6"
+      tag: "7.x-1.7"
 
   sitenow_media:
     subdir: "custom"
