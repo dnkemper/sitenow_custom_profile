@@ -367,3 +367,50 @@ function sitenow_update_7206() {
     module_enable(array('sitenow_user_create'));
   }
 }
+
+/**
+ * Enable menu link management modules.
+ */
+function sitenow_update_7207() {
+  if (!module_exists('hs_menu')) {
+    module_enable(array('hierarchical_select', 'hs_menu'), FALSE);
+  }
+
+  if (!module_exists('menu_link_weight')) {
+    module_enable(array('menu_link_weight'), FALSE);
+  }
+
+  if (!module_exists('menu_admin_per_menu')) {
+    module_enable(array('menu_admin_per_menu'), FALSE);
+
+    // If role has permission "Administer menus and menu items",
+    // add Menu Admin per Menu permissions.
+    $roles = user_roles(FALSE, 'administer menu');
+    $all_menus = menu_get_menus();
+
+    // Remove menus only admins should have access to.
+    $admin_menus = array(
+      'devel' => 'Development',
+      'management' => 'Management',
+      'navigation' => 'Navigation',
+      'user-menu' => 'User menu',
+    );
+
+    $editor_menus = array_diff($all_menus, $admin_menus);
+
+    // Build array of permissions to change.
+    $permissions = array(
+      'administer menu' => FALSE,
+      'access administration pages' => TRUE,
+    );
+
+    foreach ($editor_menus as $menu => $mid) {
+      $permissions['administer ' . $menu . ' menu items'] = TRUE;
+    }
+
+    // Change permissions.
+    foreach ($roles as $rid => $role) {
+      user_role_change_permissions($rid, $permissions);
+    }
+  }
+}

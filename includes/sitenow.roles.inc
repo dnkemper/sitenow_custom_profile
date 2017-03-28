@@ -28,7 +28,7 @@ function sitenow_default_roles() {
   $webmaster_role_id = 4;
 
   $editor_permissions = array(
-    'administer menu',
+    'administer main-menu menu items',
     'administer nodes',
     'access content overview',
     'view own unpublished content',
@@ -42,13 +42,14 @@ function sitenow_default_roles() {
     'edit any page content',
     'delete own page content',
     'delete any page content',
+    'access administration pages',
     'view the administration theme',
     'access site reports',
     'access toolbar',
   );
 
   $webmaster_permissions = array(
-    'administer menu',
+    'administer main-menu menu items',
     'administer nodes',
     'access content overview',
     'view own unpublished content',
@@ -62,6 +63,7 @@ function sitenow_default_roles() {
     'edit any page content',
     'delete own page content',
     'delete any page content',
+    'access administration pages',
     'view the administration theme',
     'access site reports',
     'access toolbar',
