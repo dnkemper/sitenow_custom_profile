@@ -414,3 +414,12 @@ function sitenow_update_7207() {
     }
   }
 }
+
+/**
+ * Enable uiowa_favicon.
+ */
+function sitenow_update_7208() {
+  if (!module_exists('uiowa_favicon')) {
+    module_enable(array('uiowa_favicon'), FALSE);
+  }
+}
