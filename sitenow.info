@@ -44,6 +44,7 @@ dependencies[] = xmlsitemap
 ; Custom
 dependencies[] = uiowa_bar
 dependencies[] = uiowa_acquia_authentication
+dependencies[] = uiowa_favicon
 
 ; Features
 test_dependencies[] = sitenow_wysiwyg
