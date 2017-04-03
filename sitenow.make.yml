@@ -830,7 +830,7 @@ libraries:
   ckeditor:
     download:
       type: "get"
-      url: "http://ckeditor.com/builder/download/e65ee7e1ca0baac7cb0a32bc997542ac"
+      url: "http://ckeditor.com/builder/download/20d9fcf762919892a111fdf622d45bf6"
 
   ckeditor_autogrow:
     download:
