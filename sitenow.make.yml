@@ -486,7 +486,7 @@ projects:
     version: "3.6"
 
   rabbit_hole:
-    version: "2.23"
+    version: "2.24"
 
   radix_layouts:
     version: "3.4"
