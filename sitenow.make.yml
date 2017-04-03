@@ -314,7 +314,7 @@ projects:
       - "https://www.drupal.org/files/issues/description-change_1447300_1.patch"
 
   jquery_update:
-    version: "3.0-alpha3"
+    version: "3.0-alpha4"
 
   leaflet:
     version: "1.4"
