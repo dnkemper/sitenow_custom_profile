@@ -287,7 +287,7 @@ projects:
     version: "3.0-beta8"
 
   imagecache_external:
-    version: "2.1"
+    version: "2.2"
 
   imagefield_crop:
     version: "1.1"
@@ -314,7 +314,7 @@ projects:
       - "https://www.drupal.org/files/issues/description-change_1447300_1.patch"
 
   jquery_update:
-    version: "3.0-alpha3"
+    version: "3.0-alpha4"
 
   leaflet:
     version: "1.4"
@@ -456,6 +456,9 @@ projects:
 
   picture:
     version: "2.13"
+    
+  plug:
+    version: "1.1"
 
   # Initial patch was from https://www.drupal.org/node/2257075#comment-9557255
   # However, it does not apply to a module in a profile. Patched with
@@ -483,7 +486,7 @@ projects:
     version: "3.6"
 
   rabbit_hole:
-    version: "2.23"
+    version: "2.24"
 
   radix_layouts:
     version: "3.4"
@@ -493,6 +496,9 @@ projects:
 
   references:
     version: "2.1"
+    
+  registry_autoload:
+    version: "1.3"
 
   relation:
     version: "1.0"
@@ -512,6 +518,9 @@ projects:
     download:
       revision: "8c79fdc59b9600f30508c26fca11694239a76510"
       branch: "7.x-2.x"
+      
+  restful:
+    version: "2.16"
 
   robotstxt:
     version: "1.3"
@@ -646,13 +655,13 @@ projects:
     version: "1.2"
 
   views_fieldsets:
-    version: "1.3"
+    version: "2.1"
 
   views_load_more:
     version: "1.5"
 
   views_slideshow:
-    version: "3.6"
+    version: "3.8"
 
   views_tree:
     version: "2.0"
@@ -764,7 +773,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
-      tag: "7.x-1.9"
+      tag: "7.x-1.10"
 
   uiowa_acquia_authentication:
     subdir: "custom"
@@ -775,8 +784,8 @@ projects:
   uiowa_bar:
     subdir: "custom"
     download:
-      url: git@github.com:ITS-UofIowa/uiowa_bar.git
-      tag: "7.x-1.18"
+      url: git@github.com:uiowa/uiowa_bar.git
+      tag: "7.x-2.0"
 
   uiowa_events:
     subdir: "custom"
@@ -788,7 +797,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_favicon.git
-      tag: "7.x-1.2"
+      tag: "7.x-1.3"
 
   uiowa_maui:
     subdir: "custom"
