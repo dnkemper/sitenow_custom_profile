@@ -287,7 +287,7 @@ projects:
     version: "3.0-beta8"
 
   imagecache_external:
-    version: "2.1"
+    version: "2.2"
 
   imagefield_crop:
     version: "1.1"
