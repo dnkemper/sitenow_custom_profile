@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * @file
+ */
+
+/**
  * Implements hook_process_page().
  */
 function ovpred_process_page(&$variables) {

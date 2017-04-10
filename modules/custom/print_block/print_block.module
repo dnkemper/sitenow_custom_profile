@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Module file for print_block module.
@@ -12,30 +13,32 @@ function print_block_block_info() {
   $blocks['print_block'] = array(
     'info' => t('Print Block'),
     'status' => TRUE,
-    'region' => 'three_33_third',  // Not usually provided, but is provided as courtesy to the OVPR_Common theme.
-    'cache' => DRUPAL_CACHE_PER_PAGE, // Block will be cached per page
+  // Not usually provided, but is provided as courtesy to the OVPR_Common theme.
+    'region' => 'three_33_third',
+  // Block will be cached per page.
+    'cache' => DRUPAL_CACHE_PER_PAGE,
   );
-   
+
   return $blocks;
 }
 
 /**
  * Implements hook_block_view().
  */
-function print_block_block_view($delta='') {
+function print_block_block_view($delta = '') {
   $block = array();
- 
-  switch($delta) {
-    case 'print_block' :
+
+  switch ($delta) {
+    case 'print_block':
       $block['subject'] = 'Print this page';
       $block['content'] = print_link();
       break;
   }
- 
+
   return $block;
 }
 
-/* 
+/**
  * Implements hook_block_configure().
  */
 function print_block_block_configure($delta = '') {
@@ -65,7 +68,7 @@ function print_block_block_configure($delta = '') {
       '#required' => FALSE,
     );
     $form['print_block_icon']['print_block_icon_path']['#states'] = array(
-      'visible' => array (':input[name="print_block_show_icon"]' => array('checked' => TRUE),),
+      'visible' => array(':input[name="print_block_show_icon"]' => array('checked' => TRUE)),
     );
     $form['print_block_icon']['print_block_icon_upload'] = array(
       '#type' => 'file',
@@ -74,7 +77,7 @@ function print_block_block_configure($delta = '') {
       '#description' => t("Use this field to upload an icon."),
     );
     $form['print_block_icon']['print_block_icon_upload']['#states'] = array(
-      'visible' => array (':input[name="print_block_show_icon"]' => array('checked' => TRUE),),
+      'visible' => array(':input[name="print_block_show_icon"]' => array('checked' => TRUE)),
     );
   }
 
@@ -85,33 +88,33 @@ function print_block_block_configure($delta = '') {
  * Implements hook_form_FORM_ID_alter().
  */
 function print_block_form_block_admin_configure_alter(&$form, &$form_state, $form_id) {
-  // Alter the block configuration form for print_block module and delta only
-  if(arg(4) == 'print_block' && arg(5) == 'print_block'){
+  // Alter the block configuration form for print_block module and delta only.
+  if (arg(4) == 'print_block' && arg(5) == 'print_block') {
     $form['#submit'][] = 'print_block_config_form_submit';
   }
 }
 
 /**
- * Process the submitted form
+ * Process the submitted form.
  */
 function print_block_config_form_submit($form, &$form_state) {
-  // Set necessary variables
+  // Set necessary variables.
   variable_set('print_block_show_icon', $form_state['values']['print_block_show_icon']);
   variable_set('print_block_link', $form_state['values']['print_block_link']);
 
-  // Check the destination folder, attempt to create it if it does't exist
+  // Check the destination folder, attempt to create it if it does't exist.
   $directory_path = 'public://print_block';
   file_prepare_directory($directory_path, FILE_CREATE_DIRECTORY);
 
-  // Store the current icon path
+  // Store the current icon path.
   $path = $form_state['values']['print_block_icon_path'];
 
-  // Define the validation settings
+  // Define the validation settings.
   $validate = array(
     'file_validate_is_image' => array(),
   );
 
-  // Check for a new uploaded icon, and use that instead
+  // Check for a new uploaded icon, and use that instead.
   if ($file = file_save_upload('print_block_icon_upload', $validate)) {
     $parts = pathinfo($file->filename);
     $filename = $directory_path . '/' . $parts['basename'];
@@ -126,20 +129,22 @@ function print_block_config_form_submit($form, &$form_state) {
  * Logic used to add a link to the print version of the node.
  */
 function print_link() {
-  // Check to make sure this is a node
-  if(arg(0) == 'node' && is_numeric(arg(1))) {
-    $node_id = arg(1); // Return the NID
+  // Check to make sure this is a node.
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    // Return the NID.
+    $node_id = arg(1);
     global $base_url;
-    // Print ready url
+    // Print ready url.
     $url = $base_url . "/print/" . $node_id;
-    // URL of the little printer image
+    // URL of the little printer image.
     $image_src = variable_get('print_block_icon_path');
-    // Create varibale out of print_block_link since empty() won't accept functions as arguments
+    // Create varibale out of print_block_link since empty() won't accept functions as arguments.
     $print_block_link = variable_get('print_block_link');
-    //Create alt text variable depending on text field
+    // Create alt text variable depending on text field.
     if ((variable_get('print_block_show_icon') == TRUE) && (empty($print_block_link))) {
       $alt_text = 'Print this page';
-    } else {
+    }
+    else {
       $alt_text = '';
     }
     // Create the array we need for theme_image()
@@ -150,23 +155,24 @@ function print_link() {
       'attributes' => array('class' => 'print-img', 'id' => 'print-img'),
     );
 
-    
-    // Theme the image
-    if(variable_get('print_block_show_icon') == TRUE) {
+    // Theme the image.
+    if (variable_get('print_block_show_icon') == TRUE) {
       $image = theme_image($image_variables);
-    } else {
+    }
+    else {
       $image = '';
     }
-    // Create the link
-    $link = l(variable_get('print_block_link') . $image, $url, 
+    // Create the link.
+    $link = l(variable_get('print_block_link') . $image, $url,
       array(
-        'html' => TRUE, 
-        'attributes' => array('target'=>'_blank', 'class' => array('print-block-link'), 'id' => 'print-block-link',), 
+        'html' => TRUE,
+        'attributes' => array('target' => '_blank', 'class' => array('print-block-link'), 'id' => 'print-block-link'),
       )
     );
     return $link;
-  } 
-  else { // Whatever it is we're looking at, it's not a node so don't return anything
+  }
+  // Whatever it is we're looking at, it's not a node so don't return anything.
+  else {
     $node_id = NULL;
     return;
   }

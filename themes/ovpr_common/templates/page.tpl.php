@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Adaptivetheme implementation to display a single Drupal page.
@@ -152,8 +153,10 @@
       <div id="nav-wrapper">
         <div class="container clearfix">
           <?php print render($page['menu_bar']); ?>
-          <?php if ($primary_navigation): print $primary_navigation; endif; ?>
-          <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
+          <?php if ($primary_navigation): print $primary_navigation;
+          endif; ?>
+          <?php if ($secondary_navigation): print $secondary_navigation;
+          endif; ?>
         </div>
       </div>
     <?php endif; ?>
@@ -166,14 +169,15 @@
             </div>
           </div>
         </div>    
-    <?php endif; ?>
-    <?php //if ($breadcrumb): ?>
+      <?php endif; ?>
+    <?php
+// If ($breadcrumb): ?>
       <div id="breadcrumb-wrapper">
         <div class="container clearfix">
           <section id="breadcrumb" class="clearfix">
-            <?php 
-              if ($breadcrumb) { 
-                print $breadcrumb; 
+            <?php
+              if ($breadcrumb) {
+                print $breadcrumb;
               } else {
                 print " ";
               }
@@ -181,7 +185,8 @@
           </section>
         </div>
       </div>
-    <?php // endif; ?>
+    <?php
+// endif;. ?>
 
     <?php if ($messages || $page['help']): ?>
       <div id="messages-help-wrapper">
@@ -246,7 +251,9 @@
 
             <?php print $feed_icons; ?>
 
-            <?php print render($title_suffix); // Prints page level contextual links ?>
+            <?php
+// Prints page level contextual links. print render($title_suffix);
+?>
 
           </<?php print $tag; ?>>
 

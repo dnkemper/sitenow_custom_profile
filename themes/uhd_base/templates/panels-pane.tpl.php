@@ -1,7 +1,8 @@
 <?php
+
 /**
- * @file panels-pane.tpl.php
- * Main panel pane template
+ * @file Panels-pane.tpl.php
+ * Main panel pane template.
  *
  * Variables available:
  * - $pane->type: the content type inside this pane
@@ -16,7 +17,7 @@
  * - $display: The complete panels display object containing all kinds of
  *   data including the contexts and all of the other panes being displayed.
  */
-//dpm($display, '$display');
+// dpm($display, '$display');.
 ?>
 <?php if ($pane_prefix): ?>
   <?php print $pane_prefix; ?>

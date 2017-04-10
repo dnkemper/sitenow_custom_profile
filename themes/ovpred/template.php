@@ -27,9 +27,10 @@ function ovpred_breadcrumb(&$variables) {
         $attributes['class'][] = 'last';
         $output .= '<li' . drupal_attributes($attributes) . '>' . $item . '</li>' . '';
       }
-      else
+      else {
         $output .= '<li' . drupal_attributes($attributes) . '>' . $item . '</li>' . $seperator;
       }
+    }
     $output .= '</ul></div>';
     return $output;
   }

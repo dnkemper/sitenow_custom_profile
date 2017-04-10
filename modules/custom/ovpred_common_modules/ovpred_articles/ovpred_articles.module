@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the OVPRED Articles feature.
@@ -51,36 +52,36 @@ function ovpred_articles_form_ovpred_article_node_form_alter(&$form, &$form_stat
  * Implements hook_preprocess_node().
  */
 function ovpred_articles_preprocess_node(&$variables) {
-  if($variables['type'] == 'ovpred_article') {
+  if ($variables['type'] == 'ovpred_article') {
     // Create a new theme hook suggestion for node--ovpred_article--iowanow.tpl.php
-    // to be used instead of node--article.tpl.php
+    // to be used instead of node--article.tpl.php.
     $suggestion = 'node__ovpred_article';
     $variables['theme_hook_suggestions'][] = $suggestion;
     $variables['theme_hook_suggestions'][] = $suggestion . '__' . $variables['view_mode'];
 
-    if(!empty($variables['field_ovpred_article_ian_url'])) {
+    if (!empty($variables['field_ovpred_article_ian_url'])) {
       $iowanow = $variables['field_ovpred_article_ian_url'][LANGUAGE_NONE][0]['url'];
       $variables['node_url'] = $iowanow;
-      if(!empty($variables['content']['links']['node']['#links']['node-readmore'])) {
+      if (!empty($variables['content']['links']['node']['#links']['node-readmore'])) {
         $variables['content']['links']['node']['#links']['node-readmore']['href'] = $iowanow;
       }
     }
 
-    if(!empty($variables['field_ovpred_article_img_ovr']) || !empty($variables['field_ovpred_article_image'])) {
+    if (!empty($variables['field_ovpred_article_img_ovr']) || !empty($variables['field_ovpred_article_image'])) {
       $variables['has_image'] = TRUE;
     }
 
-    if(!empty($variables['field_ovpred_article_img_ovr'])) {
+    if (!empty($variables['field_ovpred_article_img_ovr'])) {
       $variables['image_override'] = TRUE;
     }
 
-    if(!empty($variables['field_ovpred_article_image'])) {
+    if (!empty($variables['field_ovpred_article_image'])) {
       $variables['image_default'] = TRUE;
     }
 
     $variables['by_line'] = '';
 
-    if(!empty($variables['field_ovpred_article_by_line'])) {
+    if (!empty($variables['field_ovpred_article_by_line'])) {
       $variables['by_line'] = $variables['field_ovpred_article_by_line'][LANGUAGE_NONE][0]['safe_value'];
     }
   }
@@ -91,7 +92,7 @@ function ovpred_articles_preprocess_node(&$variables) {
  */
 function ovpred_articles_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
   if ($source->id == ('ovpred_subsite_articles_iowanow')) {
-    if(!empty($entity->field_ovpred_article_image)) {
+    if (!empty($entity->field_ovpred_article_image)) {
       // Load the file.
       $file = file_load($entity->field_ovpred_article_image[LANGUAGE_NONE][0]['fid']);
       // Save provided alt text to the field on the file entity.
@@ -116,4 +117,3 @@ function ovpred_articles_process_node(&$variables) {
     }
   }
 }
-

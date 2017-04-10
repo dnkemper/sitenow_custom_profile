@@ -77,7 +77,6 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-
 ?>
 <div<?php print $attributes; ?>>
   <div<?php print $content_attributes; ?>>
@@ -87,17 +86,17 @@
       hide($content['comments']);
       hide($content['links']);
       if($node->field_ovpred_ac_email){
-        print '<a href="mailto:'.$node->field_ovpred_ac_email[LANGUAGE_NONE][0]['email'].'">'.$node->title.'</a>';
+        print '<a href="mailto:' . $node->field_ovpred_ac_email[LANGUAGE_NONE][0]['email'] . '">' . $node->title . '</a>';
       }
       else{
         print $node->title;
       }
 
       if($node->field_ovpred_ac_department_title){
-        print ', '.$node->field_ovpred_ac_department_title[LANGUAGE_NONE][0]['value'];
+        print ', ' . $node->field_ovpred_ac_department_title[LANGUAGE_NONE][0]['value'];
       }
       if($node->field_ovpred_ac_telephone){
-        print ', '.$node->field_ovpred_ac_telephone[LANGUAGE_NONE][0]['value'];
+        print ', ' . $node->field_ovpred_ac_telephone[LANGUAGE_NONE][0]['value'];
       }
     ?>
     </p>

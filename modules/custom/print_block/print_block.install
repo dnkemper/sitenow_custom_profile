@@ -2,8 +2,7 @@
 
 /**
  * @file
- *
- * Install and uninstall tasks for Print Block
+ * Install and uninstall tasks for Print Block.
  */
 
 /**
@@ -12,8 +11,8 @@
 function print_block_install() {
   // Show an icon by default.
   variable_set('print_block_show_icon', TRUE);
-   // Set the default icon path.
-  variable_set('print_block_icon_path', drupal_get_path('module', 'print_block').'/printer-wh.png');
+  // Set the default icon path.
+  variable_set('print_block_icon_path', drupal_get_path('module', 'print_block') . '/printer-wh.png');
   // Display no text link by default.
   variable_set('print_block_link', '');
 }
@@ -22,9 +21,9 @@ function print_block_install() {
  * Implements hook_uninstall().
  */
 function print_block_uninstall() {
-   // Delete the show icon variable.
-   variable_del('print_block_show_icon');
-  // Delete the icon path variable. 
+  // Delete the show icon variable.
+  variable_del('print_block_show_icon');
+  // Delete the icon path variable.
   variable_del('print_block_icon_path');
   // Delete the link text variable.
   variable_del('print_block_link');
@@ -37,7 +36,7 @@ function print_block_update_7100(&$sandbox) {
   // Show an icon by default.
   variable_set('print_block_show_icon', TRUE);
   // Set the default icon path.
-  variable_set('print_block_icon_path', drupal_get_path('module', 'print_block').'/printer-wh.png');
-  // Display no text link by default.   
+  variable_set('print_block_icon_path', drupal_get_path('module', 'print_block') . '/printer-wh.png');
+  // Display no text link by default.
   variable_set('print_block_link', '');
 }

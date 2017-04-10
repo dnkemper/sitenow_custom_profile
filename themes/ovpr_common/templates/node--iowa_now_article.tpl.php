@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Adaptivetheme implementation to display a node.
@@ -95,7 +96,7 @@
  */
 
 /**
- * Hiding Content and Printing it Separately
+ * Hiding Content and Printing it Separately.
  *
  * Use the hide() function to hide fields and other content, you can render it
  * later using the render() function. Install the Devel module and use

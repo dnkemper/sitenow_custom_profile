@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * Provides custom blocks for Office of the Vice President for Research and
  * Economic Development affiliated websites.
  */
@@ -52,7 +54,7 @@ function ovpred_blocks_block_configure($delta = '') {
   $form = array();
   // Add the text area to the contact information form.
   if ($delta == 'ovpred_contact') {
-      $address = '<p>Office of the Vice President for Research and Economic Development<br/>
+    $address = '<p>Office of the Vice President for Research and Economic Development<br/>
 2660 UCC<br/>
 Iowa City, IA  52242</p>';
 
@@ -172,8 +174,8 @@ function ovpred_blocks_branding_content() {
   $image = theme('image',
     array(
       'path' => base_path() . drupal_get_path('module', 'ovpred_blocks') . '/images/ovpred_white.png',
-      'alt' => 'Office of the Vice President for Research and Economic Development'
-      )
+      'alt' => 'Office of the Vice President for Research and Economic Development',
+    )
     );
 
   $content = array(
@@ -183,7 +185,7 @@ function ovpred_blocks_branding_content() {
     '#options' => array(
       'attributes' => array('class' => array('ovpred-main-link')),
       'external' => TRUE,
-      'html' => TRUE
+      'html' => TRUE,
     ),
   );
 
@@ -212,7 +214,7 @@ Iowa City, IA  52242';
     ),
   );
 
-  if(!empty($phone)) {
+  if (!empty($phone)) {
     $content['phone'] = array(
       '#prefix' => '<div class="ovpred-phone">' . t('Phone: '),
       '#type' => 'link',
@@ -223,7 +225,7 @@ Iowa City, IA  52242';
     );
   }
 
-  if(!empty($fax)) {
+  if (!empty($fax)) {
     $content['fax'] = array(
       '#prefix' => '<div class="ovpred-fax">' . t('Fax: '),
       '#markup' => check_plain($fax),
@@ -231,7 +233,7 @@ Iowa City, IA  52242';
     );
   }
 
-  if(!empty($email)) {
+  if (!empty($email)) {
     $content['email'] = array(
       '#prefix' => '<div class="ovpred-email">',
       '#type' => 'link',
@@ -276,7 +278,7 @@ function ovpred_blocks_social_content() {
 
   $content = array();
 
-  if(!empty($youtube)) {
+  if (!empty($youtube)) {
     $content['youtube'] = array(
       '#type' => 'link',
       '#title' => t('YouTube'),
@@ -288,7 +290,7 @@ function ovpred_blocks_social_content() {
     );
   }
 
-  if(!empty($twitter)) {
+  if (!empty($twitter)) {
     $content['twitter'] = array(
       '#type' => 'link',
       '#title' => t('Twitter'),
@@ -300,7 +302,7 @@ function ovpred_blocks_social_content() {
     );
   }
 
-  if(!empty($facebook)) {
+  if (!empty($facebook)) {
     $content['facebook'] = array(
       '#type' => 'link',
       '#title' => t('Facebook'),
@@ -389,7 +391,7 @@ function ovpred_blocks_units_content() {
                 '@pentacrest' => 'https://discover.research.uiowa.edu/university-iowa-museums',
                 '@oldcap' => 'https://oldcap.uiowa.edu/',
                 '@natural' => 'https://mnh.uiowa.edu/',
-            )),
+              )),
             l('Mobile Museum', 'https://discover.research.uiowa.edu/mobile-museum'),
           ),
         ),
@@ -412,9 +414,9 @@ function ovpred_blocks_units_content() {
     ),
     '#attached' => array(
       'js' => array(
-        $path . '/js/units.js' => array('weight'=> 100),
-      )
-    )
+        $path . '/js/units.js' => array('weight' => 100),
+      ),
+    ),
   );
 
   return $content;

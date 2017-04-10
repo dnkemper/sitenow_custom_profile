@@ -1,12 +1,16 @@
 <?php
 
 /**
+ * @file
+ */
+
+/**
  * Implements hook_preprocess_page().
  */
 function ovpred_preprocess_page(&$variables) {
 
-  // Pass the $needs_container variable to the page template
-  $needs_container = true;
+  // Pass the $needs_container variable to the page template.
+  $needs_container = TRUE;
   // Array with full width layouts.
   $full_width_layouts = array('magnum', 'blue_steel', 'orange_mocha');
 
@@ -24,7 +28,7 @@ function ovpred_preprocess_page(&$variables) {
       // Check to see if the panelized layout is a full width layout.
       foreach ($full_width_layouts as $layout) {
         if ($variables['node']->panelizer['default']->display->layout == $layout) {
-          $needs_container = false;
+          $needs_container = FALSE;
         }
       }
     }
@@ -39,7 +43,7 @@ function ovpred_preprocess_page(&$variables) {
     // Check to see if the panel layout is a full width layout.
     foreach ($full_width_layouts as $layout) {
       if ($panel_layout == $layout) {
-        $needs_container = false;
+        $needs_container = FALSE;
       }
     }
   }

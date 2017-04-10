@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file.
  *
  * Custom region wrapper for full-width regions.

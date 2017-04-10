@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Adativetheme implementation to display a block.

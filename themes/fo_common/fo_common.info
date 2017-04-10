@@ -451,4 +451,3 @@ regions[three_33_bottom] = Footer panel - bottom
 
   ; Custom CSS
   settings[custom_css] = ''
-
