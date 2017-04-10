@@ -169,8 +169,9 @@ function print_link() {
       'attributes' => array(
         'target' => '_blank',
         'class' => array('print-block-link'),
-        'id' => 'print-block-link'),
-      )
+        'id' => 'print-block-link',
+      ),
+    )
     );
 
     return $link;

@@ -30,12 +30,15 @@ function fo_common_preprocess_field(&$variables, $hook) {
     case 'field_record_active':
       $variables['label'] = $variables['label'] . ' <span class="sub-label">(Used during the course of University or departmental operations)</span>';
       break;
+
     case 'field_record_location':
       $variables['label'] = $variables['label'] . ' <span class="sub-label">(Central Administrative Unit or Local Department)</span>';
       break;
+
     case 'field_record_inactive':
       $variables['label'] = $variables['label'] . ' <span class="sub-label">(No longer needed during regular course of operations, but retained for legal or business purposes)</span>';
       break;
+
     case 'field_record_permanent':
       $variables['label'] = $variables['label'] . ' <span class="sub-label">(May be required for legal, historical or business purposes or recommended for records of enduring value)</span>';
       break;
@@ -54,10 +57,10 @@ function fo_common_block_view_book_navigation_alter(&$data, $block) {
 
   if ($current_bid) {
     // Only display this block when the user is browsing a book.
-  $select = db_select('node', 'n')
-    ->fields('n', array('title'))
-    ->condition('n.nid', $node->book['bid'])
-    ->addTag('node_access');
+    $select = db_select('node', 'n')
+      ->fields('n', array('title'))
+      ->condition('n.nid', $node->book['bid'])
+      ->addTag('node_access');
     $title = $select->execute()->fetchField();
     // Only show the block if the user has view access for the top-level node.
     if ($title) {
