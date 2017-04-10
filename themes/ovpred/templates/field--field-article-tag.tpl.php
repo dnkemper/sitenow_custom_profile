@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Article tag template.
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>

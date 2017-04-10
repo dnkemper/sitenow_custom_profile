@@ -2,8 +2,7 @@
 
 /**
  * @file
- * Template overrides as well as (pre-)process and alter hooks for the
- * ovpred theme.
+ * Template overrides as well as (pre-)process and alter hooks.
  */
 
 /**

@@ -21,9 +21,8 @@
  * 2. Uncomment the required function to use.
  */
 
-
 /**
- * Preprocess variables for the html template.
+ * Implements template_preprocess_html().
  */
 function uhd_base_preprocess_html(&$variables) {
   // Add typekit javascript and load it.
@@ -31,54 +30,8 @@ function uhd_base_preprocess_html(&$variables) {
   drupal_add_js('jQuery(document).ready(function () {try{Typekit.load();}catch(e){}});', 'inline');
 }
 
-
 /**
- * Process variables for the html template.
- */
-/* -- Delete this line if you want to use this function
-function uhd_base_process_html(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables for the page templates.
- */
-/* -- Delete this line if you want to use these functions
-function uhd_base_preprocess_page(&$vars) {
-
-}
-function uhd_base_process_page(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables into the node templates.
- */
-/* -- Delete this line if you want to use these functions
-function uhd_base_preprocess_node(&$vars) {
-}
-function uhd_base_process_node(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables into the comment templates.
- */
-/* -- Delete this line if you want to use these functions
-function uhd_base_preprocess_comment(&$vars) {
-}
-function uhd_base_process_comment(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables into the block templates.
- *
- * Set is_main_menu_block boolean.
+ * Implements template_preprocess_block().
  */
 function uhd_base_preprocess_block(&$vars) {
   $vars['is_main_menu_block'] = FALSE;
@@ -86,7 +39,3 @@ function uhd_base_preprocess_block(&$vars) {
     $vars['is_main_menu_block'] = TRUE;
   }
 }
-/*
-function uhd_base_process_block(&$vars) {
-}
-// */

@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * OVPRED article tags template.
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
