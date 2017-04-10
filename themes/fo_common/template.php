@@ -25,8 +25,8 @@
  * Implements template_preprocess_field().
  */
 function fo_common_preprocess_field(&$variables, $hook) {
-  // Add sub-labels to Records fields with HTML classes for styling
-  switch($variables['element']['#field_name']) {
+  // Add sub-labels to Records fields with HTML classes for styling.
+  switch ($variables['element']['#field_name']) {
     case 'field_record_active':
       $variables['label'] = $variables['label'] . ' <span class="sub-label">(Used during the course of University or departmental operations)</span>';
       break;
@@ -49,7 +49,7 @@ function fo_common_preprocess_field(&$variables, $hook) {
  * Implmenets hook_block_view_MODULE_DELTA_alter().
  */
 function fo_common_block_view_book_navigation_alter(&$data, $block) {
-  // Display the title of the Book Navigation block as plain text, ie not a link
+  // Display the title of the Book Navigation block as plain text, ie not a link.
   $current_bid = 0;
   if ($node = menu_get_object()) {
     $current_bid = empty($node->book['bid']) ? 0 : $node->book['bid'];
