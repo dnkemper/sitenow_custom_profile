@@ -41,7 +41,7 @@
     <ul class="pager">
     <?php if (!empty($prev_url)) : ?>
       <li class="date-prev">
-        <?php print l('previous' . ($mini ? '' : ' ' . t('Prev', array(), array('context' => 'date_nav'))), $prev_url, $prev_options); ?>
+        <?php print l(t('previous') . ($mini ? '' : ' ' . t('Prev', array(), array('context' => 'date_nav'))), $prev_url, $prev_options); ?>
       </li>
     <?php
     endif; ?>
