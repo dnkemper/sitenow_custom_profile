@@ -2,7 +2,6 @@
 
 /**
  * @file
- * @file
  * Template file for the example display.
  *
  * Variables available:
