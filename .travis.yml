@@ -37,11 +37,11 @@ install:
 
 script:
   - phpcs --standard=Drupal,DrupalPractice . --ignore='libraries,modules,themes'
+  - find . -name '*.info' -exec sh -c 'echo "\n; Automatically added by Travis packaging script\nversion = $TRAVIS_TAG" >> "$1"' -- {} \;
   - drush make --yes --force-gitinfofile --concurrency=6 --contrib-destination=profiles/sitenow profiles/sitenow/build-sitenow.make.yml .
   - drush --yes site-install sitenow --db-url=mysql://root@localhost/drupal --site-name=TravisCI
 
 before_deploy:
-  - echo -e "\n; Automatically added by Travis packaging script\nversion = $TRAVIS_TAG" >> profiles/sitenow/sitenow.info
   - rm profiles/sitenow/deploy_key.enc
   - tar -czf build-sitenow.tar.gz -C profiles sitenow
 
