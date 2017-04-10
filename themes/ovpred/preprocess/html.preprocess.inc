@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * HTML preprocess include.
  */
 
 /**

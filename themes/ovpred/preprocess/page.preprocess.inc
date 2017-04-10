@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Page preprocess include.
  */
 
 /**
