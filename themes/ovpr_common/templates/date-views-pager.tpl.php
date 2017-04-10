@@ -31,7 +31,8 @@
 ?>
 <?php if (!empty($pager_prefix)) {print $pager_prefix;
 } ?>
-<div class="date-nav-wrapper clearfix<?php if (!empty($extra_classes)) {print $extra_classes;
+<div class="date-nav-wrapper clearfix
+<?php if (!empty($extra_classes)) {print $extra_classes;
 } ?>">
   <div class="date-nav item-list">
     <div class="date-heading">
