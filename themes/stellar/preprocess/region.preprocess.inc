@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Region preprocess include.
+ */
+
+/**
  * Implements hook_preprocess_region().
  */
 function stellar_preprocess_region(&$variables) {

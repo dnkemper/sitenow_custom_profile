@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Page preprocess include.
+ */
+
+/**
  * Implements hook_preprocess_page().
  */
 function stellar_preprocess_page(&$variables) {

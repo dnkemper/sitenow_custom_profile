@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Block preprocess include.
+ */
+
+/**
  * Implements hook_preprocess_block().
  */
 function stellar_preprocess_block(&$variables) {

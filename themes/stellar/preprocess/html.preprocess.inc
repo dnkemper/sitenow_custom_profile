@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * HTML preprocess include.
+ */
+
+/**
  * Implements hook_preprocess_html().
  */
 function stellar_preprocess_html(&$variables) {
