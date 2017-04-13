@@ -21,8 +21,9 @@ function stellar_form_system_theme_settings_alter(&$form, $form_state) {
   // Add an option to use the theme's default page template file.
   $form['omega']['layouts']['settings']['omega_layout']['#options']['default'] = 'Page Template';
   $form['omega']['layouts']['settings']['omega_layout']['default'] = array(
-      '#description' => t('Use the theme default page.tpl.php file.'),
-    );
+    '#description' => t('Use the theme default page.tpl.php file.'),
+  );
+
   // Set the default option.
   $form['omega']['layouts']['settings']['omega_layout']['#default_value'] = omega_theme_get_setting('omega_layout', FALSE);
 
