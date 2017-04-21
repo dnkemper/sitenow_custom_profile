@@ -1,0 +1,1 @@
+(function(e){e(document).ready(function(){Modernizr.touch||e.stellar({horizontalScrolling:!1});e(".primary-menu").tinyNav({header:"Menu"});e(".tinynav").uniform()})})(jQuery);
