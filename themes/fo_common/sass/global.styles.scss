@@ -201,17 +201,21 @@ hr {
   		 text-decoration: underline;
   	 }
     }
+
   	img {
   		margin-left: 10px;
   		margin-top: 5px;
   	}
+
   	h3 a {
   		color: inherit;
   		text-decoration: none;
   	}
+
   	p {
   		padding-left: 0;
   	}
+
   	ul li {
   		background-color: #464E55;
   		text-align: center;
@@ -236,6 +240,7 @@ hr {
   			}
   		}
     }
+
   	h2.block-title {
   		color: #FFFFFF;
   		float: left;
@@ -246,16 +251,15 @@ hr {
   }
 }
 
-  .region.region-three-33-first {
-	 width: 66.6666%;
-  }
+.region.region-three-33-first {
+ width: 66.6666%;
+}
 
-  .region.region-three-33-third {
-	  float: right;
+.region.region-three-33-third {
+  float: right;
 
-    .block {
-      margin-bottom: 0;
-    }
+  .block {
+    margin-bottom: 0;
   }
 }
 
@@ -1272,7 +1276,6 @@ fieldset#edit-advanced fieldset {
  * Drupal admin tables
  */
 form {
-
   th {
     text-align: left; /* LTR */
     padding-right: 1em; /* LTR */
@@ -1342,7 +1345,6 @@ div {
   }
 }
 
-
 // Otherwise these elements will appear below the "Unpublished" text
 .lt-ie8 {
   .node-unpublished > *,
@@ -1355,7 +1357,6 @@ div {
 /* =============================================================================
  *   Misc overrides for contrib modules
  * ========================================================================== */
-
 /*
  * Admin menu overrides
  */
@@ -1363,7 +1364,6 @@ div {
   margin: 0;
   padding: 0;
 }
-
 
 /*
  * Devel Module
@@ -1398,7 +1398,6 @@ div {
 /* =============================================================================
  *   Panels & Panes
  * ========================================================================== */
-
 .panel-pane {
   margin-bottom: 20px;
 
@@ -1469,39 +1468,6 @@ ul.links {
 // Hide site name on homepage of all sites
 .front h1#page-title {
   display: none;
-}
-
-//Department links
-#depts-links-top {
-  @include breakpoint($tablet-size) {
-    margin: 0;
-    float: right;
-    a {
-      height: 100%;
-      padding: 0 4px;
-      &:hover {
-        color: #000;
-        background-color: #FFC344;
-        height: 100%;
-        @include border-radius(5px);
-      }
-    }
-    li {
-      display: inline;
-      margin: 0 5px;
-      border-left: 1px solid #FFC344;
-      padding-left: 10px;
-      &.first {
-        border-left: none;
-      }
-    }
-  }
-}
-
-.view-id-departments_units h3 {
-  @include breakpoint($tablet-size) {
-    margin-top: 20px;
-  }
 }
 
 // Front page slideshows

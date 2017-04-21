@@ -5,7 +5,7 @@
 /*
  *   Important Information about this CSS File
  *
- * - Do not delete or rename this file, if you do not use it leave it blank (delete 
+ * - Do not delete or rename this file, if you do not use it leave it blank (delete
  *   everything) and the file will be skipped when you enable Production Mode in
  *   the Global theme settings.
  *
@@ -34,54 +34,19 @@
     text-align: right;
     width: 100%;
   }
-  
+
   li {}
-  
+
   a {
 	color: #E0E0E0;
     font-size: 1em;
     vertical-align: middle;
-    
+
     &:hover,
     &:focus {
 	  color: #FFFFFF;
     }
   }
-}
-
-#research-link {
-  float: left;
-  margin-right: 10px;
-  text-transform: uppercase; 
-  margin-top: 2px;
-}
-
-#depts-links-top {
-  margin: 0;
-  float: right;
-  a {
-    height: 100%;
-    padding: 0 4px;
-    &:hover {
-      color: #000;
-      background-color: #FFC344;
-      height: 100%;
-      @include border-radius(5px);
-    }
-  }
-  li {
-    display: inline;
-    margin: 0 5px;
-    border-left: 1px solid #FFC344;
-    padding-left: 10px;
-    &.first {
-      border-left: none;
-    }
-  }
-}
-
-.view-id-departments_units h3 {
-    margin-top: 20px;
 }
 
 // Front page slideshows
@@ -90,7 +55,7 @@
 }
 
 // Arrange bottom panes on GAO front page
-.site-name-grant-accounting-office { 
+.site-name-grant-accounting-office {
   .pane-gao-announcements, .pane-1 {
     float: left;
     width: 50%;
