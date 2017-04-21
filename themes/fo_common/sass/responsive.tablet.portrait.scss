@@ -11,7 +11,7 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
- 
+
 #name-and-slogan {
   float: left;
   margin-bottom: 10px;
@@ -30,14 +30,14 @@
     text-align: right;
     width: 100%;
   }
-  
+
   li {}
-  
+
   a {
   color: #E0E0E0;
     font-size: 1em;
     vertical-align: middle;
-    
+
     &:hover,
     &:focus {
     color: #FFFFFF;
@@ -46,7 +46,7 @@
 }
 
 // Arrange bottom panes on GAO front page
-.site-name-grant-accounting-office { 
+.site-name-grant-accounting-office {
   .pane-gao-announcements, .pane-1 {
     float: left;
     width: 50%;
