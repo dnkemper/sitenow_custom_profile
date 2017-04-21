@@ -1365,6 +1365,19 @@ div {
   padding: 0;
 }
 
+/**
+ * Calendar
+ */
+.view .date-nav-wrapper .date-prev a:before {
+  content: "«";
+  margin-right: 0.5em;
+}
+
+.view .date-nav-wrapper .date-next a:after {
+  content: "»";
+  margin-left: 0.5em;
+}
+
 /*
  * Devel Module
  */
