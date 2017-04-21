@@ -229,7 +229,7 @@
 
             <?php print $feed_icons; ?>
 
-            <?php print render($title_suffix); // Prints page level contextual links ?>
+            <?php print render($title_suffix); ?>
 
           </<?php print $tag; ?>>
 
