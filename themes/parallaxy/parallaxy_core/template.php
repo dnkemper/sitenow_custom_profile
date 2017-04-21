@@ -27,10 +27,10 @@
 function parallaxy_preprocess_html(&$vars) {
   global $theme_key;
 
-  // Implements body class for theme-setting color palette otpions
+  // Implements body class for theme-setting color palette options.
   $vars['classes_array'][] = theme_get_setting('content_wrapper_pattern');
 
-  // Check for and add Parallaxy Scroll Behavior
+  // Check for and add Parallaxy Scroll Behavior.
   $parallax_active = theme_get_setting('parallax');
 
   if ($parallax_active == '1') {
