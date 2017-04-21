@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Adaptivetheme implementation to display the basic html structure of a single

@@ -2,16 +2,14 @@
 
 /**
  * @file
- * Implimentation of hook_form_system_theme_settings_alter()
- *
- * To use replace "parallaxy" with your themeName and uncomment by
- * deleting the comment line to enable.
- *
- * @param $form: Nested array of form elements that comprise the form.
- * @param $form_state: A keyed array containing the current state of the form.
+ * Provides custom theme settings.
  */
-function parallaxy_form_system_theme_settings_alter(&$form, &$form_state)  {
-  // content_wrapper Background Colors
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function parallaxy_form_system_theme_settings_alter(&$form, &$form_state) {
+  // Background options for content_wrapper.
   $form['at-settings']['parallaxy_custom'] = array(
     '#type' => 'fieldset',
     '#title' => t('Custom Theme Styles'),
@@ -330,7 +328,7 @@ function parallaxy_form_system_theme_settings_alter(&$form, &$form_state)  {
     ),
   );
 
-  // content_wrapper Enable Parallax
+  // Enable parallax effect on content_wrapper.
   $parallax_active = array(1 => t('On'), 0 => t('Off'));
 
   $form['at-settings']['parallaxy_custom']['parallax_wrapper'] = array(

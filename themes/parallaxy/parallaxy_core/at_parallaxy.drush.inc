@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains functions only needed for drush integration.
@@ -7,7 +8,7 @@
  */
 
 /**
- * Implementation of hook_drush_command().
+ * Implements hook_drush_command().
  */
 function at_parallaxy_drush_command() {
   $items = array();
@@ -54,9 +55,12 @@ function drush_at_parallaxy($name = NULL, $machine_name = NULL) {
     $machine_name = $name;
   }
   $machine_name = str_replace(' ', '_', strtolower($machine_name));
+
+  // Remove characters not valid in function names.
+  // Functions must begin with an alpha character.
   $search = array(
-    '/[^a-z0-9_]/', // Remove characters not valid in function names.
-    '/^[^a-z]+/',   // Functions must begin with an alpha character.
+    '/[^a-z0-9_]/',
+    '/^[^a-z]+/',
   );
   $machine_name = preg_replace($search, '', $machine_name);
 
@@ -68,7 +72,7 @@ function drush_at_parallaxy($name = NULL, $machine_name = NULL) {
   $subtheme_path = implode('/', $subtheme_path) . '/' . str_replace('_', '-', $machine_name);
 
   // Make a fresh copy of the original subtheme.
-  drush_op('at_parallaxy_copy', $at_parallaxy_path . '/../' .'parallaxy_subtheme', $subtheme_path);
+  drush_op('at_parallaxy_copy', $at_parallaxy_path . '/../' . 'parallaxy_subtheme', $subtheme_path);
 
   // Rename the .info file.
   $subtheme_info_file = $subtheme_path . '/' . $machine_name . '.info';
@@ -92,8 +96,6 @@ function drush_at_parallaxy($name = NULL, $machine_name = NULL) {
     '!name' => $name,
     '!path' => $subtheme_path,
   )));
-
-  //system_rebuild_theme_data(); // potentially execute this here, see http://drupal.org/node/1235942
 }
 
 /**
@@ -105,7 +107,7 @@ function at_parallaxy_copy($source_dir, $target_dir, $ignore = '/^(\.(\.)?|CVS|\
   }
   $dir = opendir($source_dir);
   @mkdir($target_dir);
-  while($file = readdir($dir)) {
+  while ($file = readdir($dir)) {
     if (!preg_match($ignore, $file)) {
       if (is_dir($source_dir . '/' . $file)) {
         at_parallaxy_copy($source_dir . '/' . $file, $target_dir . '/' . $file, $ignore);

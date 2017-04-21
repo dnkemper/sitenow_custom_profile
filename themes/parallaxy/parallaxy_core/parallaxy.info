@@ -386,5 +386,3 @@
 
   ; Parallax Scroll Behavior
   settings[parallax] = '1'
-
-
