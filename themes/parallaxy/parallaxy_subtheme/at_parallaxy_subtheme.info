@@ -434,4 +434,3 @@
 
   ; Custom Background Pattern
   settings[content_wrapper_pattern] = 'content_wrapper_retina_wood_dark'
-
