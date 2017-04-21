@@ -106,12 +106,10 @@
       <div id="nav-wrapper">
         <div class="container clearfix">
           <?php print render($page['menu_bar']); ?>
-          <?php if ($primary_navigation): ?>
-            <?php print $primary_navigation; ?>
-          <? endif; ?>
-          <?php if ($secondary_navigation): ?>
-            <?php print $secondary_navigation; ?>
-          <?php endif; ?>
+          <?php if ($primary_navigation): print $primary_navigation;
+          endif; ?>
+          <?php if ($secondary_navigation): print $secondary_navigation;
+          endif; ?>
         </div>
       </div>
     <?php endif; ?>
