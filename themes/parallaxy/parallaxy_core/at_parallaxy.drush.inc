@@ -3,8 +3,6 @@
 /**
  * @file
  * Contains functions only needed for drush integration.
- *
- * Usage: drush at_parallaxy "Foobar Theme" foobartheme
  */
 
 /**
