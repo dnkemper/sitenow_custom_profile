@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Adaptivetheme implementation to display a single Drupal page.
