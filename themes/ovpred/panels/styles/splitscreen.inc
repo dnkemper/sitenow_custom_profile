@@ -1,10 +1,11 @@
 <?php
+
 /**
  * @file
  * Custom panels full-width wrappers.
  */
 
-// Plugin registration
+// Plugin registration.
 $plugin = array(
   'title' => t('Full width split screen wrapper'),
   'description' => t('Creates a two-column pane with full page wrapper with this content first and a secondary body area second.'),
@@ -60,6 +61,7 @@ function ovpred_splitscreen_wrapper_settings_form($settings) {
 
 /**
  * Available color presets.
+ *
  * @return array
  */
 function theme_ovpred_splitscreen_color_preset_colors() {

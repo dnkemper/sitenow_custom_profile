@@ -1,10 +1,11 @@
 <?php
+
 /**
  * @file
  * Custom panels full-width wrappers.
  */
 
-// Plugin registration
+// Plugin registration.
 $plugin = array(
   'title' => t('Full width wrapper'),
   'description' => t('Set a full page wrapper on this content.'),
@@ -16,12 +17,12 @@ $plugin = array(
   'hook theme'    => array(
     'wrapper_region' => array(
       'template' => 'wrapper-region',
-       'path' => drupal_get_path('theme', 'ovpred') .'/panels/styles',
-       'variables' => array(
-         'content' => NULL,
-         'settings' => NULL,
-       ),
+      'path' => drupal_get_path('theme', 'ovpred') . '/panels/styles',
+      'variables' => array(
+        'content' => NULL,
+        'settings' => NULL,
       ),
+    ),
   ),
 );
 
@@ -41,14 +42,14 @@ function theme_ovpred_wrapper_style_render_region($variables) {
   if (!empty($variables)) {
     $content = '';
 
-  foreach ($variables['panes'] as $pane_id => $pane_output) {
+    foreach ($variables['panes'] as $pane_id => $pane_output) {
 
-    $content .= $pane_output;
-  }
-  if (empty($content)) {
-    return;
-  }
-  return theme('wrapper_region',
+      $content .= $pane_output;
+    }
+    if (empty($content)) {
+      return;
+    }
+    return theme('wrapper_region',
     array(
       'content' => $content,
       'settings' => $variables['settings'],
@@ -74,6 +75,7 @@ function ovpred_wrapper_settings_form($style_settings) {
 
 /**
  * Available color presets.
+ *
  * @return array
  */
 function theme_ovpred_wrapper_color_preset_colors() {

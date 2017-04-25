@@ -4,8 +4,5 @@
 A general install profile to build sites on the SiteNow service with custom
 requirements.
 
-## Contributing
-New custom modules, themes and libraries can be added as part of the SiteNow
-profile by force-adding them to be tracked in version control.
-
-`git add -f modules/custom/mymodule`
+## Included Projects
+Modules, themes, etc. can be included in the profile by adding an exclusion to the .gitignore file. See the file for examples.

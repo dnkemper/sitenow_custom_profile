@@ -1,0 +1,19 @@
+@mixin button($bg-color: $primary-link-color, $color: #fff) {
+  @include inline-block;
+  @include border-radius($border-radius);
+  @include text-shadow(1px 1px 1px darken($bg-color, 3));
+  background: $bg-color;
+  color: $color;
+  padding: 0.8rem;
+  border: 1px solid darken($bg-color, 3);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: lighten($bg-color, 5);
+  }
+}
+
+.btn {
+  @include button;
+}

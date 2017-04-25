@@ -1,0 +1,8 @@
+{
+    "name": "its-uofiowa/parallaxy",
+    "description": "Parallaxy shared theme.",
+    "type": "drupal-theme",
+    "require": {
+      "composer/installers": "*"
+    }
+}

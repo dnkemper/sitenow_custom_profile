@@ -1,10 +1,11 @@
 <?php
+
 /**
  * @file
  * Template file for the example display.
  *
  * Variables available:
- * 
+ *
  * $plugin: The pager plugin object. This contains the view.
  *
  * $plugin->view
@@ -27,8 +28,11 @@
  *   be used in the l() function, including rel=nofollow.
  */
 ?>
-<?php if (!empty($pager_prefix)) print $pager_prefix; ?>
-<div class="date-nav-wrapper clearfix<?php if (!empty($extra_classes)) print $extra_classes; ?>">
+<?php if (!empty($pager_prefix)) {print $pager_prefix;
+} ?>
+<div class="date-nav-wrapper clearfix
+<?php if (!empty($extra_classes)) {print $extra_classes;
+} ?>">
   <div class="date-nav item-list">
     <div class="date-heading">
       <h3><?php print $nav_title ?></h3>
@@ -36,12 +40,12 @@
     <ul class="pager">
     <?php if (!empty($prev_url)) : ?>
       <li class="date-prev">
-        <?php print l('&laquo;' . ($mini ? '' : ' ' . t('Previous', array(), array('context' => 'date_nav'))), $prev_url, $prev_options); ?>
+        <?php print l(($mini ? '' : t('Previous', array(), array('context' => 'date_nav'))), $prev_url, $prev_options); ?>
       &nbsp;</li>
     <?php endif; ?>
     <?php if (!empty($next_url)) : ?>
       <li class="date-next">&nbsp;
-        <?php print l(($mini ? '' : t('Next', array(), array('context' => 'date_nav')) . ' ') . '&raquo;', $next_url, $next_options); ?>
+        <?php print l(($mini ? '' : t('Next', array(), array('context' => 'date_nav'))), $next_url, $next_options); ?>
       </li>
     <?php endif; ?>
     </ul>

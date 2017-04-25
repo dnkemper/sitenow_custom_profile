@@ -2,8 +2,7 @@
 
 /**
  * @file
- * Template overrides as well as (pre-)process and alter hooks for the
- * ovpred theme.
+ * Template overrides as well as (pre-)process and alter hooks.
  */
 
 /**
@@ -27,9 +26,10 @@ function ovpred_breadcrumb(&$variables) {
         $attributes['class'][] = 'last';
         $output .= '<li' . drupal_attributes($attributes) . '>' . $item . '</li>' . '';
       }
-      else
+      else {
         $output .= '<li' . drupal_attributes($attributes) . '>' . $item . '</li>' . $seperator;
       }
+    }
     $output .= '</ul></div>';
     return $output;
   }

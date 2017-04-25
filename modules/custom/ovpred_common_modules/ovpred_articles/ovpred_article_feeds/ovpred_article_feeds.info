@@ -1,4 +1,5 @@
 name = OVPRED Article Feeds
+description = Article feed configuration for OVPRED sites.
 core = 7.x
 package = OVPRED
 project = ovpred_article_feeds

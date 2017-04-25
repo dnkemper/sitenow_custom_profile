@@ -8,8 +8,6 @@
   release     = 7.x-3.x
   engine      = phptemplate
   screenshot  = screenshot_gravitas_sub.png
-  version = "7.x-3.0-beta1"
-  core = "7.x"
 
 
 ;----------// Stylesheets
@@ -449,4 +447,3 @@ regions[three_33_bottom] = Footer panel - bottom
 
   ; Custom CSS
   settings[custom_css] = ''
-

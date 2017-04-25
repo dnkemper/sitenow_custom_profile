@@ -2,16 +2,13 @@
 
 /**
  * @file
- * Implimentation of hook_form_system_theme_settings_alter()
- *
- * To use replace "adaptivetheme_subtheme" with your themeName and uncomment by
- * deleting the comment line to enable.
- *
- * @param $form: Nested array of form elements that comprise the form.
- * @param $form_state: A keyed array containing the current state of the form.
+ * Theme settings.
  */
 
-function ovpr_common_form_system_theme_settings_alter(&$form, &$form_state)  {
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function ovpr_common_form_system_theme_settings_alter(&$form, &$form_state) {
 
   $form['at-settings']['ovpr'] = array(
     '#type' => 'fieldset',
@@ -30,7 +27,8 @@ function ovpr_common_form_system_theme_settings_alter(&$form, &$form_state)  {
     '#default_value' => theme_get_setting('ovpr_depts_name'),
     '#description' => t('Enter the name of the department. This is used on the left side of the OVPR branding bar.'),
     '#states' => array(
-      'visible' => array(   // action to take.
+  // Action to take.
+      'visible' => array(
         ':input[name="ovpr_branding_bar"]' => array('checked' => TRUE),
       ),
     ),
@@ -41,7 +39,8 @@ function ovpr_common_form_system_theme_settings_alter(&$form, &$form_state)  {
     '#default_value' => theme_get_setting('ovpr_depts_links'),
     '#description' => t('OVPR Department links are on the right side of the OVPR Branding Bar.'),
     '#states' => array(
-      'visible' => array(   // action to take.
+  // Action to take.
+      'visible' => array(
         ':input[name="ovpr_branding_bar"]' => array('checked' => TRUE),
       ),
     ),

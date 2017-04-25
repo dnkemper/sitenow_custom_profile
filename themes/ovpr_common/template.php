@@ -25,13 +25,13 @@
  * Override or insert variables for the page templates.
  */
 function ovpr_common_preprocess_page(&$vars) {
-    $departmentname = theme_get_setting('ovpr_depts_name');
-    $sitepath = $GLOBALS['base_url'];
-    $vars['ovpr_branding'] = '<a id="research-link" href="http://www.uiowa.edu/">University of Iowa</a>'
+  $departmentname = theme_get_setting('ovpr_depts_name');
+  $sitepath = $GLOBALS['base_url'];
+  $vars['ovpr_branding'] = '<a id="research-link" href="http://www.uiowa.edu/">University of Iowa</a>'
     . l($departmentname, $sitepath, array('attributes' => array('id' => array('current-department-link'))));
-    if(theme_get_setting('ovpr_depts_links') === 1) {
+  if (theme_get_setting('ovpr_depts_links') === 1) {
     $vars['ovpr_branding'] .=
-  	'<ul id="depts-links-top">
+    '<ul id="depts-links-top">
       <li class="first"><a title="Conflict Of Interest" href="http://coi.research.uiowa.edu">COI</a></li>
       <li><a title="Division of Sponsored Programs" href="http://dsp.research.uiowa.edu">DSP</a></li>
       <li><a title="Environmental Health & Safety" href="http://ehs.research.uiowa.edu">EHS</a></li>
@@ -41,7 +41,7 @@ function ovpr_common_preprocess_page(&$vars) {
   		<li><a title="Office of the Vice President for Research" href="http://research.uiowa.edu">VPR</a></li>
   		<li class="last"><a title="See More Units..." href="http://research.uiowa.edu/ovpr-research-units-facilities-and-centers-directory">MORE UNITS</a></li>
   	</ul>';
-  	}
+  }
 }
 
 /**
@@ -69,7 +69,7 @@ function ovpr_common_preprocess_html(&$vars) {
     '#type' => 'html_tag',
     '#tag' => 'meta',
     '#attributes' => array(
-      'content' =>  'IE=edge,chrome=1',
+      'content' => 'IE=edge,chrome=1',
       'http-equiv' => 'X-UA-Compatible',
     )
   );

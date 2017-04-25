@@ -22,7 +22,7 @@
  * - $pager: The pager next/prev links to display, if any
  * - $exposed: Exposed widget form/info to display
  * - $feed_icon: Feed icon to display, if any
- * - $more: A link to view more, if any
+ * - $more: A link to view more, if any.
  *
  * @ingroup views_templates
  */
@@ -43,7 +43,7 @@
     <div class="feed-icon">
       <?php print $feed_icon; ?>
     </div>
-  <?php endif; ?>
+    <?php endif; ?>
 
   <?php if ($exposed): ?>
     <div class="view-filters">

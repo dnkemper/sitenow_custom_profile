@@ -125,7 +125,7 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($variables['content_container'] == true): ?>
+    <?php if ($variables['content_container'] == TRUE): ?>
       <div class="l-container">
     <?php endif; ?>
 
@@ -137,7 +137,7 @@
     <?php print render($page['sidebar_first']); ?>
     <?php print render($page['sidebar_second']); ?>
 
-    <?php if ($variables['content_container'] == true): ?>
+    <?php if ($variables['content_container'] == TRUE): ?>
       </div>
     <?php endif; ?>
 

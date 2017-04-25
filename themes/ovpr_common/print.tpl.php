@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Default print module template
+ * Default print module template.
  *
  * @ingroup print
  */
@@ -21,7 +21,7 @@
   </head>
   <body class="print-page">
     <?php if (!empty($print['message'])) {
-      print '<div class="print-message">'. $print['message'] .'</div><p />';
+      print '<div class="print-message">' . $print['message'] . '</div><p />';
     } ?>
     <!-- <div class="print-logo"><?php print $print['logo']; ?></div> -->
     <div class="print-site_name"><?php print $print['site_name']; ?></div>
