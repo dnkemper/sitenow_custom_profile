@@ -124,12 +124,13 @@
               </div>
             </div>
           <?php endif; ?>
-          <?php if ($breadcrumb); ?>
+          <?php if ($breadcrumb): ?>
             <div id="breadcrumb-wrapper">
               <div class="container clearfix">
                 <?php print $breadcrumb; ?>
               </div>
             </div>
+          <?php endif; ?>
           </div>
         </header>
       </div>
