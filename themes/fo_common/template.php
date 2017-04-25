@@ -146,7 +146,7 @@ function fo_common_preprocess_block(&$vars) {
   if (isset($vars['attributes_array']['role']) && $vars['attributes_array']['role'] == 'navigation') {
     $vars['title_attributes_array']['class'][] = 'offscreen';
     $vars['title_attributes_array']['id'][] = 'aria-label-' . $vars['block_html_id'];
-    $vars['attributes_array']['aria-labelledby'] =  $vars['title_attributes_array']['id'];
+    $vars['attributes_array']['aria-labelledby'] = $vars['title_attributes_array']['id'];
 
     // Remove `element-invisible` class from blocks in menu_bar, which is added by Adpativetheme.
     // @see adaptivetheme/at_core/inc/preprocess.inc
