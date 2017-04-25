@@ -63,7 +63,7 @@
  * - $title: The page title, for use in the actual HTML content.
  * - $title_suffix (array): An array containing additional output populated by
  *   modules, intended to be displayed after the main title tag that appears in
- *   the template.
+ *   the template. Prints page level contextual links.
  * - $messages: HTML for status and error messages. Should be displayed
  *   prominently.
  * - $tabs (array): Tabs linking to any sub-pages beneath the current page
@@ -187,7 +187,7 @@
 
             <?php print $feed_icons; ?>
 
-            <?php print render($title_suffix); // Prints page level contextual links ?>
+            <?php print render($title_suffix); ?>
 
           </<?php print $tag; ?>>
 
