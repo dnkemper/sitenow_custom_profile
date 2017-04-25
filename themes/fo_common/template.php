@@ -73,15 +73,10 @@ function fo_common_block_view_book_navigation_alter(&$data, $block) {
 }
 
 /**
- * Returns HTML for a breadcrumb trail.
- *
- * Based on adaptivetheme_breadcrumb() with added support for aria landmarks.
- *
- * @param $vars
- *   An associative array containing:
- *   - breadcrumb: An array containing the breadcrumb links.
+ * Implements theme_breadcrumb().
  */
 function fo_common_breadcrumb($vars) {
+  // Based on adaptivetheme_breadcrumb() with added support for aria landmarks.
   global $theme_key;
   $theme_name = $theme_key;
 
