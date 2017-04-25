@@ -98,7 +98,7 @@ function fo_common_breadcrumb($vars) {
 
       $separator = filter_xss_admin(at_get_setting('breadcrumb_separator', $theme_name));
 
-      // Push the page title onto the end of the breadcrumb array
+      // Push the page title onto the end of the breadcrumb array.
       if (at_get_setting('breadcrumb_title', $theme_name) == 1) {
         $breadcrumb[] = '<span class="crumb-title">' . drupal_get_title() . '</span>';
       }
