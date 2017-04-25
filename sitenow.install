@@ -423,3 +423,10 @@ function sitenow_update_7208() {
     module_enable(array('uiowa_favicon'), FALSE);
   }
 }
+
+/**
+ * Registry rebuild.
+ */
+function sitenow_update_7300() {
+  registry_rebuild();
+}
