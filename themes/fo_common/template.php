@@ -71,3 +71,87 @@ function fo_common_block_view_book_navigation_alter(&$data, $block) {
     }
   }
 }
+
+/**
+ * Implements theme_breadcrumb().
+ */
+function fo_common_breadcrumb($vars) {
+  // Based on adaptivetheme_breadcrumb() with added support for aria landmarks.
+  global $theme_key;
+  $theme_name = $theme_key;
+
+  $breadcrumb = $vars['breadcrumb'];
+
+  if (at_get_setting('breadcrumb_display', $theme_name) == 1) {
+
+    if (at_get_setting('breadcrumb_home', $theme_name) == 0) {
+      array_shift($breadcrumb);
+    }
+
+    // Remove the rather pointless breadcrumbs for reset password and user
+    // register pages, they link to the page you are on.
+    if (arg(0) === 'user' && (arg(1) === 'password' || arg(1) === 'register')) {
+      array_pop($breadcrumb);
+    }
+
+    if (!empty($breadcrumb)) {
+
+      $separator = filter_xss_admin(at_get_setting('breadcrumb_separator', $theme_name));
+
+      // Push the page title onto the end of the breadcrumb array.
+      if (at_get_setting('breadcrumb_title', $theme_name) == 1) {
+        $breadcrumb[] = '<span class="crumb-title">' . drupal_get_title() . '</span>';
+      }
+
+      $class = 'crumb';
+      end($breadcrumb);
+      $last = key($breadcrumb);
+
+      $output = '';
+      if (at_get_setting('breadcrumb_label', $theme_name) == 1) {
+        $output = '<div id="breadcrumb" class="clearfix"><nav class="breadcrumb-wrapper with-breadcrumb-label clearfix" role="navigation" aria-labelledby="breadcrumb-label">';
+        $output .= '<h2 id="breadcrumb-label" class="breadcrumb-label">' . t('You are here') . '</h2>';
+      }
+      else {
+        $output = '<div id="breadcrumb" class="clearfix"><nav class="breadcrumb-wrapper clearfix" role="navigation" aria-labelledby="breadcrumb-label">';
+        $output .= '<h2 id="breadcrumb-label" class="element-invisible">' . t('You are here') . '</h2>';
+      }
+      $output .= '<ol id="crumbs" class="clearfix">';
+      foreach ($breadcrumb as $key => $val) {
+        if ($key == $last && count($breadcrumb) != 1) {
+          $class = 'crumb crumb-last';
+        }
+        if ($key == 0) {
+          $output .= '<li class="' . $class . ' crumb-first">' . $val . '</li>';
+        }
+        else {
+          $output .= '<li class="' . $class . '"><span class="crumb-sepreator">' . $separator . '</span>' . $val . '</li>';
+        }
+      }
+      $output .= '</ol></nav></div>';
+
+      return $output;
+    }
+  }
+  else {
+    return;
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function fo_common_preprocess_block(&$vars) {
+  // Add `aria-labelledby` to menu/navigation blocks.
+  if (isset($vars['attributes_array']['role']) && $vars['attributes_array']['role'] == 'navigation') {
+    $vars['title_attributes_array']['class'][] = 'offscreen';
+    $vars['title_attributes_array']['id'][] = 'aria-label-' . $vars['block_html_id'];
+    $vars['attributes_array']['aria-labelledby'] = $vars['title_attributes_array']['id'];
+
+    // Remove `element-invisible` class from blocks in menu_bar, which is added by Adpativetheme.
+    // @see adaptivetheme/at_core/inc/preprocess.inc
+    if ($vars['block']->region === 'menu_bar') {
+      unset($vars['title_attributes_array']['class'][array_search('element-invisible', $vars['title_attributes_array']['class'])]);
+    }
+  }
+}
