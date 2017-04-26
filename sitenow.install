@@ -425,8 +425,8 @@ function sitenow_update_7208() {
 }
 
 /**
- * Registry rebuild.
+ * Clear cache.
  */
 function sitenow_update_7300() {
-  registry_rebuild();
+  cache_clear_all();
 }
