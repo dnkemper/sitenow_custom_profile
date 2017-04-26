@@ -423,3 +423,10 @@ function sitenow_update_7208() {
     module_enable(array('uiowa_favicon'), FALSE);
   }
 }
+
+/**
+ * Clear cache.
+ */
+function sitenow_update_7300() {
+  cache_clear_all();
+}
