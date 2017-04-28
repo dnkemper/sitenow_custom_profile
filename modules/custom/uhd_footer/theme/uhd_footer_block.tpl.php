@@ -1,6 +1,8 @@
 <?php
+
 /**
  * @file
+ * UHD Footer block template.
  *
  * @ingroup themeable
  */
