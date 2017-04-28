@@ -36,17 +36,17 @@ function uhd_footer_menu() {
   return $items;
 }
 
-
 /**
  * Implements hook_theme().
  */
 function uhd_footer_theme() {
-   $themes = array(
+  $themes = array(
     'uhd_footer_block' => array(
       'path' => drupal_get_path('module', 'uhd_footer') . '/theme',
       'template' => "uhd_footer_block",
     ),
   );
+
   return $themes;
 }
 
