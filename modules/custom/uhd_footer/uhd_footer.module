@@ -85,40 +85,40 @@ function uhd_footer_preprocess_uhd_footer_block(&$variables) {
 
   // Admin links.
   $admin_links = array();
-  $admin_links[] = l('Employment', 'http://housing.uiowa.edu/uhd-admin/employment-opportunities');
-  $admin_links[] = l('Organization', 'http://housing.uiowa.edu/uhd-admin/about-us');
-  $admin_links[] = l('Policies & Procedures', 'http://housing.uiowa.edu/uhd-admin/uhd-policies');
+  $admin_links[] = l(t('Employment'), 'http://housing.uiowa.edu/uhd-admin/employment-opportunities');
+  $admin_links[] = l(t('Organization'), 'http://housing.uiowa.edu/uhd-admin/about-us');
+  $admin_links[] = l(t('Policies & Procedures'), 'http://housing.uiowa.edu/uhd-admin/uhd-policies');
   // Housing links.
   $housing_links = array();
-  $housing_links[] = l('Living Learning Communities', 'http://housing.uiowa.edu/living-learning-communities');
-  $housing_links[] = l('Residence Halls', 'http://housing.uiowa.edu/residence-halls');
-  $housing_links[] = l('Life@Iowa', 'http://housing.uiowa.edu/life-iowa');
+  $housing_links[] = l(t('Living Learning Communities'), 'http://housing.uiowa.edu/living-learning-communities');
+  $housing_links[] = l(t('Residence Halls'), 'http://housing.uiowa.edu/residence-halls');
+  $housing_links[] = l(t('Life@Iowa'), 'http://housing.uiowa.edu/life-iowa');
   // Dining links.
   $dining_links = array();
-  $dining_links[] = l('Locations', 'https://dining.uiowa.edu/');
-  $dining_links[] = l('Menus', 'https://dining.uiowa.edu/market-place-menus');
-  $dining_links[] = l('Meal Plan Info', 'https://dining.uiowa.edu/meal-plan-rates');
+  $dining_links[] = l(t('Locations'), 'https://dining.uiowa.edu/');
+  $dining_links[] = l(t('Menus'), 'https://dining.uiowa.edu/market-place-menus');
+  $dining_links[] = l(t('Meal Plan Info'), 'https://dining.uiowa.edu/meal-plan-rates');
   // Catering links.
   $catering_links = array();
-  $catering_links[] = l('Menus', 'http://catering.uiowa.edu/menus');
-  $catering_links[] = l('Meetings', 'http://imu.uiowa.edu/meetings');
-  $catering_links[] = l('Weddings', 'http://catering.uiowa.edu/weddings');
+  $catering_links[] = l(t('Menus'), 'http://catering.uiowa.edu/menus');
+  $catering_links[] = l(t('Meetings'), 'http://imu.uiowa.edu/meetings');
+  $catering_links[] = l(t('Weddings'), 'http://catering.uiowa.edu/weddings');
   // Block stucture for uhd_site_links.
   $uhd_site_links = array();
   $uhd_site_links['admin'] = array(
-    'title' => l('UH&D Admin', 'http://housing.uiowa.edu/uhd-admin'),
+    'title' => l(t('UH&D Admin'), 'http://housing.uiowa.edu/uhd-admin'),
     'content' => theme('item_list', array('items' => $admin_links)),
   );
   $uhd_site_links['housing'] = array(
-    'title' => l('Housing', 'http://housing.uiowa.edu'),
+    'title' => l(t('Housing'), 'http://housing.uiowa.edu'),
     'content' => theme('item_list', array('items' => $housing_links)),
   );
   $uhd_site_links['dining'] = array(
-    'title' => l('Dining', 'https://dining.uiowa.edu'),
+    'title' => l(t('Dining'), 'https://dining.uiowa.edu'),
     'content' => theme('item_list', array('items' => $dining_links)),
   );
   $uhd_site_links['uhd_catering'] = array(
-    'title' => l('Catering', 'http://catering.uiowa.edu'),
+    'title' => l(t('Catering'), 'http://catering.uiowa.edu'),
     'content' => theme('item_list', array('items' => $catering_links)),
   );
   // Add to variables.
