@@ -1,0 +1,125 @@
+<?php
+/**
+ * @file
+ * Code for the catering_footer module.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function uhd_footer_permission() {
+  return array(
+    'administer uhd footer' => array(
+      'title' => t('Administer UHD Footer'),
+      'description' => t('Configure UHD footer.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function uhd_footer_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/uhd-footer'] = array(
+    'title' => 'UHD Footer',
+    'description' => 'Configuration for the UHD Footer',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('uhd_footer_config_form'),
+    'access arguments' => array('administer uhd footer'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/uhd_footer.admin.inc',
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function uhd_footer_theme() {
+   $themes = array(
+    'uhd_footer_block' => array(
+      'path' => drupal_get_path('module', 'uhd_footer') . '/theme',
+      'template' => "uhd_footer_block",
+    ),
+  );
+  return $themes;
+}
+
+/**
+ * Implements hook_preprocess_uhd_footer_block().
+ */
+function uhd_footer_preprocess_uhd_footer_block(&$variables) {
+  $module_path = drupal_get_path('module', 'uhd_footer');
+  drupal_add_css($module_path . '/css/uhd_footer.css');
+
+  // Logo.
+  $logo = base_path() . $module_path . '/images/uhd_logo.png';
+  $variables['logo'] = $logo;
+
+  // Custom menu for config form.
+  $custom_menu = variable_get('uhd_footer_custom_menu');
+  if (!empty($custom_menu) && $custom_menu != 'none') {
+    $custom_menu_tree = menu_tree_all_data($custom_menu);
+    $custom_menu_output = menu_tree_output($custom_menu_tree);
+    $variables['custom_menu_links'] = render($custom_menu_output);
+  }
+
+  // Social media menu for config form.
+  $social_menu = variable_get('uhd_footer_social_media_menu');
+  if (!empty($social_menu) && $social_menu != 'none') {
+    $social_menu_tree = menu_tree_all_data($social_menu);
+    $social_menu_output = menu_tree_output($social_menu_tree);
+    $variables['social_menu_links'] = render($social_menu_output);
+  }
+
+  // Contact us from config form.
+  $contact_us = variable_get('uhd_footer_contact_us');
+  if (!empty($contact_us)) {
+    $variables['contact_us'] = check_markup($contact_us['value'], $contact_us['format']);
+  }
+
+  // Admin links.
+  $admin_links = array();
+  $admin_links[] = l('Employment', 'http://housing.uiowa.edu/uhd-admin/employment-opportunities');
+  $admin_links[] = l('Organization', 'http://housing.uiowa.edu/uhd-admin/about-us');
+  $admin_links[] = l('Policies & Procedures', 'http://housing.uiowa.edu/uhd-admin/uhd-policies');
+  // Housing links.
+  $housing_links = array();
+  $housing_links[] = l('Living Learning Communities', 'http://housing.uiowa.edu/living-learning-communities');
+  $housing_links[] = l('Residence Halls', 'http://housing.uiowa.edu/residence-halls');
+  $housing_links[] = l('Life@Iowa', 'http://housing.uiowa.edu/life-iowa');
+  // Dining links.
+  $dining_links = array();
+  $dining_links[] = l('Locations', 'https://dining.uiowa.edu/');
+  $dining_links[] = l('Menus', 'https://dining.uiowa.edu/market-place-menus');
+  $dining_links[] = l('Meal Plan Info', 'https://dining.uiowa.edu/meal-plan-rates');
+  // Catering links.
+  $catering_links = array();
+  $catering_links[] = l('Menus', 'http://catering.uiowa.edu/menus');
+  $catering_links[] = l('Meetings', 'http://imu.uiowa.edu/meetings');
+  $catering_links[] = l('Weddings', 'http://catering.uiowa.edu/weddings');
+  // Block stucture for uhd_site_links.
+  $uhd_site_links = array();
+  $uhd_site_links['admin'] = array(
+    'title' => l('UH&D Admin', 'http://housing.uiowa.edu/uhd-admin'),
+    'content' => theme('item_list', array('items' => $admin_links)),
+  );
+  $uhd_site_links['housing'] = array(
+    'title' => l('Housing', 'http://housing.uiowa.edu'),
+    'content' => theme('item_list', array('items' => $housing_links)),
+  );
+  $uhd_site_links['dining'] = array(
+    'title' => l('Dining', 'https://dining.uiowa.edu'),
+    'content' => theme('item_list', array('items' => $dining_links)),
+  );
+  $uhd_site_links['uhd_catering'] = array(
+    'title' => l('Catering', 'http://catering.uiowa.edu'),
+    'content' => theme('item_list', array('items' => $catering_links)),
+  );
+  // Add to variables.
+  $variables['uhd_site_links'] = $uhd_site_links;
+}
