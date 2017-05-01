@@ -1,0 +1,4 @@
+name = UHD Footer
+description = Common footer functionality for UHD sites.
+core = 7.x
+package = UHD
