@@ -57,7 +57,7 @@ projects:
     version: "2.3"
 
   bongo:
-    version: "1.0-beta3"
+    version: "1.0"
 
   bootstrap_fieldgroup:
     version: "1.2"
