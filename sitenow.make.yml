@@ -739,6 +739,12 @@ projects:
     subdir: ""
 
   ################################# Custom #####################################
+  fontawesome_menu:
+    subdir: "custom"
+    download:
+      url: git@github.com:ITS-UofIowa/fontawesome_menu.git
+      tag: "7.x-1.0"
+
   localist_pane:
     subdir: "custom"
     download:
