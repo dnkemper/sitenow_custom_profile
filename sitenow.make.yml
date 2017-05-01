@@ -848,6 +848,12 @@ libraries:
       type: "git"
       url: "git@github.com:woothemes/FlexSlider.git"
       revision: "ca347d49f3656ff7ba7ea1a043feec7626a0db91"
+      
+  Font-Awesome:
+    download:
+      type: "git"
+      url: "git@github.com:FortAwesome/Font-Awesome.git"
+      tag: "v4.7.0"
 
   # Latest 1.x is 1.6.7.
   fullcalendar:
