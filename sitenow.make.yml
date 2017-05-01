@@ -495,7 +495,7 @@ projects:
     version: "1.0-rc3"
 
   references:
-    version: "2.1"
+    version: "2.2"
 
   registry_autoload:
     version: "1.3"
