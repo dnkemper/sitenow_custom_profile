@@ -791,7 +791,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:uiowa/uiowa_bar.git
-      tag: "7.x-2.2"
+      tag: "7.x-2.3"
 
   uiowa_events:
     subdir: "custom"
