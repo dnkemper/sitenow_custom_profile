@@ -132,7 +132,7 @@ projects:
     version: "1.4"
 
   date:
-    version: "2.9"
+    version: "2.10"
     patch:
       - "https://www.drupal.org/files/issues/date_date_week_range_and_date_iso_week_range_both_returns_1_day_too_much-1137062-17.patch"
 
