@@ -956,7 +956,7 @@ libraries:
     download:
       type: "git"
       url: "git@github.com:kenwheeler/slick.git"
-      tag: "1.6.0"
+      tag: "1.5.9"
 
   superfish:
     download:
