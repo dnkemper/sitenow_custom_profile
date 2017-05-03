@@ -359,10 +359,7 @@ projects:
     version: "3.2"
 
   media:
-    version: "2.0-beta1"
-    patch:
-      - "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-35.patch"
-      - "https://www.drupal.org/files/issues/media-wysiwyg_alt_and_title-2416701-13.patch"
+    version: "2.0"
 
   media_browser_plus:
     version: "3.0-beta4"
