@@ -854,6 +854,7 @@ libraries:
       type: "git"
       url: "git@github.com:FortAwesome/Font-Awesome.git"
       tag: "v4.7.0"
+    directory_name: "fontawesome"
       
   fontawesome-iconpicker:
     download:
