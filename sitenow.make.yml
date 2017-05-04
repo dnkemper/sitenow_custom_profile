@@ -764,7 +764,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_media.git
-      tag: "7.x-1.6"
+      branch: "feature/media-stable"
 
   sitenow_user_create:
     subdir: "custom"
@@ -845,13 +845,13 @@ libraries:
       type: "git"
       url: "git@github.com:woothemes/FlexSlider.git"
       revision: "ca347d49f3656ff7ba7ea1a043feec7626a0db91"
-      
+
   Font-Awesome:
     download:
       type: "git"
       url: "git@github.com:FortAwesome/Font-Awesome.git"
       tag: "v4.7.0"
-      
+
   fontawesome-iconpicker:
     download:
       type: "git"
