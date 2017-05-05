@@ -8,6 +8,7 @@ themes/*
 !modules/custom/iowa_counties
 !modules/custom/ovpred_common_modules
 !modules/custom/print_block
+!modules/custom/uhd_footer
 
 # Custom theme exclusions.
 !themes/fo_common
