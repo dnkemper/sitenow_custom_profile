@@ -897,13 +897,6 @@ libraries:
       type: "get"
       url: "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.zip"
 
-  modernizr:
-    download:
-      type: "git"
-      url: "git@github.com:ITS-UofIowa/sitenow-modernizr.git"
-      branch: "master"
-      revision: "1c9a725fc8582f5b14498af9b7f38ffc67d12627"
-
   pickadate:
     download:
       type: "git"
