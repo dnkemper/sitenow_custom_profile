@@ -96,3 +96,21 @@ function sitenow_theme_registry_alter(&$theme_registry) {
   $theme_registry['webform_edit_file_extensions']['function'] = 'theme_sitenow_edit_file_extensions';
   $theme_registry['webform_edit_file_extensions']['includes'] = array($profile_path . '/includes/' . $file_name);
 }
+
+/**
+ * Implements hook_menu_alter()
+ */
+function sitenow_menu_alter(&$items) {
+  // This is required until issue https://www.drupal.org/node/2078423
+  // in Redirect module is fixed.
+  $items['admin/config/search/redirect/settings']['access callback'] = '_sitenow_redirect_settings_access_callback';
+}
+
+/**
+ * Custom function to control access to Redirect settings page.
+ */
+function _sitenow_redirect_settings_access_callback(){
+  global $user;
+  // Forbid access for roles different than administrator.
+  return (in_array('administrator', array_values($user->roles))) ? TRUE : FALSE;
+}
