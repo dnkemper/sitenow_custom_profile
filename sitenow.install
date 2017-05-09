@@ -430,3 +430,18 @@ function sitenow_update_7208() {
 function sitenow_update_7300() {
   cache_clear_all();
 }
+
+/**
+ * Allow webmasters to manage redirects.
+ */
+function sitenow_update_7301() {
+  if (!module_exists('redirect')) {
+    module_enable(array('redirect'), FALSE);
+    // Purge redirects not used in 6 months.
+    variable_set('redirect_purge_inactive', '15552000');
+  }
+
+  // Grant webmasters permission to manage redirects.
+  $role = user_role_load_by_name('webmaster');
+  user_role_grant_permissions($role->rid, array('administer redirects'));
+}
