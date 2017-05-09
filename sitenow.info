@@ -34,6 +34,7 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = pathologic
+dependencies[] = redirect
 dependencies[] = robotstxt
 dependencies[] = token
 dependencies[] = transliteration
