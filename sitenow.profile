@@ -109,7 +109,7 @@ function sitenow_menu_alter(&$items) {
 /**
  * Custom function to control access to Redirect settings page.
  */
-function _sitenow_redirect_settings_access_callback(){
+function _sitenow_redirect_settings_access_callback() {
   global $user;
   // Forbid access for roles different than administrator.
   return (in_array('administrator', array_values($user->roles))) ? TRUE : FALSE;
