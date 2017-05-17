@@ -98,7 +98,7 @@ function sitenow_theme_registry_alter(&$theme_registry) {
 }
 
 /**
- * Implements hook_redirect_save().
+ * Implements hook_redirect_presave().
  */
 function sitenow_redirect_presave($redirect) {
   // Make new redirects have a count of one to avoid them being deleted.
