@@ -1,8 +1,8 @@
 <?php
+
 /**
  * @file
- * Adaptivetheme implementation to display the basic html structure of a single
- * Drupal page.
+ * Adaptivetheme implementation to display the basic html structure of a page.
  *
  * Adaptivetheme Variables:
  * - $html_attributes: structure attributes, includes the lang and dir attributes
