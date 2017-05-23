@@ -65,7 +65,7 @@
 <?php print $polyfills; ?>
 </head>
 <body class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <div id="skip-link" role="navigation" aria-label="Skip link">
+  <div id="skip-link" role="region" aria-label="skip-link">
     <a href="<?php print $skip_link_target; ?>" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
   <?php print $page_top; ?>
