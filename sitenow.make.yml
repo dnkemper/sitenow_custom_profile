@@ -785,7 +785,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
-      tag: "7.x-1.12"
+      tag: "7.x-1.14"
 
   uiowa_bar:
     subdir: "custom"
@@ -809,7 +809,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
-      tag: "7.x-1.6"
+      tag: "7.x-1.7"
 
 ################################# Libraries ####################################
 libraries:
