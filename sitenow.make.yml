@@ -755,7 +755,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
-      tag: "7.x-2.2"
+      tag: "7.x-2.3"
 
   sitenow_maps:
     subdir: "custom"
