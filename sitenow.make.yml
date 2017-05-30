@@ -359,7 +359,7 @@ projects:
     version: "3.2"
 
   media:
-    version: "2.2"
+    version: "2.4"
 
   media_browser_plus:
     version: "3.0-beta4"
