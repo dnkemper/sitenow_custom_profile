@@ -776,7 +776,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
-      branch: "feature/media-stable"
+      tag: "7.x-1.12"
 
   uiowa_acquia_authentication:
     subdir: "custom"
