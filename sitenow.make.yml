@@ -752,7 +752,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
-      tag: "7.x-2.2"
+      tag: "7.x-2.3"
 
   sitenow_maps:
     subdir: "custom"
@@ -782,7 +782,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
-      tag: "7.x-1.12"
+      tag: "7.x-1.14"
 
   uiowa_bar:
     subdir: "custom"
@@ -806,7 +806,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
-      tag: "7.x-1.5"
+      tag: "7.x-1.8"
 
 ################################# Libraries ####################################
 libraries:
@@ -851,7 +851,8 @@ libraries:
       type: "git"
       url: "git@github.com:FortAwesome/Font-Awesome.git"
       tag: "v4.7.0"
-
+    directory_name: "fontawesome"
+      
   fontawesome-iconpicker:
     download:
       type: "git"
@@ -911,13 +912,6 @@ libraries:
     download:
       type: "get"
       url: "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.zip"
-
-  modernizr:
-    download:
-      type: "git"
-      url: "git@github.com:ITS-UofIowa/sitenow-modernizr.git"
-      branch: "master"
-      revision: "1c9a725fc8582f5b14498af9b7f38ffc67d12627"
 
   pickadate:
     download:
