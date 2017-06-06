@@ -764,7 +764,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_media.git
-      branch: "feature/media-stable"
+      tag: "7.x-1.8"
 
   sitenow_user_create:
     subdir: "custom"
