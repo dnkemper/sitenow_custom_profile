@@ -359,10 +359,7 @@ projects:
     version: "3.2"
 
   media:
-    version: "2.0-beta1"
-    patch:
-      - "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-35.patch"
-      - "https://www.drupal.org/files/issues/media-wysiwyg_alt_and_title-2416701-13.patch"
+    version: "2.4"
 
   media_browser_plus:
     version: "3.0-beta4"
@@ -767,7 +764,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_media.git
-      tag: "7.x-1.6"
+      tag: "7.x-1.8"
 
   sitenow_user_create:
     subdir: "custom"
@@ -779,7 +776,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
-      tag: "7.x-1.11"
+      tag: "7.x-1.12"
 
   uiowa_acquia_authentication:
     subdir: "custom"
@@ -848,7 +845,7 @@ libraries:
       type: "git"
       url: "git@github.com:woothemes/FlexSlider.git"
       revision: "ca347d49f3656ff7ba7ea1a043feec7626a0db91"
-      
+
   Font-Awesome:
     download:
       type: "git"
