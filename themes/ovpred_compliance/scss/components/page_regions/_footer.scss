@@ -1,0 +1,11 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  @extend .font-smoothing-on;
+  padding: 3rem 0;
+
+  a {
+    color: #aaa;
+    text-decoration: underline;
+  }
+}

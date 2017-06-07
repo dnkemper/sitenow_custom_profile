@@ -15,6 +15,8 @@ themes/*
 !themes/gravitas
 !themes/ovpr_common
 !themes/ovpred
+!themes/ovpred_admin
+!themes/ovpred_compliance
 !themes/parallaxy
 !themes/uhd_base
 !themes/stellar

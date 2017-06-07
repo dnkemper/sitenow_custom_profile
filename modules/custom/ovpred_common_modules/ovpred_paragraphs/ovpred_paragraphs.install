@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall code for the Catering Paragraphs feature.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function ovpred_paragraphs_install() {
+
+  field_cache_clear();
+
+  // Create a Content Blocks field for use with the paragraphs.
+  $field = array(
+    'field_name' => 'ovpred_content_blocks',
+    'type' => 'paragraphs',
+    'cardinality' => -1,
+  );
+
+  field_create_field($field);
+
+  $instance = array(
+    'field_name' => $field['field_name'],
+    'label' => 'Content Blocks',
+    'entity_type' => 'node',
+    'bundle' => 'page',
+    'settings' => array(
+      'title' => 'Content Block',
+      'title_multiple' => 'Content Blocks',
+      'default_edit_mode' => 'preview',
+      'add_mode' => 'button',
+    ),
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+      ),
+    ),
+    'widget' => array(
+      'type' => 'paragraphs_embed',
+    ),
+  );
+
+  field_create_instance($instance);
+}

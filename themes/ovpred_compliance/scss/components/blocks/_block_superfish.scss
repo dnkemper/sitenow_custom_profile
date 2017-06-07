@@ -1,0 +1,165 @@
+$sf-color: #fff;
+$anchor-padding-width: 1rem;
+$anchor-padding-height: 1.5rem;
+$dropdown-items-bg: #333;
+$accordion-items-bg: #333;
+$nav-height: 46px;
+
+.block-superfish {
+  position: static;
+
+  .block__title {
+    @extend .sr-only;
+  }
+
+  a {
+    color: $sf-color;
+  }
+
+  // Toogle
+  #superfish-1-toggle {
+    padding: 0;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    &:before {
+      @include fa(bars);
+      font-size: 2.5rem;
+    }
+
+    &.sf-expanded {
+      &:before {
+        @include fa(times);
+        font-size: 2.5rem;
+      }
+    }
+
+    span {
+      @extend .sr-only;
+    }
+  }
+
+  .sf-sub-indicator {
+    @extend .sr-only;
+  }
+
+  // Shared styles
+  .sf-style-none {
+    @include clearfix;
+    overflow: visible;
+
+    li {
+      a {
+        padding: 1.2rem;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          background: rgba(255,255,255,0.2);
+        }
+      }
+    }
+
+    // Top level menu items.
+    a.sf-depth-1 {
+      text-transform: uppercase;
+    }
+
+    // Dropdown items.
+    li.menuparent ul {
+      background-color: $dropdown-items-bg;
+      @include box-shadow(0px 0px 3px rgba(0,0,0,0.3));
+    }
+  }
+
+  // Horizontal styles.
+  .sf-horizontal {
+    float: right;
+
+    li:hover > ul,
+    li.sfHover > ul {
+      top: $nav-height;
+      padding: 0px !important;
+      border-radius: 0px;
+    }
+
+    li.sf-depth-1.active-trail > a {
+      box-shadow: 0px -3px 0px rgba(0,0,0,0.4) inset;
+    }
+
+    a.sf-depth-1 {
+      padding: $anchor-padding-height $anchor-padding-width;
+      text-align: center;
+    }
+
+    a.sf-depth-1.menuparent {
+      position: relative;
+      padding-right: $anchor-padding-width + 2rem;
+
+      &:before {
+        @include fa(chevron-down);
+        font-size: 1rem;
+        margin-top: -0.7rem;
+        position: absolute;
+        right: $anchor-padding-width;
+        top: 50%;
+        color: darken($sf-color, 10);
+      }
+
+      &.active {
+        background: transparent;
+      }
+    }
+  }
+
+  // Accordion styles.
+  .sf-accordion {
+    @extend .row;
+    width: auto !important;
+    float: none !important;
+    background: $accordion-items-bg;
+    border-top: 1px solid darken($accordion-items-bg, 6);
+
+    li.menuparent {
+      position: relative;
+
+      a.sf-accordion-button {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 1;
+
+        &:before {
+          @include fa(bars);
+        }
+      }
+
+      &.sf-expanded {
+
+        a.sf-accordion-button {
+          &:before {
+            @include fa(times);
+          }
+        }
+      }
+    }
+
+
+    li {
+
+      &.sf-clone-parent > a.sf-depth-1 {
+        background: inherit;
+      }
+
+      a {
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+        &.sf-depth-1 {
+          background: darken($accordion-items-bg, 3);
+        }
+      }
+    }
+  }
+}
