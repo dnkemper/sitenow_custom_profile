@@ -760,7 +760,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_maps.git
-      tag: "7.x-1.7"
+      tag: "7.x-1.9"
 
   sitenow_media:
     subdir: "custom"
@@ -924,8 +924,8 @@ libraries:
   proj4js:
     download:
       type: "git"
-      url: "git@github.com:ITS-UofIowa/proj4js.git"
-      tag: "1.1.0"
+      url: "git@github.com:proj4js/proj4js.git"
+      tag: "2.4.3"
 
   respondjs:
     download:
