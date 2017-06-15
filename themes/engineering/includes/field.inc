@@ -1,9 +1,13 @@
 <?php
+
 /**
  * @file
  * Theme and preprocess functions for fields.
  */
 
+/**
+ * Implements hook_preprocess_field().
+ */
 function engineering_preprocess_field(&$vars) {
   // Remove field level clearfixing.
   $clearfix = array_search('clearfix', $vars['classes_array']);
@@ -15,7 +19,7 @@ function engineering_preprocess_field(&$vars) {
   switch ($vars['element']['#field_name']) {
     case 'field_tags':
       // Add classes for the tag items.
-      foreach($vars['items'] as &$item) {
+      foreach ($vars['items'] as &$item) {
         $item['#options']['attributes']['class'] = 'label label-default font-smoothing-on';
       }
       break;

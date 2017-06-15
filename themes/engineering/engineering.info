@@ -32,9 +32,3 @@ scripts[] = assets/js/engineering.script.js
 ; Settings
 ; Set this to FALSE for development only.
 settings[preprocess_css] = FALSE
-
-; Information added by Drupal.org packaging script on 2016-05-15
-version = "7.x-3.4"
-core = "7.x"
-project = "radix"
-datestamp = "1463294557"

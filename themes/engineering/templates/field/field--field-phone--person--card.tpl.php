@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file field.tpl.php
+ * @file
  * Default template implementation to display the value of a field.
  *
  * This file is not used and is here as a starting point for customization only.
@@ -44,7 +44,7 @@
  * @ingroup themeable
  */
 $phone = $variables['element']['#items'][0]['value'];
-$phone_href = preg_replace("/[^0-9]/","",$phone);
+$phone_href = preg_replace("/[^0-9]/", "", $phone);
 ?>
 <a href="tel:<?php print $phone_href; ?>" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="<?php print $phone; ?>">
   <i class="fa fa-phone" aria-hidden="true"></i>

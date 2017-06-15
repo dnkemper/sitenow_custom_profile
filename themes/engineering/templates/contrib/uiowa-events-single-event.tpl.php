@@ -1,6 +1,7 @@
 <?php
+
 /**
- * @file uiowa-events-single-event.tpl.php
+ * @file
  * Default theme implementation for the full listing of events.
  *
  * @see uiowa_events_single_event()
@@ -31,7 +32,7 @@
         <span>
           <?php if (!empty($data['location_name'])): ?>
             <div class="event-location"><?php print $data['location_name'] ?><?php if (!empty($data['room_number'])): ?><?php print ', ' . $data['room_number'] ?>
-              <?php endif; ?>
+           <?php endif; ?>
             </div>
           <?php endif; ?>
           <?php if (!empty($data['address'])): ?>
@@ -51,7 +52,8 @@
         <hr>
         <div class="field contact-info">
           Contact Info: <?php print $data['custom_fields']['contact_name'] ?><?php if (!empty($data['custom_fields']['contact_email'])): ?>, <?php print $data['custom_fields']['contact_email'] ?><?php if (!empty($data['custom_fields']['contact_phone_number'])): ?>, <?php print $data['custom_fields']['contact_phone_number'] ?>
-          <?php endif; ?><?php endif; ?>
+         <?php endif; ?><?php
+         endif; ?>
         </div>
       <?php endif; ?>
     </div>

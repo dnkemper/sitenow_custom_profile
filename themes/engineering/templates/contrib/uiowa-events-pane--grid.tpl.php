@@ -1,6 +1,7 @@
 <?php
+
 /**
- * @file uiowa-events-pane.tpl.php
+ * @file
  * Default theme implementation for the events pane.
  *
  * @see uiowa_events_pane()
@@ -10,7 +11,7 @@
  * $data
  *   Event data generated from Localist API.
  */
-$view_all = l('View Full Calendar', base_path() . 'events');
+$view_all = l(t('View Full Calendar'), base_path() . 'events');
 ?>
 <div class="row">
   <?php foreach ($items as $delta => $item): ?>

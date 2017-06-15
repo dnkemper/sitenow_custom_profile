@@ -5,7 +5,7 @@
  * Template for a block.
  */
 
-// show the menu only for pages that are in the main menu
+  // Show the menu only for pages that are in the main menu.
   $show_main_menu = FALSE;
   $menu_trail = menu_get_active_trail();
   if (isset($menu_trail[1]['menu_name']) && $menu_trail[1]['menu_name'] == 'main-menu') {
