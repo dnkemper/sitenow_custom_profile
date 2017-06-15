@@ -1,0 +1,30 @@
+.pane-uiowa-events-pane {
+  h3 {
+    margin: 0;
+    margin-bottom: $spacer-sm;
+  }
+
+  .field {
+    margin-bottom: $spacer-sm;
+  }
+
+  &.uiowa-events-pane-grid {
+    .pane-content {
+      position: relative;
+    }
+
+    .col {
+      margin-bottom: $spacer-md;
+    }
+
+    .view-all {
+      text-align: center;
+
+      @include breakpoint(sm) {
+        position: absolute;
+        top: -7rem;
+        right: 0;
+      }
+    }
+  }
+}

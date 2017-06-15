@@ -1,0 +1,27 @@
+{
+  "name": "engineering",
+  "description": "A theme based on Radix.",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "includes",
+    "kits",
+    "node_modules",
+    "templates",
+    "*.json",
+    "*.js",
+    "*.png",
+    "*.inc",
+    "*.info",
+    "*.md",
+    "*.php"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "font-awesome": "fontawesome#~4.6.3",
+    "waypoints": "~4.0.0",
+    "countUp.js": "~1.7.1",
+    "radialIndicator": "~1.3.1"
+  }
+}

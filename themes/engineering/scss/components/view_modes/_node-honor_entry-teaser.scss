@@ -1,0 +1,15 @@
+.node-honor_entry-teaser {
+  margin-bottom: $spacer-lg;
+  @include clearfix;
+
+  @include breakpoint(sm) {
+    .field-name-field-image {
+      float: left;
+      margin-right: 2rem;
+    }
+  }
+
+  .content {
+    overflow: hidden;
+  }
+}

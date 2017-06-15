@@ -1,0 +1,8 @@
+.page-news {
+  .views-row {
+    @include view-teaser;
+  }
+  .views-row-first {
+    padding-top: 0;
+  }
+}

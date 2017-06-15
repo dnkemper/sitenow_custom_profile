@@ -1,0 +1,29 @@
+.node-person-card {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  padding: $spacer-md;
+  margin-bottom: $spacer-md;
+  display: flex;
+  align-items: center;
+
+  .field-name-field-image {
+    flex: 120px 0 0;
+    margin-right: $spacer-md;
+  }
+
+  .content {
+    flex: 300px 1 1;
+  }
+
+  h2 {
+    margin-bottom: $spacer-sm;
+  }
+
+  .btn-group {
+    margin: $spacer-sm 0;
+  }
+
+  .popover {
+    width: 100%;
+  }
+}

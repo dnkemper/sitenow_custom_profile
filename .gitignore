@@ -11,6 +11,7 @@ themes/*
 !modules/custom/uhd_footer
 
 # Custom theme exclusions.
+!themes/engineering
 !themes/fo_common
 !themes/gravitas
 !themes/ovpr_common
