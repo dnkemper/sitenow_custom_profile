@@ -1,0 +1,14 @@
+.field-label {
+  font-weight: $fw-bold;
+
+
+  .field-label-above & {
+    margin-bottom: $spacer-xs;
+  }
+}
+
+.field-label-inline {
+  div {
+    display: inline;
+  }
+}

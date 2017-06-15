@@ -1,0 +1,26 @@
+.node-article-hero {
+  h2 {
+    margin: 0;
+    margin-bottom: $spacer-sm;
+  }
+
+  .field {
+    margin-bottom: $spacer-sm;
+  }
+
+  .field-name-field-primary-department {
+    .field-item:before {
+      content: '\29C9';
+      color: $brand-yellow;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .field-name-article-post-date {
+    .field-item:before {
+      content: '\25FC';
+      color: $brand-yellow;
+      margin-right: 0.5rem;
+    }
+  }
+}

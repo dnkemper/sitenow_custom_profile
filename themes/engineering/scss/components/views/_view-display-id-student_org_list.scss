@@ -1,0 +1,15 @@
+.view-display-id-student_org_list {
+  .views-row {
+    @include view-teaser;
+    ul.links.inline {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+  .views-row-first {
+    padding-top: 0;
+  }
+}

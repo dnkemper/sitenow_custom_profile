@@ -1,0 +1,23 @@
+.showcase-type-grid {
+  // Account for the grid spacing to remove the bottom margins.
+  margin-bottom: -($spacer-lg);
+}
+
+.field_collection_item--field_showcase_items--showcase_grid {
+  margin: 0 auto $spacer-lg;
+
+  h2 {
+    margin: 0;
+    margin-bottom: $spacer-sm;
+  }
+
+  .field {
+    margin-bottom: $spacer-sm;
+  }
+
+  .btn {
+    @include breakpoint(md) {
+      display: block;
+    }
+  }
+}

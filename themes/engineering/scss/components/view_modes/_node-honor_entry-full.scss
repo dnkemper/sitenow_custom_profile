@@ -1,0 +1,12 @@
+.node-honor_entry-full {
+  .field-name-field-honor-note {
+    @extend .h3;
+  }
+
+  @include breakpoint(md) {
+    .field-name-field-image {
+      float: right;
+      margin-left: 2rem;
+    }
+  }
+}

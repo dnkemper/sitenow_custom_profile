@@ -1,0 +1,8 @@
+html.mm-opened .mm-page {
+  overflow: hidden;
+  top: 0;
+}
+
+#off-canvas:not( .mm-menu ) {
+   display: none;
+}

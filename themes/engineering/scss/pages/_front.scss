@@ -1,0 +1,159 @@
+%pull-pane-top {
+  @include breakpoint(lg) {
+    margin: -($spacer-lg * 2) 0 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  > .container-smooth {
+    @include breakpoint(lg) {
+      border-top: 2rem solid #333333;
+      box-shadow: 0px -8px 10px rgba(0, 0, 0, 0.1), 0px 4px 0px $brand-yellow inset;
+      padding-top: $spacer-lg;
+      padding-bottom: $spacer-lg;
+      position: relative;
+      background: #fff;
+    }
+  }
+}
+
+.front {
+  // page-title-breadrumb reagion overrides.
+  .page-title-type-hero {
+    height: 80vh;
+    display: flex;
+    align-items: flex-end;
+
+    > .container-smooth {
+      padding-bottom: 10rem;
+    }
+
+    .bg-img {
+      opacity: 1;
+    }
+
+    .dots {
+      opacity: 0.2;
+    }
+  }
+
+  // Main wrapper overrides for additonal styles.
+  #main-wrapper {
+    box-shadow: 0 20rem 30rem -15rem $color-light-tan inset;
+    border-top: 7px solid $brand-yellow;
+  }
+
+  // panel-pane overrides for pulled top panel panes.
+  .panel-pane {
+    @include breakpoint(lg) {
+      padding: 0;
+    }
+
+    > .container-smooth {
+      @include breakpoint(lg) {
+        padding: $spacer-lg;
+      }
+    }
+  }
+
+  .showcase-type-hero {
+    h2 {
+      display: none;
+    }
+  }
+
+  .pane-engineering-blocks-homepage-articles {
+    @extend %pull-pane-top;
+    border-bottom: 7px solid $brand-yellow;
+
+    @include breakpoint(lg) {
+      box-shadow: 0px 6px 8px rgba(0,0,0,0.2);
+
+      // background-image: url('../images/backgrounds/blueprint.png');
+      // background-repeat: no-repeat;
+      // background-size: 100%;
+      // background-position: 0rem 8rem;
+    }
+
+    .pane-content {
+      position: relative;
+    }
+
+    .item-list {
+      @include breakpoint(sm) {
+        position: absolute;
+        top: -7rem;
+        right: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+          list-style: none;
+          display: inline;
+
+          &:after {
+            content: '\2758';
+            margin: 0 0.5rem 0 1rem;
+            color: #ccc;
+          }
+
+          &:last-child:after {
+            content: "";
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #coe-something-more {
+    @extend %pull-pane-top;
+
+    h2 {
+      font-weight: bold;
+      letter-spacing: -0.2rem;
+      font-size: 4.3rem;
+    }
+
+    .department-quick-nav {
+      text-align: center;
+
+      .dept-label {
+        margin-right: 1rem;
+        font-style: italic;
+        font-size: 1.8rem;
+      }
+
+      div.dropdown {
+        display: inline-block;
+      }
+    }
+  }
+
+  .pane-engineering-blocks-homepage-numbers {
+    background: #222;
+    @extend .font-smoothing-on;
+    color: #fff;
+    position: relative;
+    text-align: center;
+
+    .pane-title {
+      &:after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .bg-img {
+      background-image: url('../images/backgrounds/ceo_background_rooftop_blur_gray.jpg');
+    }
+
+    > .container-smooth {
+      position: relative;
+    }
+  }
+}
