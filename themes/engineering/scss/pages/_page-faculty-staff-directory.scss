@@ -1,0 +1,14 @@
+.page-faculty-staff-directory {
+  .view-id-faculty_and_staff_directory {
+    .view-display-id-attachment_az {
+      text-align: center;
+      margin: 1rem 0 4rem;
+    }
+
+    .node-person-card {
+      @include breakpoint(lg) {
+        min-height: 220px;
+      }
+    }
+  }
+}

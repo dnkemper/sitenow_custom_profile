@@ -1,0 +1,62 @@
+.block-responsive-menu {
+  .responsive-menu-toggle-icon {
+    width: auto;
+    height: auto;
+
+    &:before,
+    &:after,
+    span.icon {
+      background: $link-color;
+      left: auto;
+      position: static;
+      margin: 4px 0;
+
+      html.mm-opening & {
+        position: absolute;
+      }
+    }
+
+    .label {
+      @extend .sr-only;
+    }
+  }
+
+  .horizontal-menu {
+    a {
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    // First level menu items.
+    > li {
+
+      > a {
+        padding: $spacer-sm;
+      }
+
+      // Nested menu items.
+      ul {
+        @include fadeInUp($function: ease, $duration: 0.3s);
+        @extend .font-smoothing-on;
+        background: #333;
+        left: $spacer-sm;
+
+        a {
+          padding: $spacer-sm;
+          color: #fff;
+
+          &:hover,
+          &:focus {
+            background: #555;
+          }
+        }
+      }
+    }
+
+    // Position last dropdown to the right to prevent overflow.
+    > .last ul {
+      left: auto;
+      right: $spacer-sm;
+    }
+  }
+}

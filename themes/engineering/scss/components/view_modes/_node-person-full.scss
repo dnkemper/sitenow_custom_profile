@@ -1,0 +1,43 @@
+%label-default-reversed {
+  background-color: #eee;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.node-person-full {
+  a {
+    text-decoration: underline;
+  }
+
+  .field {
+    margin-bottom: $spacer-md;
+  }
+
+  .field_collection_item--field_person_directory--full {
+    margin-bottom: $spacer-sm;
+
+    .field {
+      margin-bottom: 0;
+    }
+  }
+
+  .field-name-field-image {
+    @include breakpoint(sm) {
+      float: right;
+    }
+  }
+
+  .field-name-person-main-title {
+    font-size: 1.8rem;
+  }
+
+  .field-name-field-present-research-interests,
+  .field-name-field-special-fields-knowledge {
+    .field-item {
+      @extend .label;
+      @extend %label-default-reversed;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.node-article-teaser {
+  @include breakpoint(md) {
+    display: flex;
+    align-items: center;
+  }
+
+  .field-name-field-image {
+    text-align: center;
+    margin-bottom: $spacer-md;
+
+    img {
+      @extend %img-bordered;
+    }
+
+    @include breakpoint(md) {
+      margin-right: $spacer-lg;
+      flex: 400px 1 0;
+    }
+  }
+
+  .field-name-field-primary-department {
+    .field-item:before {
+      content: '\29C9';
+      color: $brand-yellow;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .field-name-article-post-date {
+    .field-item:before {
+      content: '\25FC';
+      color: $brand-yellow;
+      margin-right: 0.5rem;
+    }
+  }
+  .links.inline {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+}

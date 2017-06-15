@@ -1,0 +1,39 @@
+html.js fieldset.collapsed {
+  height: auto;
+}
+
+legend {
+  margin-bottom: 0;
+
+  &.panel-heading {
+    position: relative;
+    margin-bottom: -1rem;
+    margin-top: 1rem;
+
+    a.fieldset-title {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+
+      &:before {
+        margin-right: 0.3rem;
+        @include fa(minus-square-o);
+      }
+
+      .collapsed & {
+        &:before {
+          @include fa(plus-square-o);
+        }
+      }
+    }
+  }
+}
+
+fieldset.panel {
+  border: none;
+}
+
+.panel-body.fieldset-wrapper {
+  border: 1px solid #ddd;
+}

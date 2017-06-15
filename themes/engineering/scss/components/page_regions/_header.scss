@@ -1,0 +1,50 @@
+.header {
+  background: $color-light-tan;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px -5px 8px -5px rgba(0, 0, 0, 0.1) inset;
+  border-bottom: 1px solid darken($color-light-tan, 10);
+
+  @include breakpoint(lg) {
+    padding: 4rem 0 0;
+  }
+
+  > .container-smooth {
+    position: relative;
+    background: #fff;
+    padding: 0 2rem;
+
+    @include breakpoint(lg) {
+      margin-bottom: -($spacer-lg);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+      padding: 0 $spacer-lg;
+      border: 1px solid #eaeaea;
+      max-width: 1280px;
+      z-index: 1;
+    }
+  }
+
+  .header-navbar {
+    padding: $spacer-md 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(sf) {
+      .toggle {
+        display: none;
+      }
+
+      .responsive-menu-block {
+        display: block;
+        font-size: 1.4rem;
+      }
+    }
+
+    .site-name {
+      margin: 0;
+      font-size: 33px;
+      font-family: "franklin-gothic-urw",sans-serif;
+    }
+  }
+}

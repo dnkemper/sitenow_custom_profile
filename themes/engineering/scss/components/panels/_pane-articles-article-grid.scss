@@ -1,0 +1,15 @@
+.pane-articles-article-grid {
+  .pane-content {
+    position: relative;
+  }
+
+  .more-link {
+    text-align: center;
+
+    @include breakpoint(sm) {
+      position: absolute;
+      top: -7rem;
+      right: 0;
+    }
+  }
+}

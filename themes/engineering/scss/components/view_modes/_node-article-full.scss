@@ -1,0 +1,32 @@
+.node-article-full {
+  .article-meta {
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    padding: 1rem 0;
+    margin-bottom: $spacer-md;
+
+    .field {
+      margin-bottom: 0;
+    }
+
+    > span {
+      display: inline-block;
+    }
+
+    > .sepearator {
+      margin: 0 0.5rem;
+    }
+  }
+
+  .author-info {
+    margin-bottom: $spacer-md;
+
+    .field {
+      margin-bottom: 0;
+    }
+  }
+
+  .field-name-field-image-caption {
+    font-size: 1.4rem;
+  }
+}

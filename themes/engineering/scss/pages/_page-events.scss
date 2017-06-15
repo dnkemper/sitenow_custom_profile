@@ -1,0 +1,8 @@
+.page-events {
+  .uiowa-event {
+    @include view-teaser;
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+}
