@@ -83,7 +83,7 @@ function engineering_shared_people_render($subtype, $conf, $panel_args, $context
   );
 
   // Endpoint base.
-  $endpoint_base = 'https://engineering.dev.drupal.uiowa.edu/feeds/person/json/v1/directory/';
+  $endpoint_base = 'https://www.engineering.uiowa.edu/feeds/person/json/v1/directory/';
 
   // Append args to the $endpoint.
   $endpoint = $endpoint_base . implode('/', $args);
