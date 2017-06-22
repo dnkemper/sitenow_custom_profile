@@ -9,14 +9,14 @@
  * Implements hook_block_info().
  */
 function engineering_shared_blocks_block_info() {
-  $blocks['administration']['info']  = t('Administration');
+  $blocks['administration']['info'] = t('Administration');
   $blocks['annex_construction']['info'] = t('Annex Connstruction Cameras');
   $blocks['hireahawk']['info'] = t('Hireahawk Widget');
   $blocks['homepage_articles']['info'] = t('Homepage Articles');
-  $blocks['homepage_numbers']['info']  = t('Homepage Numbers');
+  $blocks['homepage_numbers']['info'] = t('Homepage Numbers');
   $blocks['homepage_showcase_block']['info'] = t('Homepage Showcase Block');
   $blocks['misc_footer']['info'] = t('Additional Footer Information');
-  $blocks['support']['info']  = t('Support');
+  $blocks['support']['info'] = t('Support');
   $blocks['thank_staff']['info'] = t('Thank a Staff Member');
 
   return $blocks;
