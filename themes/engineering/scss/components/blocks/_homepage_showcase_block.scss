@@ -1,0 +1,19 @@
+.block--homepage-showcase-block {
+  .dome-icon {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+
+    i {
+      font-size: 6rem;
+      background: #333;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

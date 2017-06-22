@@ -1,0 +1,20 @@
+.block--social-media {
+  .block__title {
+    @extend .sr-only;
+  }
+  .menu {
+    li {
+      display: inline-block;
+      a {
+        text-decoration: none;
+        font-size: 2.3rem;
+        padding: 0;
+
+        &:hover,
+        &:focus {
+          background: transparent;
+        }
+      }
+    }
+  }
+}

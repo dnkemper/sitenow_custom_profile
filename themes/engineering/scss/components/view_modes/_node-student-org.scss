@@ -1,0 +1,16 @@
+.node-student-org {
+  .field-name-field-student-org-url {
+    .field-item:before {
+      @include fa('link');
+      font-size: 1.4rem;
+      min-width: 20px;
+    }
+  }
+  .field-name-field-student-org-email {
+    .field-item:before {
+      @include fa('envelope');
+      font-size: 1.4rem;
+      min-width: 20px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.footer {
+  @extend .font-smoothing-on;
+  background: #333;
+  color: #fff;
+  padding-top: $spacer-lg;
+  padding-bottom: $spacer-lg;
+  border-top: 6px solid darken(#333, 3);
+
+  a {
+    color: #ccc;
+    transition: color 0.3s ease-out;
+
+    &:hover,
+    &:focus {
+      color: $brand-yellow;
+    }
+
+    &.btn-primary {
+      color: #333;
+    }
+  }
+
+  .block {
+    margin-bottom: 2rem;
+  }
+
+  .block__title {
+    font-weight: $fw-bold;
+    border-bottom: 1px solid $brand-yellow;
+    margin-bottom: $spacer-sm;
+    padding-bottom: $spacer-sm;
+  }
+
+  .menu {
+    a {
+      padding: 0.5rem 0;
+
+      &:hover,
+      &:focus {
+        background: transparent;
+      }
+    }
+  }
+
+  .block--misc-footer {
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          display: block;
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.page-title-breadcrumbs {
+
+  .page-title {
+    margin: 0;
+  }
+
+  .breadcrumbs {
+    font-size: 1.3rem;
+  }
+
+  #block-menu-block-1 {
+    margin: $spacer-sm 0;
+  }
+
+  // Account for the offset of the pulled header-nav.
+  &.page-title-type-default {
+    margin: 2rem 0;
+
+    @include breakpoint(lg) {
+      margin: 6rem 0 2rem;
+    }
+  }
+
+  // Remove the extra space provided by panel-pane.
+  &.node-page-default-default.page-title-type-default {
+    margin-bottom: -2rem;
+  }
+
+  &.page-title-type-hero {
+    position: relative;
+    min-height: 30vh;
+    background: #222;
+
+    > .container-smooth {
+      @extend .font-smoothing-on;
+      position: relative;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      color: #fff;
+      min-height: 30vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      @include breakpoint(lg) {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    .page-title {
+      font-size: 4.5rem;
+    }
+
+    .breadcrumbs {
+
+      a {
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+
+    #block-menu-block-1 {
+      width: 300px;
+      margin: $spacer-sm auto;
+      position: relative;
+
+      .dropdown {
+        display: inline-block;
+        position: static;
+      }
+
+      .open > .dropdown-menu {
+        width: 100%;
+      }
+    }
+  }
+}

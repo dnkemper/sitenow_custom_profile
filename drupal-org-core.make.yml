@@ -4,4 +4,4 @@ api: 2
 projects:
   drupal:
     type: core
-    version: '7.54'
+    version: '7.56'

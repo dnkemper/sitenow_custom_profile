@@ -1,0 +1,13 @@
+.page-faculty-directory {
+  .pane-engineering-blocks-faculty-profiles-departments {
+    padding: 0;
+  }
+
+  .view-id-faculty_profiles {
+    .node-person-card {
+      @include breakpoint(lg) {
+        min-height: 220px;
+      }
+    }
+  }
+}

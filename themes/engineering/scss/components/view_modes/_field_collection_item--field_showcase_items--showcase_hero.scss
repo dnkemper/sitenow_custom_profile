@@ -1,0 +1,21 @@
+.field_collection_item--field_showcase_items--showcase_hero {
+  @extend .font-smoothing-on;
+  height: 50vh;
+  padding: 3rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    position: relative;
+    margin-bottom: -($spacer-sm);
+  }
+
+  .field {
+    margin-bottom: $spacer-sm;
+  }
+}
