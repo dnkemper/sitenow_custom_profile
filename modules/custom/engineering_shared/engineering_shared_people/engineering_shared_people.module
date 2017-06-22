@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function engineering_shared_people_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && ($plugin_type == 'content_types')) {
+    return 'plugins/' . $plugin_type;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function engineering_shared_people_theme() {
+  $module_path = drupal_get_path('module', 'engineering_shared_people');
+  $themes = array(
+    'person_teaser' => array(
+      "path" => $module_path . '/theme',
+      "template" => "person_teaser",
+    ),
+  );
+  return $themes;
+}
+
+/**
+ * Implements hook_flush_caches().
+ */
+function engineering_shared_people_flush_caches() {
+  return array('cache_engineering_shared_people');
+}
+
+/**
+ * Uiowa Events cache invalidation helper function.
+ */
+function engineering_shared_people_invalidate_cache() {
+  cache_clear_all('*', 'cache_engineering_shared_people', TRUE);
+}
+
+/**
+ * Helper function for decoding JSON.
+ *
+ * @param string $uri
+ *   The JSON feed.
+ *
+ * @return array
+ *   The retrieved data.
+ */
+function _engineering_shared_people_decode($uri) {
+  $decode_content = drupal_http_request($uri);
+  $decode_array = drupal_json_decode($decode_content->data);
+  return $decode_array;
+}

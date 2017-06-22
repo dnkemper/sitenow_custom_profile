@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the engineering_shared_taxonomies feature.
+ */
+
+include_once 'engineering_shared_taxonomies.features.inc';

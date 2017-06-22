@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Installation hooks for the Engineering Dept People module.
+ */
+
+ /**
+  * Implements hook_install().
+  */
+function engineering_shared_people_install() {
+  // Set the default cache time in minutes.
+  variable_set('engineering_shared_people_cache_time', '720');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function engineering_shared_people_schema() {
+  $schema = array();
+  $schema['cache_engineering_shared_people'] = drupal_get_schema_unprocessed('system', 'cache');
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function engineering_shared_people_uninstall() {
+  // Deletes engineering dept people entries from panels pane table.
+  $query = db_delete('panels_pane')
+    ->condition("type", "engineering_shared_people")
+    ->execute();
+
+  variable_del('engineering_shared_people_cache_time');
+
+}

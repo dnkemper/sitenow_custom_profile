@@ -1,0 +1,232 @@
+<?php
+
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function engineering_shared_blocks_block_info() {
+  $blocks['administration']['info'] = t('Administration');
+  $blocks['annex_construction']['info'] = t('Annex Connstruction Cameras');
+  $blocks['hireahawk']['info'] = t('Hireahawk Widget');
+  $blocks['homepage_articles']['info'] = t('Homepage Articles');
+  $blocks['homepage_numbers']['info'] = t('Homepage Numbers');
+  $blocks['homepage_showcase_block']['info'] = t('Homepage Showcase Block');
+  $blocks['misc_footer']['info'] = t('Additional Footer Information');
+  $blocks['support']['info'] = t('Support');
+  $blocks['thank_staff']['info'] = t('Thank a Staff Member');
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function engineering_shared_blocks_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'administration':
+      $block['subject'] = 'Administration';
+      $markup['student-services'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<strong>',
+        '#markup' => 'Engineering Student Services',
+        '#suffix' => '</strong>',
+      );
+      $markup['student-services-phone'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<div>',
+        '#markup' => 'Ph.: ' . l(t('319.335.5763'), 'tel:319-335-5763'),
+        '#suffix' => '</div>',
+      );
+      $markup['student-services-email'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<p>',
+        '#markup' => l(t('Email Contact Form'), '//www.engineering.uiowa.edu/node/4056'),
+        '#suffix' => '</p>',
+      );
+      $markup['dean'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<strong>',
+        '#markup' => 'Dean\'s Office',
+        '#suffix' => '</strong>',
+      );
+      $markup['dean-phone'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<div>',
+        '#markup' => 'Ph.: ' . l(t('319.335.5764'), 'tel:319-335-5764'),
+        '#suffix' => '</div>',
+      );
+      $markup['dean-email'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<p>',
+        '#markup' => l(t('Email Contact Form'), '//www.engineering.uiowa.edu/node/4071'),
+        '#suffix' => '</p>',
+      );
+      // Theme the markup.
+      $block['content'] = render($markup);
+      break;
+
+    case 'annex_construction':
+      $block['content'] = theme('annex_construction');
+      break;
+
+    case 'hireahawk':
+      $block['content'] = theme('hireahawk');
+      break;
+
+    case 'homepage_articles':
+      // Get/place the view.
+      $view = views_embed_view('articles', 'article_home');
+      $markup['view']['#markup'] = $view;
+      // Build the more links.
+      $items = array();
+      $items[] = l(t('View All'), base_path() . 'news');
+      $markup['more_links'] = array(
+        '#type' => 'markup',
+        '#markup' => theme('item_list', array('items' => $items)),
+      );
+
+      $block['subject'] = 'Featured News';
+      $block['content'] = render($markup);
+      break;
+
+    case 'homepage_numbers':
+      $block['subject'] = 'A few facts about our college';
+      $block['content'] = theme('homepage_numbers');
+      break;
+
+    case 'homepage_showcase_block':
+      $markup['dome_container'] = array(
+        '#type' => 'container',
+        '#attributes' => array(
+          'class' => 'dome-icon',
+        ),
+      );
+      $markup['dome_container']['dome'] = array(
+        '#type' => 'markup',
+        '#markup' => '<i class="ui-glyph-icon-dome" aria-hidden="true"></i>',
+      );
+      $markup['cta'] = array(
+        '#type' => 'markup',
+        '#markup' => l(
+          t('Learn About our Programs'),
+          drupal_get_path_alias('node/2529'),
+          array(
+            'attributes' => array(
+              'class' => 'btn btn-lg btn-primary',
+            ),
+          )
+        ),
+      );
+
+      $block['content'] = render($markup);
+      break;
+
+    case 'misc_footer':
+      $block['subject'] = 'Additional Information';
+      $markup['address'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<p>',
+        '#markup' => '3100 Seamans Center for the Engineering Arts and Sciences</br>Iowa City, IA 52242',
+        '#suffix' => '</p>',
+      );
+      $markup['misc-links'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<div><ul>',
+        '#markup' =>
+        '<li>' . l(t('Site Suggestions/Contact Webmaster'), '//www.engineering.uiowa.edu/node/4061') . '</li>
+        <li>' . l(t('Engineering Photo Submission'), '//www.engineering.uiowa.edu/node/5291') . '</li>
+        <li>' . l(t('Get Your Engineering Password'), 'https://password.engineering.uiowa.edu/accounts/') . '</li>',
+        '#suffix' => '</ul></div>',
+      );
+      $block['content'] = render($markup);
+      break;
+
+    case 'thank_staff':
+      $block['subject'] = 'Thank a Staff Member';
+      $markup['a'] = array(
+        '#type' => 'markup',
+        '#markup' => theme_html_tag(array(
+          'element' => array(
+            '#tag' => 'a',
+            '#value' => 'Thank a Staff Member',
+            '#attributes' => array(
+              'class' => 'btn btn-primary',
+              'id' => 'thankStaff',
+              'href' => '//www.engineering.uiowa.edu/node/4051',
+            ),
+          ),
+        )),
+      );
+      $block['content'] = render($markup);
+      break;
+
+    case 'support':
+      $block['subject'] = 'Support';
+      $markup['support-container'] = array(
+        '#type' => 'container',
+        '#attributes' => array(
+          'class' => 'support-info',
+        ),
+      );
+      $markup['support-container']['info'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<p>',
+        '#markup' => 'You can support The College of Engineering by making a gift to the University of Iowa Foundation.',
+        '#suffix' => '</p>',
+      );
+      $markup['support-container']['a'] = array(
+        '#type' => 'markup',
+        '#markup' => theme_html_tag(array(
+          'element' => array(
+            '#tag' => 'a',
+            '#value' => 'Give Today',
+            '#attributes' => array(
+              'class' => 'btn btn-primary',
+              'id' => 'giveToday',
+              'href' => 'http://www.uifoundation.org/engineering/',
+            ),
+          ),
+        )),
+      );
+      // Theme the markup.
+      $block['content'] = render($markup);
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function engineering_shared_blocks_theme() {
+  $module_path = drupal_get_path('module', 'engineering_shared_blocks');
+  $themes = array(
+    'annex_construction' => array(
+      "path" => $module_path . '/theme',
+      "template" => "annex_construction",
+    ),
+    'hireahawk' => array(
+      "path" => $module_path . '/theme',
+      "template" => "hireahawk",
+    ),
+    'homepage_numbers' => array(
+      "path" => $module_path . '/theme',
+      "template" => "homepage_numbers",
+    ),
+  );
+  return $themes;
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function engineering_shared_blocks_preprocess_block(&$vars) {
+  // Add a block class based upon delta.
+  $vars['classes_array'][] = 'block--' . str_replace('_', '-', $vars['elements']['#block']->delta);
+}
