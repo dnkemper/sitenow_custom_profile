@@ -1,0 +1,16 @@
+name = engineering_shared_feeds
+description = Feed importer configuration for Engineering sites.
+core = 7.x
+package = Engineering
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_ex
+dependencies[] = feeds_tamper
+features[ctools][] = feeds:feeds_importer_default:1
+features[ctools][] = feeds_tamper:feeds_tamper_default:2
+features[features_api][] = api:2
+features[feeds_importer][] = department_articles
+features[feeds_tamper][] = department_articles-audiences-explode
+features[feeds_tamper][] = department_articles-blank_source_1-default_value
+features[feeds_tamper][] = department_articles-tags-explode

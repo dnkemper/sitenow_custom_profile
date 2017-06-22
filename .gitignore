@@ -5,6 +5,7 @@ modules/custom/*
 themes/*
 
 # Custom module exclusions.
+!modules/custom/engineering_shared
 !modules/custom/iowa_counties
 !modules/custom/ovpred_common_modules
 !modules/custom/print_block

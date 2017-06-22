@@ -1,0 +1,14 @@
+name = engineering_shared_views
+description = Views configuration for Engineering sites.
+core = 7.x
+package = Engineering
+dependencies[] = entity
+dependencies[] = views
+dependencies[] = views_bootstrap
+dependencies[] = views_content
+dependencies[] = views_xml
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = article_feeds
+features[views_view][] = articles
+features_exclude[dependencies][ctools] = ctools

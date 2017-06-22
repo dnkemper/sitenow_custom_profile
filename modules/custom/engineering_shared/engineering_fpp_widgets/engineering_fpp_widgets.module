@@ -1,0 +1,391 @@
+<?php
+
+/**
+ * @file
+ * Code for the engineering_fpp_widgets feature.
+ */
+
+include_once 'engineering_fpp_widgets.features.inc';
+include_once 'engineering_fpp_widgets.helpers.inc';
+include_once 'engineering_fpp_widgets.template_attributes.inc';
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function engineering_fpp_widgets_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' || $owner == 'page_manager' || $owner == 'panels') {
+    return 'plugins/' . $plugin_type;
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function engineering_fpp_widgets_theme_registry_alter(&$theme_registry) {
+  // Defined path to the current module.
+  $module_path = drupal_get_path('module', 'engineering_fpp_widgets') . '/theme';
+  // Find all .tpl.php files in this module's folder recursively.
+  $template_file_objects = drupal_find_theme_templates($theme_registry, '.tpl.php', $module_path);
+  // Iterate through all found template file objects.
+  foreach ($template_file_objects as $key => $template_file_object) {
+    // If the template has not already been overridden by a theme.
+    if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) {
+      // Alter the theme path and template elements.
+      $theme_registry[$key]['theme path'] = $module_path;
+      $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
+      $theme_registry[$key]['type'] = 'module';
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function engineering_fpp_widgets_form_fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
+  $form['view_mode']['#access'] = FALSE;
+
+  switch ($form['#entity']->bundle) {
+    case 'accordion':
+      $form['title']['#description'] = t('Enter a title for this widget. You may use @none to hide the title.', array('@none' => '<none>'));
+      $form['reusable']['category']['#default_value'] = 'Accordion';
+      break;
+
+    case 'tabs':
+      $form['title']['#description'] = t('Enter a title for this widget. You may use @none to hide the title.', array('@none' => '<none>'));
+      $form['reusable']['category']['#default_value'] = 'Tabs';
+      break;
+
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Pane style edit form.
+ */
+function engineering_fpp_widgets_form_panels_edit_style_type_form_alter(&$form, &$form_state, $form_id) {
+  // Reset the style options.
+  $form['style']['#options'] = array('default' => 'No style');
+  switch ($form_state['pane']->type) {
+    case 'fieldable_panels_pane':
+      // Load the pane object.
+      $pane = fieldable_panels_panes_load_from_subtype($form_state['pane']->subtype);
+      // Get the bundle.
+      $bundle = $pane->bundle;
+      // Reset the options for fieldable_panel_panes.
+      $form['style']['#options'] = array();
+      // Switch on bundle type.
+      switch ($bundle) {
+        case 'accordion':
+          // Allow the panel_color option set.
+          $form['style']['#options']['accordion_options'] = 'Accordion Options';
+          break;
+
+        case 'showcases':
+          // Allow the panel_color option set.
+          $form['style']['#options']['showcase_hero'] = 'Showcase Hero';
+          $form['style']['#options']['showcase_grid'] = 'Showcase Grid';
+          break;
+
+        case 'tabs':
+          // Allow the panel_color option set.
+          $form['style']['#options']['tab_options'] = 'Tab Options';
+          break;
+
+      }
+      break;
+
+    case 'uiowa_events_pane':
+      $form['style']['#options']['uiowa_events_grid'] = 'Uiowa Events Grid';
+      break;
+
+  }
+}
+
+/**
+ * Implements hook_preprocess_panels_pane().
+ *
+ * @see _allow_full_width_region()
+ */
+function engineering_fpp_widgets_preprocess_panels_pane(&$vars) {
+  $container = FALSE;
+  $allow_full_width = _allow_full_width_region($vars['display']->layout, $vars['pane']->panel);
+
+  // If there are panel settings.
+  if (isset($vars['settings'])) {
+    // Add the panel settings to the element.
+    $vars['content']['#element']->conf['panel_settings'] = $vars['settings'];
+  }
+
+  // Check to see if the region allows a full_width pane.
+  if ($allow_full_width == 1) {
+    // If there is no full_width setting, add a container.
+    if (!isset($vars['settings']['full_width'])) {
+      $container = TRUE;
+    }
+    // Else if the full_width setting is false, add a container.
+    elseif ($vars['settings']['full_width'] == 0) {
+      $container = TRUE;
+    }
+  }
+
+  // Add a class for the showcase_type.
+  if (!empty($vars['settings']) && !empty($vars['settings']['showcase_type'])) {
+    $vars['classes_array'][] = 'showcase-type-' . $vars['settings']['showcase_type'];
+  }
+
+  // If we need a panel pane container.
+  if ($container == TRUE) {
+    // Suggest the panels_pane__container template.
+    $vars['theme_hook_suggestions'][] = 'panels_pane__container';
+  }
+
+  switch ($vars['pane']->subtype) {
+    case 'engineering_blocks-homepage_numbers':
+      $vars['theme_hook_suggestions'][] = 'panels_pane__container_bg_image';
+      break;
+
+    case 'uiowa_events_pane':
+      // Add a class for the uiowa-events-pane-grid.
+      if (!empty($vars['settings']) && !empty($vars['settings']['uiowa_events_type'])) {
+        $vars['classes_array'][] = 'uiowa-events-pane-' . $vars['settings']['uiowa_events_type'];
+      }
+
+      // Re-render content and pass the pane object to variables.
+      // Prepare the parameters.
+      $params = array(
+        'days' => 365,
+        'start' => date('Y-m-d'),
+        'page' => 1,
+      );
+      foreach ($vars['pane']->configuration as $name => $c) {
+        if (!empty($c) && substr($name, 0, 6) === 'param_') {
+          $key = str_replace('param_', '', $name);
+          $params[$key] = $c;
+        }
+      }
+
+      // Get the events.
+      $events = uiowa_events_load(array('events'), $params);
+
+      // Set additional pane config.
+      $external_link = ($vars['pane']->configuration == 'event-link-external') ? TRUE : FALSE;
+      $more_link = ($vars['pane']->configuration == TRUE) ? TRUE : FALSE;
+
+      // Prepare variables.
+      $variables = array(
+        'data' => $events['events'],
+        'external_link' => $external_link,
+        'more_link' => $more_link,
+        'pane' => $vars['pane'],
+      );
+
+      $vars['content']['#markup'] = theme('uiowa_events_pane', $variables);
+      break;
+
+  }
+
+  // Look for specific CSS pane IDs.
+  if (!empty($vars['pane']->css) && !empty($vars['pane']->css['css_id'])) {
+    // Switch on pane css id.
+    switch ($vars['pane']->css['css_id']) {
+      case 'coe-something-more':
+        $dept = array();
+        $dept['container'] = array(
+          '#type' => 'container',
+          '#attributes' => array(
+            'class' => 'department-quick-nav',
+          ),
+        );
+        $dept['container']['dept_label'] = array(
+          '#type' => 'markup',
+          '#prefix' => '<span class="dept-label">',
+          '#markup' => 'Looking for a department',
+          '#suffix' => '</span>',
+        );
+        $dept['container']['dept_dropdown'] = array(
+          '#type' => 'markup',
+          '#markup' => theme('engineering_core_dept_button'),
+        );
+        $vars['content'] .= drupal_render($dept);
+        break;
+
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ *
+ * @see full_width_layouts();
+ */
+function engineering_fpp_widgets_preprocess_page(&$vars) {
+  // If we are on a node and the node is panelized.
+  if (isset($vars['node'], $vars['node']->panelizer)) {
+    // Set the node layout as a variable.
+    $node_layout = $vars['node']->panelizer['default']->display->layout;
+    // Get full_width_layouts.
+    $layouts = full_width_layouts();
+
+    // If the layout we are on is a full_width_layout.
+    if (array_key_exists($node_layout, $layouts)) {
+      // Do not set a container for the page.
+      $vars['container'] = FALSE;
+    }
+  }
+
+  // If we are a panel page.
+  if (!empty(panels_get_current_page_display())) {
+    $display = panels_get_current_page_display();
+    $layout = $display->layout;
+    // Get full_width_layouts.
+    $layouts = full_width_layouts();
+    // If the layout we are on is a full_width_layout.
+    if (array_key_exists($layout, $layouts)) {
+      // Do not set a container for the page.
+      $vars['container'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field_collection_bootstrap_accordion().
+ */
+function engineering_fpp_widgets_preprocess_field_collection_bootstrap_accordion(&$vars) {
+  // Check if we are passing panel_settings.
+  if (!empty($vars['entity']->conf['panel_settings'])) {
+    // Add to the update the classes to the conf variable.
+    $vars['conf'] = array(
+      'panel_classes' => 'panel ' . $vars['entity']->conf['panel_settings']['panel_color'],
+    );
+  }
+}
+
+/**
+ * Implements hook_preprocess_field_collection_bootstrap_tabs().
+ */
+function engineering_fpp_widgets_preprocess_field_collection_bootstrap_tabs(&$vars) {
+  // Check if we are passing panel_settings.
+  if (!empty($vars['entity']->conf['panel_settings'])) {
+    // Update nav_classes.
+    $nav_classes = array('nav');
+    $vars['nav_classes'] = array_merge($nav_classes, explode('_', $vars['entity']->conf['panel_settings']['nav_style']));
+  }
+}
+
+/**
+ * Implements hook_preprocess_entity().
+ */
+function engineering_fpp_widgets_preprocess_entity(&$vars) {
+  // If the entity is a field_collection_item.
+  if ($vars['entity_type'] == 'field_collection_item') {
+    $field_collection = $vars['field_collection_item'];
+
+    // Add a class based on the [entity_type]--[bundle]--[view_mode].
+    $vars['classes_array'][] = 'field_collection_item--' . $vars['elements']['#bundle'] . '--' . $vars['view_mode'];
+
+    // Switch on bundle.
+    switch ($vars['elements']['#bundle']) {
+      case 'field_showcase_items':
+
+        // Switch on view_mode.
+        switch ($vars['view_mode']) {
+          case 'showcase_hero':
+            // Add a class based upon the showcase node id.
+            $selector = 'showcase-' . $field_collection->item_id;
+            // Add a .bg-img class to the entity.
+            $vars['classes_array'][] = 'bg-img';
+            // Add a selector class to the classes_array.
+            $vars['classes_array'][] = $selector;
+            // Create a url to the image file needed.
+            if (!empty($vars['content']['field_image'])) {
+              $image_path = image_style_url($vars['content']['field_image'][0]['#image_style'], $vars['field_image'][0]['uri']);
+              drupal_add_css('.' . $selector . ' {background-image: url("' . $image_path . '");}', 'inline');
+            }
+            unset($vars['content']['field_image']);
+            break;
+
+        }
+        break;
+
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function engineering_fpp_widgets_preprocess_field(&$vars) {
+  // If the field is from a field_collection_item.
+  if ($vars['element']['#entity_type'] == 'field_collection_item') {
+    // Switch on field_name.
+    switch ($vars['element']['#field_name']) {
+      case 'field_title':
+        // Suggest a template file to strip out extraneous markup.
+        $vars['theme_hook_suggestions'][] = 'field__bare';
+        break;
+
+      case 'field_icon':
+        // Suggest a template file to strip out extraneous markup.
+        $vars['theme_hook_suggestions'][] = 'field__bare';
+        break;
+
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_fieldable_panels_pane().
+ */
+function engineering_fpp_widgets_preprocess_fieldable_panels_pane(&$vars) {
+  $bundle = $vars['elements']['#bundle'];
+  $showcase_type = (isset($vars['elements']['#element']->conf['panel_settings'], $vars['elements']['#element']->conf['panel_settings']['showcase_type']) ? $vars['elements']['#element']->conf['panel_settings']['showcase_type'] : NULL);
+
+  switch ($bundle) {
+    case 'showcases':
+      $element = $vars['content']['field_showcase_items'];
+      $children = array_intersect_key($element, element_children($element));
+      $view_mode = 'full';
+      $field_collection_ids = array();
+      $showcase_items = array();
+
+      // Get the showcase_type setting.
+      if (isset($showcase_type)) {
+        switch ($showcase_type) {
+          case 'hero':
+            $view_mode = 'showcase_hero';
+            break;
+
+          case 'grid':
+            $columns = (isset($vars['elements']['#fieldable_panels_pane']->conf['panel_settings']['col'])) ? $vars['elements']['#fieldable_panels_pane']->conf['panel_settings']['col'] : '3_col';
+            $view_mode = 'showcase_grid';
+            $vars['theme_hook_suggestions'][] = 'fieldable_panels_pane__showcases_grid';
+            $vars['theme_hook_suggestions'][] = 'fieldable_panels_pane__showcases_grid_' . $columns;
+            break;
+
+        }
+      }
+
+      // This code replaces the content variable with the proper entity and view mode.
+      // Get the field_collection_item ids.
+      foreach ($vars['content']['field_showcase_items']['#items'] as $item) {
+        $field_collection_ids[] = $item['value'];
+      }
+      // Load the field_collection_items.
+      $entities = field_collection_item_load_multiple($field_collection_ids);
+      // Prepare the render array for each field_collection_item for a given view_mode.
+      $view = entity_view('field_collection_item', $entities, $view_mode);
+      // Loop through $children.
+      foreach ($children as $delta => $child) {
+        // Get the field_collection_item id and store as a variable.
+        $id = array_keys($child['entity']['field_collection_item']);
+        $id = $id[0];
+        // Add our re-rendered entity to the showcase_items array.
+        $showcase_items[] = $view['field_collection_item'][$id];
+      }
+      // Update content with our showcase_items.
+      $vars['content'] = $showcase_items;
+      break;
+
+  }
+}

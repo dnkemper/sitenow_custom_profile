@@ -1,0 +1,202 @@
+<?php
+
+/**
+ * @file
+ * Code for the engineering_shared_content_types feature.
+ */
+
+include_once 'engineering_shared_content_types.features.inc';
+
+/**
+ * Implements hook_field_access().
+ */
+function engineering_shared_content_types_field_access($op, $field, $entity_type, $entity, $account) {
+  // Restrict field_protected to admin protected content perm.
+  if ($field['field_name'] == 'field_protected') {
+    return user_access('administrate protected content', $account);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function engineering_shared_content_types_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_image_hero']['#states'] = array(
+    // Show field_image_hero when the field_display_type is set to hero.
+    'visible' => array(
+      ':input[name="field_display_type[' . LANGUAGE_NONE . ']"]' => array('value' => 'hero'),
+    ),
+    // Set the required indicator.
+    'required' => array(
+      ':input[name="field_display_type[' . LANGUAGE_NONE . ']"]' => array('value' => 'hero'),
+    ),
+  );
+  // Register validation function.
+  $form['#validate'][] = 'engineering_shared_content_types_form_validate';
+}
+
+/**
+ * Custom form validation function.
+ */
+function engineering_shared_content_types_form_validate($form, &$form_state) {
+  // Validates image has been selected/uploaded for display type hero.
+  if (!empty($form_state['values']['field_display_type'])) {
+    if ($form_state['values']['field_display_type'][LANGUAGE_NONE][0]['value'] == 'hero' && $form_state['values']['field_image_hero'][LANGUAGE_NONE][0]['fid'] == 0) {
+      form_set_error('field_image_hero', 'Image required for this display type hero.');
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function engineering_shared_content_types_form_article_node_form_alter(&$form, &$form_state, $form_id) {
+  // If an imported article...
+  if (isset($form_state['node'], $form_state['node']->field_imported) && $form_state['node']->field_imported[LANGUAGE_NONE][0]['value'] == 1) {
+    // Disable entire form.
+    $form['#disabled'] = TRUE;
+    // Remove image field access.
+    $form['field_image']['#access'] = FALSE;
+    // Display message explaining disabled form, and link to source.
+    $source_nid = $form_state['node']->field_external_nid[LANGUAGE_NONE][0]['safe_value'];
+    drupal_set_message(t('This article was imported and cannot be edited. All changes must happen at the source. <a href="//engineering.uiowa.edu/node/@nid">View source</a>.', array('@nid' => $source_nid)), 'warning');
+  }
+  else {
+    // Keep these import fields from being used for regular articles.
+    $form['field_imported']['#access'] = FALSE;
+    $form['field_external_nid']['#access'] = FALSE;
+    $form['field_external_image']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function engineering_shared_content_types_node_access($node, $op, $account) {
+  // Check to see if the node is protected.
+  if (!empty($node->field_protected) && $node->field_protected[LANGUAGE_NONE][0]['value'] == 1) {
+    // If the user does not have the "administrate protected content" perm.
+    if (!user_access('administrate protected content')) {
+      // If the operation is edit or delete.
+      if ($op == 'update' || $op == 'delete') {
+        // Prevent the access.
+        return NODE_ACCESS_DENY;
+      }
+    }
+  }
+  // Prevent deletion of articles create by user 1 (itsadmin imported).
+  if ($node->type == 'article' && $node->uid == '1') {
+    // If the operation is delete.
+    if ($op == 'delete') {
+      // Prevent the access.
+      return NODE_ACCESS_DENY;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function engineering_shared_content_types_preprocess_field(&$vars) {
+  switch ($vars['element']['#field_name']) {
+    case 'field_external_image':
+      // Mimic field_image for style purposes.
+      $vars['classes_array'][] = 'field-name-field-image';
+      $vars['classes_array'][] = 'field-type-image';
+      break;
+
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function engineering_shared_content_types_preprocess_node(&$vars) {
+  // Add theme suggestion and node classes based upon the type and view mode.
+  $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
+  $vars['classes_array'][] = 'node-' . $vars['type'] . '-' . $vars['view_mode'];
+
+  switch ($vars['type']) {
+    case 'article':
+      // If external image.
+      if (!empty($vars['field_external_image'])) {
+        // And if local image...
+        if (!empty($vars['field_image'])) {
+          unset($vars['field_image']);
+        }
+      }
+      switch ($vars['view_mode']) {
+        case 'full':
+          $vars['theme_hook_suggestions'][] = 'node__article__full__dept';
+          break;
+
+        case 'grid':
+          $vars['theme_hook_suggestions'][] = 'node__article__grid__dept';
+          break;
+
+        case 'teaser':
+          $vars['theme_hook_suggestions'][] = 'node__article__teaser__dept';
+          break;
+
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function engineering_shared_content_types_node_view($node, $view_mode, $langcode) {
+  // Get extra field info from hook_field_extra_fields().
+  $extra = engineering_shared_core_field_extra_fields();
+
+  // Check that we're supporting the node type being viewed.
+  if (empty($extra['node'][$node->type]['display'])) {
+    return;
+  }
+
+  $config = field_bundle_settings('node', $node->type);
+  foreach ($extra['node'][$node->type]['display'] as $field_name => $field_info) {
+    // Check to make sure this field is visible in this view mode.
+    if (empty($config['extra_fields']['display'][$field_name][$view_mode]['visible'])) {
+      continue;
+    }
+
+    switch ($field_name) {
+      // Article Post Date.
+      case 'article_post_date':
+        $node->content[$field_name] = array(
+          '#pseudo_field' => TRUE,
+          '#label_display' => 'hidden',
+          '#markup' => format_date($node->created, 'custom', 'F j, Y'),
+        );
+        break;
+
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function engineering_shared_content_types_theme() {
+  $module_path = drupal_get_path('module', 'engineering_shared_content_types');
+  $themes = array(
+    'node__article__full__dept' => array(
+      "variables" => array('nodes' => NULL),
+      "path" => $module_path . '/theme',
+      "template" => "node--article--full--dept",
+    ),
+    'node__article__grid__dept' => array(
+      "variables" => array('nodes' => NULL),
+      "path" => $module_path . '/theme',
+      "template" => "node--article--grid--dept",
+    ),
+    'node__article__teaser__dept' => array(
+      "variables" => array('nodes' => NULL),
+      "path" => $module_path . '/theme',
+      "template" => "node--article--teaser--dept",
+    ),
+  );
+  return $themes;
+}

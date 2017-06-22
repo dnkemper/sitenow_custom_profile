@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Code for the catering_footer module.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function engineering_shared_footer_permission() {
+  return array(
+    'administer engineering footer' => array(
+      'title' => t('Administer Engineering Footer'),
+      'description' => t('Configure Engineering footer.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function engineering_shared_footer_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/engineering-footer'] = array(
+    'title' => 'Engineering Footer',
+    'description' => 'Configuration for the Engineering Footer',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('engineering_shared_footer_config_form'),
+    'access arguments' => array('administer engineering footer'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/engineering_shared_footer.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function engineering_shared_footer_theme() {
+  $themes = array(
+    'engineering_shared_footer_block' => array(
+      'path' => drupal_get_path('module', 'engineering_shared_footer') . '/theme',
+      'template' => "engineering_shared_footer_block",
+    ),
+  );
+
+  return $themes;
+}
+
+/**
+ * Implements hook_preprocess_engineering_shared_footer_block().
+ */
+function engineering_shared_footer_preprocess_engineering_shared_footer_block(&$variables) {
+  $quick_menu_tree = menu_tree_all_data('menu-quick-links');
+  if (!empty($quick_menu_tree)) {
+    $quick_menu_output = menu_tree_output($quick_menu_tree);
+    $variables['quick_menu_links'] = render($quick_menu_output);
+  }
+  $social_menu_tree = menu_tree_all_data('menu-social-media');
+  if (!empty($social_menu_tree)) {
+    $social_menu_output = menu_tree_output($social_menu_tree);
+    $variables['social_menu_links'] = render($social_menu_output);
+  }
+
+  // Content from config form.
+  $contact_us = variable_get('engineering_shared_footer_contact_us');
+  if (!empty($contact_us)) {
+    $variables['contact_us'] = check_markup($contact_us['value'], $contact_us['format']);
+  }
+}
