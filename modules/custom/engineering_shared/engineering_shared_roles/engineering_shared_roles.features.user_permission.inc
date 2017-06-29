@@ -229,10 +229,7 @@ function engineering_shared_roles_user_default_permissions() {
   // Exported permission: 'add terms in audiences'.
   $permissions['add terms in audiences'] = array(
     'name' => 'add terms in audiences',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
+    'roles' => array(),
     'module' => 'taxonomy_access_fix',
   );
 
@@ -289,15 +286,6 @@ function engineering_shared_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'administer devel menu items'.
-  $permissions['administer devel menu items'] = array(
-    'name' => 'administer devel menu items',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'menu_admin_per_menu',
   );
 
   // Exported permission: 'administer engineering footer'.
@@ -602,42 +590,57 @@ function engineering_shared_roles_user_default_permissions() {
   // Exported permission: 'administer panelizer node page content'.
   $permissions['administer panelizer node page content'] = array(
     'name' => 'administer panelizer node page content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: 'administer panelizer node page context'.
   $permissions['administer panelizer node page context'] = array(
     'name' => 'administer panelizer node page context',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: 'administer panelizer node page defaults'.
   $permissions['administer panelizer node page defaults'] = array(
     'name' => 'administer panelizer node page defaults',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: 'administer panelizer node page layout'.
   $permissions['administer panelizer node page layout'] = array(
     'name' => 'administer panelizer node page layout',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: 'administer panelizer node page overview'.
   $permissions['administer panelizer node page overview'] = array(
     'name' => 'administer panelizer node page overview',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: 'administer panelizer node page settings'.
   $permissions['administer panelizer node page settings'] = array(
     'name' => 'administer panelizer node page settings',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'panelizer',
   );
 
@@ -1359,10 +1362,7 @@ function engineering_shared_roles_user_default_permissions() {
   // Exported permission: 'delete terms in audiences'.
   $permissions['delete terms in audiences'] = array(
     'name' => 'delete terms in audiences',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
@@ -1707,10 +1707,7 @@ function engineering_shared_roles_user_default_permissions() {
   // Exported permission: 'edit terms in audiences'.
   $permissions['edit terms in audiences'] = array(
     'name' => 'edit terms in audiences',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
-    ),
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 
