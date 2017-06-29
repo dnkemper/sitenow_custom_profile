@@ -38,7 +38,6 @@ features[user_permission][] = administer advanced pane settings
 features[user_permission][] = administer blocks
 features[user_permission][] = administer ckeditor link
 features[user_permission][] = administer content types
-features[user_permission][] = administer devel menu items
 features[user_permission][] = administer engineering footer
 features[user_permission][] = administer entity view modes
 features[user_permission][] = administer fancybox
