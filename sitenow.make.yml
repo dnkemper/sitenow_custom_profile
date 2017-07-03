@@ -60,6 +60,11 @@ projects:
   bongo:
     version: "1.0"
 
+  bootstrap_accessibility:
+    download:
+      branch: "7.x-1.x"
+      revision: "c068661491afe3a1ec82b8e8b0f86f4a6ac1f258"
+
   bootstrap_fieldgroup:
     version: "1.2"
 
