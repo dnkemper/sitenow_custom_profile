@@ -668,7 +668,7 @@ projects:
     version: "1.5"
 
   views_slideshow:
-    version: "3.8"
+    version: "3.9"
 
   views_tree:
     version: "2.0"
