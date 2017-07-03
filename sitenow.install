@@ -430,3 +430,10 @@ function sitenow_update_7208() {
 function sitenow_update_7300() {
   cache_clear_all();
 }
+
+/**
+ * Turn page compression off.
+ */
+function sitenow_update_7301() {
+  variable_set('page_compression', 0);
+}
