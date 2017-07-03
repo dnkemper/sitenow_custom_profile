@@ -396,7 +396,7 @@ projects:
     version: "2.8"
 
   mimemail:
-    version: "1.0-beta4"
+    version: "1.0"
 
   modernizr:
     version: "3.9"
