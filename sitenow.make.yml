@@ -76,7 +76,7 @@ projects:
     version: "1.4"
 
   ckeditor:
-    version: "1.17"
+    version: "1.18"
 
   ckeditor_link:
     version: "2.4"
