@@ -754,6 +754,12 @@ projects:
     download:
       url: git@github.com:ITS-UofIowa/fontawesome_menu.git
       tag: "7.x-1.1"
+      
+  font_awesome_field:
+    subdir: "custom"
+    download:
+      url: git@github.com:ITS-UofIowa/font_awesome_field.git
+      tag: "7.x-2.0"
 
   localist_pane:
     subdir: "custom"
