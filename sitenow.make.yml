@@ -846,6 +846,13 @@ libraries:
     download:
       type: "get"
       url: "https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip"
+      
+  bootstrap-accessibility-plugin:
+    download:
+      type: "git"
+      url: "git@github.com:paypal/bootstrap-accessibility-plugin.git"
+      tag: "v1.0.4"
+    directory_name: "bootstrap-accessibility-plugin"
 
   chosen:
     download:
