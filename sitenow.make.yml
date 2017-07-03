@@ -36,9 +36,7 @@ projects:
     version: "1.2"
 
   auto_entitylabel:
-    download:
-      branch: "7.x-1.x"
-      revision: "46f7bacc8c68761d45fac98a3c13431b9607a8d3"
+    version: "1.4"
 
   # Can we migrate all sites using this to auto_entitylabel?
   auto_nodetitle:
