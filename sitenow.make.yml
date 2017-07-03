@@ -709,7 +709,7 @@ projects:
     version: "1.4"
 
   workflow:
-    version: "2.9"
+    version: "2.10"
 
   wysiwyg:
     version: "2.4"
