@@ -369,7 +369,7 @@ projects:
     version: "1.0-alpha1"
 
   media_youtube:
-    version: "3.0"
+    version: "3.4"
 
   memcache:
     version: "1.6"
