@@ -411,7 +411,7 @@ projects:
     version: "1.7"
 
   node_revision_delete:
-    version: "2.6"
+    version: "2.7"
 
   # Can we migrate to entityqueue?
   nodequeue:
