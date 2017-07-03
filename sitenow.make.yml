@@ -666,6 +666,9 @@ projects:
 
   views_load_more:
     version: "1.5"
+    
+  view_mode_selector:
+    version: "1.2"
 
   views_slideshow:
     version: "3.9"
