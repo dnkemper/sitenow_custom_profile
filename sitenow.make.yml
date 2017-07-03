@@ -484,7 +484,7 @@ projects:
     version: "2.1"
 
   quicktabs:
-    version: "3.6"
+    version: "3.8"
 
   rabbit_hole:
     version: "2.24"
