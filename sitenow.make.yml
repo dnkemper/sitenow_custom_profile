@@ -399,7 +399,7 @@ projects:
     version: "1.0"
 
   modernizr:
-    version: "3.9"
+    version: "3.10"
     
   module_missing_message_fixer:
     version: "1.4"
