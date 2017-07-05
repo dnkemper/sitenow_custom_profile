@@ -187,7 +187,7 @@ projects:
   expire:
     version: "2.0-rc4"
     patch: 
-      - "https://www.drupal.org/files/issues/expire-fix-save-overriden-values-2201913-27.patch"
+      - "https://www.drupal.org/files/issues/add_support_for_terms-2201913-15.patch"
 
   extlink:
     version: "1.18"
