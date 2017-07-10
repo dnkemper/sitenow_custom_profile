@@ -437,3 +437,10 @@ function sitenow_update_7300() {
 function sitenow_update_7301() {
   variable_set('page_compression', 0);
 }
+
+/**
+ * Set expire config for taxonomy terms.
+ */
+function sitenow_update_7302() {
+  variable_set('expire_taxonomy_term_actions', drupal_map_assoc(array(1, 2, 3)));
+}
