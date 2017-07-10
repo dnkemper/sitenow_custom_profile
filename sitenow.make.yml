@@ -9,7 +9,7 @@ defaults:
 ################################# Contrib ####################################
 projects:
   acquia_connector:
-    version: "2.17"
+    version: "3.1"
 
   acquia_purge:
     version: "1.3"
@@ -36,9 +36,7 @@ projects:
     version: "1.2"
 
   auto_entitylabel:
-    download:
-      branch: "7.x-1.x"
-      revision: "46f7bacc8c68761d45fac98a3c13431b9607a8d3"
+    version: "1.4"
 
   # Can we migrate all sites using this to auto_entitylabel?
   auto_nodetitle:
@@ -62,6 +60,11 @@ projects:
   bongo:
     version: "1.0"
 
+  bootstrap_accessibility:
+    download:
+      branch: "7.x-1.x"
+      revision: "c068661491afe3a1ec82b8e8b0f86f4a6ac1f258"
+
   bootstrap_fieldgroup:
     version: "1.2"
 
@@ -78,7 +81,7 @@ projects:
     version: "1.4"
 
   ckeditor:
-    version: "1.17"
+    version: "1.18"
 
   ckeditor_link:
     version: "2.4"
@@ -176,13 +179,15 @@ projects:
     version: "1.1"
 
   entityreference:
-    version: "1.2"
+    version: "1.4"
 
   escape_admin:
     version: "1.2"
 
   expire:
     version: "2.0-rc4"
+    patch: 
+      - "https://www.drupal.org/files/issues/add_support_for_terms-2201913-15.patch"
 
   extlink:
     version: "1.18"
@@ -233,9 +238,7 @@ projects:
     version: "1.11"
 
   file_entity:
-    version: "2.0-beta3"
-    patch:
-      - "https://www.drupal.org/files/issues/disable_file_entity_label-1245266-14.patch"
+    version: "2.2"
 
   file_entity_link:
     version: "1.0-alpha3"
@@ -264,6 +267,9 @@ projects:
 
   form_builder:
     version: "1.20"
+    
+  fullcalendar:
+    version: "2.0"
 
   geocoder:
     version: "1.3"
@@ -364,7 +370,7 @@ projects:
     version: "3.2"
 
   media:
-    version: "2.4"
+    version: "2.8"
 
   media_browser_plus:
     version: "3.0-beta4"
@@ -373,7 +379,7 @@ projects:
     version: "1.0-alpha1"
 
   media_youtube:
-    version: "3.0"
+    version: "3.4"
 
   memcache:
     version: "1.6"
@@ -400,10 +406,10 @@ projects:
     version: "2.8"
 
   mimemail:
-    version: "1.0-beta4"
+    version: "1.0"
 
   modernizr:
-    version: "3.9"
+    version: "3.10"
     
   module_missing_message_fixer:
     version: "1.4"
@@ -415,7 +421,7 @@ projects:
     version: "1.7"
 
   node_revision_delete:
-    version: "2.6"
+    version: "2.7"
 
   # Can we migrate to entityqueue?
   nodequeue:
@@ -454,7 +460,7 @@ projects:
     version: "1.4"
 
   pathologic:
-    version: "2.12"
+    version: "3.1"
 
   phone:
     version: "1.0-beta1"
@@ -488,7 +494,7 @@ projects:
     version: "2.1"
 
   quicktabs:
-    version: "3.6"
+    version: "3.8"
 
   rabbit_hole:
     version: "2.24"
@@ -564,7 +570,7 @@ projects:
       - "https://www.drupal.org/files/issues/simplesamlphp_auth-store-saml-roles-separate-2707269-2.patch"
 
   site_verify:
-    version: "1.1"
+    version: "1.2"
 
   slick:
     version: "2.0"
@@ -628,7 +634,7 @@ projects:
     version: "1.2"
 
   uuid:
-    version: "1.0-beta2"
+    version: "1.0"
 
   value_is:
     version: "1.10"
@@ -670,9 +676,12 @@ projects:
 
   views_load_more:
     version: "1.5"
+    
+  view_mode_selector:
+    version: "1.2"
 
   views_slideshow:
-    version: "3.8"
+    version: "3.9"
 
   views_tree:
     version: "2.0"
@@ -713,14 +722,10 @@ projects:
     version: "1.4"
 
   workflow:
-    version: "2.9"
+    version: "2.10"
 
   wysiwyg:
-    download:
-      revision: "898d022cf7d0b6c6a6e7d813199d561b4ad39f8b"
-      branch: "7.x-2.x"
-    patch:
-      - "https://www.drupal.org/files/issues/2679106-ckeditor-reuse-cache-busting-query-898d02-do-not-test.patch"
+    version: "2.4"
 
   wysiwyg_filter:
     version: "1.6-rc3"
@@ -758,7 +763,13 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/fontawesome_menu.git
-      tag: "7.x-1.0"
+      tag: "7.x-1.1"
+      
+  font_awesome_field:
+    subdir: "custom"
+    download:
+      url: git@github.com:ITS-UofIowa/font_awesome_field.git
+      tag: "7.x-2.0"
 
   localist_pane:
     subdir: "custom"
@@ -837,6 +848,13 @@ libraries:
     download:
       type: "get"
       url: "https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip"
+      
+  bootstrap-accessibility-plugin:
+    download:
+      type: "git"
+      url: "git@github.com:paypal/bootstrap-accessibility-plugin.git"
+      tag: "v1.0.4"
+    directory_name: "bootstrap-accessibility-plugin"
 
   chosen:
     download:
