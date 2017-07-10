@@ -107,6 +107,7 @@ function sitenow_set_vars() {
   variable_set('preprocess_css', 1);
   variable_set('preprocess_js', 1);
   variable_set('expire_file_file', '1');
+  variable_set('expire_taxonomy_term_actions', drupal_map_assoc(array(1, 2, 3)));
 
   // Set variable for webform exports.
   variable_set('webform_export_path', 'private://webform_results');
