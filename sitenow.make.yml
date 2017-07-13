@@ -239,6 +239,8 @@ projects:
 
   file_entity:
     version: "2.2"
+    patch:
+      - "https://www.drupal.org/files/issues/disable_file_entity_label-1245266-14.patch"
 
   file_entity_link:
     version: "1.0-alpha3"
