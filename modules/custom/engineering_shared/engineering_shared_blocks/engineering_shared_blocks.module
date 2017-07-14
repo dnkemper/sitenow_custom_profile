@@ -230,3 +230,21 @@ function engineering_shared_blocks_preprocess_block(&$vars) {
   // Add a block class based upon delta.
   $vars['classes_array'][] = 'block--' . str_replace('_', '-', $vars['elements']['#block']->delta);
 }
+
+/**
+ * Preprocess variables for panels_pane.tpl.php.
+ */
+function engineering_shared_blocks_preprocess_panels_pane(&$vars) {
+  if (isset($vars['pane']->subtype)) {
+    switch ($vars['pane']->subtype) {
+      case 'engineering_shared_blocks-homepage_articles':
+        $vars['classes_array'][] = 'pane-engineering-blocks-homepage-articles';
+        break;
+
+      case 'engineering_shared_blocks-homepage_numbers':
+        $vars['classes_array'][] = 'pane-engineering-blocks-homepage-numbers';
+        break;
+
+    }
+  }
+}
