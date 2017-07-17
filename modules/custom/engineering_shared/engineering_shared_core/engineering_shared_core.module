@@ -165,7 +165,7 @@ function theme_item_list_dropdown($vars) {
  * Implements hook_theme().
  */
 function engineering_shared_core_theme() {
-    return array(
+  return array(
     'engineering_core_dept_button' => array(
       'render element' => 'element',
     ),
@@ -185,11 +185,11 @@ function engineering_shared_core_theme() {
  */
 function theme_engineering_core_dept_button($vars) {
   $links = array(
-    l('Biomedical Engineering', '//bme.engineering.uiowa.edu'),
-    l('Chemical and Biochemical Engineering', '//cbe.engineering.uiowa.edu'),
-    l('Civil and Environmental Engineering', '//cee.engineering.uiowa.edu'),
-    l('Electrical and Computer Engineering', '//ece.engineering.uiowa.edu'),
-    l('Mechanical and Industrial Engineering', '//mie.engineering.uiowa.edu'),
+    l(t('Biomedical Engineering'), '//bme.engineering.uiowa.edu'),
+    l(t('Chemical and Biochemical Engineering'), '//cbe.engineering.uiowa.edu'),
+    l(t('Civil and Environmental Engineering'), '//cee.engineering.uiowa.edu'),
+    l(t('Electrical and Computer Engineering'), '//ece.engineering.uiowa.edu'),
+    l(t('Mechanical and Industrial Engineering'), '//mie.engineering.uiowa.edu'),
   );
   $markup = array();
   $markup['container'] = array(
