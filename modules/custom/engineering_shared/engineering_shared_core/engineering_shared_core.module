@@ -162,6 +162,73 @@ function theme_item_list_dropdown($vars) {
 }
 
 /**
+ * Implements hook_theme().
+ */
+function engineering_shared_core_theme() {
+    return array(
+    'engineering_core_dept_button' => array(
+      'render element' => 'element',
+    ),
+    'item_list_dropdown' => array(
+      'variables' => array(
+        'items' => array(),
+        'type' => 'ul',
+        'attributes' => array(),
+        'parent_attributes' => array()
+      ),
+    ),
+  );
+}
+
+/**
+ * Custom Engineering Departments Dropdown Button.
+ */
+function theme_engineering_core_dept_button($vars) {
+  $links = array(
+    l('Biomedical Engineering', '//bme.engineering.uiowa.edu'),
+    l('Chemical and Biochemical Engineering', '//cbe.engineering.uiowa.edu'),
+    l('Civil and Environmental Engineering', '//cee.engineering.uiowa.edu'),
+    l('Electrical and Computer Engineering', '//ece.engineering.uiowa.edu'),
+    l('Mechanical and Industrial Engineering', '//mie.engineering.uiowa.edu'),
+  );
+  $markup = array();
+  $markup['container'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => 'dropdown',
+    ),
+  );
+  $markup['container']['button'] = array(
+    '#type' => 'markup',
+    '#markup' => theme_html_tag(array(
+      'element' => array(
+        '#tag' => 'button',
+        '#value' => 'Departments <i class="fa fa-caret-down" aria-hidden="true"></i>',
+        '#attributes' => array(
+          'class' => 'btn btn-primary dropdown-toggle',
+          'data-toggle' => 'dropdown',
+          'id' => 'deptDropdown',
+          'aria-haspopup' => 'true',
+          'aria-expanded' => 'false',
+        ),
+      ),
+    )),
+  );
+  $markup['container']['dropdown_list'] = array(
+    '#type' => 'markup',
+    '#markup' => theme('item_list_dropdown', array(
+      'parent_attributes' => array(
+        'class' => 'dropdown-menu',
+        'aria-labelledby' => 'deptDropdown'
+      ),
+      'items' => $links,
+    )),
+  );
+  $output = drupal_render($markup);
+  return $output;
+}
+
+/**
  * Implements hook_field_extra_fields().
  *
  * Naming convention: If the field is agnostic use a generic name.
