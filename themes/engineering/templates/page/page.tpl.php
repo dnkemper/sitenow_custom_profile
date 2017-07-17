@@ -98,6 +98,8 @@
     <?php if ($page['footer']): ?>
       <?php print render($page['footer']); ?>
     <?php endif; ?>
-    <?php print theme('engineering_shared_footer_block'); ?>
+    <?php if (module_exists('engineering_shared_footer')): ?>
+      <?php print theme('engineering_shared_footer_block'); ?>
+    <?php endif; ?>
   </div>
 </footer>
