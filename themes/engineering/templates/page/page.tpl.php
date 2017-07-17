@@ -93,35 +93,13 @@
 
 
 
-<?php if ($page['footer']): ?>
-  <footer id="footer" class="footer" role="footer">
-    <div class="container-smooth">
-      <div class="row">
-        <div class="col-md-3">
-          <?php
-            print render($page['footer']['engineering_blocks_administration']);
-            print render($page['footer']['menu_menu-social-media']);
-          ?>
-        </div>
-        <div class="col-md-3">
-          <?php
-            print render($page['footer']['menu_menu-graduate-students']);
-            print render($page['footer']['menu_menu-undergraduate-students']);
-          ?>
-        </div>
-        <div class="col-md-3">
-          <?php
-            print render($page['footer']['menu_menu-faculty-staff']);
-            print render($page['footer']['engineering_blocks_thank_staff']);
-          ?>
-        </div>
-          <div class="col-md-3">
-            <?php
-              print render($page['footer']['engineering_blocks_support']);
-              print render($page['footer']['engineering_blocks_misc_footer']);
-            ?>
-          </div>
-      </div>
-    </div>
-  </footer>
-<?php endif; ?>
+<footer id="footer" class="footer" role="footer">
+  <div class="container-smooth">
+    <?php if ($page['footer']): ?>
+      <?php print render($page['footer']); ?>
+    <?php endif; ?>
+    <?php if (module_exists('engineering_shared_footer')): ?>
+      <?php print theme('engineering_shared_footer_block'); ?>
+    <?php endif; ?>
+  </div>
+</footer>

@@ -18,7 +18,6 @@ $plugin = array(
  * Renders the pane content.
  */
 function theme_showcase_grid_style_render_pane($content) {
-  // dpm($content);
   if (!empty($content)) {
     return theme('panels_pane', $content);
   }
