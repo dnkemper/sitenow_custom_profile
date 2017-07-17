@@ -154,10 +154,22 @@ function engineering_shared_people_render($subtype, $conf, $panel_args, $context
       '#type' => 'markup',
       '#markup' => render($person_teaser),
     );
+
+    // Add in clearfix.
+    if (($delta + 1) % 2 == 0) {
+      $markup['row'][] = array(
+        '#type' => 'container',
+        '#attributes' => array(
+          'class' => 'clearfix visible-md-block',
+        ),
+      );
+    }
   }
   $block = new stdClass();
   // The title may be overridden by the user within the panel options.
   $block->title = 'People';
+  // Add min-height to card. @todo Change COE theme to not scope this style so hard.
+  drupal_add_css('.node-person-card {min-height: 220px;}', 'inline');
   $block->content = render($markup);
 
   return $block;
