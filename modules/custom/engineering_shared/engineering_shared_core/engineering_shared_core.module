@@ -50,6 +50,9 @@ function engineering_shared_core_preprocess_page(&$vars) {
     drupal_add_css('.panel-display {box-sizing:border-box !important;}', $option['type'] = 'inline');
   }
 
+  // Hide the department dropdown that gets added to #coe-something-more.
+  drupal_add_css('#coe-something-more .department-quick-nav {display: none;}', 'inline');
+
   // If the page is a node.
   if ($is_node === TRUE) {
     $node = $vars['node'];
@@ -174,7 +177,7 @@ function engineering_shared_core_theme() {
         'items' => array(),
         'type' => 'ul',
         'attributes' => array(),
-        'parent_attributes' => array()
+        'parent_attributes' => array(),
       ),
     ),
   );
@@ -219,7 +222,7 @@ function theme_engineering_core_dept_button($vars) {
     '#markup' => theme('item_list_dropdown', array(
       'parent_attributes' => array(
         'class' => 'dropdown-menu',
-        'aria-labelledby' => 'deptDropdown'
+        'aria-labelledby' => 'deptDropdown',
       ),
       'items' => $links,
     )),
