@@ -135,6 +135,17 @@ function ovpred_compliance_theme_config_form_submit($form, &$form_state) {
     // anything to them.
     $parts = pathinfo($file->filename);
     variable_set('bg_image_path', $parts['basename']);
+    // Clear varnish.
+    $base_url = $GLOBALS['base_url'] . '/';
+    $uri = 'public://theme/main_image/main_image.jpg';
+    $image_path = file_create_url($uri);
+    $image_path = str_replace($base_url, '', $image_path);
+    $service = _acquia_purge_service();
+    $service->addPath($image_path);
+    if ($service->lockAcquire()) {
+      $service->process();
+      $service->lockRelease();
+    }
   }
 }
 
