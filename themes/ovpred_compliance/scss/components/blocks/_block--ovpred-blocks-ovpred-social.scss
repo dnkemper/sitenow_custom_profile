@@ -1,0 +1,16 @@
+.block--ovpred-blocks-ovpred-social {
+  .block__content > a {
+    font-size: 3.2rem;
+    display: inline-block;
+    margin-right: 0.8rem;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      color: $brand-yellow;
+    }
+  }
+  .social-media-label {
+    @extend .sr-only;
+  }
+}

@@ -521,7 +521,7 @@ hr {
   border: 0;
   border-top: 1px solid #eeeeee; }
 
-.sr-only, .block-superfish .block__title, .block-superfish #superfish-1-toggle span, .block-superfish .sf-sub-indicator {
+.sr-only, .block-superfish .block__title, .block-superfish #superfish-1-toggle span, .block-superfish .sf-sub-indicator, .block--ovpred-blocks-ovpred-social .social-media-label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -2091,7 +2091,7 @@ select[multiple].input-lg,
 .has-feedback label ~ .form-control-feedback {
   top: 7.28571rem; }
 
-.has-feedback label.sr-only ~ .form-control-feedback, .has-feedback .block-superfish label.block__title ~ .form-control-feedback, .block-superfish .has-feedback label.block__title ~ .form-control-feedback, .has-feedback .block-superfish label.sf-sub-indicator ~ .form-control-feedback, .block-superfish .has-feedback label.sf-sub-indicator ~ .form-control-feedback {
+.has-feedback label.sr-only ~ .form-control-feedback, .has-feedback .block-superfish label.block__title ~ .form-control-feedback, .block-superfish .has-feedback label.block__title ~ .form-control-feedback, .has-feedback .block-superfish label.sf-sub-indicator ~ .form-control-feedback, .block-superfish .has-feedback label.sf-sub-indicator ~ .form-control-feedback, .has-feedback .block--ovpred-blocks-ovpred-social label.social-media-label ~ .form-control-feedback, .block--ovpred-blocks-ovpred-social .has-feedback label.social-media-label ~ .form-control-feedback {
   top: 0; }
 
 .help-block {
@@ -7480,7 +7480,7 @@ button.close {
 .fa-meetup:before {
   content: ""; }
 
-.sr-only, .block-superfish .block__title, .block-superfish #superfish-1-toggle span, .block-superfish .sf-sub-indicator {
+.sr-only, .block-superfish .block__title, .block-superfish #superfish-1-toggle span, .block-superfish .sf-sub-indicator, .block--ovpred-blocks-ovpred-social .social-media-label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -7590,6 +7590,21 @@ pre {
       .block-superfish .sf-accordion li a.sf-depth-1 {
         background: #2b2b2b; }
 
+.block--ovpred-blocks-ovpred-social .block__content > a {
+  font-size: 3.2rem;
+  display: inline-block;
+  margin-right: 0.8rem;
+  color: #fff; }
+  .block--ovpred-blocks-ovpred-social .block__content > a:hover, .block--ovpred-blocks-ovpred-social .block__content > a:focus {
+    color: #ffce00; }
+
+.block--ovpred-blocks-ovpred-thank .btn {
+  color: #fff;
+  text-decoration: none; }
+  .block--ovpred-blocks-ovpred-thank .btn i {
+    font-size: 2rem;
+    margin-right: 0.3rem; }
+
 .block--ovpred-blocks-ovpred-units .ovpred-units-title {
   font-size: 2.2rem;
   font-weight: 700;
@@ -7673,6 +7688,13 @@ body.cke_editable {
   .footer a {
     color: #aaa;
     text-decoration: underline; }
+  .footer .block__title {
+    font-weight: 700;
+    font-size: 2.6rem;
+    border-bottom: 1px solid #1a1a1a;
+    box-shadow: 0px 1px 0px #2a2a2a;
+    margin-bottom: .3em;
+    padding-bottom: .2em; }
 
 .header {
   background-color: #333;
