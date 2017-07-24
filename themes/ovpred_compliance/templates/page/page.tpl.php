@@ -11,7 +11,9 @@
  */
 ?>
 <header id="header" class="header page-header" role="header">
-  <div class="pos-abs pattern-overlay dots"></div>
+  <?php if ($header_pattern_overlay == 'On'): ?>
+    <div class="pos-abs pattern-overlay dots"></div>
+  <?php endif; ?>
   <div class="pos-abs bg-color"></div>
   <div class="header-branding pos-rel">
     <div class="container-smooth">
