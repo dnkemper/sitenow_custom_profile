@@ -7714,9 +7714,9 @@ body.cke_editable {
         -ms-flex-align: center;
             align-items: center; }
     .branding-height-medium .header .header-branding {
-      min-height: 30vh; }
+      min-height: 25vmin; }
     .branding-height-large .header .header-branding {
-      min-height: 50vh; }
+      min-height: 40vmin; }
     .header .header-branding > .container-smooth {
       padding-top: 1rem;
       padding-bottom: 1rem; }
@@ -7755,5 +7755,8 @@ body.cke_editable {
 #ui-wrapper #edit-submit-search {
   width: auto;
   padding: 4px 8px; }
+
+.accordion-item .accordion-title {
+  font-size: 2rem; }
 
 /*# sourceMappingURL=ovpred_compliance.style.css.map */

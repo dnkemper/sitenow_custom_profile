@@ -21,10 +21,10 @@
     align-items: center;
 
     .branding-height-medium & {
-      min-height: 30vh;
+      min-height: 25vmin;
     }
     .branding-height-large & {
-      min-height: 50vh;
+      min-height: 40vmin;
     }
 
     > .container-smooth {
