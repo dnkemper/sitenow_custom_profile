@@ -253,11 +253,12 @@ function ovpred_blocks_thank_content() {
 
   $content = array(
     '#type' => 'link',
-    '#title' => t('Thank a staff member'),
+    '#title' => t('<i class="fa fa-thumbs-up" aria-hidden="true"></i> Thank a staff member'),
     '#href' => 'https://workflow.uiowa.edu/form/thankyou',
     '#options' => array(
-      'attributes' => array('class' => array('ovpred-thank-link')),
+      'attributes' => array('class' => array('ovpred-thank-link btn btn-primary')),
       'external' => TRUE,
+      'html' => TRUE,
     ),
   );
 
@@ -280,11 +281,12 @@ function ovpred_blocks_social_content() {
   if (!empty($youtube)) {
     $content['youtube'] = array(
       '#type' => 'link',
-      '#title' => t('YouTube'),
+      '#title' => t('<i class="fa fa-youtube-square" aria-hidden="true"></i><span class="social-media-label">YouTube</span>'),
       '#href' => $youtube,
       '#options' => array(
         'attributes' => array('class' => array('ovpred-youtube')),
         'external' => TRUE,
+        'html' => TRUE,
       ),
     );
   }
@@ -292,11 +294,12 @@ function ovpred_blocks_social_content() {
   if (!empty($twitter)) {
     $content['twitter'] = array(
       '#type' => 'link',
-      '#title' => t('Twitter'),
+      '#title' => t('<i class="fa fa-twitter-square" aria-hidden="true"></i><span class="social-media-label">Twitter</span>'),
       '#href' => $twitter,
       '#options' => array(
         'attributes' => array('class' => array('ovpred-twitter')),
         'external' => TRUE,
+        'html' => TRUE,
       ),
     );
   }
@@ -304,11 +307,12 @@ function ovpred_blocks_social_content() {
   if (!empty($facebook)) {
     $content['facebook'] = array(
       '#type' => 'link',
-      '#title' => t('Facebook'),
+      '#title' => t('<i class="fa fa-facebook-official" aria-hidden="true"></i><span class="social-media-label">Facebook</span>'),
       '#href' => $facebook,
       '#options' => array(
         'attributes' => array('class' => array('ovpred-facebook')),
         'external' => TRUE,
+        'html' => TRUE,
       ),
     );
   }

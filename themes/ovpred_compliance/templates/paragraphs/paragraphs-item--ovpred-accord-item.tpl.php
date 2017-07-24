@@ -26,16 +26,16 @@
  * @see template_process()
  */
 ?>
-<div class="panel panel-default">
-  <div class="panel-heading" role="tab" id="accord-header-id-<?php print $id; ?>">
-    <div class="panel-title">
+<div class="accordion-item">
+  <div class="accordion-heading" role="tab" id="accord-header-id-<?php print $id; ?>">
+    <div class="accordion-title">
       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#accord-content-id-<?php print $id; ?>" aria-expanded="false" aria-controls="accord-content-id-<?php print $id; ?>">
         <?php print render($content['field_para_title']); ?>
       </a>
     </div>
   </div>
   <div id="accord-content-id-<?php print $id; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accord-header-id-<?php print $id; ?>">
-    <div class="panel-body">
+    <div class="accordion-body">
       <?php print render($content['field_para_body']); ?>
     </div>
   </div>
