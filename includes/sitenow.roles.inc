@@ -51,6 +51,7 @@ function sitenow_default_roles() {
   $webmaster_permissions = array(
     'administer main-menu menu items',
     'administer nodes',
+    'administer redirects',
     'access content overview',
     'view own unpublished content',
     'create article content',
