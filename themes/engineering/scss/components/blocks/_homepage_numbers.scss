@@ -1,0 +1,40 @@
+.pane-engineering-blocks-homepage-numbers {
+
+  .pane-content {
+    margin: 0 -1rem;
+
+    @include breakpoint(md) {
+      display: table; // IE.
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .count-wrapper {
+      flex: 300px 1 1;
+      margin: 0 1rem;
+      background-color: rgba(0,0,0,0.6);
+      text-align: center;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+
+      .count-inner {
+        .count-prefix, .count, .count-suffix {
+          font-size: 4.5rem;
+          font-weight: bold;
+          color: $brand-yellow;
+        }
+        .count-info {
+          text-align: center;
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .count-button {
+      margin: 0 auto;
+    }
+  }
+}

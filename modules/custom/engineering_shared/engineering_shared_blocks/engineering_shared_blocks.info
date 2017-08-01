@@ -1,0 +1,6 @@
+name = engineering_shared_blocks
+description = Custom blocks for Engineering sites.
+core = 7.x
+package = Engineering
+version = 7.x-1.0
+features[features_api][] = api:2

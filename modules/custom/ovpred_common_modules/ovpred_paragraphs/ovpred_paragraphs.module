@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the OVPRED Paragraphs feature.
+ */
+
+include_once 'ovpred_paragraphs.features.inc';

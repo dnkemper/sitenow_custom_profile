@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the engineering_shared_views feature.
+ */
+
+include_once 'engineering_shared_views.features.inc';

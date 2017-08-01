@@ -103,10 +103,11 @@ function sitenow_set_vars() {
   variable_set('cache', 1);
   variable_set('block_cache', 1);
   variable_set('page_cache_maximum_age', '21600');
-  variable_set('page_compression', 1);
+  variable_set('page_compression', 0);
   variable_set('preprocess_css', 1);
   variable_set('preprocess_js', 1);
   variable_set('expire_file_file', '1');
+  variable_set('expire_taxonomy_term_actions', drupal_map_assoc(array(1, 2, 3)));
 
   // Set variable for webform exports.
   variable_set('webform_export_path', 'private://webform_results');
@@ -432,9 +433,23 @@ function sitenow_update_7300() {
 }
 
 /**
- * Allow webmasters to manage redirects.
+ * Turn page compression off.
  */
 function sitenow_update_7301() {
+  variable_set('page_compression', 0);
+}
+
+/**
+ * Set expire config for taxonomy terms.
+ */
+function sitenow_update_7302() {
+  variable_set('expire_taxonomy_term_actions', drupal_map_assoc(array(1, 2, 3)));
+}
+
+/**
+ * Allow webmasters to manage redirects.
+ */
+function sitenow_update_7303() {
   if (!module_exists('redirect')) {
     module_enable(array('redirect'), FALSE);
     // Purge redirects not used in 6 months.

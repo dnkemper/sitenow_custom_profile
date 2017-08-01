@@ -1,0 +1,5 @@
+name = OVPRED Compliance Theme
+description = OVPRED Compliance Theme Configuration.
+core = 7.x
+package = COI
+project = ovpred_compliance_theme

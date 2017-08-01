@@ -1,0 +1,58 @@
+.header {
+  background-color: #333;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+
+  .pattern-overlay {
+    @extend .opacity-6;
+  }
+
+  .bg-color {
+    background-color: #000;
+    @extend .opacity-4;
+  }
+
+  .header-branding {
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    .branding-height-medium & {
+      min-height: 25vmin;
+    }
+    .branding-height-large & {
+      min-height: 40vmin;
+    }
+
+    > .container-smooth {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .navbar-branding {
+      display: block;
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    .site-name {
+      font-family: $font-family-site-name;
+      font-size: 5rem;
+    }
+  }
+
+  .header-navbar {
+    background-color: #222;
+
+    .navbar-black-transparency & {
+      background-color: rgba(0,0,0,0.8);
+    }
+  }
+}

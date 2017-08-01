@@ -97,6 +97,18 @@ function sitenow_theme_registry_alter(&$theme_registry) {
   $theme_registry['webform_edit_file_extensions']['includes'] = array($profile_path . '/includes/' . $file_name);
 }
 
+ * Implements hook_redirect_presave().
+ */
+function sitenow_redirect_presave($redirect) {
+  // Make new redirects have a count of one to avoid them being deleted.
+  // This avoids applying a patch to the redirect module.
+  // Explanation of bug: https://www.drupal.org/node/1396446
+  if ($redirect->is_new == TRUE) {
+    $redirect->count = 1;
+    $redirect->access = REQUEST_TIME;
+  }
+}
+
 /**
  * Implements hook_menu_alter()
  */

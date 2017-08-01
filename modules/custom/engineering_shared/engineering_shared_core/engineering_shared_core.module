@@ -1,0 +1,253 @@
+<?php
+
+/**
+ * @file
+ * Code for the engineering_shared_core feature.
+ */
+
+include_once 'engineering_shared_core.features.inc';
+
+/**
+ * Implements hook_init().
+ *
+ * Redirect requests for ~user or %7euser to user.engineering.uiowa.edu/~user.
+ */
+function engineering_shared_core_init() {
+  $path = current_path();
+
+  if (preg_match('/(?:~|%7e)(.+)/i', $path, $matches)) {
+    drupal_goto("http://user.engineering.uiowa.edu/~{$matches[1]}", array(), 301);
+  }
+}
+
+/**
+ * Implements hook_form_FORMID_alter().
+ */
+function engineering_shared_core_form_panelizer_edit_content_form_alter(&$form, &$form_state, $form_id) {
+  // Set the default value for panelizer revisions to FALSE.
+  $form['revision_information']['revision']['#default_value'] = FALSE;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function engineering_shared_core_permission() {
+  return array(
+    'administrate protected content' => array(
+      'title' => t('Administrate protected content'),
+      'description' => t('Edit and delete protected content.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function engineering_shared_core_preprocess_page(&$vars) {
+  $is_node = (isset($vars['node'])) ? TRUE : FALSE;
+
+  if ($vars['is_admin'] == TRUE) {
+    drupal_add_css('.panel-display {box-sizing:border-box !important;}', $option['type'] = 'inline');
+  }
+
+  // Hide the department dropdown that gets added to #coe-something-more.
+  drupal_add_css('#coe-something-more .department-quick-nav {display: none;}', 'inline');
+
+  // If the page is a node.
+  if ($is_node === TRUE) {
+    $node = $vars['node'];
+
+    // If the panel is not overridden, add class for the panelizer name.
+    // We use this class to possibly deteremine extra spacing, i.e. basic pages.
+    if (isset($node->panelizer) && $node->panelizer['default']->name != NULL) {
+      $vars['page_title_type_classes'][] = str_replace(':', '-', $node->panelizer['default']->name);
+    }
+
+    // If we have a field_display_type.
+    if (!empty($node->field_display_type)) {
+      $type = $node->field_display_type[LANGUAGE_NONE][0]['value'];
+      // Add the type to be used as a class in page.tpl.
+      $vars['page_title_type_classes'][] = 'page-title-type-' . $type;
+      $vars['page_title_type'] = $type;
+
+      switch ($type) {
+        case 'hero':
+          // Create a url to the image file needed.
+          if (!empty($node->field_image_hero)) {
+            // Set a selector to be used for the bg image.
+            $selector = 'page-title-type-' . $type;
+            // Create the image path.
+            $image_path = image_style_url('showcase_hero', $node->field_image_hero[LANGUAGE_NONE][0]['uri']);
+            // Add inline css for dynamic bg-image.
+            drupal_add_css('.' . $selector . ' .bg-img {background-image: url("' . $image_path . '");}', 'inline');
+          }
+
+          break;
+
+      }
+    }
+    // If we have no field_display_type specified, assume we are the default type.
+    // This is useful all other pages or page nodes that did not get the config set.
+    else {
+      $vars['page_title_type_classes'][] = 'page-title-type-default';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function engineering_shared_core_process_page(&$vars) {
+  // If we have page_title_type_classes, create a classes string.
+  if (isset($vars['page_title_type_classes'])) {
+    $vars['page_title_type_classes'] = implode(' ', $vars['page_title_type_classes']);
+  }
+  // Else set a the page-title-type to be default.
+  else {
+    $vars['page_title_type_classes'] = 'page-title-type-default';
+  }
+
+  // If we dont have a page_title_type, then set a default.
+  if (!isset($vars['page_title_type'])) {
+    $vars['page_title_type'] = 'default';
+  }
+}
+
+/**
+ * Themeing function for item_list_dropdown.
+ */
+function theme_item_list_dropdown($vars) {
+  $items = $vars['items'];
+  $type = $vars['type'];
+  $attributes = $vars['attributes'];
+  $parent_attributes = $vars['parent_attributes'];
+  $output = '';
+
+  if (!empty($items)) {
+    $output = "<$type" . drupal_attributes($parent_attributes) . '>';
+    $num_items = count($items);
+    $i = 0;
+    foreach ($items as $item) {
+      $attributes = array();
+      $children = array();
+      $data = '';
+      $i++;
+      if (is_array($item)) {
+        foreach ($item as $key => $value) {
+          if ($key == 'data') {
+            $data = $value;
+          }
+          elseif ($key == 'children') {
+            $children = $value;
+          }
+          else {
+            $attributes[$key] = $value;
+          }
+        }
+      }
+      else {
+        $data = $item;
+      }
+      if (count($children) > 0) {
+        // Render nested list.
+        $data .= theme_item_list(array(
+          'items' => $children,
+          'title' => NULL,
+          'type' => $type,
+          'attributes' => $attributes,
+        ));
+      }
+      $output .= '<li' . drupal_attributes($attributes) . '>' . $data . "</li>\n";
+    }
+    $output .= "</$type>";
+  }
+  return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function engineering_shared_core_theme() {
+  return array(
+    'engineering_core_dept_button' => array(
+      'render element' => 'element',
+    ),
+    'item_list_dropdown' => array(
+      'variables' => array(
+        'items' => array(),
+        'type' => 'ul',
+        'attributes' => array(),
+        'parent_attributes' => array(),
+      ),
+    ),
+  );
+}
+
+/**
+ * Custom Engineering Departments Dropdown Button.
+ */
+function theme_engineering_core_dept_button($vars) {
+  $links = array(
+    l(t('Biomedical Engineering'), '//bme.engineering.uiowa.edu'),
+    l(t('Chemical and Biochemical Engineering'), '//cbe.engineering.uiowa.edu'),
+    l(t('Civil and Environmental Engineering'), '//cee.engineering.uiowa.edu'),
+    l(t('Electrical and Computer Engineering'), '//ece.engineering.uiowa.edu'),
+    l(t('Mechanical and Industrial Engineering'), '//mie.engineering.uiowa.edu'),
+  );
+  $markup = array();
+  $markup['container'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => 'dropdown',
+    ),
+  );
+  $markup['container']['button'] = array(
+    '#type' => 'markup',
+    '#markup' => theme_html_tag(array(
+      'element' => array(
+        '#tag' => 'button',
+        '#value' => 'Departments <i class="fa fa-caret-down" aria-hidden="true"></i>',
+        '#attributes' => array(
+          'class' => 'btn btn-primary dropdown-toggle',
+          'data-toggle' => 'dropdown',
+          'id' => 'deptDropdown',
+          'aria-haspopup' => 'true',
+          'aria-expanded' => 'false',
+        ),
+      ),
+    )),
+  );
+  $markup['container']['dropdown_list'] = array(
+    '#type' => 'markup',
+    '#markup' => theme('item_list_dropdown', array(
+      'parent_attributes' => array(
+        'class' => 'dropdown-menu',
+        'aria-labelledby' => 'deptDropdown',
+      ),
+      'items' => $links,
+    )),
+  );
+  $output = drupal_render($markup);
+  return $output;
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ *
+ * Naming convention: If the field is agnostic use a generic name.
+ * Otherwise prefix the field_name with the entity_type.
+ */
+function engineering_shared_core_field_extra_fields() {
+  // Article.
+  $extra['node']['article'] = array(
+    'display' => array(
+      'article_post_date' => array(
+        'label' => t('Post Date'),
+        'description' => t('Article Post Date.'),
+        'weight' => 99,
+      ),
+    ),
+  );
+
+  return $extra;
+}

@@ -1,0 +1,4 @@
+name = engineering_shared_footer
+description = Custom footer functionality for Engineering sites.
+core = 7.x
+package = Engineering

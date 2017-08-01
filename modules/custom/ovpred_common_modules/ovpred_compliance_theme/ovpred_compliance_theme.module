@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * @file
+ * Code for the COI Core module.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function ovpred_compliance_theme_permission() {
+  return array(
+    'administer ovpred compliance theme' => array(
+      'title' => t('Administer OVPRED Compliance Theme'),
+      'description' => t('Set theme configuration for the OVPRED Compliance Theme.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function ovpred_compliance_theme_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/ovpred-compliance-theme'] = array(
+    'title' => 'OVPRED Compliance Theme',
+    'description' => 'Configuration for the OVPRED Compliance Theme',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ovpred_compliance_theme_config_form'),
+    'access arguments' => array('administer ovpred compliance theme'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback: OVPRED Compliance Theme configuration form.
+ */
+function ovpred_compliance_theme_config_form($form, &$form_state) {
+  $form['markup'] = array(
+    '#type' => 'markup',
+    '#markup' => t('<p>These settings allows you to customize the OVPRED Compliance Theme.</p>'),
+  );
+  $form['ovpred_compliance_theme_branding_height'] = array(
+    '#type' => 'select',
+    '#title' => t('Branding Height'),
+    '#default_value' => variable_get('ovpred_compliance_theme_branding_height', 'branding-height-medium'),
+    '#options' => array(
+      'branding-height-small' => t('Small'),
+      'branding-height-medium' => t('Medium'),
+      'branding-height-large' => t('Large'),
+    ),
+  );
+  $form['ovpred_compliance_theme_pattern_overlay'] = array(
+    '#type' => 'radios',
+    '#title' => t('Pattern Overlay'),
+    '#default_value' => variable_get('ovpred_compliance_theme_pattern_overlay', 'on'),
+    '#options' => drupal_map_assoc(array(t('On'), t('Off'))),
+  );
+  $form['header_image_config'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Main Header image file settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['header_image_config']['bg_image'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Include a background image in the header'),
+    '#default_value' => variable_get('bg_image'),
+  );
+  $form['header_image_config']['bg_image_path'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Main Header image file name',
+    '#description' => t('This field will display the uploaded file name.  It is for reference only and is not editable.'),
+    '#default_value' => variable_get('bg_image_path'),
+    '#disabled' => TRUE,
+    '#states' => array(
+      // Hide the settings when the bg_image checkbox is unchecked.
+      'invisible' => array(
+        ':input[name="bg_image"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+  // Upload field.
+  $form['header_image_config']['bg_image_upload'] = array(
+    '#type' => 'file',
+    '#title' => t('Upload main image'),
+    '#description' => t('Recommended minimum dimensions of the image to upload are 1200px x 200px.<br>Only files with the following extensions are allowed: <em>jpg jpeg gif png</em>.'),
+    '#default_value' => variable_get('bg_image_upload'),
+    '#states' => array(
+      // Hide the settings when the bg_image checkbox is unchecked.
+      'invisible' => array(
+        ':input[name="bg_image"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+  $form['ovpred_compliance_theme_navbar_color'] = array(
+    '#type' => 'select',
+    '#title' => t('Navbar Color Options'),
+    '#default_value' => variable_get('ovpred_compliance_theme_navbar_color', 'navbar-black'),
+    '#options' => array(
+      'navbar-black' => t('Black'),
+      'navbar-black-transparency' => t('Black with Transparency'),
+    ),
+  );
+
+  $form = system_settings_form($form);
+  $form['#submit'][] = 'ovpred_compliance_theme_config_form_submit';
+
+  return $form;
+}
+
+/**
+ * Form submit for ovpred_compliance_theme settings form.
+ */
+function ovpred_compliance_theme_config_form_submit($form, &$form_state) {
+  // Check the destination folder for the image, and attempt to create it
+  // if it does't exist.
+  $directory_path = 'public://theme/main_image';
+  file_prepare_directory($directory_path, FILE_CREATE_DIRECTORY);
+  // Define the validation settings.
+  $validate = array(
+    'file_validate_is_image' => array(),
+  );
+  // Check for a new uploaded image, and use that instead.
+  if ($file = file_save_upload('bg_image_upload', $validate)) {
+    // Use the same filename for all images so that we can call the image from
+    // a css file.
+    $filename = 'main_image.jpg';
+    $destination = $directory_path . '/' . $filename;
+    file_unmanaged_copy($file->uri, $destination, FILE_EXISTS_REPLACE);
+    // Display the file name to users since the full path doesn't mean
+    // anything to them.
+    $parts = pathinfo($file->filename);
+    variable_set('bg_image_path', $parts['basename']);
+    // Clear varnish.
+    $base_url = $GLOBALS['base_url'] . '/';
+    $uri = 'public://theme/main_image/main_image.jpg';
+    $image_path = file_create_url($uri);
+    $image_path = str_replace($base_url, '', $image_path);
+    $service = _acquia_purge_service();
+    $service->addPath($image_path);
+    if ($service->lockAcquire()) {
+      $service->process();
+      $service->lockRelease();
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function ovpred_compliance_theme_preprocess_html(&$vars) {
+  // Add a branding height class.
+  $vars['classes_array'][] = variable_get('ovpred_compliance_theme_branding_height');
+  $vars['classes_array'][] = variable_get('ovpred_compliance_theme_navbar_color');
+
+  // Set the background image if we have one.
+  if (variable_get('bg_image') == 1) {
+    $uri = 'public://theme/main_image/main_image.jpg';
+    $image_path = file_create_url($uri);
+    drupal_add_css('.header {background-image: url("' . $image_path . '");}', 'inline');
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function ovpred_compliance_theme_preprocess_page(&$vars) {
+  $vars['header_pattern_overlay'] = variable_get('ovpred_compliance_theme_pattern_overlay', 'On');
+}

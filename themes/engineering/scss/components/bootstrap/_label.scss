@@ -1,0 +1,11 @@
+.label {
+  display: inline-block;
+}
+
+%label-default-reversed {
+  background-color: #eee;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  color: #333;
+  border: 1px solid #ccc;
+}

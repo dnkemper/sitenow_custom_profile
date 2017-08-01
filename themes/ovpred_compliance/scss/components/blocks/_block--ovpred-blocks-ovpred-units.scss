@@ -1,0 +1,40 @@
+.block--ovpred-blocks-ovpred-units {
+  .ovpred-units-title {
+    font-size: 2.2rem;
+    font-weight: $fw-bold;
+    text-decoration: none;
+
+    &:before {
+      @include fa(minus-square);
+      margin-right: 1rem;
+    }
+
+    &.collapsed:before {
+      @include fa(plus-square);
+    }
+  }
+
+  .ovpred-units-content {
+    margin: 0 -1rem;
+    @include breakpoint(sm) {
+      display: flex;
+    }
+
+    > div {
+      flex: 100px 1 1;
+      padding: 0 1rem;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: $fw-bold;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1.4rem;
+    }
+  }
+}

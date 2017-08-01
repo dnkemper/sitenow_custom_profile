@@ -1,0 +1,26 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  @extend .font-smoothing-on;
+  padding: 3rem 0;
+
+  a {
+    color: #aaa;
+    text-decoration: underline;
+  }
+
+  .ovpred-units-content {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .block__title {
+    font-weight: $fw-bold;
+    font-size: 2.6rem;
+    border-bottom: 1px solid #1a1a1a;
+    box-shadow: 0px 1px 0px #2a2a2a;
+    margin-bottom: .3em;
+    padding-bottom: .2em;
+  }
+}

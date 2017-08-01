@@ -1,0 +1,21 @@
+.panel-pane {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  .pane-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 250px;
+      height: 4px;
+      margin: 1.5rem 0 3rem;
+      background: $brand-yellow;
+    }
+  }
+}

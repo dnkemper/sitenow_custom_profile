@@ -1,0 +1,16 @@
+.form-item.webform-component {
+  margin-bottom: 2rem;
+
+  .description {
+    @extend .small;
+  }
+}
+
+.webform-container-inline div,
+.webform-container-inline div.form-item {
+  display: inline-block;
+}
+
+.webform-calendar {
+  vertical-align: middle;
+}

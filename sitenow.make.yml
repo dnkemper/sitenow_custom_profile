@@ -9,7 +9,7 @@ defaults:
 ################################# Contrib ####################################
 projects:
   acquia_connector:
-    version: "2.17"
+    version: "3.1"
 
   acquia_purge:
     version: "1.3"
@@ -29,13 +29,14 @@ projects:
   advanced_help:
     version: "1.3"
 
+  advanced_link:
+    version: "1.3"
+
   ape:
     version: "1.2"
 
   auto_entitylabel:
-    download:
-      branch: "7.x-1.x"
-      revision: "46f7bacc8c68761d45fac98a3c13431b9607a8d3"
+    version: "1.4"
 
   # Can we migrate all sites using this to auto_entitylabel?
   auto_nodetitle:
@@ -59,6 +60,11 @@ projects:
   bongo:
     version: "1.0"
 
+  bootstrap_accessibility:
+    download:
+      branch: "7.x-1.x"
+      revision: "c068661491afe3a1ec82b8e8b0f86f4a6ac1f258"
+
   bootstrap_fieldgroup:
     version: "1.2"
 
@@ -75,7 +81,7 @@ projects:
     version: "1.4"
 
   ckeditor:
-    version: "1.17"
+    version: "1.18"
 
   ckeditor_link:
     version: "2.4"
@@ -173,13 +179,15 @@ projects:
     version: "1.1"
 
   entityreference:
-    version: "1.2"
+    version: "1.4"
 
   escape_admin:
     version: "1.2"
 
   expire:
     version: "2.0-rc4"
+    patch: 
+      - "https://www.drupal.org/files/issues/add_support_for_terms-2201913-15.patch"
 
   extlink:
     version: "1.18"
@@ -230,7 +238,9 @@ projects:
     version: "1.11"
 
   file_entity:
-    version: "2.0-beta3"
+    version: "2.2"
+    patch:
+      - "https://www.drupal.org/files/issues/disable_file_entity_label-1245266-14.patch"
 
   file_entity_link:
     version: "1.0-alpha3"
@@ -259,6 +269,9 @@ projects:
 
   form_builder:
     version: "1.20"
+    
+  fullcalendar:
+    version: "2.0"
 
   geocoder:
     version: "1.3"
@@ -359,10 +372,7 @@ projects:
     version: "3.2"
 
   media:
-    version: "2.0-beta1"
-    patch:
-      - "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-35.patch"
-      - "https://www.drupal.org/files/issues/media-wysiwyg_alt_and_title-2416701-13.patch"
+    version: "2.8"
 
   media_browser_plus:
     version: "3.0-beta4"
@@ -371,7 +381,7 @@ projects:
     version: "1.0-alpha1"
 
   media_youtube:
-    version: "3.0"
+    version: "3.4"
 
   memcache:
     version: "1.6"
@@ -398,10 +408,13 @@ projects:
     version: "2.8"
 
   mimemail:
-    version: "1.0-beta4"
+    version: "1.0"
 
   modernizr:
-    version: "3.9"
+    version: "3.10"
+    
+  module_missing_message_fixer:
+    version: "1.4"
 
   multiform:
     version: "1.3"
@@ -410,7 +423,7 @@ projects:
     version: "1.7"
 
   node_revision_delete:
-    version: "2.6"
+    version: "2.7"
 
   # Can we migrate to entityqueue?
   nodequeue:
@@ -449,7 +462,7 @@ projects:
     version: "1.4"
 
   pathologic:
-    version: "2.12"
+    version: "3.1"
 
   phone:
     version: "1.0-beta1"
@@ -483,7 +496,7 @@ projects:
     version: "2.1"
 
   quicktabs:
-    version: "3.6"
+    version: "3.8"
 
   rabbit_hole:
     version: "2.24"
@@ -499,6 +512,9 @@ projects:
 
   registry_autoload:
     version: "1.3"
+   
+  registry_rebuild:
+    version: "2.5"
 
   relation:
     version: "1.0"
@@ -556,7 +572,7 @@ projects:
       - "https://www.drupal.org/files/issues/simplesamlphp_auth-store-saml-roles-separate-2707269-2.patch"
 
   site_verify:
-    version: "1.1"
+    version: "1.2"
 
   slick:
     version: "2.0"
@@ -569,7 +585,10 @@ projects:
 
   special_menu_items:
     version: "2.0"
-
+  
+  stage_file_proxy:
+    version: "1.7"
+    
   strongarm:
     version: "2.0"
 
@@ -617,7 +636,7 @@ projects:
     version: "1.2"
 
   uuid:
-    version: "1.0-beta2"
+    version: "1.0"
 
   value_is:
     version: "1.10"
@@ -659,9 +678,12 @@ projects:
 
   views_load_more:
     version: "1.5"
+    
+  view_mode_selector:
+    version: "1.2"
 
   views_slideshow:
-    version: "3.8"
+    version: "3.9"
 
   views_tree:
     version: "2.0"
@@ -671,6 +693,10 @@ projects:
 
   webform:
     version: "4.15"
+
+  webform_bt_layout:
+    version: "3.x-dev"
+    revision: "912bbfea70edd1949c8eac893301b7798ff7e26c"
 
   webform_rules:
     version: "1.6"
@@ -698,14 +724,10 @@ projects:
     version: "1.4"
 
   workflow:
-    version: "2.9"
+    version: "2.10"
 
   wysiwyg:
-    download:
-      revision: "898d022cf7d0b6c6a6e7d813199d561b4ad39f8b"
-      branch: "7.x-2.x"
-    patch:
-      - "https://www.drupal.org/files/issues/2679106-ckeditor-reuse-cache-busting-query-898d02-do-not-test.patch"
+    version: "2.4"
 
   wysiwyg_filter:
     version: "1.6-rc3"
@@ -743,7 +765,13 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/fontawesome_menu.git
-      tag: "7.x-1.0"
+      tag: "7.x-1.1"
+      
+  font_awesome_field:
+    subdir: "custom"
+    download:
+      url: git@github.com:ITS-UofIowa/font_awesome_field.git
+      tag: "7.x-2.0"
 
   localist_pane:
     subdir: "custom"
@@ -755,19 +783,19 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
-      tag: "7.x-2.2"
+      tag: "7.x-2.3"
 
   sitenow_maps:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_maps.git
-      tag: "7.x-1.7"
+      tag: "7.x-1.10"
 
   sitenow_media:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_media.git
-      tag: "7.x-1.6"
+      tag: "7.x-1.9"
 
   sitenow_user_create:
     subdir: "custom"
@@ -779,19 +807,19 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
-      tag: "7.x-1.11"
+      tag: "7.x-1.13"
 
   uiowa_acquia_authentication:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
-      tag: "7.x-1.12"
+      tag: "7.x-1.14"
 
   uiowa_bar:
     subdir: "custom"
     download:
       url: git@github.com:uiowa/uiowa_bar.git
-      tag: "7.x-2.3"
+      tag: "7.x-2.4"
 
   uiowa_events:
     subdir: "custom"
@@ -809,7 +837,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
-      tag: "7.x-1.5"
+      tag: "7.x-1.8"
 
 ################################# Libraries ####################################
 libraries:
@@ -822,6 +850,13 @@ libraries:
     download:
       type: "get"
       url: "https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip"
+      
+  bootstrap-accessibility-plugin:
+    download:
+      type: "git"
+      url: "git@github.com:paypal/bootstrap-accessibility-plugin.git"
+      tag: "v1.0.4"
+    directory_name: "bootstrap-accessibility-plugin"
 
   chosen:
     download:
@@ -848,7 +883,7 @@ libraries:
       type: "git"
       url: "git@github.com:woothemes/FlexSlider.git"
       revision: "ca347d49f3656ff7ba7ea1a043feec7626a0db91"
-      
+
   Font-Awesome:
     download:
       type: "git"
@@ -925,8 +960,8 @@ libraries:
   proj4js:
     download:
       type: "git"
-      url: "git@github.com:ITS-UofIowa/proj4js.git"
-      tag: "1.1.0"
+      url: "git@github.com:proj4js/proj4js.git"
+      tag: "2.4.3"
 
   respondjs:
     download:
