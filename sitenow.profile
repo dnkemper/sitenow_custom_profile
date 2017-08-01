@@ -97,6 +97,7 @@ function sitenow_theme_registry_alter(&$theme_registry) {
   $theme_registry['webform_edit_file_extensions']['includes'] = array($profile_path . '/includes/' . $file_name);
 }
 
+/**
  * Implements hook_redirect_presave().
  */
 function sitenow_redirect_presave($redirect) {
