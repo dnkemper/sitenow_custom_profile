@@ -109,3 +109,21 @@ function sitenow_redirect_presave($redirect) {
     $redirect->access = REQUEST_TIME;
   }
 }
+
+/**
+ * Implements hook_menu_alter()
+ */
+function sitenow_menu_alter(&$items) {
+  // This is required until issue https://www.drupal.org/node/2078423
+  // in Redirect module is fixed.
+  $items['admin/config/search/redirect/settings']['access callback'] = '_sitenow_redirect_settings_access_callback';
+}
+
+/**
+ * Custom function to control access to Redirect settings page.
+ */
+function _sitenow_redirect_settings_access_callback() {
+  global $user;
+  // Forbid access for roles different than administrator.
+  return (in_array('administrator', array_values($user->roles))) ? TRUE : FALSE;
+}
