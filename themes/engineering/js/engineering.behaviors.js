@@ -22,55 +22,34 @@
                 separator: ',',
                 decimal: '.'
               };
-              // CountUp(element, start, end, decimals, duration, options).
-              var countOne = new CountUp("countone", 0, 60000, 0, 1.5, numberDefault);
-              countOne.start();
-              // Options for radialIndicator.
-              $('#counttwo').radialIndicator({
-                barBgColor: '#333333',
-                barColor: '#ffce00',
-                barWidth: 10,
-                initValue: 0,
-                roundCorner : false,
-                percentage: true,
-              });
-              // Assign radialIndicator.
-              var countTwo = $('#counttwo').data('radialIndicator');
-              // Animate radialIndicator.
-              countTwo.animate(94);
-              // Options for radialIndicator.
-              $('#countthree').radialIndicator({
-                  barBgColor: '#333333',
-                  barColor: '#ffce00',
-                  barWidth: 10,
-                  initValue: 0,
-                  roundCorner : false,
-                  percentage: true,
-              });
-              // Assign radialIndicator.
-              var countThree = $('#countthree').data('radialIndicator');
-              // Animate radialIndicator.
-              countThree.animate(29);
-              // CountUp(element, start, end, decimals, duration, options).
-              var countFour = new CountUp("countfour", 0, 30, 0, 1.5, numberDefault);
-              countFour.start();
-              // CountUp(element, start, end, decimals, duration, options).
-              var countFive = new CountUp("countfive", 0, 700, 0, 1.5, numberDefault);
-              countFive.start();
-              // Options for radialIndicator.
-              $('#countsix').radialIndicator({
-                  barBgColor: '#333333',
-                  barColor: '#ffce00',
-                  barWidth: 10,
-                  initValue: 0,
-                  roundCorner : false,
-                  percentage: true,
-              });
-              // Assign radialIndicator.
-              var countSix = $('#countsix').data('radialIndicator');
-              // Animate radialIndicator.
-              countSix.animate(92);
 
+              var numbersBlock = $('.pane-engineering-blocks-homepage-numbers');
+
+              var countNumber = numbersBlock.find('.countupnumber');
+              countNumber.each(function() {
+                var number = $(this).find('span.count').text();
+                var id = $(this).find('span.count').attr('id');
+                // CountUp(element, start, end, decimals, duration, options).
+                var count = new CountUp(id, 0, number, 0, 1.5, numberDefault);
+                count.start();
+              });
+
+              var countPercentage = numbersBlock.find('.radialpercentage');
+              countPercentage.each(function() {
+                var id = $(this).find('span.count').attr('id');
+                var value = $(this).find('.sr-only').text();
+                var percentage = value.replace("%", "");
+                $('#'+id).radialIndicator({
+                  barBgColor: '#333333',
+                  barColor: '#ffce00',
+                  barWidth: 10,
+                  initValue: 0,
+                  roundCorner : false,
+                  percentage: true,
+                });
+                var countpercent = $('#'+id).data('radialIndicator');
+                countpercent.animate(percentage);
+              });
 
             }
             // Destropy waypoint to prevent re-run.
