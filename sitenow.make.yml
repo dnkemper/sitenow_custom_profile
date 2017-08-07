@@ -795,7 +795,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_media.git
-      tag: "7.x-1.9"
+      tag: "7.x-1.10"
       
   sitenow_paragraphs:
     subdir: "custom"
