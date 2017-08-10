@@ -21,7 +21,7 @@ function ovpred_compliance_preprocess_html(&$vars) {
     '#type' => 'html_tag',
     '#tag' => 'meta',
     '#attributes' => array(
-      'content' =>  'IE=edge,chrome=1',
+      'content' => 'IE=edge,chrome=1',
       'http-equiv' => 'X-UA-Compatible',
     )
   );
