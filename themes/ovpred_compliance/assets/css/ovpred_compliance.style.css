@@ -7704,7 +7704,14 @@ body.cke_editable {
   margin: 0;
   padding: 0;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
   .header .bg-color {
     background-color: #000; }
   .header .header-branding {
