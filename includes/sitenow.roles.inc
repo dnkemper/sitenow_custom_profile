@@ -67,6 +67,7 @@ function sitenow_default_roles() {
     'view the administration theme',
     'access site reports',
     'access toolbar',
+    'create drupal users',
   );
 
   // Enable default permissions for roles.
