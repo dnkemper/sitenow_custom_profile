@@ -15,4 +15,16 @@ function ovpred_compliance_preprocess_html(&$vars) {
     drupal_add_js('https://use.typekit.net/' . $typekit_id . '.js');
     drupal_add_js('try{Typekit.load();}catch(e){}', array('type' => 'inline'));
   }
+
+  // Setup IE meta tag to force IE rendering mode.
+  $meta_ie_render_engine = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'content' =>  'IE=edge,chrome=1',
+      'http-equiv' => 'X-UA-Compatible',
+    )
+  );
+  // Add header meta tag for IE to head.
+  drupal_add_html_head($meta_ie_render_engine, 'meta_ie_render_engine');
 }
