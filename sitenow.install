@@ -122,7 +122,7 @@ function sitenow_set_vars() {
   variable_set('node_revision_delete_time', 'everyday');
   variable_set('node_revision_delete_track_article', 1);
   variable_set('node_revision_delete_track_page', 1);
-  
+
   // Allow the url pattern to follow the menu tree.
   variable_set('pathauto_node_pattern', '[node:menu-link:parents:join-path]/[node:title]');
 
