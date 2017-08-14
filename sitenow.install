@@ -115,8 +115,17 @@ function sitenow_set_vars() {
   // Hide error reporting by default.
   variable_set('error_level', ERROR_REPORTING_HIDE);
 
+  // Set vars for Node Revision Delete.
+  variable_set('node_revision_delete_cron', '50');
+  variable_set('node_revision_delete_number_article', '10');
+  variable_set('node_revision_delete_number_page', '10');
+  variable_set('node_revision_delete_time', 'everyday');
+  variable_set('node_revision_delete_track_article', 1);
+  variable_set('node_revision_delete_track_page', 1);
+
   // Allow the url pattern to follow the menu tree.
   variable_set('pathauto_node_pattern', '[node:menu-link:parents:join-path]/[node:title]');
+
 }
 
 /**
@@ -462,4 +471,20 @@ function sitenow_update_7303() {
   // Grant webmasters permission to manage redirects.
   $role = user_role_load_by_name('webmaster');
   user_role_grant_permissions($role->rid, array('administer redirects'));
+}
+
+/**
+ * Turn on Node Revision Delete.
+ */
+function sitenow_update_7304() {
+  if (!module_exists('node_revision_delete')) {
+    module_enable(array('node_revision_delete'));
+
+    variable_set('node_revision_delete_cron', '50');
+    variable_set('node_revision_delete_number_article', '10');
+    variable_set('node_revision_delete_number_page', '10');
+    variable_set('node_revision_delete_time', 'everyday');
+    variable_set('node_revision_delete_track_article', 1);
+    variable_set('node_revision_delete_track_page', 1);
+  }
 }
