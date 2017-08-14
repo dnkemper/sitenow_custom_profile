@@ -115,7 +115,7 @@ function sitenow_set_vars() {
   // Hide error reporting by default.
   variable_set('error_level', ERROR_REPORTING_HIDE);
 
-  //allow the url pattern to follow the menu tree
+  // Allow the url pattern to follow the menu tree.
   variable_set('pathauto_node_pattern', '[node:menu-link:parents:join-path]/[node:title]');
 }
 
