@@ -127,9 +127,9 @@ function sitenow_set_vars() {
   variable_set('pathauto_node_pattern', '[node:menu-link:parents:join-path]/[node:title]');
 
   // Enable redirect on 403 to login page.
-  variable_set('logintoboggan_override_destination_parameter', 1);
-  variable_set('logintoboggan_login_successful_message', '0');
-  variable_set('logintoboggan_minimum_password_length', '0');
+  if (!variable_get('site_403', FALSE)) {
+    variable_set('site_403', 'toboggan/denied');
+  }
 
 }
 
@@ -500,9 +500,9 @@ function sitenow_update_7304() {
 function sitenow_update_7305(){
   if (!module_exists('logintoboggan')) {
     module_enable(array('logintoboggan'));
+  }
 
-    variable_set('logintoboggan_override_destination_parameter', 1);
-    variable_set('logintoboggan_login_successful_message', '0');
-    variable_set('logintoboggan_minimum_password_length', '0');
+  if (!variable_get('site_403', FALSE)) {
+    variable_set('site_403', 'toboggan/denied');
   }
 }
