@@ -126,6 +126,11 @@ function sitenow_set_vars() {
   // Allow the url pattern to follow the menu tree.
   variable_set('pathauto_node_pattern', '[node:menu-link:parents:join-path]/[node:title]');
 
+  // Enable redirect on 403 to login page.
+  variable_set('logintoboggan_override_destination_parameter', 1);
+  variable_set('logintoboggan_login_successful_message', '0');
+  variable_set('logintoboggan_minimum_password_length', '0');
+
 }
 
 /**
@@ -486,5 +491,18 @@ function sitenow_update_7304() {
     variable_set('node_revision_delete_time', 'everyday');
     variable_set('node_revision_delete_track_article', 1);
     variable_set('node_revision_delete_track_page', 1);
+  }
+}
+
+/**
+ * Turn on logintoboggan and enable redirect on 403 to login page.
+ */
+function sitenow_update_7305(){
+  if (!module_exists('logintoboggan')) {
+    module_enable(array('logintoboggan'));
+
+    variable_set('logintoboggan_override_destination_parameter', 1);
+    variable_set('logintoboggan_login_successful_message', '0');
+    variable_set('logintoboggan_minimum_password_length', '0');
   }
 }
