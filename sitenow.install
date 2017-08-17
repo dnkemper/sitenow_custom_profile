@@ -54,8 +54,8 @@ function sitenow_add_default_blocks() {
  */
 function sitenow_enable_theme_settings() {
   // Enable the admin theme.
-  theme_enable(array('seven'));
-  variable_set('admin_theme', 'seven');
+  theme_enable(array('adminimal'));
+  variable_set('admin_theme', 'adminimal');
   variable_set('node_admin_theme', '1');
 }
 
@@ -486,5 +486,16 @@ function sitenow_update_7304() {
     variable_set('node_revision_delete_time', 'everyday');
     variable_set('node_revision_delete_track_article', 1);
     variable_set('node_revision_delete_track_page', 1);
+  }
+}
+
+/**
+ * Change admin theme from Seven to Adminimal.
+ */
+function sitenow_update_7305() {
+  if (variable_get('admin_theme') == 'seven') {
+    theme_enable(array('adminimal'));
+    variable_set('admin_theme', 'adminimal');
+    theme_disable(array('seven'));
   }
 }
