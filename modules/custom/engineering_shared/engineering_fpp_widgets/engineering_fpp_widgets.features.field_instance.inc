@@ -528,7 +528,7 @@ function engineering_fpp_widgets_field_default_field_instances() {
           'fancybox_gallery' => 'post',
           'fancybox_gallery_custom' => '',
           'fancybox_image_style_content' => 'thumbnail',
-          'fancybox_image_style_fancybox' => 'large',
+          'fancybox_image_style_fancybox' => '',
         ),
         'type' => 'fancybox',
         'weight' => 0,
