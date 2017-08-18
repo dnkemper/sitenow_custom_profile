@@ -14,9 +14,9 @@ function engineering_preprocess_html(&$vars) {
     '#type' => 'html_tag',
     '#tag' => 'meta',
     '#attributes' => array(
-      'content' =>  'IE=edge,chrome=1',
+      'content' => 'IE=edge,chrome=1',
       'http-equiv' => 'X-UA-Compatible',
-    )
+    ),
   );
   // Add header meta tag for IE to head.
   drupal_add_html_head($meta_ie_render_engine, 'meta_ie_render_engine');
