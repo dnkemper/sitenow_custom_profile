@@ -203,6 +203,12 @@ function engineering_shared_feeds_feeds_importer_default() {
             'target' => 'field_tags',
             'term_search' => '0',
             'autocreate' => 1,
+            'language' => 'und',
+          ),
+          12 => array(
+            'source' => 'Blank source 2',
+            'target' => 'field_external_image_cropped',
+            'unique' => FALSE,
           ),
         ),
         'insert_new' => '1',

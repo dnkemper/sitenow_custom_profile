@@ -45,6 +45,41 @@ function engineering_shared_feeds_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'department_articles-blank_source_2-copy';
+  $feeds_tamper->importer = 'department_articles';
+  $feeds_tamper->source = 'Blank source 2';
+  $feeds_tamper->plugin_id = 'copy';
+  $feeds_tamper->settings = array(
+    'to_from' => 'from',
+    'source' => 'image',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Copy source value';
+  $export['department_articles-blank_source_2-copy'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'department_articles-blank_source_2-find_replace';
+  $feeds_tamper->importer = 'department_articles';
+  $feeds_tamper->source = 'Blank source 2';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '/files/field/',
+    'replace' => '/files/styles/16_9_medium/public/field/',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace';
+  $export['department_articles-blank_source_2-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'department_articles-tags-explode';
   $feeds_tamper->importer = 'department_articles';
   $feeds_tamper->source = 'tags';

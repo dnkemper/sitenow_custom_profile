@@ -13,7 +13,7 @@
 ?>
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($content['field_image']);?>
-  <?php print render($content['field_external_image']); ?>
+  <?php print render($content['field_external_image_cropped']); ?>
   <div class="content"<?php print $content_attributes; ?>>
     <?php print render($title_prefix); ?>
     <?php if (!$page && !empty($title)): ?>
