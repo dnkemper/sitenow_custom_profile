@@ -116,7 +116,7 @@ function engineering_shared_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -167,7 +167,7 @@ function engineering_shared_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -222,7 +222,7 @@ function engineering_shared_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -276,13 +276,9 @@ function engineering_shared_content_types_field_default_field_instances() {
       ),
       'grid' => array(
         'label' => 'hidden',
-        'module' => 'imagecache_external',
-        'settings' => array(
-          'imagecache_external_link' => 'content',
-          'imagecache_external_style' => '16_9_medium',
-        ),
-        'type' => 'imagecache_external_image',
-        'weight' => 2,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -331,10 +327,14 @@ function engineering_shared_content_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'grid' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'imagecache_external',
+        'settings' => array(
+          'imagecache_external_link' => 'content',
+          'imagecache_external_style' => '16_9_medium',
+        ),
+        'type' => 'imagecache_external_image',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -390,7 +390,7 @@ function engineering_shared_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -544,7 +544,7 @@ function engineering_shared_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -599,7 +599,7 @@ function engineering_shared_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
