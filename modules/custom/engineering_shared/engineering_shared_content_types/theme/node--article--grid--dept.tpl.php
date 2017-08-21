@@ -14,7 +14,7 @@
 <article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php print render($content['field_image']); ?>
-  <?php print render($content['field_external_image']); ?>
+  <?php print render($content['field_external_image_cropped']); ?>
 
   <?php print render($title_prefix); ?>
   <?php if (!$page && !empty($title)): ?>
