@@ -66,6 +66,7 @@ function engineering_shared_content_types_form_article_node_form_alter(&$form, &
     $form['field_imported']['#access'] = FALSE;
     $form['field_external_nid']['#access'] = FALSE;
     $form['field_external_image']['#access'] = FALSE;
+    $form['field_external_image_cropped']['#access'] = FALSE;
   }
 }
 
@@ -100,6 +101,7 @@ function engineering_shared_content_types_node_access($node, $op, $account) {
 function engineering_shared_content_types_preprocess_field(&$vars) {
   switch ($vars['element']['#field_name']) {
     case 'field_external_image':
+    case 'field_external_image_cropped':
       // Mimic field_image for style purposes.
       $vars['classes_array'][] = 'field-name-field-image';
       $vars['classes_array'][] = 'field-type-image';
@@ -119,7 +121,7 @@ function engineering_shared_content_types_preprocess_node(&$vars) {
   switch ($vars['type']) {
     case 'article':
       // If external image.
-      if (!empty($vars['field_external_image'])) {
+      if (!empty($vars['field_external_image']) || !empty($vars['field_external_image_cropped'])) {
         // And if local image...
         if (!empty($vars['field_image'])) {
           unset($vars['field_image']);

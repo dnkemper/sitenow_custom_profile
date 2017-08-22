@@ -27,6 +27,7 @@ features[field_instance][] = node-article-field_article_source
 features[field_instance][] = node-article-field_audience_multi
 features[field_instance][] = node-article-field_author
 features[field_instance][] = node-article-field_external_image
+features[field_instance][] = node-article-field_external_image_cropped
 features[field_instance][] = node-article-field_external_nid
 features[field_instance][] = node-article-field_image
 features[field_instance][] = node-article-field_image_caption

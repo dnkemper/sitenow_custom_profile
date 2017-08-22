@@ -25,6 +25,7 @@ features[field_base][] = field_body
 features[field_base][] = field_caption
 features[field_base][] = field_display_type
 features[field_base][] = field_external_image
+features[field_base][] = field_external_image_cropped
 features[field_base][] = field_external_nid
 features[field_base][] = field_gallery_images
 features[field_base][] = field_icon
