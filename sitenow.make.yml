@@ -801,7 +801,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_paragraphs.git
-      tag: "7.x-1.0-beta1"
+      tag: "7.x-1.0-beta2"
 
   sitenow_user_create:
     subdir: "custom"
@@ -843,7 +843,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
-      tag: "7.x-1.10"
+      tag: "7.x-1.11"
 
 ################################# Libraries ####################################
 libraries:
