@@ -54,7 +54,6 @@ features[user_permission][] = administer filters
 features[user_permission][] = administer google analytics
 features[user_permission][] = administer image styles
 features[user_permission][] = administer imagecache external
-features[user_permission][] = administer linkchecker
 features[user_permission][] = administer main-menu menu items
 features[user_permission][] = administer management menu items
 features[user_permission][] = administer masquerade
