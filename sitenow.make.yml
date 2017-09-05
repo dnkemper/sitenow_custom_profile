@@ -844,6 +844,12 @@ projects:
     download:
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
       tag: "7.x-1.11"
+  
+  uiowa_cron:
+    subdir: "custom"
+    download:
+      url: git@github.com:ITS-UofIowa/uiowa_cron.git
+      branch: "7.x-1.x"
 
 ################################# Libraries ####################################
 libraries:
