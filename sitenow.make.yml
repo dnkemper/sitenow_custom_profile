@@ -648,7 +648,7 @@ projects:
     version: "2.1"
 
   views:
-    version: "3.17"
+    version: "3.18"
     patch:
       - "https://www.drupal.org/files/issues/views-representative_view-1417090-71.patch"
 
