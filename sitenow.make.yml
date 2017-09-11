@@ -78,7 +78,7 @@ projects:
     version: "3.5"
 
   captcha:
-    version: "1.4"
+    version: "1.5"
 
   ckeditor:
     version: "1.18"
