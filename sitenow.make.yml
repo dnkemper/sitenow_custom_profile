@@ -429,6 +429,9 @@ projects:
   nodequeue:
     version: "2.1"
 
+  oembed:
+    version: "1.0-rc2"
+
   options_element:
     version: "1.12"
 
