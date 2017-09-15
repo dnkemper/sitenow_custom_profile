@@ -849,7 +849,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_cron.git
-      branch: "7.x-1.x"
+      tag: "7.x-1.0"
 
 ################################# Libraries ####################################
 libraries:
