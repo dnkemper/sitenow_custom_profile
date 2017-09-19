@@ -78,7 +78,7 @@ projects:
     version: "3.5"
 
   captcha:
-    version: "1.4"
+    version: "1.5"
 
   ckeditor:
     version: "1.18"
@@ -238,7 +238,7 @@ projects:
     version: "1.11"
 
   file_entity:
-    version: "2.3"
+    version: "2.4"
     patch:
       - "https://www.drupal.org/files/issues/disable_file_entity_label-1245266-14.patch"
 
@@ -372,7 +372,7 @@ projects:
     version: "3.2"
 
   media:
-    version: "2.9"
+    version: "2.10"
 
   media_browser_plus:
     version: "3.0-beta4"
@@ -381,7 +381,7 @@ projects:
     version: "1.0-alpha1"
 
   media_youtube:
-    version: "3.4"
+    version: "3.5"
 
   memcache:
     version: "1.6"
@@ -417,7 +417,7 @@ projects:
     version: "1.5"
 
   multiform:
-    version: "1.3"
+    version: "1.4"
 
   navbar:
     version: "1.7"
@@ -520,7 +520,7 @@ projects:
     version: "2.5"
 
   relation:
-    version: "1.0"
+    version: "1.1"
 
   reroute_email:
     version: "1.2"
@@ -651,7 +651,7 @@ projects:
     version: "2.1"
 
   views:
-    version: "3.17"
+    version: "3.18"
     patch:
       - "https://www.drupal.org/files/issues/views-representative_view-1417090-71.patch"
 
@@ -816,7 +816,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
-      tag: "7.x-1.14"
+      tag: "7.x-1.15"
 
   uiowa_acquia_authentication:
     subdir: "custom"
@@ -846,13 +846,13 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
-      tag: "7.x-1.11"
+      tag: "7.x-1.12"
 
   uiowa_cron:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_cron.git
-      branch: "7.x-1.x"
+      tag: "7.x-1.0"
 
 ################################# Libraries ####################################
 libraries:
