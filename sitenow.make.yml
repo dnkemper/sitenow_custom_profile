@@ -431,6 +431,8 @@ projects:
 
   oembed:
     version: "1.0-rc2"
+    patch:
+      - "https://www.drupal.org/files/oembed-2021015-1.patch"
 
   options_element:
     version: "1.12"
