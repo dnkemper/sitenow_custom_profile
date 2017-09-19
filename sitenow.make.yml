@@ -186,7 +186,7 @@ projects:
 
   expire:
     version: "2.0-rc4"
-    patch: 
+    patch:
       - "https://www.drupal.org/files/issues/add_support_for_terms-2201913-15.patch"
 
   extlink:
@@ -269,7 +269,7 @@ projects:
 
   form_builder:
     version: "1.20"
-    
+
   fullcalendar:
     version: "2.0"
 
@@ -412,7 +412,7 @@ projects:
 
   modernizr:
     version: "3.10"
-    
+
   module_missing_message_fixer:
     version: "1.5"
 
@@ -512,7 +512,7 @@ projects:
 
   registry_autoload:
     version: "1.3"
-   
+
   registry_rebuild:
     version: "2.5"
 
@@ -585,10 +585,10 @@ projects:
 
   special_menu_items:
     version: "2.0"
-  
+
   stage_file_proxy:
     version: "1.7"
-    
+
   strongarm:
     version: "2.0"
 
@@ -678,7 +678,7 @@ projects:
 
   views_load_more:
     version: "1.5"
-    
+
   view_mode_selector:
     version: "1.2"
 
@@ -766,7 +766,7 @@ projects:
     download:
       url: git@github.com:ITS-UofIowa/fontawesome_menu.git
       tag: "7.x-1.1"
-      
+
   font_awesome_field:
     subdir: "custom"
     download:
@@ -796,7 +796,7 @@ projects:
     download:
       url: git@github.com:ITS-UofIowa/sitenow_media.git
       tag: "7.x-1.10"
-      
+
   sitenow_paragraphs:
     subdir: "custom"
     download:
@@ -844,7 +844,7 @@ projects:
     download:
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
       tag: "7.x-1.12"
-  
+
   uiowa_cron:
     subdir: "custom"
     download:
@@ -862,7 +862,7 @@ libraries:
     download:
       type: "get"
       url: "https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip"
-      
+
   bootstrap-accessibility-plugin:
     download:
       type: "git"
@@ -878,7 +878,7 @@ libraries:
   ckeditor:
     download:
       type: "get"
-      url: "http://ckeditor.com/builder/download/20d9fcf762919892a111fdf622d45bf6"
+      url: "http://ckeditor.com/builder/download/dc18c03b15496e19bcc75ef786705bf6"
 
   ckeditor_autogrow:
     download:
@@ -902,7 +902,7 @@ libraries:
       url: "git@github.com:FortAwesome/Font-Awesome.git"
       tag: "v4.7.0"
     directory_name: "fontawesome"
-      
+
   fontawesome-iconpicker:
     download:
       type: "git"
