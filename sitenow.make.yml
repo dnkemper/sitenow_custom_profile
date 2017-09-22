@@ -854,7 +854,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_cron.git
-      tag: "7.x-1.0"
+      tag: "7.x-2.0"
 
 ################################# Libraries ####################################
 libraries:
