@@ -29,7 +29,7 @@ install:
   - cd ../.. && mkdir profiles && mv ITS-UofIowa/sitenow_custom_profile profiles/sitenow
 
   # install dependencies
-  - composer global require drush/drush
+  - composer global require drush/drush:~8
   - composer global require drupal/coder
 
   # register Drupal standards and ignore warnings on exit
