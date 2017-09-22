@@ -8,6 +8,7 @@ php:
 cache:
   directories:
     - $HOME/.composer/cache
+    - $HOME/.drush/cache
 
 services:
   - mysql
