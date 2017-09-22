@@ -855,12 +855,12 @@ projects:
 libraries:
   backbone:
     download:
-      type: "get"
-      url: "http://backbonejs.org/backbone-min.js"
+      type: "file"
+      url: "https://github.com/jashkenas/backbone/archive/1.3.3.tar.gz"
 
   bootstrap:
     download:
-      type: "get"
+      type: "file"
       url: "https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip"
 
   bootstrap-accessibility-plugin:
@@ -872,22 +872,22 @@ libraries:
 
   chosen:
     download:
-      type: "get"
+      type: "file"
       url: "https://github.com/harvesthq/chosen/releases/download/v1.6.2/chosen_v1.6.2.zip"
 
   ckeditor:
     download:
-      type: "get"
-      url: "http://ckeditor.com/builder/download/dc18c03b15496e19bcc75ef786705bf6"
+      type: "file"
+      url: "http://ckeditor.com/builder/download/20d9fcf762919892a111fdf622d45bf6"
 
   ckeditor_autogrow:
     download:
-      type: "get"
+      type: "file"
       url: "http://download.ckeditor.com/autogrow/releases/autogrow_4.4.7.zip"
 
   fancybox:
     download:
-      type: "get"
+      type: "file"
       url: "https://github.com/fancyapps/fancybox/archive/v2.1.5.zip"
 
   flexslider:
@@ -918,7 +918,7 @@ libraries:
 
   icalcreator:
     download:
-      type: "get"
+      type: "file"
       url: "https://github.com/iCalcreator/iCalcreator/archive/e3dbec2cb3bb91a8bde989e467567ae8831a4026.zip"
     directory_name: "iCalcreator"
 
@@ -960,7 +960,7 @@ libraries:
 
   leaflet:
     download:
-      type: "get"
+      type: "file"
       url: "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.zip"
 
   pickadate:
@@ -1010,5 +1010,5 @@ libraries:
 
   underscore:
     download:
-      type: "get"
-      url: "http://underscorejs.org/underscore-min.js"
+      type: "file"
+      url: "https://github.com/jashkenas/underscore/archive/1.8.3.tar.gz"
