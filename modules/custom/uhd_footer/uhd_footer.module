@@ -94,11 +94,13 @@ function uhd_footer_preprocess_uhd_footer_block(&$variables) {
   $dining_links[] = l(t('Locations'), 'https://dining.uiowa.edu/');
   $dining_links[] = l(t('Menus'), 'https://dining.uiowa.edu/market-place-menus');
   $dining_links[] = l(t('Meal Plan Info'), 'https://dining.uiowa.edu/meal-plan-rates');
+
   // Catering links.
   $catering_links = array();
-  $catering_links[] = l(t('Menus'), 'http://catering.uiowa.edu/menus');
-  $catering_links[] = l(t('Meetings'), 'http://imu.uiowa.edu/meetings');
-  $catering_links[] = l(t('Weddings'), 'http://catering.uiowa.edu/weddings');
+  $catering_links[] = l(t('Menus'), 'https://catering.uiowa.edu/menus');
+  $catering_links[] = l(t('Meetings'), 'https://imu.uiowa.edu/meetings');
+  $catering_links[] = l(t('Weddings'), 'https://catering.uiowa.edu/weddings');
+
   // Block stucture for uhd_site_links.
   $uhd_site_links = array();
 
@@ -106,14 +108,17 @@ function uhd_footer_preprocess_uhd_footer_block(&$variables) {
     'title' => l(t('Housing'), 'http://housing.uiowa.edu'),
     'content' => theme('item_list', array('items' => $housing_links)),
   );
+
   $uhd_site_links['dining'] = array(
     'title' => l(t('Dining'), 'https://dining.uiowa.edu'),
     'content' => theme('item_list', array('items' => $dining_links)),
   );
-  $uhd_site_links['uhd_catering'] = array(
+
+  $uhd_site_links['catering'] = array(
     'title' => l(t('Catering'), 'http://catering.uiowa.edu'),
     'content' => theme('item_list', array('items' => $catering_links)),
   );
+
   // Add to variables.
   $variables['uhd_site_links'] = $uhd_site_links;
 }
