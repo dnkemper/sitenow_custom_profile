@@ -85,9 +85,10 @@ function uhd_footer_preprocess_uhd_footer_block(&$variables) {
 
   // Housing links.
   $housing_links = array();
-  $housing_links[] = l(t('Living Learning Communities'), 'http://housing.uiowa.edu/living-learning-communities');
-  $housing_links[] = l(t('Residence Halls'), 'http://housing.uiowa.edu/residence-halls');
-  $housing_links[] = l(t('Life@Iowa'), 'http://housing.uiowa.edu/life-iowa');
+  $housing_links[] = l(t('Apply'), 'https://housing.uiowa.edu/living-campus/apply');
+  $housing_links[] = l(t('Communities'), 'https://housing.uiowa.edu/communities');
+  $housing_links[] = l(t('Residence Halls'), 'https://housing.uiowa.edu/residence-halls');
+
   // Dining links.
   $dining_links = array();
   $dining_links[] = l(t('Locations'), 'https://dining.uiowa.edu/');
