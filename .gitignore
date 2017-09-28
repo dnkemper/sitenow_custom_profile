@@ -20,7 +20,6 @@ themes/*
 !themes/ovpred_admin
 !themes/ovpred_compliance
 !themes/parallaxy
-!themes/uhd_base
 !themes/stellar
 
 # Custom library exclusions.
