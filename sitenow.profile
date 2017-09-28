@@ -117,6 +117,8 @@ function sitenow_menu_alter(&$items) {
   // This is required until issue https://www.drupal.org/node/2078423
   // in Redirect module is fixed.
   $items['admin/config/search/redirect/settings']['access callback'] = '_sitenow_redirect_settings_access_callback';
+  // Do not expose list of teasers at /node.
+  $items['node']['access callback'] = FALSE;
 }
 
 /**
