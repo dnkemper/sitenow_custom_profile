@@ -702,7 +702,7 @@ projects:
     version: "1.6"
 
   webform_validation:
-    version: "1.13"
+    version: "1.14"
 
   weight:
     version: "2.5"
