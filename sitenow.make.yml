@@ -208,7 +208,7 @@ projects:
     version: "2.0-rc3"
 
   feeds:
-    version: "2.0-beta3"
+    version: "2.0-beta4"
 
   feeds_ex:
     version: "1.0-beta2"
