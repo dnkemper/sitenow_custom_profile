@@ -291,7 +291,7 @@ projects:
     version: "2.11"
 
   google_analytics:
-    version: "2.3"
+    version: "2.4"
 
   hidden_captcha:
     version: "1.1"
