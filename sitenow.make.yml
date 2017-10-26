@@ -843,7 +843,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_maui.git
-      tag: "7.x-1.12"
+      tag: "7.x-1.15"
   
   uiowa_cron:
     subdir: "custom"
