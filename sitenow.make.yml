@@ -813,7 +813,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_wysiwyg.git
-      branch: "bug/188-wysiwyg-btbutton"
+      tag: "7.x-1.16"
 
   uiowa_acquia_authentication:
     subdir: "custom"
