@@ -499,11 +499,22 @@ function sitenow_update_7305() {
     variable_set('admin_theme', 'adminimal');
 
     // Place blocks into Adminimal's Content and Help regions.
+    $fields_to_select = array(
+      'bid',
+      'region',
+      'status',
+      'weight',
+      'visibility',
+      'pages',
+      'module',
+      'delta',
+    );
+
     $blocks_to_move = db_select('block', 'b')
-      ->fields('b', array('bid','region', 'status', 'weight','visibility','pages','module','delta'))
+      ->fields('b', $fields_to_select)
       ->condition('theme', 'seven')
       ->condition('status', 1)
-      ->condition('region', array('content','help'), 'IN')
+      ->condition('region', array('content', 'help'), 'IN')
       ->execute()
       ->fetchAllAssoc('bid');
 
