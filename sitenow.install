@@ -494,8 +494,48 @@ function sitenow_update_7304() {
  */
 function sitenow_update_7305() {
   if (variable_get('admin_theme') == 'seven') {
+    // Set Adminimal as admin theme.
     theme_enable(array('adminimal'));
     variable_set('admin_theme', 'adminimal');
+
+    // Place blocks into Adminimal's Content and Help regions.
+    $blocks_to_move = db_select('block', 'b')
+      ->fields('b', array('bid','region', 'status', 'weight','visibility','pages','module','delta'))
+      ->condition('theme', 'seven')
+      ->condition('status', 1)
+      ->condition('region', array('content','help'), 'IN')
+      ->execute()
+      ->fetchAllAssoc('bid');
+
+    if ($blocks_to_move) {
+      foreach ($blocks_to_move as $bid => $values) {
+        $values = get_object_vars($values);
+        unset($values['bid']);
+        $delta = array_pop($values);
+        $module = array_pop($values);
+
+        db_update('block')
+          ->fields($values)
+          ->condition('theme', 'adminimal')
+          ->condition('module', $module)
+          ->condition('delta', $delta)
+          ->execute();
+
+        echo("Block " . $module . ":" . $delta . " has been moved in Adminimal \n");
+      }
+    }
+
+    // Disable blocks moved to Adminimal's Hidden region.
+    db_update('block')
+      ->fields(array(
+        'status' => 0,
+        'region' => -1,
+      ))
+      ->condition('theme', 'adminimal')
+      ->condition('region', 'hidden')
+      ->execute();
+
+    // Disable Seven theme.
     theme_disable(array('seven'));
   }
 }
