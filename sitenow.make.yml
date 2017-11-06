@@ -43,7 +43,7 @@ projects:
     version: "1.0"
 
   better_exposed_filters:
-    version: "3.4"
+    version: "3.5"
 
   better_formats:
     version: "1.0-beta2"
@@ -176,7 +176,7 @@ projects:
     version: "1.0-rc1"
 
   entityqueue:
-    version: "1.1"
+    version: "1.2"
 
   entityreference:
     version: "1.5"
@@ -238,7 +238,7 @@ projects:
     version: "1.11"
 
   file_entity:
-    version: "2.4"
+    version: "2.12"
     patch:
       - "https://www.drupal.org/files/issues/disable_file_entity_label-1245266-14.patch"
 
@@ -372,7 +372,7 @@ projects:
     version: "3.2"
 
   media:
-    version: "2.11"
+    version: "2.13"
 
   media_browser_plus:
     version: "3.0-beta4"
@@ -551,6 +551,8 @@ projects:
 
   rrssb:
     version: "1.0"
+    patch:
+      - "https://www.drupal.org/files/issues/twitter_share_pop_up-2901575-3.patch"
 
   rules:
     version: "2.10"
@@ -692,7 +694,7 @@ projects:
     version: "1.0-alpha4"
 
   webform:
-    version: "4.15"
+    version: "4.16"
 
   webform_bt_layout:
     version: "3.x-dev"
@@ -724,13 +726,13 @@ projects:
     version: "1.4"
 
   workflow:
-    version: "2.10"
+    version: "2.11"
 
   wysiwyg:
     version: "2.4"
 
   wysiwyg_filter:
-    version: "1.6-rc3"
+    version: "1.6-rc9"
 
   xmlsitemap:
     version: "2.3"
@@ -801,7 +803,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_paragraphs.git
-      tag: "7.x-1.0-beta2"
+      tag: "7.x-1.0"
 
   sitenow_user_create:
     subdir: "custom"
