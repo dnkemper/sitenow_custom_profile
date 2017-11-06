@@ -10,7 +10,7 @@
  */
 function sitenow_enable_blocks() {
   $default_theme = variable_get('theme_default', 'bartik');
-  $admin_theme = 'seven';
+  $admin_theme = 'adminimal';
 
   $values = array(
     array(
