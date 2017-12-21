@@ -394,6 +394,8 @@ projects:
 
   menu_block:
     version: "2.7"
+    patch:
+      - "https://www.drupal.org/files/issues/menu_block-undefined_index-2642556-7.patch"
 
   menu_link_weight:
     version: "1.4"
