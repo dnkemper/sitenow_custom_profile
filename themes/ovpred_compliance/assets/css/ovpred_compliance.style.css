@@ -7684,6 +7684,30 @@ pre {
 body.cke_editable {
   font-size: 1.6rem; }
 
+.book-navigation .page-links {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  padding: 0.5em;
+  text-align: center; }
+
+.book-navigation .page-previous {
+  display: block;
+  float: left;
+  text-align: left;
+  width: 42%; }
+
+.book-navigation .page-up {
+  display: block;
+  float: left;
+  margin: 0 5%;
+  width: 4%; }
+
+.book-navigation .page-next {
+  display: block;
+  float: right;
+  text-align: right;
+  width: 42%; }
+
 .footer {
   background-color: #222;
   color: #fff;

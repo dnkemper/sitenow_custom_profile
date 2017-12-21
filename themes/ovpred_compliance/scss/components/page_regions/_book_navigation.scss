@@ -1,0 +1,29 @@
+.book-navigation {
+  .page-links {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: center;
+  }
+
+  .page-previous {
+    display: block;
+    float: left;
+    text-align: left;
+    width: 42%;
+  }
+
+  .page-up {
+    display: block;
+    float: left;
+    margin: 0 5%;
+    width: 4%;
+  }
+
+  .page-next {
+    display: block;
+    float: right;
+    text-align: right;
+    width: 42%;
+  }
+}
