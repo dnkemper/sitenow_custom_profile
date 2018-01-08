@@ -431,6 +431,11 @@ projects:
   nodequeue:
     version: "2.1"
 
+  oembed:
+    version: "1.0-rc2"
+    patch:
+      - "https://www.drupal.org/files/oembed-2021015-1.patch"
+
   options_element:
     version: "1.12"
 
@@ -799,7 +804,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_media.git
-      tag: "7.x-1.12"
+      tag: "7.x-1.13"
 
   sitenow_paragraphs:
     subdir: "custom"
