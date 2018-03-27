@@ -829,6 +829,12 @@ projects:
     download:
       url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
       tag: "7.x-1.14"
+      
+  uiowa_alerts:
+    subdir: "custom"
+    download:
+      url: git@github.com:uiowa/uiowa_alerts.git
+      tag: "7.x-1.0"
 
   uiowa_bar:
     subdir: "custom"
