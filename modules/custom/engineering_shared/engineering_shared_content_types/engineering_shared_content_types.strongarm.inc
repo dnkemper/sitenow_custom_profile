@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * engineering_shared_content_types.strongarm.inc
@@ -118,19 +117,19 @@ function engineering_shared_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'redirect' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
         'xmlsitemap' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
       ),
       'display' => array(
