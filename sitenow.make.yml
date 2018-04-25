@@ -372,7 +372,7 @@ projects:
     version: "3.2"
 
   media:
-    version: "2.13"
+    version: "2.19"
 
   media_browser_plus:
     version: "3.0-beta4"
