@@ -780,7 +780,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/font_awesome_field.git
-      tag: "7.x-2.0"
+      tag: "7.x-2.1"
 
   localist_pane:
     subdir: "custom"
