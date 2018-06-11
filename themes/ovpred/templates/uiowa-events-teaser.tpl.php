@@ -1,6 +1,5 @@
 <?php
-/**
- * @file uiowa-events-teaser.tpl.php
+/* @file uiowa-events-teaser.tpl.php
  * Default theme implementation for a single event teaser.
  *
  * @see template_preprocess_uiowa_events_teaser()
