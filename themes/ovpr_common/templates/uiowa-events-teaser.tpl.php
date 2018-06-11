@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file uiowa-events-teaser.tpl.php
  * Default theme implementation for a single event teaser.
@@ -13,7 +14,6 @@
  *   TRUE if linking to Localist, FALSE if URL is to internal page.
  */
 ?>
-
 <div class="uiowa-event">
   <p class="date-string"><?php print render($variables['event']['date_string']); ?></p>
   <?php print render($variables['event']['image']); ?>

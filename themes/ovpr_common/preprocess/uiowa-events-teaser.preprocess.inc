@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * @file uiowa-events-teaser.preprocess.inc
+ */
+
+/**
  * Implements hook_preprocess_uiowa_events_teaser().
  */
 function ovpr_common_preprocess_uiowa_events_teaser(&$vars) {
