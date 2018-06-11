@@ -1,6 +1,8 @@
 <?php
-/** Implements hook_preprocess_uiowa_events_teaser(). */
 
+/**
+ * Implements hook_preprocess_uiowa_events_teaser().
+ */
 function ovpr_common_preprocess_uiowa_events_teaser(&$vars) {
   // Format date/time.
   if (isset($vars['event']['instance_start'])) {

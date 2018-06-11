@@ -1,5 +1,6 @@
 <?php
-/* @file uiowa-events-teaser.tpl.php
+/**
+ * @file uiowa-events-teaser.tpl.php
  * Default theme implementation for a single event teaser.
  *
  * @see template_preprocess_uiowa_events_teaser()
@@ -10,7 +11,7 @@
  *   An array of event data from uiowa_events_load().
  * $external_link
  *   TRUE if linking to Localist, FALSE if URL is to internal page.
- */    
+ */
 ?>
 
 <div class="uiowa-event">
