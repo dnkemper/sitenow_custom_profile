@@ -5,32 +5,38 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
+/* line 11, ../sass/global.blocks.scss */
 .block {
   margin-bottom: 20px;
 }
+/* line 13, ../sass/global.blocks.scss */
 .region-header .block {
   margin-top: 20px;
 }
 
+/* line 50, ../sass/global.blocks.scss */
 .block-content ul,
 .block-content ol {
   margin: 0 0 0 15px;
   padding: 0;
 }
+/* line 55, ../sass/global.blocks.scss */
 .block-content li {
   margin: 0;
   padding: 0;
 }
 
+/* line 132, ../sass/global.blocks.scss */
 #block-system-main-menu a {
   color: #000 !important;
 }
+/* line 135, ../sass/global.blocks.scss */
 #block-system-main-menu li {
   border-bottom: 1px solid #FFC344;
   padding: 10px;
   position: relative;
 }
+/* line 139, ../sass/global.blocks.scss */
 #block-system-main-menu li:after {
   content: ' ';
   background: #FFC344;
@@ -40,13 +46,16 @@
   bottom: -3px;
   right: 0;
 }
+/* line 148, ../sass/global.blocks.scss */
 #block-system-main-menu li li {
   border-bottom: none;
   padding: 2px;
 }
+/* line 151, ../sass/global.blocks.scss */
 #block-system-main-menu li li:after {
   display: none;
 }
+/* line 156, ../sass/global.blocks.scss */
 #block-system-main-menu .block-inner {
   margin-left: 0;
   margin-right: 20px;

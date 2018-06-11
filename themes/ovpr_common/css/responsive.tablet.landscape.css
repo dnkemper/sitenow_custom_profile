@@ -5,7 +5,6 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
 /**
  *   Important Information about this CSS File
  *
@@ -19,12 +18,14 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
+/* line 18, ../sass/responsive.tablet.landscape.scss */
 #name-and-slogan {
   float: left;
   margin-bottom: 10px;
   margin-top: 30px;
 }
 
+/* line 24, ../sass/responsive.tablet.landscape.scss */
 #research-depts-nav {
   background: #3B3B3C;
   padding: 5px;
@@ -32,25 +33,26 @@
   overflow: auto;
   width: 100%;
 }
+/* line 30, ../sass/responsive.tablet.landscape.scss */
 #research-depts-nav a {
   color: #FFC344;
   font-size: 0.8em;
   font-weight: bold;
   vertical-align: middle;
 }
+/* line 36, ../sass/responsive.tablet.landscape.scss */
 #research-depts-nav #current-department-link {
   float: left;
   background-color: #FFC344;
   padding: 0 4px;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   color: #000;
   margin-top: 2px;
 }
 
+/* line 47, ../sass/responsive.tablet.landscape.scss */
 #research-link {
   float: left;
   margin-right: 10px;
@@ -58,42 +60,48 @@
   margin-top: 2px;
 }
 
+/* line 54, ../sass/responsive.tablet.landscape.scss */
 #depts-links-top {
   margin: 0;
   float: right;
 }
+/* line 57, ../sass/responsive.tablet.landscape.scss */
 #depts-links-top a {
   height: 100%;
   padding: 0 4px;
 }
+/* line 60, ../sass/responsive.tablet.landscape.scss */
 #depts-links-top a:hover {
   color: #000;
   background-color: #FFC344;
   height: 100%;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+/* line 67, ../sass/responsive.tablet.landscape.scss */
 #depts-links-top li {
   display: inline;
   margin: 0 5px;
   border-left: 1px solid #FFC344;
   padding-left: 10px;
 }
+/* line 72, ../sass/responsive.tablet.landscape.scss */
 #depts-links-top li.first {
   border-left: none;
 }
 
+/* line 78, ../sass/responsive.tablet.landscape.scss */
 #main-content {
   margin-left: 20px;
 }
 
+/* line 84, ../sass/responsive.tablet.landscape.scss */
 .view-id-featured_content .flexslider .slides img {
   width: 400px;
   float: left;
 }
+/* line 89, ../sass/responsive.tablet.landscape.scss */
 .view-id-featured_content .flexslider ul.slides li img {
   padding-right: 10px;
 }

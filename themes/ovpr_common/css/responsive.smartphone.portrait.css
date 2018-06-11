@@ -5,7 +5,6 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
 /**
  *   Important Information about this CSS File
  *
@@ -19,15 +18,18 @@
  *
  * - Read the _README file in this directory, it contains useful help and other information.
  */
+/* line 18, ../sass/responsive.smartphone.portrait.scss */
 html {
   font-size: 112.5%;
   /* Increase the default font size on small devices */
 }
 
+/* line 22, ../sass/responsive.smartphone.portrait.scss */
 #research-depts-wrapper {
   display: none;
 }
 
+/* line 26, ../sass/responsive.smartphone.portrait.scss */
 .front #breadcrumb-wrapper .container {
   display: none;
 }
