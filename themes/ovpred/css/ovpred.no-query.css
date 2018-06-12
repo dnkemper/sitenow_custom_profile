@@ -362,7 +362,7 @@ body { font-family: "proxima-nova", sans-serif; font-size: 1.8em; color: #453D36
 
 .uiowa-events-page .uiowa-event, .pane-uiowa-events-pane-list .uiowa-event { border-bottom: 1px solid #efefef; padding-bottom: .5em; margin-bottom: .5em; }
 .uiowa-events-page .uiowa-event h3, .pane-uiowa-events-pane-list .uiowa-event h3 { margin: 0; font-weight: 400; font-size: 18px; font-size: 1.8rem; }
-.uiowa-events-page .date-string, .pane-uiowa-events-pane-list .date-string { font-size: 14px; font-size: 1.4rem; }
+.uiowa-events-page .date-string, .pane-uiowa-events-pane-list .date-string { font-size: 14px; font-size: 1.4rem; margin-bottom: 0; }
 .uiowa-events-page .date-string:before, .pane-uiowa-events-pane-list .date-string:before { font-family: FontAwesome; font-weight: normal; font-style: normal; text-decoration: inherit; -webkit-font-smoothing: antialiased; *margin-right: .3em; content: ""; margin-right: 10px; color: #777; }
 
 .node--article--feature { max-width: 500px; margin: 0 auto; margin-bottom: 1em; }
