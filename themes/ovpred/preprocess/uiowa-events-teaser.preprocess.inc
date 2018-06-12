@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * 
  * Implements hook_preprocess_uiowa_events_teaser().
  */
 function ovpred_preprocess_uiowa_events_teaser(&$vars) {
