@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * engineering_shared_feeds.feeds_importer_default.inc
@@ -27,6 +26,7 @@ function engineering_shared_feeds_feeds_importer_default() {
         'request_timeout' => NULL,
         'auto_scheme' => 'http',
         'accept_invalid_cert' => FALSE,
+        'cache_http_result' => TRUE,
       ),
     ),
     'parser' => array(
@@ -68,14 +68,6 @@ function engineering_shared_feeds_feeds_importer_default() {
             'debug' => 0,
             'weight' => '4',
           ),
-          'audiences' => array(
-            'name' => 'Audiences',
-            'value' => 'field_audience_multi',
-            'raw' => 0,
-            'inner' => 0,
-            'debug' => 0,
-            'weight' => '5',
-          ),
           'author' => array(
             'name' => 'Author',
             'value' => 'field_author',
@@ -116,6 +108,14 @@ function engineering_shared_feeds_feeds_importer_default() {
             'debug' => 0,
             'weight' => '10',
           ),
+          'audiences' => array(
+            'name' => 'Audiences',
+            'value' => 'field_audience_multi',
+            'raw' => 0,
+            'inner' => 0,
+            'debug' => 0,
+            'weight' => '11',
+          ),
         ),
         'display_errors' => 0,
         'debug_mode' => 0,
@@ -151,64 +151,65 @@ function engineering_shared_feeds_feeds_importer_default() {
             'language' => 'und',
           ),
           3 => array(
-            'source' => 'audiences',
-            'target' => 'field_audience_multi:label',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          4 => array(
             'source' => 'author',
             'target' => 'field_author',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          5 => array(
+          4 => array(
             'source' => 'source',
             'target' => 'field_article_source',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          6 => array(
+          5 => array(
             'source' => 'Blank source 1',
             'target' => 'field_imported',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          7 => array(
+          6 => array(
             'source' => 'create',
             'target' => 'created',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          8 => array(
+          7 => array(
             'source' => 'image',
             'target' => 'field_external_image',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          9 => array(
+          8 => array(
             'source' => 'nid',
             'target' => 'field_external_nid',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          10 => array(
+          9 => array(
             'source' => 'caption',
             'target' => 'field_image_caption',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          11 => array(
+          10 => array(
             'source' => 'tags',
             'target' => 'field_tags',
             'term_search' => '0',
             'autocreate' => 1,
             'language' => 'und',
           ),
-          12 => array(
+          11 => array(
             'source' => 'Blank source 2',
             'target' => 'field_external_image_cropped',
             'unique' => FALSE,
+            'language' => 'und',
+          ),
+          12 => array(
+            'source' => 'audiences',
+            'target' => 'field_article_audiences',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
         ),
         'insert_new' => '1',
