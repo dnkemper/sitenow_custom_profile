@@ -5,7 +5,6 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
 /**
  * responsive.custom.css is for custom media queries that are not set via the
  * theme settings, such as cascading media queries.
@@ -21,11 +20,13 @@
  * look under the "CSS" settings tab.
  */
 @media only screen and (max-width: 480px) {
+  /* line 42, ../sass/responsive.custom.scss */
   .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;
   }
 }
+/* line 59, ../sass/responsive.custom.scss */
 .node-type-grant-bulletin-opportunity .field-name-body {
   padding-top: 1.5em;
 }

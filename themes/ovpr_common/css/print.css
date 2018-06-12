@@ -5,12 +5,12 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
 /*
  * @file
  * Print Styles
  * This probably needs work, but it's a good starting point.
  */
+/* line 11, ../sass/print.scss */
 body {
   width: 100% !important;
   margin: 0 !important;
@@ -24,23 +24,27 @@ body {
   font-size: 11pt;
 }
 
+/* line 25, ../sass/print.scss */
 .print-page {
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
+/* line 33, ../sass/print.scss */
 a {
   background: transparent;
   font-weight: 700;
   text-decoration: underline;
   color: #0000ee;
 }
+/* line 40, ../sass/print.scss */
 a[href^="http://"]:after, a[href^="http://"]:visited:after {
   content: "(" attr(href) ")";
   font-size: 10pt;
 }
 
+/* line 49, ../sass/print.scss */
 div[id*="wrapper"],
 [class*="title"],
 [class*="inner"],
@@ -70,6 +74,7 @@ table * {
   background: none !important;
 }
 
+/* line 80, ../sass/print.scss */
 .sidebar,
 #breadcrumb,
 .nav,
@@ -89,19 +94,23 @@ ul.links,
   display: none;
 }
 
+/* line 101, ../sass/print.scss */
 #content {
   display: block !important;
 }
 
+/* line 106, ../sass/print.scss */
 #header {
   margin-bottom: 20px;
 }
 
+/* line 111, ../sass/print.scss */
 .content-inner {
   margin: 0 !important;
   padding: 0 !important;
 }
 
+/* line 118, ../sass/print.scss */
 h1,
 h2,
 h3,
@@ -114,24 +123,29 @@ h6 {
   line-height: 1;
 }
 
+/* line 131, ../sass/print.scss */
 h1 {
   font-size: 14pt;
 }
 
+/* line 136, ../sass/print.scss */
 h2 {
   font-size: 13pt;
 }
 
+/* line 141, ../sass/print.scss */
 h3 {
   font-size: 12pt;
 }
 
+/* line 146, ../sass/print.scss */
 h4,
 h5,
 h6 {
   font-size: 11pt;
 }
 
+/* line 152, ../sass/print.scss */
 h1 a,
 h2 a,
 h3 a,
@@ -144,14 +158,17 @@ h6 a,
   color: #333333;
 }
 
+/* line 166, ../sass/print.scss */
 hgroup a:link, hgroup a:visited {
   text-decoration: none;
 }
 
+/* line 173, ../sass/print.scss */
 #page-title {
   margin-top: 20px;
 }
 
+/* line 178, ../sass/print.scss */
 pre,
 code,
 tt,
@@ -162,6 +179,7 @@ var {
   font-family: Consolas, "Lucida Console", Menlo, Monaco, "DejaVu Sans Mono", monospace, sans-serif;
 }
 
+/* line 189, ../sass/print.scss */
 blockquote {
   margin: 20px;
   padding: 10px;
@@ -170,79 +188,96 @@ blockquote {
   background: #eeeeee;
 }
 
+/* line 198, ../sass/print.scss */
 hr {
   background-color: #666666;
 }
 
+/* line 204, ../sass/print.scss */
 #header {
   padding-bottom: 20px;
 }
 
+/* line 209, ../sass/print.scss */
 #logo img {
   padding: 0 10px 0 0;
   margin: 0 !important;
   float: none !important;
 }
 
+/* line 217, ../sass/print.scss */
 img {
   float: left;
   margin: 4px 20px 10px 0;
   page-break-inside: avoid;
 }
 
+/* line 224, ../sass/print.scss */
 a img {
   border: none;
 }
 
+/* line 230, ../sass/print.scss */
 table {
   margin: 1px;
   text-align: left;
 }
 
+/* line 236, ../sass/print.scss */
 th {
   border-bottom: 1px solid #333333;
   font-weight: 700;
 }
 
+/* line 242, ../sass/print.scss */
 td {
   border-bottom: 1px solid #333333;
 }
 
+/* line 247, ../sass/print.scss */
 th,
 td {
   padding: 4px 10px 4px 0;
 }
 
+/* line 253, ../sass/print.scss */
 tfoot {
   font-style: italic;
 }
 
+/* line 258, ../sass/print.scss */
 caption {
   margin-bottom: 10px;
   text-align: left;
 }
 
+/* line 264, ../sass/print.scss */
 thead {
   display: table-header-group;
 }
 
+/* line 269, ../sass/print.scss */
 tr {
   page-break-inside: avoid;
 }
 
+/* line 275, ../sass/print.scss */
 form {
   margin-bottom: 10px;
 }
 
+/* line 281, ../sass/print.scss */
 .poll .text,
 .poll .percent,
 .poll .total {
   text-align: left;
 }
+/* line 286, ../sass/print.scss */
 .poll form {
   margin-bottom: 0;
 }
 
+/* line 293, ../sass/print.scss */
 .node,
 .comment {
   margin-bottom: 20px;
@@ -250,6 +285,7 @@ form {
   page-break-inside: avoid;
 }
 
+/* line 300, ../sass/print.scss */
 .submitted {
   color: #666666;
   text-decoration: none;
@@ -258,6 +294,7 @@ form {
   margin: 0;
   padding: 0;
 }
+/* line 308, ../sass/print.scss */
 .submitted a {
   color: #666666;
   text-decoration: none;
@@ -267,6 +304,7 @@ form {
   padding: 0;
 }
 
+/* line 318, ../sass/print.scss */
 .print-content .field-type-image figure {
   margin: 0;
 }

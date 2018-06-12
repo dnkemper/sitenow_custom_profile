@@ -5,19 +5,22 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
+/* line 10, ../sass/global.comments.scss */
 #comments {
   margin: 1.5em 0;
 }
 
+/* line 29, ../sass/global.comments.scss */
 .comment {
   margin-bottom: 20px;
 }
 
+/* line 80, ../sass/global.comments.scss */
 .comment-preview {
   background-color: #ffffea;
 }
 
+/* line 119, ../sass/global.comments.scss */
 .new {
   color: #c00;
 }
