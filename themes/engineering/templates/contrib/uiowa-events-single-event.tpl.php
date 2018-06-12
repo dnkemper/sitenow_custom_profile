@@ -19,8 +19,8 @@
     <div class="col-md-8">
       <div class="field event-time">
         <?php if (!empty($data['future_instances'])): ?>
-          <?php print $data['today'] ?> → <span class="future-instances-toggle">more dates through <?php print date('l, F j', strtotime($data['last_date'])) ?></span>
-          <div class="future-instances">
+          <?php print $data['today'] ?> → <a id="date-toggle" aria-controls="future-instances" role="button" href="#future-instances">more dates through <?php print date('l, F j, Y', strtotime($data['last_date'])) ?></a>
+          <div id="future-instances" tabindex="-1" role="region" aria-labelledby="date-toggle">
             <i class="fa fa-calendar-o fa-inline"></i><?php print $data['future_instances'] ?>
           </div>
         <?php else: ?>
@@ -71,7 +71,7 @@
         </div>
       <?php endif; ?>
 
-      <a href="http://events.uiowa.edu/event/<?php print $data['id'] ?>" role="button" class="btn btn-primary btn-block">View on Event Calendar</a>
+      <a href="<?php print $data['events_site_url'] ?>" role="button" class="btn btn-primary">View on Event Calendar</a>
     </div>
   </div>
 </div>

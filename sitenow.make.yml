@@ -596,7 +596,7 @@ projects:
     version: "2.0"
 
   stage_file_proxy:
-    version: "1.7"
+    version: "1.8"
 
   strongarm:
     version: "2.0"
