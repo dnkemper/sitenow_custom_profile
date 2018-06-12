@@ -5,7 +5,7 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
+/* line 12, ../sass/global.fields.scss */
 .fieldset-legend {
   font-size: 1.6em;
   /* text-decoration:underline; */
@@ -13,6 +13,7 @@
   font-weight: bold;
 }
 
+/* line 33, ../sass/global.fields.scss */
 .field .field-label {
   font-size: 1em;
   font-weight: 700;
@@ -21,13 +22,16 @@
   margin: 0;
 }
 
+/* line 61, ../sass/global.fields.scss */
 .field-type-taxonomy-term-reference {
   margin-bottom: 1.5em;
 }
+/* line 67, ../sass/global.fields.scss */
 .field-type-taxonomy-term-reference.field-label-inline .field-items {
   margin: 0;
   padding: 0;
 }
+/* line 72, ../sass/global.fields.scss */
 .field-type-taxonomy-term-reference.field-label-inline .field-item {
   display: inline;
   list-style: none;
@@ -35,14 +39,17 @@
   /* LTR */
 }
 
+/* line 162, ../sass/global.fields.scss */
 .ia-l .field-type-image {
   margin: 0.5em 15px 1.5em 0;
 }
 
+/* line 167, ../sass/global.fields.scss */
 .ia-c .field-type-image {
   margin: 0.5em auto 1.5em;
 }
 
+/* line 172, ../sass/global.fields.scss */
 .ia-r .field-type-image {
   margin: 0.5em 0 1.5em 15px;
 }

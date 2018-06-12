@@ -5,8 +5,8 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
 /* Target IE 6, 7 and 8 */
+/* line 7, ../sass/lt-ie9.scss */
 html {
   font-size: 81.3%;
 }
@@ -18,22 +18,25 @@ html {
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
+/* line 19, ../sass/lt-ie9.scss */
 #site-name {
   font-family: 'Oswald';
   font-size: 2.5em;
 }
 
+/* line 26, ../sass/lt-ie9.scss */
 #name-and-slogan {
   float: left;
   margin-bottom: 10px;
   margin-top: 30px;
 }
 
+/* line 32, ../sass/lt-ie9.scss */
 #main-content {
   margin-left: 40px;
 }
 
+/* line 36, ../sass/lt-ie9.scss */
 #research-depts-nav {
   background: #3B3B3C;
   padding: 5px;
@@ -41,25 +44,26 @@ html {
   overflow: auto;
   width: 100%;
 }
+/* line 42, ../sass/lt-ie9.scss */
 #research-depts-nav a {
   color: #FFC344;
   font-size: 0.8em;
   font-weight: bold;
   vertical-align: middle;
 }
+/* line 48, ../sass/lt-ie9.scss */
 #research-depts-nav #current-department-link {
   float: left;
   background-color: #FFC344;
   padding: 0 4px;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   color: #000;
   margin-top: 2px;
 }
 
+/* line 59, ../sass/lt-ie9.scss */
 #research-link {
   float: left;
   margin-right: 10px;
@@ -67,39 +71,44 @@ html {
   margin-top: 2px;
 }
 
+/* line 68, ../sass/lt-ie9.scss */
 #depts-links-top {
   margin: 0;
   float: right;
 }
+/* line 71, ../sass/lt-ie9.scss */
 #depts-links-top a {
   height: 100%;
   padding: 0 4px;
 }
+/* line 74, ../sass/lt-ie9.scss */
 #depts-links-top a:hover {
   color: #000;
   background-color: #FFC344;
   height: 100%;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+/* line 81, ../sass/lt-ie9.scss */
 #depts-links-top li {
   display: inline;
   margin: 0 5px;
   border-left: 1px solid #FFC344;
   padding-left: 10px;
 }
+/* line 86, ../sass/lt-ie9.scss */
 #depts-links-top li.first {
   border-left: none;
 }
 
+/* line 93, ../sass/lt-ie9.scss */
 .flexslider .slides img {
   width: 440px;
   float: left;
 }
 
+/* line 98, ../sass/lt-ie9.scss */
 .flexslider ul.slides li img {
   padding-right: 10px;
 }

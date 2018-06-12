@@ -5,20 +5,22 @@
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot);
   src: local("Oswald Bold"), local("Oswald-Bold"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6fY6323mHUZFJMgTvxaG2iE.eot) format("embedded-opentype"), url(https://themes.googleusercontent.com/static/fonts/oswald/v7/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-
 /**
  * @file
  * Node Styling
  */
+/* line 9, ../sass/global.nodes.scss */
 .node {
   margin-bottom: 20px;
 }
 
+/* line 104, ../sass/global.nodes.scss */
 .node-iowa-now-article .publication_source {
   color: #3B3B3C;
   font-style: italic;
 }
 
+/* line 109, ../sass/global.nodes.scss */
 .field-name-field-iowanow-thumbnail-image {
   float: left;
   margin: 0.5em 0.5em 0.5em 0;

@@ -1,0 +1,100 @@
+// Abstracted classes for uiowa_events grid and list styles.
+.pane-uiowa-events-pane-grid,
+%pane-uiowa-events-pane-grid {
+  // Each event item
+  .uiowa-event {
+    padding: 1em;
+    margin-bottom: 1em;
+    background: $snow;
+    @include border(1px, bottom);
+  }
+
+  // Title
+  h3 {
+    @include font-size(1.8);
+    margin: 0;
+
+    a {
+      font-weight: normal;
+    }
+  }
+
+  // Image
+  img {
+    line-height: 0;
+    text-align: center;
+
+    a {
+      display: block;
+    }
+  }
+
+  // Date
+  .date-string {
+    font-family: $base-font-stack;
+    font-weight: $fw-bold;
+    @include font-size(1.4);
+    text-transform: uppercase;
+    margin-bottom: .5em;
+    display: block;
+    background: #333;
+    color: $yellow-gold;
+    @include font-smoothing;
+    padding: .3em;
+    text-align: center;
+
+    &:before,
+    &:after {
+      content: "\2014";
+      margin: 0 .5em;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  // Responsive
+  @include breakpoint(500px ($bp-desktop - 1px)) {
+    @include grid(2, ".uiowa-events", ".uiowa-event");
+  }
+
+  @include breakpoint($bp-desktop) {
+    .no-flexbox & {
+      @include grid(4, ".uiowa-events", ".uiowa-event");
+    }
+
+    .flexbox & {
+      .uiowa-events {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include justify-content(space-between);
+      }
+
+      .uiowa-event {
+        width: 24%;
+      }
+    }
+  }
+}
+
+%pane-uiowa-events-pane-list,
+.pane-uiowa-events-pane-list {
+  .uiowa-event {
+    @include article-list;
+    @include list-separator;
+  }
+
+  .date-string {
+    @include font-size(1.4);
+    margin-bottom: 0;
+
+    &:before {
+      @include icon($fa-var-calendar);
+      margin-right: 10px;
+      color: #777;
+    }
+  }
+}
+
+.uiowa-events-page {
+  @extend %pane-uiowa-events-pane-list;
+}

@@ -9,7 +9,6 @@
  * Implements hook_preprocess_panels_pane().
  */
 function ovpred_preprocess_panels_pane(&$variables) {
-
   if (isset($variables['pane']->style['style'])) {
     // Wrapper style.
     if ($variables['pane']->style['style'] === 'wrapper') {
