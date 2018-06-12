@@ -2,7 +2,10 @@
 
 /**
  * @file
- *
+ * Preprocess uiowa_events teaser template.
+ */
+
+/**
  * Implements hook_preprocess_uiowa_events_teaser().
  */
 function ovpred_preprocess_uiowa_events_teaser(&$vars) {
@@ -11,6 +14,4 @@ function ovpred_preprocess_uiowa_events_teaser(&$vars) {
     $start_time = strtotime($vars['event']['instance_start']);
     $vars['event']['date_string'] = format_date($start_time, 'custom', 'M j gA');
   }
-
-  
 }
