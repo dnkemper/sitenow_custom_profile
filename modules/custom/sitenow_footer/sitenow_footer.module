@@ -66,8 +66,7 @@ function sitenow_footer_block_info() {
  */
 function sitenow_footer_block_view($delta = '') {
   $block = array();
-
-  switch($delta) {
+  switch ($delta) {
     case 'sitenow_footer':
       $block['content'] = theme('sitenow_footer_block');
       break;
@@ -106,7 +105,7 @@ function sitenow_footer_preprocess_sitenow_footer_block(&$variables) {
     );
   }
   else {
-    $variables['logo'] = FAlSE;
+    $variables['logo'] = FALSE;
   }
 
   // Custom menu for config form.
