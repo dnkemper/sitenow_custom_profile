@@ -1,0 +1,143 @@
+<?php
+
+/**
+ * @file
+ * Code for the sitenow_footer module.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function sitenow_footer_permission() {
+  return array(
+    'administer sitenow footer' => array(
+      'title' => t('Administer Sitenow Footer'),
+      'description' => t('Configure Sitenow footer.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function sitenow_footer_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/sitenow-footer'] = array(
+    'title' => 'Sitenow Footer',
+    'description' => 'Configuration for the Sitenow Footer',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sitenow_footer_config_form'),
+    'access arguments' => array('administer sitenow footer'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/sitenow_footer.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sitenow_footer_theme() {
+  $themes = array(
+    'sitenow_footer_block' => array(
+      'path' => drupal_get_path('module', 'sitenow_footer') . '/theme',
+      'template' => "sitenow_footer_block",
+    ),
+  );
+
+  return $themes;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function sitenow_footer_block_info() {
+  $blocks["sitenow_footer"] = array(
+    'info' => t("Sitenow Footer"),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function sitenow_footer_block_view($delta = '') {
+  $block = array();
+
+  switch($delta) {
+    case 'sitenow_footer':
+      $block['content'] = theme('sitenow_footer_block');
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_preprocess_sitenow_footer_block().
+ */
+function sitenow_footer_preprocess_sitenow_footer_block(&$variables) {
+  $module_path = drupal_get_path('module', 'sitenow_footer');
+  drupal_add_css($module_path . '/css/sitenow_footer.css');
+
+  // Logo.
+  $fid = variable_get('sitenow_footer_logo');
+  if (!empty($fid)) {
+    $file = file_load($fid);
+    $logo = array(
+      '#type' => 'html_tag',
+      '#tag' => 'img',
+      '#attributes' => array(
+        'src' => file_create_url($file->uri),
+        'alt' => variable_get('site_name') . ' logo',
+        'title' => variable_get('site_name') . ' logo',
+      ),
+    );
+    $variables['logo'] = array(
+      '#theme' => 'link',
+      '#path' => base_path(),
+      '#text' => render($logo),
+      '#options' => array(
+        'html' => TRUE,
+      ),
+    );
+  }
+  else {
+    $variables['logo'] = FAlSE;
+  }
+
+  // Custom menu for config form.
+  $custom_menu = variable_get('sitenow_footer_custom_menu');
+  if (!empty($custom_menu) && $custom_menu != 'none') {
+    $menu = menu_load($custom_menu);
+    $custom_menu_tree = menu_tree_all_data($custom_menu);
+    $custom_menu_output = menu_tree_output($custom_menu_tree);
+    $variables['custom_menu_links'] = render($custom_menu_output);
+    $variables['custom_menu_links_title'] = check_plain($menu['title']);
+  }
+  else {
+    $variables['custom_menu_links'] = FALSE;
+  }
+
+  // Social media menu for config form.
+  $social_menu = variable_get('sitenow_footer_social_media_menu');
+  if (!empty($social_menu) && $social_menu != 'none') {
+    $menu = menu_load($social_menu);
+    $social_menu_tree = menu_tree_all_data($social_menu);
+    $social_menu_output = menu_tree_output($social_menu_tree);
+    $variables['social_menu_links'] = render($social_menu_output);
+    $variables['social_menu_links_title'] = check_plain($menu['title']);
+  }
+  else {
+    $variables['social_menu_links'] = FALSE;
+  }
+
+  // Add additional info.
+  $additional_info_details = variable_get('sitenow_footer_additional_info');
+  $additional_info_title = variable_get('sitenow_footer_additional_info_title');
+  $variables['additional_info_title'] = (!empty($additional_info_title)) ? check_plain($additional_info_title) : FALSE;
+  $variables['additional_info_details'] = (!empty($additional_info_details)) ? check_markup($additional_info_details['value'], $additional_info_details['format']) : FALSE;
+}

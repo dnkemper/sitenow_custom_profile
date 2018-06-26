@@ -1,0 +1,4 @@
+name = Sitenow Footer
+core = 7.x
+package = Sitenow
+version = 7.x-1.0
