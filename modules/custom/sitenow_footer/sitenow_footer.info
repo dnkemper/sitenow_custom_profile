@@ -1,4 +1,5 @@
 name = Sitenow Footer
+description = Configuration and block implementation for common footer.
 core = 7.x
 package = Sitenow
 version = 7.x-1.0
