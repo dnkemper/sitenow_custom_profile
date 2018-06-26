@@ -79,9 +79,6 @@ function sitenow_footer_block_view($delta = '') {
  * Implements hook_preprocess_sitenow_footer_block().
  */
 function sitenow_footer_preprocess_sitenow_footer_block(&$variables) {
-  $module_path = drupal_get_path('module', 'sitenow_footer');
-  drupal_add_css($module_path . '/css/sitenow_footer.css');
-
   // Logo.
   $fid = variable_get('sitenow_footer_logo');
   if (!empty($fid)) {
