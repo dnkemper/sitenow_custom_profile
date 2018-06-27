@@ -38,6 +38,8 @@ function sitenow_footer_menu() {
 
 /**
  * Implements hook_theme().
+ *
+ * @todo Get theme_hook_suggestions to work, rather than dynamic template name.
  */
 function sitenow_footer_theme() {
   $theme = variable_get('sitenow_footer_theme', 'default');
@@ -86,8 +88,10 @@ function sitenow_footer_block_view($delta = '') {
  * Implements hook_preprocess_sitenow_footer().
  */
 function sitenow_footer_preprocess_sitenow_footer(&$variables) {
+  // Get theme config and add css.
   $theme = variable_get('sitenow_footer_theme', 'default');
   drupal_add_css(drupal_get_path('module', 'sitenow_footer') . '/css/sitenow-footer--' . $theme . '.css');
+
   // Logo.
   $fid = variable_get('sitenow_footer_logo');
   if (!empty($fid)) {
