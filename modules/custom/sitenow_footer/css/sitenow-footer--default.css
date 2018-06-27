@@ -1,3 +1,8 @@
+.col-left .block,
+.col-right .block {
+  margin-bottom: 1.3em;
+}
+
 .block--custom-menu .block-title,
 .block--social-media-menu .block-title,
 .block--social-media-menu .menu-link-title {
@@ -11,9 +16,16 @@
   border: 0;
 }
 
+.block--additional-info {
+  color: #FFFFFF;
+}
+
 .block--social-media-menu .menu {
   display: flex;
-  font-size: 1.2em;
+  font-size: 1.5em;
+}
+.block--social-media-menu .menu a {
+  color: #999999;
 }
 
 .block--custom-menu .menu {
@@ -23,4 +35,7 @@
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;
+}
+.block--custom-menu .menu a {
+  color: #FFCD00;
 }
