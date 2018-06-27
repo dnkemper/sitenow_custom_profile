@@ -11,6 +11,21 @@
  * @see sitenow_footer_menu()
  */
 function sitenow_footer_config_form($form, &$form_state) {
+  // Theme.
+  $form['theme_fieldset'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Theme',
+    '#collapsible' => TRUE,
+  );
+  $form['theme_fieldset']['sitenow_footer_theme'] = array(
+    '#type' => 'select',
+    '#title' => 'Footer Theme',
+    '#options' => array(
+      'default' => 'Uiowa Standard',
+    ),
+    '#default_value' => variable_get('sitenow_footer_theme'),
+    '#description' => t('Select a theme to use for the footer.'),
+  );
   // Lockup.
   $form['logo_fieldset'] = array(
     '#type' => 'fieldset',

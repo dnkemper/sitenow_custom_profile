@@ -40,10 +40,17 @@ function sitenow_footer_menu() {
  * Implements hook_theme().
  */
 function sitenow_footer_theme() {
+  $theme = variable_get('sitenow_footer_theme', 'default');
   $themes = array(
-    'sitenow_footer_block' => array(
+    'sitenow_footer' => array(
       'path' => drupal_get_path('module', 'sitenow_footer') . '/theme',
-      'template' => "sitenow_footer_block",
+      'template' => "sitenow-footer--" . $theme,
+      'variables' => array(
+        'logo' => FALSE,
+        'custom_menu_links' => FALSE,
+        'social_menu_links' => FALSE,
+        'additional_info_details' => FALSE,
+      ),
     ),
   );
 
@@ -68,7 +75,7 @@ function sitenow_footer_block_view($delta = '') {
   $block = array();
   switch ($delta) {
     case 'sitenow_footer':
-      $block['content'] = theme('sitenow_footer_block');
+      $block['content'] = theme('sitenow_footer');
       break;
   }
 
@@ -76,9 +83,11 @@ function sitenow_footer_block_view($delta = '') {
 }
 
 /**
- * Implements hook_preprocess_sitenow_footer_block().
+ * Implements hook_preprocess_sitenow_footer().
  */
-function sitenow_footer_preprocess_sitenow_footer_block(&$variables) {
+function sitenow_footer_preprocess_sitenow_footer(&$variables) {
+  $theme = variable_get('sitenow_footer_theme', 'default');
+  drupal_add_css(drupal_get_path('module', 'sitenow_footer') . '/css/sitenow-footer--' . $theme . '.css');
   // Logo.
   $fid = variable_get('sitenow_footer_logo');
   if (!empty($fid)) {
@@ -101,11 +110,8 @@ function sitenow_footer_preprocess_sitenow_footer_block(&$variables) {
       ),
     );
   }
-  else {
-    $variables['logo'] = FALSE;
-  }
 
-  // Custom menu for config form.
+  // Custom menu.
   $custom_menu = variable_get('sitenow_footer_custom_menu');
   if (!empty($custom_menu) && $custom_menu != 'none') {
     $menu = menu_load($custom_menu);
@@ -114,11 +120,8 @@ function sitenow_footer_preprocess_sitenow_footer_block(&$variables) {
     $variables['custom_menu_links'] = render($custom_menu_output);
     $variables['custom_menu_links_title'] = check_plain($menu['title']);
   }
-  else {
-    $variables['custom_menu_links'] = FALSE;
-  }
 
-  // Social media menu for config form.
+  // Social media menu.
   $social_menu = variable_get('sitenow_footer_social_media_menu');
   if (!empty($social_menu) && $social_menu != 'none') {
     $menu = menu_load($social_menu);
@@ -127,11 +130,8 @@ function sitenow_footer_preprocess_sitenow_footer_block(&$variables) {
     $variables['social_menu_links'] = render($social_menu_output);
     $variables['social_menu_links_title'] = check_plain($menu['title']);
   }
-  else {
-    $variables['social_menu_links'] = FALSE;
-  }
 
-  // Add additional info.
+  // Additional info.
   $additional_info_details = variable_get('sitenow_footer_additional_info');
   $additional_info_title = variable_get('sitenow_footer_additional_info_title');
   $variables['additional_info_title'] = (!empty($additional_info_title)) ? check_plain($additional_info_title) : FALSE;
