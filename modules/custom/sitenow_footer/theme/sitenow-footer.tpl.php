@@ -8,6 +8,9 @@
  */
 ?>
 <div class="row">
+  <?php if ($attachments): ?>
+    <?php print render($attachments); ?>
+  <?php endif; ?>
   <?php if ($logo || $additional_info_details || $social_menu_links): ?>
     <div class="col-md-6 col-left">
       <?php if ($logo): ?>

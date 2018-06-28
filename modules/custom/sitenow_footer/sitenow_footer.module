@@ -49,6 +49,7 @@ function sitenow_footer_theme() {
         'custom_menu_links' => FALSE,
         'social_menu_links' => FALSE,
         'additional_info_details' => FALSE,
+        'attachments' => FALSE,
       ),
     ),
   );
@@ -110,7 +111,7 @@ function sitenow_footer_preprocess_sitenow_footer(&$variables) {
   // Add css if applicable.
   $css = drupal_get_path('module', 'sitenow_footer') . '/css/sitenow-footer--' . $theme . '.css';
   if (file_exists($css)) {
-    drupal_add_css($css);
+    $variables['attachments']['#attached']['css'][] = $css;
   }
   // Add a template suggestion based upon the theme.
   $variables['theme_hook_suggestions'][] = 'sitenow_footer__' . $theme;
