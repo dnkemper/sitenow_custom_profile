@@ -12,7 +12,13 @@
  */
 function sitenow_install() {
 
-  module_enable(array('sitenow_footer', 'sitenow_media', 'sitenow_wysiwyg', 'sitenow_wysiwyg_bonus_pack', 'toolbar'));
+  module_enable(array(
+    'sitenow_footer',
+    'sitenow_media',
+    'sitenow_wysiwyg',
+    'sitenow_wysiwyg_bonus_pack',
+    'toolbar'
+  ));
 
   // Only enable if the extension is loaded to avoid site install error.
   if (extension_loaded('memcache') || extension_loaded('memcached')) {
