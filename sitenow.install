@@ -16,7 +16,7 @@ function sitenow_install() {
     'sitenow_media',
     'sitenow_wysiwyg',
     'sitenow_wysiwyg_bonus_pack',
-    'toolbar'
+    'toolbar',
   ));
 
   // Only enable if the extension is loaded to avoid site install error.
