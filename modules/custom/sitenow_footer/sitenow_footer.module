@@ -1,0 +1,167 @@
+<?php
+
+/**
+ * @file
+ * Code for the sitenow_footer module.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function sitenow_footer_permission() {
+  return array(
+    'administer sitenow footer' => array(
+      'title' => t('Administer Sitenow Footer'),
+      'description' => t('Configure Sitenow footer.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function sitenow_footer_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/sitenow-footer'] = array(
+    'title' => 'Sitenow Footer',
+    'description' => 'Configuration for the Sitenow Footer',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sitenow_footer_config_form'),
+    'access arguments' => array('administer sitenow footer'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/sitenow_footer.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sitenow_footer_theme() {
+  $themes = array(
+    'sitenow_footer' => array(
+      'path' => drupal_get_path('module', 'sitenow_footer') . '/theme',
+      'template' => "sitenow-footer",
+      'variables' => array(
+        'logo' => FALSE,
+        'custom_menu_links' => FALSE,
+        'social_menu_links' => FALSE,
+        'additional_info_details' => FALSE,
+        'attachments' => FALSE,
+      ),
+    ),
+  );
+
+  return $themes;
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function sitenow_footer_theme_registry_alter(&$theme_registry) {
+  // Defined path to the current module.
+  $module_path = drupal_get_path('module', 'sitenow_footer') . '/theme';
+  // Find all .tpl.php files in this module's folder recursively.
+  $template_file_objects = drupal_find_theme_templates($theme_registry, '.tpl.php', $module_path);
+  // Iterate through all found template file objects.
+  foreach ($template_file_objects as $key => $template_file_object) {
+    // If the template has not already been overridden by a theme.
+    if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) {
+      // Alter the theme path and template elements.
+      $theme_registry[$key]['theme path'] = $module_path;
+      $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
+      $theme_registry[$key]['type'] = 'module';
+    }
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function sitenow_footer_block_info() {
+  $blocks["sitenow_footer"] = array(
+    'info' => t("Sitenow Footer"),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function sitenow_footer_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'sitenow_footer':
+      $block['content'] = theme('sitenow_footer');
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_preprocess_sitenow_footer().
+ */
+function sitenow_footer_preprocess_sitenow_footer(&$variables) {
+  // Get theme variant.
+  $theme = variable_get('sitenow_footer_theme', 'default');
+  // Add css if applicable.
+  $css = drupal_get_path('module', 'sitenow_footer') . '/css/sitenow-footer--' . $theme . '.css';
+  if (file_exists($css)) {
+    $variables['attachments']['#attached']['css'][] = $css;
+  }
+  // Add a template suggestion based upon the theme.
+  $variables['theme_hook_suggestions'][] = 'sitenow_footer__' . $theme;
+
+  // Generate logo render array.
+  $fid = variable_get('sitenow_footer_logo');
+  if (!empty($fid)) {
+    $file = file_load($fid);
+    $logo = array(
+      '#type' => 'html_tag',
+      '#tag' => 'img',
+      '#attributes' => array(
+        'src' => file_create_url($file->uri),
+        'alt' => variable_get('site_name') . ' logo',
+        'title' => variable_get('site_name') . ' logo',
+      ),
+    );
+    $variables['logo'] = array(
+      '#theme' => 'link',
+      '#path' => base_path(),
+      '#text' => render($logo),
+      '#options' => array(
+        'html' => TRUE,
+      ),
+    );
+  }
+
+  // Generate custom menu markup.
+  $custom_menu = variable_get('sitenow_footer_custom_menu');
+  if (!empty($custom_menu) && $custom_menu != 'none') {
+    $menu = menu_load($custom_menu);
+    $custom_menu_tree = menu_tree_all_data($custom_menu);
+    $custom_menu_output = menu_tree_output($custom_menu_tree);
+    $variables['custom_menu_links'] = render($custom_menu_output);
+    $variables['custom_menu_links_title'] = check_plain($menu['title']);
+  }
+
+  // Generate social media menu markup.
+  $social_menu = variable_get('sitenow_footer_social_media_menu');
+  if (!empty($social_menu) && $social_menu != 'none') {
+    $menu = menu_load($social_menu);
+    $social_menu_tree = menu_tree_all_data($social_menu);
+    $social_menu_output = menu_tree_output($social_menu_tree);
+    $variables['social_menu_links'] = render($social_menu_output);
+    $variables['social_menu_links_title'] = check_plain($menu['title']);
+  }
+
+  // Generate additional info markup.
+  $additional_info_details = variable_get('sitenow_footer_additional_info');
+  $additional_info_title = variable_get('sitenow_footer_additional_info_title');
+  $variables['additional_info_title'] = (!empty($additional_info_title)) ? check_plain($additional_info_title) : FALSE;
+  $variables['additional_info_details'] = (!empty($additional_info_details)) ? check_markup($additional_info_details['value'], $additional_info_details['format']) : FALSE;
+}
