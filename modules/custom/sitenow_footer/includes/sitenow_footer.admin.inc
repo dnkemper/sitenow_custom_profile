@@ -14,14 +14,14 @@ function sitenow_footer_config_form($form, &$form_state) {
   // Theme.
   $form['theme_fieldset'] = array(
     '#type' => 'fieldset',
-    '#title' => 'Theme',
+    '#title' => t('Theme'),
     '#collapsible' => TRUE,
   );
   $form['theme_fieldset']['sitenow_footer_theme'] = array(
     '#type' => 'select',
-    '#title' => 'Footer Theme',
+    '#title' => t('Footer Theme'),
     '#options' => array(
-      'default' => 'Uiowa Standard',
+      'default' => t('Uiowa Standard'),
     ),
     '#default_value' => variable_get('sitenow_footer_theme'),
     '#description' => t('Select a theme to use for the footer.'),
@@ -29,20 +29,20 @@ function sitenow_footer_config_form($form, &$form_state) {
   // Lockup.
   $form['logo_fieldset'] = array(
     '#type' => 'fieldset',
-    '#title' => 'Logo',
+    '#title' => t('Logo'),
     '#collapsible' => TRUE,
   );
   $form['logo_fieldset']['sitenow_footer_logo'] = array(
     '#type'          => 'media',
-    '#title'         => 'Image',
-    '#description'   => 'Upload an image to use for a logo or lockup.',
+    '#title'         => t('Image'),
+    '#description'   => t('Upload an image to use for a logo or lockup.'),
     '#theme'         => 'media_widget',
     '#default_value' => variable_get('sitenow_footer_logo', NULL),
     '#media_options' => array(
       'global' => array(
         'file_directory'  => 'sitenow_footer_logo',
         'enabledPlugins'  => array(
-          'upload'
+          'upload',
         ),
         'file_extensions' => 'svg png gif jpg jpeg',
         'uri_scheme'      => 'public',
@@ -59,7 +59,7 @@ function sitenow_footer_config_form($form, &$form_state) {
   $menus = array_merge($menus, menu_get_menus());
   $form['menu_fieldset'] = array(
     '#type' => 'fieldset',
-    '#title' => 'Footer Menus',
+    '#title' => t('Footer Menus'),
     '#collapsible' => TRUE,
   );
   $form['menu_fieldset']['sitenow_footer_social_media_menu'] = array(
@@ -84,7 +84,7 @@ function sitenow_footer_config_form($form, &$form_state) {
   empty($sitenow_footer_additional_info) ? $sitenow_footer_additional_info = $defaults : $sitenow_footer_additional_info;
   $form['additional_info_fieldset'] = array(
     '#type' => 'fieldset',
-    '#title' => 'Additional Information',
+    '#title' => t('Additional Information'),
     '#collapsible' => TRUE,
   );
   $form['additional_info_fieldset']['sitenow_footer_additional_info_title'] = array(
