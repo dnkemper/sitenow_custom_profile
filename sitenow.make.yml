@@ -649,7 +649,7 @@ projects:
     version: "1.2"
 
   uuid:
-    version: "1.0"
+    version: "1.1"
 
   value_is:
     version: "1.10"
