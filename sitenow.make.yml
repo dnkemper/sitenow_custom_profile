@@ -298,6 +298,8 @@ projects:
 
   hierarchical_select:
     version: "3.0-beta8"
+    patch:
+          - "https://www.drupal.org/files/issues/hierarchical_select-not_well_formed_numeric_value_error-2845621-1.patch"
 
   imagecache_external:
     version: "2.2"
