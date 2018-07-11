@@ -655,6 +655,8 @@ projects:
 
   viewfield:
     version: "2.1"
+    patch:
+      - "https://www.drupal.org/files/issues/2018-07-10/viewfield_title_field_formatter-2984973-2.patch"
 
   views:
     version: "3.18"
