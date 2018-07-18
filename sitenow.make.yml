@@ -744,7 +744,7 @@ projects:
     version: "1.6-rc9"
 
   xmlsitemap:
-    version: "2.3"
+    version: "2.4"
 
   # Themes
   adaptivetheme:
