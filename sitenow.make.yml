@@ -574,7 +574,7 @@ projects:
     version: "1.5"
 
   select_or_other:
-    version: "2.22"
+    version: "2.24"
 
   shs:
     version: "1.6"
@@ -751,6 +751,8 @@ projects:
 
   xmlsitemap:
     version: "2.4"
+    patch:
+      - "https://www.drupal.org/files/issues/2018-07-19/xmlsitemap-2986847-2.patch"
 
   # Themes
   adaptivetheme:
