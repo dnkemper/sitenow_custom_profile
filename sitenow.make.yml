@@ -568,7 +568,7 @@ projects:
     version: "1.5"
 
   select_or_other:
-    version: "2.22"
+    version: "2.24"
 
   shs:
     version: "1.6"
