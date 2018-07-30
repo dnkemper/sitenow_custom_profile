@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * SiteNow Footer installation.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function sitenow_footer_uninstall() {
+  variable_del('sitenow_footer_theme');
+  variable_del('sitenow_footer_logo');
+  variable_del('sitenow_footer_social_media_menu');
+  variable_del('sitenow_footer_custom_menu');
+  variable_del('sitenow_footer_additional_info_title');
+  variable_del('sitenow_footer_additional_info');
+}

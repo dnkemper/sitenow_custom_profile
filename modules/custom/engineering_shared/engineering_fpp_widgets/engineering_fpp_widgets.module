@@ -154,23 +154,43 @@ function engineering_fpp_widgets_preprocess_panels_pane(&$vars) {
       // Re-render content and pass the pane object to variables.
       // Prepare the parameters.
       $params = array(
-        'days' => 365,
-        'start' => date('Y-m-d'),
-        'page' => 1,
+        'display_id' => 'year',
+        'filters[startdate][value][date]' => date('m-d-Y'),
+        'page' => 0,
+        'items_per_page' => $vars['pane']->configuration['param_pp'],
       );
-      foreach ($vars['pane']->configuration as $name => $c) {
-        if (!empty($c) && substr($name, 0, 6) === 'param_') {
-          $key = str_replace('param_', '', $name);
-          $params[$key] = $c;
+      foreach ($vars['pane']->configuration as $name => $value) {
+        if (!empty($value)) {
+          switch ($name) {
+            case 'uiowa_events_filters_departments':
+              $params['filters[department]'] = $value;
+              break;
+
+            case 'uiowa_events_filters_event_types':
+              $params['filters[types]'] = $value;
+              break;
+
+            case 'uiowa_events_filters_event_audience':
+              $params['filters[audiences]'] = $value;
+              break;
+
+            case 'uiowa_events_filters_event_general_interest':
+              $params['filters[interests]'] = $value;
+              break;
+
+            case 'uiowa_events_filters_keywords':
+              $params['filters[keywords]'] = $value;
+              break;
+
+          }
         }
       }
-
       // Get the events.
-      $events = uiowa_events_load(array('events'), $params);
+      $events = uiowa_events_load($params);
 
       // Set additional pane config.
-      $external_link = ($vars['pane']->configuration == 'event-link-external') ? TRUE : FALSE;
-      $more_link = ($vars['pane']->configuration == TRUE) ? TRUE : FALSE;
+      $external_link = (variable_get('uiowa_events_event_link') == 'event-link-external') ? TRUE : FALSE;
+      $more_link = ($vars['pane']->configuration['more_link'] == TRUE) ? TRUE : FALSE;
 
       // Prepare variables.
       $variables = array(

@@ -1,7 +1,8 @@
 <?php
 
 /**
- * @file uiowa-events-teaser.preprocess.inc
+ * @file
+ * Preprocess uiowa_events teaser template.
  */
 
 /**

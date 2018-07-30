@@ -17,16 +17,9 @@
 <div class="uiowa-event-single-event">
   <div class="row">
     <div class="col-md-8">
-      <div class="field event-time">
-        <?php if (!empty($data['future_instances'])): ?>
-          <?php print $data['today'] ?> → <span class="future-instances-toggle">more dates through <?php print date('l, F j', strtotime($data['last_date'])) ?></span>
-          <div class="future-instances">
-            <i class="fa fa-calendar-o fa-inline"></i><?php print $data['future_instances'] ?>
-          </div>
-        <?php else: ?>
-          <i class="fa fa-calendar-o fa-inline"></i><?php print $data['today'] ?>
-        <?php endif; ?>
-      </div>
+        <div class="field event-time">
+          <?php print render($data['date_instances']) ?>
+        </div>
       <div class="field location-address">
         <span><i class="fa fa-map-marker fa-inline"></i></span>
         <span>
@@ -71,7 +64,10 @@
         </div>
       <?php endif; ?>
 
-      <a href="http://events.uiowa.edu/event/<?php print $data['id'] ?>" role="button" class="btn btn-primary btn-block">View on Event Calendar</a>
+      <a href="<?php print $data['events_site_url'] ?>" role="button" class="btn btn-primary">View on Event Calendar</a>
     </div>
+  </div>
+  <div class="uiowa-event-accessibility-statement">
+    <em><?php print $data['accessibility_statement']; ?></em>
   </div>
 </div>

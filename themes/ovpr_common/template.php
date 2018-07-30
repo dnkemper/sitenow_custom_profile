@@ -77,3 +77,24 @@ function ovpr_common_preprocess_html(&$vars) {
   // Add header meta tag for IE to head.
   drupal_add_html_head($meta_ie_render_engine, 'meta_ie_render_engine');
 }
+
+/**
+ * Implements hook_preprocess_uiowa_events_teaser().
+ */
+function ovpr_common_preprocess_uiowa_events_teaser(&$vars) {
+  // Trim description.
+  $filtered = filter_xss($vars['event']['description_text']);
+  $filtered = truncate_utf8($filtered, 175, TRUE, TRUE);
+  $vars['event']['description_text'] = $filtered;
+  // Format date/time.
+  // Version 1.3.
+  if (isset($vars['event']['start'])) {
+    $time = strtotime($vars['event']['start']);
+    $vars['event']['date_string'] = format_date($time, 'long');
+  }
+  // Version 1.4.
+  elseif (isset($vars['event']['instance_start'])) {
+    $time = strtotime($vars['event']['instance_start']);
+    $vars['event']['date_string'] = format_date($time, 'long');
+  }
+}

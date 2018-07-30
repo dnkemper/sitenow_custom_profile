@@ -11,7 +11,7 @@
  * $data
  *   Event data generated from Localist API.
  */
-$view_all = l(t('View Full Calendar'), base_path() . 'events');
+$view_all = l(t('View Full Calendar'), base_path() . variable_get('uiowa_events_listing_path', 'events'));
 ?>
 <div class="row">
   <?php foreach ($items as $delta => $item): ?>

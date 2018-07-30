@@ -12,6 +12,7 @@ features[ctools][] = feeds_tamper:feeds_tamper_default:2
 features[features_api][] = api:2
 features[feeds_importer][] = department_articles
 features[feeds_tamper][] = department_articles-audiences-explode
+features[feeds_tamper][] = department_articles-audiences-explode_terms
 features[feeds_tamper][] = department_articles-blank_source_1-default_value
 features[feeds_tamper][] = department_articles-blank_source_2-copy
 features[feeds_tamper][] = department_articles-blank_source_2-find_replace
