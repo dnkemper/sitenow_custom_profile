@@ -749,11 +749,6 @@ projects:
       - "https://www.drupal.org/files/issues/2018-07-19/xmlsitemap-2986847-2.patch"
 
   # Themes
-  adaptivetheme:
-    type: theme
-    version: "3.1"
-    subdir: ""
-
   adminimal_theme:
     type: theme
     version: "1.24"
