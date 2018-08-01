@@ -298,6 +298,8 @@ projects:
 
   hierarchical_select:
     version: "3.0-beta8"
+    patch:
+          - "https://www.drupal.org/files/issues/hierarchical_select-not_well_formed_numeric_value_error-2845621-1.patch"
 
   imagecache_external:
     version: "2.2"
@@ -340,6 +342,8 @@ projects:
 
   libraries:
     version: "2.3"
+    patch:
+      - "https://www.drupal.org/files/issues/libraries-version-callback-reference-parameter-fix-2779591-11.patch"
 
   lightbox2:
     version: "1.0-beta1"
@@ -438,6 +442,8 @@ projects:
 
   options_element:
     version: "1.12"
+    patch:
+          - "https://www.drupal.org/files/issues/php71-non-well-formed-numeric-value-form-options-739080-1.patch"
 
   override_node_options:
     version: "1.13"
@@ -568,7 +574,7 @@ projects:
     version: "1.5"
 
   select_or_other:
-    version: "2.22"
+    version: "2.24"
 
   shs:
     version: "1.6"
@@ -791,7 +797,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
-      tag: "7.x-2.3"
+      tag: "7.x-2.4"
 
   sitenow_maps:
     subdir: "custom"
@@ -828,7 +834,7 @@ projects:
     download:
       url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
       tag: "7.x-1.14"
-      
+
   uiowa_alerts:
     subdir: "custom"
     download:
