@@ -28,11 +28,11 @@ function stellar_preprocess_page(&$variables) {
   }
 
   // Create attributes for the header region.
-  $variables['page']['header']['classes_array'][] = 'l-header';
-  $variables['page']['header']['classes_array'][] = 'pattern';
-  $variables['page']['header']['attributes_array']['role'] = 'banner';
-  $variables['page']['header']['attributes_array']['class'] = implode(" ", $variables['page']['header']['classes_array']);
-  $variables['header_attributes'] = drupal_attributes($variables['page']['header']['attributes_array']);
+  $variables['page']['header']['#classes_array'][] = 'l-header';
+  $variables['page']['header']['#classes_array'][] = 'pattern';
+  $variables['page']['header']['#attributes_array']['role'] = 'banner';
+  $variables['page']['header']['#attributes_array']['class'] = implode(" ", $variables['page']['header']['classes_array']);
+  $variables['header_attributes'] = drupal_attributes($variables['page']['header']['#attributes_array']);
 
   // Footer block grid def.
   foreach ($variables['page']['footer'] as $key => &$block) {
