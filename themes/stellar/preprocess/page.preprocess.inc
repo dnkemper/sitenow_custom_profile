@@ -31,7 +31,7 @@ function stellar_preprocess_page(&$variables) {
   $variables['page']['header']['#classes_array'][] = 'l-header';
   $variables['page']['header']['#classes_array'][] = 'pattern';
   $variables['page']['header']['#attributes_array']['role'] = 'banner';
-  $variables['page']['header']['#attributes_array']['class'] = implode(" ", $variables['page']['header']['classes_array']);
+  $variables['page']['header']['#attributes_array']['class'] = implode(" ", $variables['page']['header']['#classes_array']);
   $variables['header_attributes'] = drupal_attributes($variables['page']['header']['#attributes_array']);
 
   // Footer block grid def.
