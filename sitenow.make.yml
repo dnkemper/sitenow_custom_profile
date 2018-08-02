@@ -400,8 +400,6 @@ projects:
     download:
       branch: 7.x-2.x
       revision: 03a09f8c8a44eaeb1044382f80f9e603e39496ef
-    patch:
-      - "https://www.drupal.org/files/issues/menu_block-undefined_index-2642556-7.patch"
 
   menu_link_weight:
     version: "1.4"
