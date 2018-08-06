@@ -53,7 +53,7 @@
             </div>
           <?php endif; ?>
           <?php if ($title): ?>
-            <h1 id="page-title" class="page-title">
+            <h1 <?php print $title_attributes; ?>>
               <?php print $title; ?>
             </h1>
           <?php endif; ?>

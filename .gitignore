@@ -22,6 +22,7 @@ themes/*
 !themes/ovpred_compliance
 !themes/parallaxy
 !themes/stellar
+!themes/adaptivetheme
 
 # Custom library exclusions.
 !libraries/modernizr

@@ -9,6 +9,9 @@
  * Implements template_preprocess_page().
  */
 function ovpred_compliance_preprocess_page(&$vars) {
+  // Add attributes for page titles.
+  $vars['title_attributes_array']['class'][] = 'page-title';
+  $vars['title_attributes_array']['id'][] = 'page-title';
 
   // Add a grid definitions for '.main-content' regions.
   if (!empty($vars['page']['sidebar'])) {

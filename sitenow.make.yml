@@ -298,6 +298,8 @@ projects:
 
   hierarchical_select:
     version: "3.0-beta8"
+    patch:
+          - "https://www.drupal.org/files/issues/hierarchical_select-not_well_formed_numeric_value_error-2845621-1.patch"
 
   imagecache_external:
     version: "2.2"
@@ -340,6 +342,8 @@ projects:
 
   libraries:
     version: "2.3"
+    patch:
+      - "https://www.drupal.org/files/issues/libraries-version-callback-reference-parameter-fix-2779591-11.patch"
 
   lightbox2:
     version: "1.0-beta1"
@@ -393,9 +397,9 @@ projects:
     version: "1.0"
 
   menu_block:
-    version: "2.7"
-    patch:
-      - "https://www.drupal.org/files/issues/menu_block-undefined_index-2642556-7.patch"
+    download:
+      branch: 7.x-2.x
+      revision: 03a09f8c8a44eaeb1044382f80f9e603e39496ef
 
   menu_link_weight:
     version: "1.4"
@@ -438,6 +442,8 @@ projects:
 
   options_element:
     version: "1.12"
+    patch:
+          - "https://www.drupal.org/files/issues/php71-non-well-formed-numeric-value-form-options-739080-1.patch"
 
   override_node_options:
     version: "1.13"
@@ -568,7 +574,7 @@ projects:
     version: "1.5"
 
   select_or_other:
-    version: "2.22"
+    version: "2.24"
 
   shs:
     version: "1.6"
@@ -749,11 +755,6 @@ projects:
       - "https://www.drupal.org/files/issues/2018-07-19/xmlsitemap-2986847-2.patch"
 
   # Themes
-  adaptivetheme:
-    type: theme
-    version: "3.1"
-    subdir: ""
-
   adminimal_theme:
     type: theme
     version: "1.24"
@@ -796,7 +797,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
-      tag: "7.x-2.3"
+      tag: "7.x-2.4"
 
   sitenow_maps:
     subdir: "custom"
@@ -833,7 +834,7 @@ projects:
     download:
       url: git@github.com:ITS-UofIowa/uiowa_acquia_authentication.git
       tag: "7.x-1.14"
-      
+
   uiowa_alerts:
     subdir: "custom"
     download:

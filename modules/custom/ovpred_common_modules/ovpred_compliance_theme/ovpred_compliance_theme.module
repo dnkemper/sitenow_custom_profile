@@ -105,6 +105,11 @@ function ovpred_compliance_theme_config_form($form, &$form_state) {
       'navbar-black-transparency' => t('Black with Transparency'),
     ),
   );
+  $form['ovpred_compliance_theme_front_page_title'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Display the title of the front page off screen'),
+    '#default_value' => variable_get('ovpred_compliance_theme_front_page_title', FALSE),
+  );
 
   $form = system_settings_form($form);
   $form['#submit'][] = 'ovpred_compliance_theme_config_form_submit';
@@ -170,4 +175,9 @@ function ovpred_compliance_theme_preprocess_html(&$vars) {
  */
 function ovpred_compliance_theme_preprocess_page(&$vars) {
   $vars['header_pattern_overlay'] = variable_get('ovpred_compliance_theme_pattern_overlay', 'On');
+
+  // Move the title of the front page off screen.
+  if ($vars['is_front'] == TRUE && variable_get('ovpred_compliance_theme_front_page_title') == 1) {
+    $vars['title_attributes_array']['class'][] = 'element-invisible';
+  }
 }
