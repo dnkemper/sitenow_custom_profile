@@ -555,10 +555,3 @@ function sitenow_update_7305() {
     theme_disable(array('seven'));
   }
 }
-
-/**
- * Set default timezone to America/Chicago.
- */
-function sitenow_update_7306() {
-  variable_set('date_default_timezone', 'America/Chicago');
-}
