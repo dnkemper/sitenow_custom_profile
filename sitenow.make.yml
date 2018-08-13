@@ -787,12 +787,6 @@ projects:
       url: git@github.com:ITS-UofIowa/font_awesome_field.git
       tag: "7.x-2.1"
 
-  localist_pane:
-    subdir: "custom"
-    download:
-      url: git@github.com:ITS-UofIowa/localist_pane.git
-      tag: "7.x-1.7"
-
   parallaxy_background_image:
     subdir: "custom"
     download:
