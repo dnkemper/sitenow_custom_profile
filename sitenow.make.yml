@@ -516,6 +516,9 @@ projects:
 
   radix_layouts:
     version: "3.4"
+  
+  recaptcha:
+    version: "2.2"
 
   redirect:
     version: "1.0-rc3"
