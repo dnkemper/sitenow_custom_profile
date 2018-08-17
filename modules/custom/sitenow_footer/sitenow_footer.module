@@ -110,7 +110,7 @@ function sitenow_footer_preprocess_sitenow_footer(&$variables) {
   $theme = variable_get('sitenow_footer_theme', 'default');
   // Add css if applicable.
   $css = drupal_get_path('module', 'sitenow_footer') . '/css/sitenow-footer--' . $theme . '.css';
-  if (file_exists($css)) {
+  if (file_exists(realpath($css))) {
     $variables['attachments']['#attached']['css'][] = $css;
   }
   // Add a template suggestion based upon the theme.
