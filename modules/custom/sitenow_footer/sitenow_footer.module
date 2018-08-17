@@ -103,16 +103,24 @@ function sitenow_footer_block_view($delta = '') {
 }
 
 /**
+ * Implements hook_preprocess_page().
+ */
+function sitenow_footer_preprocess_page(&$variables) {
+  // Attach CSS in page preprocess due to issue with block cache.
+  $theme = variable_get('sitenow_footer_theme', 'default');
+  // Add css if applicable.
+  $css = drupal_get_path('module', 'sitenow_footer') . '/css/sitenow-footer--' . $theme . '.css';
+  if (file_exists($css)) {
+    drupal_add_css($css);
+  }
+}
+
+/**
  * Implements hook_preprocess_sitenow_footer().
  */
 function sitenow_footer_preprocess_sitenow_footer(&$variables) {
   // Get theme variant.
   $theme = variable_get('sitenow_footer_theme', 'default');
-  // Add css if applicable.
-  $css = drupal_get_path('module', 'sitenow_footer') . '/css/sitenow-footer--' . $theme . '.css';
-  if (file_exists($css)) {
-    $variables['attachments']['#attached']['css'][] = $css;
-  }
   // Add a template suggestion based upon the theme.
   $variables['theme_hook_suggestions'][] = 'sitenow_footer__' . $theme;
 
