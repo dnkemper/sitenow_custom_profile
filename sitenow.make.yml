@@ -141,6 +141,7 @@ projects:
     version: "2.10"
     patch:
       - "https://www.drupal.org/files/issues/date_date_week_range_and_date_iso_week_range_both_returns_1_day_too_much-1137062-17.patch"
+      - "https://www.drupal.org/files/issues/2843367-php71-string-offset-26.patch"
 
   date_ical:
     version: "3.9"
