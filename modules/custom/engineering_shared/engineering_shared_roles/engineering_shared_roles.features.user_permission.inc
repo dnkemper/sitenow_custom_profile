@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * engineering_shared_roles.features.user_permission.inc
@@ -50,6 +49,16 @@ function engineering_shared_roles_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'webform',
+  );
+
+  // Exported permission: 'access broken links report'.
+  $permissions['access broken links report'] = array(
+    'name' => 'access broken links report',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'linkchecker',
   );
 
   // Exported permission: 'access ckeditor link'.
@@ -113,6 +122,15 @@ function engineering_shared_roles_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'media',
+  );
+
+  // Exported permission: 'access own broken links report'.
+  $permissions['access own broken links report'] = array(
+    'name' => 'access own broken links report',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'linkchecker',
   );
 
   // Exported permission: 'access own webform results'.
@@ -224,6 +242,15 @@ function engineering_shared_roles_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
+  // Exported permission: 'administer CAPTCHA settings'.
+  $permissions['administer CAPTCHA settings'] = array(
+    'name' => 'administer CAPTCHA settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'captcha',
+  );
+
   // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -238,6 +265,7 @@ function engineering_shared_roles_user_default_permissions() {
     'name' => 'administer advanced pane settings',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'panels',
   );
@@ -416,6 +444,15 @@ function engineering_shared_roles_user_default_permissions() {
     'module' => 'imagecache_external',
   );
 
+  // Exported permission: 'administer linkchecker'.
+  $permissions['administer linkchecker'] = array(
+    'name' => 'administer linkchecker',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'linkchecker',
+  );
+
   // Exported permission: 'administer main-menu menu items'.
   $permissions['administer main-menu menu items'] = array(
     'name' => 'administer main-menu menu items',
@@ -529,6 +566,15 @@ function engineering_shared_roles_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'administer oembed'.
+  $permissions['administer oembed'] = array(
+    'name' => 'administer oembed',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'oembed',
   );
 
   // Exported permission: 'administer page manager'.
@@ -681,6 +727,15 @@ function engineering_shared_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer recaptcha'.
+  $permissions['administer recaptcha'] = array(
+    'name' => 'administer recaptcha',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'recaptcha',
   );
 
   // Exported permission: 'administer redirects'.
@@ -1571,6 +1626,15 @@ function engineering_shared_roles_user_default_permissions() {
     'module' => 'fieldable_panels_panes',
   );
 
+  // Exported permission: 'edit link settings'.
+  $permissions['edit link settings'] = array(
+    'name' => 'edit link settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'linkchecker',
+  );
+
   // Exported permission: 'edit meta tags'.
   $permissions['edit meta tags'] = array(
     'name' => 'edit meta tags',
@@ -2030,6 +2094,16 @@ function engineering_shared_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'skip CAPTCHA'.
+  $permissions['skip CAPTCHA'] = array(
+    'name' => 'skip CAPTCHA',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'captcha',
   );
 
   // Exported permission: 'switch shortcut sets'.
