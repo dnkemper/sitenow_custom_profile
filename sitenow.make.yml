@@ -496,11 +496,6 @@ projects:
     patch:
       - "https://www.drupal.org/files/issues/print-2257075-8.patch"
 
-  proj4js:
-    version: "1.2"
-    patch:
-      - "https://www.drupal.org/files/issues/proj4js-rename_make_file_to-2420707-1.patch"
-
   pseudo_field:
     download:
       revision: "e22e163026cadb93b347d3e16177a1806e6829fc"
