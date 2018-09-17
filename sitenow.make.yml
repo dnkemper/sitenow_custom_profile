@@ -844,7 +844,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/uiowa_events.git
-      tag: "7.x-2.4"
+      tag: "7.x-2.5"
 
   uiowa_favicon:
     subdir: "custom"
