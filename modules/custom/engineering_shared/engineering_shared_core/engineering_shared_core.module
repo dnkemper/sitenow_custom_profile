@@ -21,6 +21,19 @@ function engineering_shared_core_init() {
 }
 
 /**
+ * Implements hook_form_alter()
+ */
+function engineering_shared_core_form_alter(&$form, &$form_state, $form_id) {
+  // Add recaptcha to all webforms.
+  if (strstr($form_id, 'webform_client_form')) {
+    $form['sitenow_captcha'] = array(
+      '#type' => 'captcha',
+      '#captcha_type' => 'recaptcha/reCAPTCHA',
+    );
+  }
+}
+
+/**
  * Implements hook_form_FORMID_alter().
  */
 function engineering_shared_core_form_panelizer_edit_content_form_alter(&$form, &$form_state, $form_id) {
