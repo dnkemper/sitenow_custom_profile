@@ -53,9 +53,7 @@ function engineering_shared_content_types_form_validate($form, &$form_state) {
 function engineering_shared_content_types_form_article_node_form_alter(&$form, &$form_state, $form_id) {
   // If an imported article...
   if (isset($form_state['node'], $form_state['node']->field_imported) && $form_state['node']->field_imported[LANGUAGE_NONE][0]['value'] == 1) {
-    // Disable entire form.
-//    $form['#disabled'] = TRUE;
-    dpm($form);
+    // Disable fields.
     $disabled = array(
       'title',
       'field_tags',
