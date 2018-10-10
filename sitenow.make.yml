@@ -279,6 +279,8 @@ projects:
 
   geofield:
     version: "2.3"
+    patch:
+      - "https://www.drupal.org/files/issues/lat_long_values_get-2510694-2.patch"
 
   geophp:
     version: "1.7"
@@ -794,6 +796,12 @@ projects:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
       tag: "7.x-2.4"
 
+  sitenow_dcv:
+    subdir: "custom"
+    download:
+      url: git@github.com:ITS-UofIowa/sitenow_dcv.git
+      tag: "7.x-1.0"
+      
   sitenow_maps:
     subdir: "custom"
     download:
