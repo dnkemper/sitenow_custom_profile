@@ -555,3 +555,10 @@ function sitenow_update_7305() {
     theme_disable(array('seven'));
   }
 }
+
+/**
+ * Enable sitenow_dcv.
+ */
+function sitenow_update_7306() {
+  module_enable(array('sitenow_dcv'));
+}
