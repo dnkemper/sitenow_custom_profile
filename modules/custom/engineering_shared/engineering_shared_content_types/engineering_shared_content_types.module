@@ -54,7 +54,24 @@ function engineering_shared_content_types_form_article_node_form_alter(&$form, &
   // If an imported article...
   if (isset($form_state['node'], $form_state['node']->field_imported) && $form_state['node']->field_imported[LANGUAGE_NONE][0]['value'] == 1) {
     // Disable entire form.
-    $form['#disabled'] = TRUE;
+//    $form['#disabled'] = TRUE;
+    dpm($form);
+    $disabled = array(
+      'title',
+      'field_tags',
+      'field_image',
+      'field_article_source',
+      'field_author',
+      'field_external_image',
+      'field_external_nid',
+      'field_image_caption',
+      'field_imported',
+      'field_external_image_cropped',
+      'field_article_audiences',
+    );
+    foreach ($disabled as $d) {
+      $form[$d]['#disabled'] = TRUE;
+    }
     // Remove image field access.
     $form['field_image']['#access'] = FALSE;
     // Display message explaining disabled form, and link to source.
