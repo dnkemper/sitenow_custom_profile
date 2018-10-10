@@ -279,6 +279,8 @@ projects:
 
   geofield:
     version: "2.3"
+    patch:
+      - "https://www.drupal.org/files/issues/lat_long_values_get-2510694-2.patch"
 
   geophp:
     version: "1.7"
