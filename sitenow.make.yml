@@ -794,6 +794,12 @@ projects:
       url: git@github.com:ITS-UofIowa/parallaxy_background_image.git
       tag: "7.x-2.4"
 
+  sitenow_dcv:
+    subdir: "custom"
+    download:
+      url: git@github.com:ITS-UofIowa/sitenow_dcv.git
+      tag: "7.x-1.0"
+      
   sitenow_maps:
     subdir: "custom"
     download:
