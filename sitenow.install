@@ -557,8 +557,15 @@ function sitenow_update_7305() {
 }
 
 /**
+ * Clear cache.
+ */
+function sitenow_update_7400() {
+  cache_clear_all();
+}
+
+/**
  * Enable sitenow_dcv.
  */
-function sitenow_update_7306() {
+function sitenow_update_7401() {
   module_enable(array('sitenow_dcv'));
 }
