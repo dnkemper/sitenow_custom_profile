@@ -349,7 +349,7 @@ projects:
       - "https://www.drupal.org/files/issues/libraries-version-callback-reference-parameter-fix-2779591-11.patch"
 
   lightbox2:
-    version: "1.0-beta1"
+    version: "2.12"
 
   link:
     version: "1.4"
