@@ -564,8 +564,7 @@ function sitenow_update_7400() {
 }
 
 /**
- * Enable sitenow_dcv.
+ * Deleted.
  */
 function sitenow_update_7401() {
-  module_enable(array('sitenow_dcv'));
 }
