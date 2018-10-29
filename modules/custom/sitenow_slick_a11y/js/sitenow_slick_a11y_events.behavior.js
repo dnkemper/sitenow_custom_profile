@@ -7,7 +7,7 @@
   Drupal.behaviors.slickA11yEvents = {
     attach: function (context, settings) {
       jQuery.each( Drupal.settings.slick_a11y.slickA11y, function( i, settings ) {
-        $('#slick-' + settings.id ).once('slick-a11y-events', function () {
+        $('.slick').once('slick-a11y-events', function () {
           // When a slide is changed.
           $(this).on('init', function( slick ) {
             var currentSlide = 0;
