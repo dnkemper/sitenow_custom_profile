@@ -1,0 +1,25 @@
+{
+  "name": "ovpred_compliance_paragraphs",
+  "description": "A theme based on OVPRED Compliance for use with SiteNow Paragraphs.",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "includes",
+    "kits",
+    "node_modules",
+    "templates",
+    "*.json",
+    "*.js",
+    "*.png",
+    "*.inc",
+    "*.info",
+    "*.md",
+    "*.php"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "font-awesome": "fontawesome#^4",
+    "waypoints": "~4.0.0"
+  }
+}

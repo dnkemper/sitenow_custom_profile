@@ -20,6 +20,7 @@ themes/*
 !themes/ovpred
 !themes/ovpred_admin
 !themes/ovpred_compliance
+!themes/ovpred_compliance_paragraphs
 !themes/parallaxy
 !themes/stellar
 !themes/adaptivetheme

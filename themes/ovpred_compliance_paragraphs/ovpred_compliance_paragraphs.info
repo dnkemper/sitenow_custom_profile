@@ -1,0 +1,24 @@
+name        = ovpred_compliance_paragraphs
+description = A theme based on OVPRED Compliance for use with SiteNow Paragraphs.
+screenshot  = screenshot.png
+core        = 7.x
+base theme  = ovpred_compliance
+
+; Regions
+regions[content] = Content
+regions[main_nav] = Main Navigation
+regions[header] = Header
+regions[sidebar] = Sidebar
+regions[footer] = Footer
+
+; Breakpoints
+breakpoints[xs] = (max-width: 767px)
+breakpoints[sm] = (min-width: 768px) and (max-width: 991px)
+breakpoints[md] = (min-width: 992px) and (max-width: 1199px)
+breakpoints[lg] = (min-width: 1200px)
+
+; CSS - General
+stylesheets[all][]     = assets/css/ovpred_compliance_paragraphs.style.css
+
+; Javascript
+scripts[] = assets/js/ovpred_compliance_paragraphs.script.js
