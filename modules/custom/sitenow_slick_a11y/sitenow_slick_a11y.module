@@ -9,7 +9,7 @@
  * Implements hook_preprocess_slick().
  */
 function sitenow_slick_a11y_preprocess_slick(&$vars) {
-  $id = $vars['id'];
+  $id = $vars['attributes_array']['id'];
   $settings['slickA11y'][$id] = array(
     'id' => $id,
     'titles' => array(),
