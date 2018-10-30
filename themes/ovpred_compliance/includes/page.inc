@@ -45,6 +45,8 @@ function ovpred_compliance_process_page(&$vars) {
     // Add a container to '.main-content'.
     $vars['$content-classes'][] = 'container-smooth';
   }
-  // Add classes for the main_wrapper.
-  $vars['content_classes'] = implode(' ', $vars['$content-classes']);
+
+  if (isset($vars['$content-classes'])) {
+    $vars['content_classes'] = implode(' ', $vars['$content-classes']);
+  }
 }
