@@ -1,0 +1,4 @@
+name = Sitenow Slick Accessibility
+description = Accessibility improvements for slick slider
+core = 7.x
+package = Sitenow

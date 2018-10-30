@@ -1,0 +1,2 @@
+## Sitenow Slick Accessibility
+Provides accessibility improvements for slick slider. Currently supports adding title and arial-label attributes to slick-dots and slick-arrows. Works with any implementation of slick that uses theme_slick() for rendering. Logical defaults have been provided in hook_preprocess_slick(). An alter function has been provided to update titles, see: hook_slick_a11y_settings_alter().

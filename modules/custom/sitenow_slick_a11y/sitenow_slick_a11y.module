@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Sitenow slick a211y module.
+ */
+
+/**
+ * Implements hook_preprocess_slick().
+ */
+function sitenow_slick_a11y_preprocess_slick(&$vars) {
+  $id = $vars['id'];
+  $settings['slickA11y'][$id] = array(
+    'id' => $id,
+    'titles' => array(),
+  );
+
+  // Set default titles for slick.
+  foreach ($vars['items'] as $item) {
+    $settings['slickA11y'][$id]['titles'][$item['#delta']] = 'Slide ' . $item['#delta'];
+  }
+
+  // Allow other modules to alter settings.
+  drupal_alter('slick_a11y_settings', $settings, $vars, $id);
+
+  drupal_add_js(array('slick_a11y' => $settings), 'setting');
+  drupal_add_js(drupal_get_path('module', 'sitenow_slick_a11y') . '/js/sitenow_slick_a11y_dots.behavior.js', array(
+    'group' => 200,
+  ));
+  drupal_add_js(drupal_get_path('module', 'sitenow_slick_a11y') . '/js/sitenow_slick_a11y_events.behavior.js', array(
+    'group' => 0,
+  ));
+}
