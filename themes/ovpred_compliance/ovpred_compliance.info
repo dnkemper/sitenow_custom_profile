@@ -20,10 +20,13 @@ breakpoints[md] = (min-width: 992px) and (max-width: 1199px)
 breakpoints[lg] = (min-width: 1200px)
 
 ; CSS - General
-stylesheets[all][]     = assets/css/ovpred_compliance.style.css
+stylesheets[all][] = assets/css/ovpred_compliance.style.css
 
 ; Javascript
 scripts[] = assets/js/ovpred_compliance.script.js
+
+; Plugins
+plugins[panels][layouts] = panel_layouts
 
 ; Settings
 ; Set this to FALSE for development only.
