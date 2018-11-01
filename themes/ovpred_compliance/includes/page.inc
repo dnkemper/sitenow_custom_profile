@@ -49,4 +49,7 @@ function ovpred_compliance_process_page(&$vars) {
   if (isset($vars['$content-classes'])) {
     $vars['content_classes'] = implode(' ', $vars['$content-classes']);
   }
+  else {
+    $vars['$content-classes'] = array();
+  }
 }
