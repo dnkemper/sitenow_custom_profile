@@ -750,7 +750,7 @@ projects:
     version: "2.4"
 
   wysiwyg_filter:
-    version: "1.6-rc9"
+    version: "1.6-rc4"
 
   xmlsitemap:
     version: "2.4"
