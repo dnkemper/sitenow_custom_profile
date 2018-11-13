@@ -142,6 +142,7 @@ function sitenow_footer_preprocess_sitenow_footer(&$variables) {
       '#path' => base_path(),
       '#text' => render($logo),
       '#options' => array(
+        'attributes' => array(),
         'html' => TRUE,
       ),
     );
