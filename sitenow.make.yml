@@ -9,7 +9,7 @@ defaults:
 ################################# Contrib ####################################
 projects:
   acquia_connector:
-    version: "3.3"
+    version: "3.4"
 
   acquia_purge:
     version: "1.3"
