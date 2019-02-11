@@ -400,6 +400,7 @@ function ovpred_blocks_units_content() {
             l(t('Injury Prevention Research Center'), 'http://www.public-health.uiowa.edu/iprc/'),
             l(t('Center for Health Effects of Environmental Contamination'), 'https://cheec.uiowa.edu/'),
             l(t('Center for Global and Regional Environmental Research'), 'https://cgrer.uiowa.edu/'),
+            l(t('Iowa Center for Research by Undergraduates'), 'https://uiowa.edu/icru'),
           ),
         ),
       ),
