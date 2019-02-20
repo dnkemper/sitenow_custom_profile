@@ -352,9 +352,7 @@ projects:
     version: "2.12"
 
   link:
-    version: "1.4"
-    patch:
-      - "https://www.drupal.org/files/issues/link-widget_in_custom_form-2718563-10.patch"
+    version: "1.6"
 
   linkchecker:
     version: "1.3"
