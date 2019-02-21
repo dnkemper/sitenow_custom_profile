@@ -266,7 +266,7 @@ projects:
       revision: "0b1f8e7e24c168d1820ccded63c319327d57a97e"
 
   focal_point:
-    version: "1.1"
+    version: "1.2"
 
   form_builder:
     version: "1.20"
