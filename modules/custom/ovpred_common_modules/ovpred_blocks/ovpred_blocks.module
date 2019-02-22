@@ -37,7 +37,7 @@ function ovpred_blocks_block_info() {
   );
 
   $blocks['ovpred_units'] = array(
-    'info' => t('Research and Economic Development units'),
+    'info' => t('Research units'),
     'cache' => DRUPAL_CACHE_GLOBAL,
     'region' => 'sub_footer',
     'status' => 1,
@@ -53,7 +53,7 @@ function ovpred_blocks_block_configure($delta = '') {
   $form = array();
   // Add the text area to the contact information form.
   if ($delta == 'ovpred_contact') {
-    $address = '<p>Office of the Vice President for Research and Economic Development<br/>
+    $address = '<p>Office of the Vice President for Research<br/>
 2660 UCC<br/>
 Iowa City, IA  52242</p>';
 
@@ -172,8 +172,8 @@ function ovpred_blocks_branding_content() {
 
   $image = theme('image',
     array(
-      'path' => base_path() . drupal_get_path('module', 'ovpred_blocks') . '/images/ovpred_white.png',
-      'alt' => 'Office of the Vice President for Research and Economic Development',
+      'path' => base_path() . drupal_get_path('module', 'ovpred_blocks') . '/images/ovpr_white.png',
+      'alt' => 'Office of the Vice President for Research',
     )
     );
 
@@ -195,7 +195,7 @@ function ovpred_blocks_branding_content() {
  * Contact us block content.
  */
 function ovpred_blocks_contact_content() {
-  $address = 'Office of the Vice President for Research and Economic Development<br/>
+  $address = 'Office of the Vice President for Research<br/>
 2660 UCC<br/>
 Iowa City, IA  52242';
 
@@ -336,7 +336,7 @@ function ovpred_blocks_units_content() {
         'link' => array(
           '#prefix' => '<a href="#tab1focus" id="tab1" class="tab ovpred-units-title" role="tab" aria-selected="true" aria-expanded="false" tabindex="0" title="Click to expand">',
           '#suffix' => '</a>',
-          '#markup' => t('Research and Economic Development units'),
+          '#markup' => t('Office of Research units'),
         ),
         '#suffix' => '</h2></div>',
       ),
@@ -349,7 +349,7 @@ function ovpred_blocks_units_content() {
           '#title' => t('Research Administration'),
           '#theme' => 'item_list',
           '#items' => array(
-            l(t('Office of Research and Economic Development'), 'https://research.uiowa.edu/'),
+            l(t('Office of the Vice President for Research'), 'https://research.uiowa.edu/'),
             l(t('Office of Animal Resources'), 'https://animal.research.uiowa.edu/'),
             l(t('Office of the Institutional Animal Care and Use Committee'), 'https://animal.research.uiowa.edu/'),
             l(t('Conflict of Interest in Research Office'), 'https://coi.research.uiowa.edu/'),
@@ -357,17 +357,7 @@ function ovpred_blocks_units_content() {
             l(t('Environmental Health & Safety Office'), 'https://ehs.research.uiowa.edu/'),
             l(t('Human Subjects Office'), 'https://hso.research.uiowa.edu/'),
             l(t('Research Information Systems'), 'https://ris.research.uiowa.edu/'),
-          ),
-        ),
-        'economic' => array(
-          '#prefix' => '<div class="unit-group economic-development">',
-          '#suffix' => '</div>',
-          '#title' => t('Economic Development'),
-          '#theme' => 'item_list',
-          '#items' => array(
-            l(t('UI Research Park'), 'https://researchpark.uiowa.edu/'),
-            l(t('UI Research Foundation'), 'https://research.uiowa.edu/uirf/'),
-            l(t('UI Ventures'), 'https://uiventures.uiowa.edu/'),
+            l(t('UI Research Foundation'), 'https://uifr.research.uiowa.edu/'),
           ),
         ),
         'facilities' => array(
@@ -380,6 +370,7 @@ function ovpred_blocks_units_content() {
             l(t('Fermentation Facility'), 'https://cbb.research.uiowa.edu/'),
             l(t('High Resolution Mass Spectrometry Facility'), 'https://hrmsf.research.uiowa.edu/'),
             l(t('High Throughput Screening Facility'), 'https://pharmacy.uiowa.edu/high-throughput-screening-facility'),
+            l(t('Iowa-Creates'), 'https://iowacreates.research.uiowa.edu/'),
           ),
         ),
         'museums' => array(
@@ -395,7 +386,6 @@ function ovpred_blocks_units_content() {
                 '@oldcap' => 'https://oldcap.uiowa.edu/',
                 '@natural' => 'https://mnh.uiowa.edu/',
               )),
-            l(t('Mobile Museum'), 'https://discover.research.uiowa.edu/mobile-museum'),
           ),
         ),
         'centers' => array(
@@ -407,10 +397,10 @@ function ovpred_blocks_units_content() {
             l(t('Public Policy Center'), 'http://ppc.uiowa.edu/'),
             l(t('Obermann Center for Advanced Studies'), 'https://obermann.uiowa.edu/'),
             l(t('State Hygienic Laboratory'), 'https://www.shl.uiowa.edu/'),
-            l(t('Iowa Consortium for Substance Abuse Research & Evaluation'), 'http://iconsortium.subst-abuse.uiowa.edu/'),
             l(t('Injury Prevention Research Center'), 'http://www.public-health.uiowa.edu/iprc/'),
             l(t('Center for Health Effects of Environmental Contamination'), 'https://cheec.uiowa.edu/'),
             l(t('Center for Global and Regional Environmental Research'), 'https://cgrer.uiowa.edu/'),
+            l(t('Iowa Center for Research by Undergraduates'), 'https://uiowa.edu/icru'),
           ),
         ),
       ),
