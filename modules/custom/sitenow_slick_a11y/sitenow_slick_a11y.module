@@ -28,9 +28,9 @@ function sitenow_slick_a11y_preprocess_slick(&$vars) {
     'group' => 200,
   ));
   drupal_add_js(drupal_get_path('module', 'sitenow_slick_a11y') . '/js/sitenow_slick_a11y_events.behavior.js', array(
-        'group' => 0,
-    ));
+    'group' => 0,
+  ));
   drupal_add_js(drupal_get_path('module', 'sitenow_slick_a11y') . '/js/sitenow_slick_a11y_slick_track.behavior.js', array(
-      'group' => 0,
+    'group' => 0,
   ));
 }
