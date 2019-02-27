@@ -510,7 +510,7 @@ projects:
     version: "3.8"
 
   rabbit_hole:
-    version: "2.24"
+    version: "2.25"
 
   radix_layouts:
     version: "3.4"
