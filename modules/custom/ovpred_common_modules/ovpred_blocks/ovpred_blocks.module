@@ -253,7 +253,7 @@ function ovpred_blocks_thank_content() {
 
   $content = array(
     '#type' => 'link',
-    '#title' => t('<i class="fa fa-thumbs-up" aria-hidden="true"></i> Thank a staff member'),
+    '#title' => t('Thank a staff member'),
     '#href' => 'https://workflow.uiowa.edu/form/thankyou',
     '#options' => array(
       'attributes' => array('class' => array('ovpred-thank-link btn btn-primary')),
@@ -357,7 +357,7 @@ function ovpred_blocks_units_content() {
             l(t('Environmental Health & Safety Office'), 'https://ehs.research.uiowa.edu/'),
             l(t('Human Subjects Office'), 'https://hso.research.uiowa.edu/'),
             l(t('Research Information Systems'), 'https://ris.research.uiowa.edu/'),
-            l(t('UI Research Foundation'), 'https://uifr.research.uiowa.edu/'),
+            l(t('UI Research Foundation'), 'https://uirf.research.uiowa.edu/'),
           ),
         ),
         'facilities' => array(
