@@ -816,7 +816,7 @@ projects:
     subdir: "custom"
     download:
       url: git@github.com:ITS-UofIowa/sitenow_paragraphs.git
-      tag: "7.x-1.7"
+      tag: "7.x-1.8"
 
   sitenow_user_create:
     subdir: "custom"
