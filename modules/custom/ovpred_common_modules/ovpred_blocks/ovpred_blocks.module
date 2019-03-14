@@ -382,7 +382,7 @@ function ovpred_blocks_units_content() {
             l(t('Office of the State Archaeologist'), 'https://archaeology.uiowa.edu/'),
             t('<a href="@pentacrest">Pentacrest Museums</a><ul><li><a href="@oldcap">Old Capitol Museum</a></li><li><a href="@natural">Museum of Natural History</a></li></ul>',
               array(
-                '@pentacrest' => 'https://discover.research.uiowa.edu/university-iowa-museums',
+                '@pentacrest' => 'https://research.uiowa.edu/pentacrest-museums',
                 '@oldcap' => 'https://oldcap.uiowa.edu/',
                 '@natural' => 'https://mnh.uiowa.edu/',
               )),
