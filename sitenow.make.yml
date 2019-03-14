@@ -578,7 +578,7 @@ projects:
     version: "2.24"
 
   shs:
-    version: "1.6"
+    version: "1.8"
 
   simplesamlphp_auth:
     download:
