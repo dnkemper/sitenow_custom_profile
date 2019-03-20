@@ -550,7 +550,7 @@ projects:
       branch: "7.x-2.x"
 
   restful:
-    version: "2.16"
+    version: "2.17"
 
   robotstxt:
     version: "1.4"
