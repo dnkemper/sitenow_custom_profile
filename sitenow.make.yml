@@ -986,7 +986,7 @@ libraries:
     download:
       type: "git"
       url: "git@github.com:amsul/pickadate.js.git"
-      tag: "3.5.6"
+      tag: "3.6.3"
 
   proj4js:
     download:
