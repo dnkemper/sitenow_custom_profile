@@ -22,10 +22,17 @@
   .page-title-type-hero {
     height: 80vh;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 
     > .container-smooth {
       padding-bottom: 10rem;
+      align-self: flex-end;
+    }
+
+    .hp-links {
+      z-index: 9;
+      position: absolute;
+      right: 0;
     }
 
     .bg-img {

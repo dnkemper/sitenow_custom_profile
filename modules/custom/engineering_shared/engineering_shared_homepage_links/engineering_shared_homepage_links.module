@@ -1,0 +1,119 @@
+<?php
+
+/**
+ * @file
+ * Code for the engineering_shared_homepage_links.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function engineering_shared_homepage_links_permission() {
+  return array(
+    'administer website homeapge' => array(
+      'title' => t('Administer Website Homepage'),
+      'description' => t('Configure homepage settings.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function engineering_shared_homepage_links_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/engineering-homepage'] = array(
+    'title' => 'Homepage Settings',
+    'description' => 'Configuration for Homepage.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('engineering_shared_homepage_links_config'),
+    'access arguments' => array('administer website homeapge'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback: facilities_alerts_emails.
+ *
+ * @see facilites_alerts_menu()
+ */
+function engineering_shared_homepage_links_config($form, &$form_state) {
+  $form['hp_links'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Homepage links'),
+    '#collapsible' => TRUE,
+  );
+  $form['hp_links']['engineering_shared_homepage_links_link_1'] = array(
+    '#tree' => TRUE,
+    '#type' => 'link_field',
+    '#title' => t('Link 1'),
+    '#default_value' => variable_get('engineering_shared_homepage_links_link_1'),
+    '#field_name' => 'link_field',
+    '#field_parents' => array(),
+    '#language' => 'und',
+    '#delta' => 0,
+  );
+  $form['hp_links']['engineering_shared_homepage_links_link_2'] = array(
+    '#tree' => TRUE,
+    '#type' => 'link_field',
+    '#title' => t('Link 2'),
+    '#default_value' => variable_get('engineering_shared_homepage_links_link_2'),
+    '#field_name' => 'link_field',
+    '#field_parents' => array(),
+    '#language' => 'und',
+    '#delta' => 0,
+  );
+  $form['hp_links']['engineering_shared_homepage_links_link_3'] = array(
+    '#tree' => TRUE,
+    '#type' => 'link_field',
+    '#title' => t('Link 3'),
+    '#default_value' => variable_get('engineering_shared_homepage_links_link_3'),
+    '#field_name' => 'link_field',
+    '#field_parents' => array(),
+    '#language' => 'und',
+    '#delta' => 0,
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function engineering_shared_homepage_links_preprocess_page(&$vars) {
+  $links = array();
+  if ($vars['is_front']) {
+    $hp_links = array(
+      'engineering_shared_homepage_links_link_1',
+      'engineering_shared_homepage_links_link_2',
+      'engineering_shared_homepage_links_link_3',
+    );
+    foreach ($hp_links as $vname) {
+      $config = variable_get($vname);
+      if (!empty($config['url'])) {
+        $links['container'] = array(
+          '#type' => 'container',
+          '#attributes' => array(
+            'class' => array('hp-links'),
+          ),
+        );
+        $links['container'][] = array(
+          '#theme' => 'link',
+          '#text' => (!empty($config['title'])) ? $config['title'] : $config['url'],
+          '#path' => $config['url'],
+          '#options' => array(
+            'attributes' => array(
+              'class' => array(
+                'btn',
+                'btn-primary',
+              ),
+            ),
+          ),
+        );
+      }
+    }
+  }
+  $vars['hp_links'] = !empty($links) ? $links : FALSE;
+}

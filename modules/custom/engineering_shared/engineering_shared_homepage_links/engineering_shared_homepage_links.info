@@ -1,0 +1,5 @@
+name = engineering_shared_homepage_links
+description = Configurable links for homepage.
+core = 7.x
+package = Engineering
+version = 7.x-1.0
