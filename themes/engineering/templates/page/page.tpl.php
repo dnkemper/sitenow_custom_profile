@@ -58,6 +58,9 @@
 
 <div class="page-title-breadcrumbs <?php print $page_title_type_classes; ?>">
   <?php if ($page_title_type == 'hero'): ?>
+    <?php if ($hp_links): ?>
+      <?php print render($hp_links); ?>
+    <?php endif; ?>
     <div class="pos-abs bg-img opacity-7"></div>
     <div class="pos-abs pattern-overlay dots opacity-9"></div>
   <?php endif; ?>
