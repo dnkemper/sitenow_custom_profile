@@ -35,7 +35,6 @@ function engineering_shared_homepage_links_menu() {
   return $items;
 }
 
-
 /**
  * Page callback: facilities_alerts_emails.
  *
@@ -108,7 +107,7 @@ function engineering_shared_homepage_links_preprocess_page(&$vars) {
             'attributes' => array(
               'class' => array(
                 'btn',
-                'btn-primary'
+                'btn-primary',
               ),
             ),
           ),
