@@ -839,7 +839,7 @@ projects:
   uiowa_alerts:
     subdir: "custom"
     download:
-      url: git@github.com:uiowa/uiowa_alerts.git
+      url: git@github.com:ITS-UofIowa/uiowa_alerts.git
       tag: "7.x-1.0"
 
   uiowa_bar:
