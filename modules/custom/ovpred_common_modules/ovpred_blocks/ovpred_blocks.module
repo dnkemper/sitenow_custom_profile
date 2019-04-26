@@ -370,7 +370,7 @@ function ovpred_blocks_units_content() {
             l(t('Fermentation Facility'), 'https://cbb.research.uiowa.edu/'),
             l(t('High Resolution Mass Spectrometry Facility'), 'https://hrmsf.research.uiowa.edu/'),
             l(t('High Throughput Screening Facility'), 'https://pharmacy.uiowa.edu/high-throughput-screening-facility'),
-            l(t('Iowa-Creates'), 'https://iowacreates.research.uiowa.edu/'),
+            l(t('Iowa Creates'), 'https://iowacreates.research.uiowa.edu/'),
           ),
         ),
         'museums' => array(
